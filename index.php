@@ -5,7 +5,7 @@ if( !empty($_GET['lang']) ){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $lang; ?>">
 <head>
     <meta charset="utf-8">
     <title>Mister Milano | Official Website</title>
