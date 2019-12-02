@@ -157,6 +157,27 @@ if( !empty($_GET['lang']) ){
                 <div role="tabpanel" class="tab-pane" id="past">
                     <div class="tablewrap">
                     <table itemscope itemtype="http://schema.org/Event" class="table">
+                        <tr class="bounce-table animation-element">
+                            <td class="subject">
+                                <div class="date" itemprop="startDate" content="2019-07-18">
+                                    <span class="day">18</span>
+                                    <span class="month">July</span>
+                                    <span class="year">2019</span>
+                                </div>
+                            </td>
+                            <td class="location subject" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
+                                <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                                    <span itemprop="addressLocality">Zürich</span>,
+                                    <span itemprop="addressRegion">(CH)</span>
+                                </div>
+                            </td>
+                            <td class="venue subject" itemprop="name">
+                                <a target="_blank" itemprop="url" title="Sommerkonzert Bäckeranlage Zürich (CH)" href="https://www.facebook.com/baeckirestaurant">Bäckeranlage</a>
+                                <div class="location-small">Zürich (CH)</div>
+                            </td>
+                            <td class="ticket subject">
+                            </td>
+                        </tr>                      
                         <?php
                         $url = 'http://tourdate.twogentlemen.net/json.php?id=574&past';
                         $content = file_get_contents($url);
