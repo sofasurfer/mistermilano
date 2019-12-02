@@ -131,27 +131,6 @@ if( !empty($_GET['lang']) ){
                             </tr>
                         </tbody>
                     </table>
-
-                    <!--table itemscope itemtype="http://schema.org/Event" class="table">
-                        <?php
-                        $url = 'http://tourdate.twogentlemen.net/json.php?id=574';
-                        $content = file_get_contents($url);
-                        $json = json_decode($content, true);
-
-                        // Check if tours exist
-                        if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
-                          foreach($json['shows'] as $item) {
-                            $item['event_link'] = $item['club_website'];
-                            if( !empty($item['show_link'])){
-                              $item['event_link'] = $item['show_link'];
-                            }
-                            include 'tpl/tour-item.php';
-                          }    
-                        }else{
-                          include 'tpl/mailchimp.php';
-                        }
-                        ?> 
-                    </table-->
                     </div>                
                 </div>
                 <div role="tabpanel" class="tab-pane" id="past">
