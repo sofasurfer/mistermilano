@@ -105,7 +105,34 @@ if( !empty($_GET['lang']) ){
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="upcomming">
                     <div class="tablewrap">
-                    <table itemscope itemtype="http://schema.org/Event" class="table">
+
+                    <table itemscope="" itemtype="http://schema.org/Event" class="table">
+                        <tbody>
+                            <tr class="bounce-table animation-element">
+                                <td class="subject">
+                                    <div class="date" itemprop="startDate" content="2019-12-14">
+                                        <span class="day">14</span>
+                                        <span class="month">Dez</span>
+                                        <span class="year">2019</span>
+                                    </div>
+                                </td>
+                                <td class="location subject" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
+                                    <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                                        <span itemprop="addressLocality">Genève</span>,
+                                        <span itemprop="addressRegion">(CH)</span>
+                                    </div>
+                                </td>
+                                <td class="venue subject" itemprop="name">
+                                    <a target="_blank" itemprop="url" title="Grütli Genève (CH)" href="https://www.cinemas-du-grutli.ch">Grütli</a>
+                                    <div class="location-small">Genève (CH)</div>
+                                </td>
+                                <td class="ticket subject">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!--table itemscope itemtype="http://schema.org/Event" class="table">
                         <?php
                         $url = 'http://tourdate.twogentlemen.net/json.php?id=574';
                         $content = file_get_contents($url);
@@ -124,7 +151,7 @@ if( !empty($_GET['lang']) ){
                           include 'tpl/mailchimp.php';
                         }
                         ?> 
-                    </table>
+                    </table-->
                     </div>                
                 </div>
                 <div role="tabpanel" class="tab-pane" id="past">
