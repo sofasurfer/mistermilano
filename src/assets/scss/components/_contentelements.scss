@@ -9,8 +9,26 @@
    Colors
    ========================================================================== */
 
-.c-bg-dark {
-	background-color: $bg-dark;
+.c-bg-light {
+	background-color: $bg-light;
+}
+
+.c-line-vertical {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	height: 100%;
+	width: 1px;
+	background-color: $border-basic;
+}
+
+.c-line-top {
+	border-top: solid 1px $border-basic;
+}
+
+.c-line-bottom {
+	border-bottom: solid 1px $border-basic;
 }
 
 /* ==========================================================================

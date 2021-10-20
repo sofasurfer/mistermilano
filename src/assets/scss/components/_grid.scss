@@ -24,14 +24,16 @@
 	padding-bottom: 6em;
 }
 
-.c-showroom {
-	margin-bottom: 6em;
+.c-title-main {
+	margin-top: 6em;
 }
 
-.c-header .c-container,
-.c-footer .c-container,
-.c-showroom .c-container {
+.c-container-no-padding {
 	padding-bottom: 0;
+}
+
+.c-teaser-img-text {
+	margin-bottom: 6em;
 }
 
 
@@ -41,15 +43,15 @@
    ========================================================================== */
 
 .c-container {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 
 
 .c-row {
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -10px;
+    margin-left: -10px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -111,8 +113,8 @@
 .c-col-12 {
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .c-col-12 {
@@ -259,5 +261,10 @@
 /* ==========================================================================
    Grid Varianten
    ========================================================================== */
+
+.c-text-padding,
+.c-teaser-img-text .c-row-reverse .c-text-padding-var {
+	padding-left: calc(10px + 10px);
+}
 
 

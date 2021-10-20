@@ -20,10 +20,23 @@ h6 {
 }
 
 
-h1,.c-h1 {
-	padding-bottom: .6em;
-	line-height: 1.2;
-	font-size: 3rem;
+h1,
+.c-h1 {
+	padding-bottom: .5em;
+	line-height: 1.1;
+	font-size: 4.44rem; /* 80px */
+	font-weight: bold;
+}
+
+.c-title-main h1,
+.c-title-main .c-h1 {
+	padding-top: 1.5rem;
+}
+
+h1 span,
+.c-h1 span,
+h2 span,
+.c-h2 span{
 	font-weight: normal;
 }
 
@@ -31,7 +44,7 @@ h2,
 .c-h2 {
 	padding-bottom: .6em;
 	line-height: 1.2;
-	font-size: 1.5rem;
+	font-size: 2.22rem; /* 40px */
 	font-weight: bold;
 }
 
@@ -73,13 +86,26 @@ h3,
 	padding-top: 1.5em;
 }
 
-
-.c-footer,
-.c-text-small {
-	font-size: 0.85rem;
+.c-lead {
+	font-size: 1.33rem;
+	line-height: 1.33;
 }
 
+.c-title-category {
+	display: block; 
+	text-transform: uppercase;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;	
+}
 
+.c-title-category,
+.c-text-small {	
+	font-size: 0.77rem; /* 14px */
+}
+
+.c-footer-disclaimer {
+	font-size: 0.88rem; /* 18px */
+}
 
 /* ==========================================================================
    Basic Lists Content 

@@ -3,10 +3,18 @@
    ========================================================================== */
 
 .c-footer {
-	padding-top: 4em;
-	padding-bottom: 4em;
-	background-color: $bg-dark;
-	color: $text-color-light;
+	padding-bottom: 1.5em;
+}
+
+.c-footer-main {
+	min-height: 40px;
+}
+
+.c-footer-logo {
+	position: relative;
+	width: 20px;
+	height: 40px;
+	margin-left: -20px;
 }
 
 .c-footer p {
@@ -14,7 +22,7 @@
 }
 
 .c-footer-disclaimer {
-	padding-top: 2em;
+	padding-top: 1.5em;
 }
 
 .c-footer-disclaimer-list {
@@ -28,22 +36,15 @@
 }
 
 .c-footer-disclaimer-list > li + li {
-	border-left: solid 1px $border-basic;
 	padding-left: 10px;
-	margin-left: 8px; 
 }
-
-.c-footer-social-list li:first-child {
-	padding-right: 12px; 
-}
-
 
 .c-footer a,
 .c-footer a:visited {
-	color: $text-color-light;
+	color: $text-color;
 }
 
 .c-footer a:hover,
 .c-footer a:focus {
-	color: $text-color-light;
+	color: $text-color;
 }
