@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Base
+   ========================================================================== */
+html {
+	font-size: 18px;
+}
+
+/* ==========================================================================
+   Titles
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+
+
+h1,.c-h1 {
+	padding-bottom: .6em;
+	line-height: 1.2;
+	font-size: 3rem;
+	font-weight: normal;
+}
+
+h2,
+.c-h2 {
+	padding-bottom: .6em;
+	line-height: 1.2;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+
+h3,
+.c-h3 {
+	line-height: 1.5;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+
+
+/* ==========================================================================
+   Basic Text Content
+   ========================================================================== */
+
+.c-content,
+.c-footer {
+	line-height: 1.5;
+}
+
+.c-text-block p {
+	padding-bottom: 1.5em;
+}
+
+.c-text-block p + h2,
+.c-text-block p + h3,
+.c-text-block p + h4,
+.c-text-block ul + p,
+.c-text-block ul + h2,
+.c-text-block ul + h3,
+.c-text-block ul + h4,
+.c-text-block ul + ol,
+.c-text-block ol + p,
+.c-text-block ol + h2,
+.c-text-block ol + h3,
+.c-text-block ol + h4 {
+	padding-top: 1.5em;
+}
+
+
+.c-footer,
+.c-text-small {
+	font-size: 0.85rem;
+}
+
+
+
+/* ==========================================================================
+   Basic Lists Content 
+   ========================================================================== */
+.c-text-block ul {
+	margin: 0;
+	padding: 0 0 1.5em 20px; 
+}
+
+.c-text-block ol {
+	margin: 0;
+	padding: 0 0 1.5em 20px; 
+}
+
+/* ==========================================================================
+   Quote
+   ========================================================================== */
+
+.c-text-block blockquote {
+	margin: 0; 
+	padding: 0;
+}
+
+.c-text-block blockquote p {
+	position: relative;
+	padding: 1.3em 2em 0 0;
+	line-height: 1.3;
+	font-size: 36px;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.c-text-block blockquote p::before {
+	content: '\201C';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size: 170%;
+	color: $text-color;
+}
+
+
+/* ==========================================================================
+   Text helpers
+   ========================================================================== */
+
+.c-text-right {
+	text-align: right;	
+}
+
+.c-text-center {
+	text-align: center;	
+}
+
+.c-text-light {
+	color: $text-color-light;
+}
+
+/* ==========================================================================
+   Text sizes responsive
+   ========================================================================== */
+
+
+@media only screen and (max-width:767px) {    
+	html {
+		font-size: 16px;
+	}
+	
+	h1, .c-h1 {
+		font-size: 2rem; 
+	}
+}
+
+

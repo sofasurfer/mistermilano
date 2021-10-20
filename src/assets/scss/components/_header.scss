@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.c-header {
+	background-color: $bg-content;
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+	z-index: 10;
+}
+
+
+.c-header-inner {
+	height: 60px;
+}
+
+
+.c-header-logo {
+	position: relative;
+	width: 130px;
+}
+
+.c-header-logo a {
+	display: block;
+}
+
+

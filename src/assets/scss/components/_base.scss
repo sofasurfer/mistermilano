@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Base Project
+   ========================================================================== */
+
+body {
+	@include font-smoothing(on);
+	background-color: $bg-content;
+	color: $text-color;
+	font-family: $font-stack-default;
+	font-weight: normal;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* links */
+a {
+	text-decoration: underline;
+}
+
+
+a,
+a:visited,
+a:focus,
+a:hover {
+	color: $text-color;
+}
+
+.c-text-light a,
+.c-text-ight a:visited,
+.c-text-light a:focus,
+.c-text-light a:hover {
+	color: $text-color-light;
+}
+
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+
+input,
+select,
+textarea {
+	color: $text-color;
+}
+
+textarea {
+	resize: none;
+}
+
+
+/* ==========================================================================
+   Standard img / media declaration
+   ========================================================================== */
+
+embed,
+object,
+video,
+iframe,
+img {
+    width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+.c-img-max-width,
+.c-content .c-img-max-width {
+	width: auto;
+	max-width: 100%;
+}
+
+img { 
+	vertical-align: bottom; 
+}

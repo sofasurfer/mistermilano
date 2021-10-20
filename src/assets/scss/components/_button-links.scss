@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Link colors and styles
+   ========================================================================== */
+
+a[href^="tel:"] {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+
+/* ==========================================================================
+   Button and links with icons
+   ========================================================================== */
+
+.c-btn,
+.c-form-standard input[type="submit"]{
+    display: block;
+    margin: 0;
+	padding: 0.9em 12px;
+	border: solid 1px $border-basic;
+	background-color: transparent;
+    line-height: 1.2;
+    text-align: center;  
+	font-weight: normal;
+	font-size: 1em;
+	transition: all 0.2s ease-out;
+	text-decoration: none;
+}
+
+.c-btn,
+.c-btn:visited,
+.c-form-standard input[type="submit"] {
+    color: $text-color;
+}
+
+.c-btn:hover, 
+.c-btn:focus,
+.c-form-standard input[type="submit"]:hover,
+.c-form-standard input[type="submit"]:focus {
+    color: $text-color-light;
+	background-color: $bg-dark;
+	text-decoration: none;
+}
+
+
+.c-btn-small,
+.c-btn-small:visited,
+.c-btn-small:hover,
+.c-btn-small:focus {
+    display: inline-block;
+    font-size: 12px;
+    padding: 0.5em 20px;
+    color: $text-color-light;
+    border-color: $text-color-light;
+}
+

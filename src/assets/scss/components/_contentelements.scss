@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Contentelements
+   ========================================================================== */
+
+/* small elements that don't need their own .scss */
+
+
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+
+.c-bg-dark {
+	background-color: $bg-dark;
+}
+
+/* ==========================================================================
+  Showroom
+   ========================================================================== */
+
+.c-showroom {
+	overflow: hidden;
+}
+
+
+
+
+/* ==========================================================================
+  Text img
+   ========================================================================== */
+
+
+
+
+.c-cookie-notice{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  background-color: $bg-dark;
+  color: white;
+  line-height: 1.8;
+  text-align: center;
+  display: none;
+}
+
+@media only screen and (max-width:768px) {    
+	.c-cookie-notice {
+		line-height: 1.5;
+	}
+	
+	.c-cookie-notice span {
+		display: block;
+		padding-top: 1em;
+	}
+	
+}

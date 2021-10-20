@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Table
+   ========================================================================== */
+
+/* box around table, so it can scroll on small screens */
+.c-table {
+    overflow: auto;
+}
+
+.c-table-layout {
+    width: 100%;
+}
+
+.c-table-layout th {
+	padding: 0 15px 0.5em 0;
+	border-bottom: solid 2px #666;	
+}
+
+.c-table-layout td {
+	padding: 0.5em 15px 0.5em 0;
+	border-bottom: solid 1px #ccc;	
+}
+
+
+
+
+
+
