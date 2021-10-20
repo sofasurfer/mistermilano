@@ -1,6 +1,6 @@
-# Default Website Prototype
+# WP Theme Lanz Architekten
 
-Boilerplate for frontend development @ cubegrafik GmbH.
+Boilerplate for frontend development @ neofluxe GmbH.
 
 Pork this project for future development
 
