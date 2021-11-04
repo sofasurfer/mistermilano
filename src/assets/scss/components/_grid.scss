@@ -28,11 +28,17 @@
 	margin-top: 6em;
 }
 
+.c-teaser-cta {
+	padding-top: 1.5em;
+	padding-bottom: 3em;
+}
+
 .c-container-no-padding {
 	padding-bottom: 0;
 }
 
-.c-teaser-img-text {
+.c-teaser-img-text,
+.c-teaser-cta {
 	margin-bottom: 6em;
 }
 
@@ -264,7 +270,9 @@
 
 .c-text-padding,
 .c-teaser-img-text .c-row-reverse .c-text-padding-var {
-	padding-left: calc(10px + 10px);
+	padding-left: $text-padding-small;
 }
 
-
+.c-text-padding-inside {
+	padding-left: $text-padding-inside-small;
+}

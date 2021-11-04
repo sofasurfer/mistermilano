@@ -8,17 +8,21 @@
 
 .c-footer-main {
 	min-height: 40px;
+	/*padding-left: 20px;*/
+
 }
 
 .c-footer-logo {
-	position: relative;
+	position: absolute;
 	width: 20px;
 	height: 40px;
-	margin-left: -20px;
+	left: 0;
+	top: 0;
 }
 
-.c-footer p {
-	padding-bottom: 1.5em;
+.c-footer-main-address {
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 .c-footer-disclaimer {
