@@ -7,21 +7,18 @@ body {
 	background-color: $bg-content;
 	color: $text-color;
 	font-family: $font-stack-default;
-	font-weight: normal;
+	font-weight: 300;
 	-webkit-tap-highlight-color: transparent;
 }
 
 /* links */
-a {
-	text-decoration: underline;
-}
-
 
 a,
 a:visited,
 a:focus,
 a:hover {
 	color: $text-color;
+	text-decoration: none;
 }
 
 .c-text-light a,

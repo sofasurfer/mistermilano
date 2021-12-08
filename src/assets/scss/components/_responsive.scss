@@ -151,9 +151,22 @@
 	
 }
 
+@media only screen and (max-width:1150px) {  
+	.c-title-main .c-col-9,
+	.c-quote .c-col-9 {
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 0 83.33333%;
+		-ms-flex: 0 0 83.33333%;
+		flex: 0 0 83.33333%;
+		max-width: 83.33333%;
+	}
+}
+
 
 @media only screen and (max-width:767px) {  
 	.c-text-only .c-col-8,
+	.c-title-main .c-col-9,
+	.c-quote .c-col-9,
 	.c-teaser-img-text .c-col-5,
 	.c-teaser-img-text .c-col-7,
 	.c-footer-disclaimer .c-col-6,

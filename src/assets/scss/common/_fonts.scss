@@ -4,41 +4,25 @@
 
 
 /*
-        This font software is the property of Commercial Type.
-
-        You may not modify the font software, use it on another website, or install it on a computer.
-
-        License information is available at http://commercialtype.com/eula
-        For more information please visit Commercial Type at http://commercialtype.com or email us at info[at]commercialtype.com
-
-        Copyright (C) 2019 Schwartzco Inc.
-        License: 1903-QRMCNJ     
+        Achtung, Fonts sind ncoh nicht lizenziert und nur zu Testzwecken eingebunden!
 */
 
 @font-face {
-  font-family: 'Styrene A Web';
-  src: url('../fonts/StyreneA-Light-Web.woff2') format('woff2'),
-       url('../fonts/StyreneA-Light-Web.woff') format('woff');
+  font-family: 'TheSans';
+  src: url('../fonts/TheSansB-W3Light.woff2') format('woff2');
   font-weight:  300;
   font-style:   normal;
   font-stretch: normal;
+	font-display: fallback;
 }
 
 
 @font-face {
-  font-family: 'Styrene A Web';
-  src: url('../fonts/StyreneA-Thin-Web.woff2') format('woff2'),
-       url('../fonts/StyreneA-Thin-Web.woff') format('woff');
-  font-weight:  100;
+  font-family: 'TheSans';
+  src: url('../fonts/TheSansB-W7Bold.woff2') format('woff2');
+  font-weight:  700;
   font-style:   normal;
   font-stretch: normal;
+	font-display: fallback;
 }
 
-@font-face {
-  font-family: 'Styrene A Web';
-  src: url('../fonts/StyreneA-Medium-Web.woff2') format('woff2'),
-       url('../fonts/StyreneA-Medium-Web.woff') format('woff');
-  font-weight:  500;
-  font-style:   normal;
-  font-stretch: normal;
-}
