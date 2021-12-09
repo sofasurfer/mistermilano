@@ -29,8 +29,14 @@ h1,
 }
 
 .c-title-main h1,
-.c-title-main .c-h1 {
+.c-title-main .c-h1,
+.c-title-secondary h2,
+.c-title-secondary .c-h1 {
 	padding-top: 1.5rem;
+}
+
+.c-title-main .c-title-category + h1 {
+	padding-top: 0;
 }
 
 h1 span,
@@ -52,7 +58,7 @@ h2,
 h3,
 .c-h3 {
 	line-height: 1.5;
-	font-size: 1rem;
+	font-size: 1.33rem;
 	padding-bottom: 0.5em;
 	font-weight: bold;
 }
@@ -107,14 +113,24 @@ h3,
 
 .c-title-category,
 .c-text-small,
-.c-text-block blockquote cite {	
+.c-text-block blockquote cite,
+.c-legend,
+.c-info-list dt {	
 	font-size: 0.77rem; /* 14px */
 }
 
-
+.c-legend {
+	display: block;
+	padding-top: 1em;
+}
 
 .c-footer-disclaimer {
 	font-size: 0.88rem; /* 18px */
+}
+
+.c-offcanvas-content {
+	line-height: 1.2;
+	font-size: 2.22rem; /* 40px */
 }
 
 /* ==========================================================================
@@ -162,10 +178,35 @@ h3,
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 30px;
-	color: $text-color-medium;
+	width: 26px;
+	color: $text-color;
 	font-weight: bold;
 	text-align: right;
+}
+
+.c-info-list {
+	margin: 0;
+	padding: 0 0 1.5em 0;
+}
+
+.c-project-info .c-info-list {
+	padding-bottom: 0;
+}
+
+.c-info-list dt {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.c-info-list dd {
+	margin: 0;
+	padding: 0;
+}
+
+.c-info-list dd + dt{
+	padding-top: 0.5em;
 }
 
 /* ==========================================================================
@@ -230,14 +271,58 @@ h3,
 	}
 }
 
+@media only screen and (max-width:900px) {  
+	h1, .c-h1,
+	.c-offcanvas-content {
+		font-size: 3rem; 
+	}
+	
+	h2, c-h2,
+	.c-text-block blockquote p {
+		font-size: 1.88rem;
+	}
+}
+
 
 @media only screen and (max-width:767px) {    
+	
 	html {
 		font-size: 16px;
 	}
 	
-	h1, .c-h1 {
+	h1, .c-h1,
+	.c-offcanvas-content {
 		font-size: 2rem; 
+	}
+	
+	h2, c-h2,
+	.c-text-block blockquote p {
+		font-size: 1.5rem;
+	}
+	
+	.c-text-block blockquote p::before {
+		left: -21px;
+		top: -1.5rem;
+		font-size: 12.5rem;
+	}
+	
+	.c-lead,
+	h3, .c-h3 {
+		font-size: 1.125rem;
+	}
+	
+	.c-title-category,
+	.c-text-small,
+	.c-text-block blockquote cite,
+	.c-legend,
+	.c-info-list dt {	
+		font-size: 0.875rem; 
+	}
+
+
+
+	.c-footer-disclaimer {
+		font-size: 1rem; 
 	}
 }
 

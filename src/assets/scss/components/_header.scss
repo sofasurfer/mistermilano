@@ -10,6 +10,9 @@
 
 .c-header-inner {
 	height: 40px;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
 }
 
 
@@ -40,6 +43,49 @@
 
 .c-header-logo a {
 	display: block;
+}
+
+
+/* ==========================================================================
+   main nav
+   ========================================================================== */
+
+.c-main-nav-list {
+	margin: 0;
+	padding: 16px 0 0 0;
+	list-style: none;
+}
+
+.c-main-nav-list li {
+	display: inline-block;
+}
+
+.c-main-nav-list li + li {
+	padding-left: 2em;
+}
+
+.c-main-nav-list a {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 0.75em;
+}
+
+.c-main-nav-list a::before {
+	content:'';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 0;
+	background-color: $border-basic;
+	transition: all 0.2s linear;
+}
+
+
+.c-main-nav-list a:focus::before,
+.c-main-nav-list a:hover::before,
+.c-main-nav-list .c-active a::before{
+	height: 8px;
 }
 
 

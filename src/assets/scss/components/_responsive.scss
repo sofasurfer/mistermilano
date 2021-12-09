@@ -62,6 +62,15 @@
 	.c-text-padding-inside {
 		padding-left: $text-padding-inside-medium;
 	}
+	
+	.c-offcanvas-trigger {
+		top: 19px;
+		right: 40px;
+	}
+	
+	.c-img-wide figure {
+		margin-right: -40px;
+	}
 }
 
 
@@ -134,6 +143,10 @@
 	.c-text-padding-inside {
 		padding-left: $text-padding-inside-big;
 	}
+	
+	.c-img-wide figure {
+		margin-right: -60px;
+	}
 }
 
 
@@ -149,10 +162,16 @@
 		left: calc(50% - 600px);
 	}
 	
+	.c-img-wide .c-container {
+		max-width: 100%;
+		width: auto;
+		margin-left: calc(50% - 660px);
+	}
 }
 
 @media only screen and (max-width:1150px) {  
 	.c-title-main .c-col-9,
+	.c-title-secondary .c-col-9,
 	.c-quote .c-col-9 {
 		-webkit-box-flex: 0;
 		-webkit-flex: 0 0 83.33333%;
@@ -163,14 +182,72 @@
 }
 
 
+@media only screen and (max-width:980px) {  
+	.c-text-only .c-col-8 {
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 0 83.33333%;
+		-ms-flex: 0 0 83.33333%;
+		flex: 0 0 83.33333%;
+		max-width: 83.33333%;
+	}
+}
+
+@media only screen and (max-width:900px) {  
+	.c-offcanvas-trigger-open {
+		display: block;
+	}
+	
+	.c-main-nav {
+		display: none;
+	}
+	
+	.c-team .c-col-4 {
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 0 50%;
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+
 @media only screen and (max-width:767px) {  
+	.c-container {
+		padding-bottom: 3em;
+	}
+
+	.c-title-main {
+		margin-top: 3em;
+	}
+	
+	.c-link-back-top {
+		top: calc(-1.5em - 20px);
+	}
+
+	.c-teaser-cta {
+		padding-top: 1.5em;
+		padding-bottom: 3em;
+	}
+
+	.c-container-no-padding {
+		padding-bottom: 0;
+	}
+
+	.c-teaser-img-text,
+	.c-teaser-cta,
+	.c-quote {
+		margin-bottom: 3em;
+	}
+	
+	
 	.c-text-only .c-col-8,
 	.c-title-main .c-col-9,
+	.c-title-secondary .c-col-9,
 	.c-quote .c-col-9,
 	.c-teaser-img-text .c-col-5,
 	.c-teaser-img-text .c-col-7,
 	.c-footer-disclaimer .c-col-6,
-	.c-teaser-cta .c-col-8 {
+	.c-teaser-cta .c-col-8,
+	.c-project-info .c-col-6 {
 		-webkit-box-flex: 0;
 		-webkit-flex: 0 0 100%;
 		-ms-flex: 0 0 100%;
@@ -180,7 +257,8 @@
 	
 	.c-teaser-img-text .c-text-padding-var,
 	.c-footer-disclaimer .c-text-padding-var,
-	.c-teaser-cta .c-text-padding-var {
+	.c-teaser-cta .c-text-padding-var,
+	.c-project-info .c-text-padding-var {
 		padding-left: $text-padding-small;
 	}
 	
@@ -193,9 +271,23 @@
 		text-align: left;
 	}
 	
-	
-	
-
 }
 
+
+@media only screen and (max-width:540px) {  
+	.c-team .c-col-4,
+	.c-img-2-col .c-col-5,
+	.c-img-2-col .c-col-7 {
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 0 100%;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;    	
+	}
+	
+	.c-img-2-col .c-col-5 + .c-col-7,
+	.c-img-2-col .c-col-7 + .c-col-5{
+		padding-top: 3em;
+	}
+}
 

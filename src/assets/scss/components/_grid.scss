@@ -20,7 +20,9 @@
    Standard Padding between Components 
    ========================================================================== */
 
-.c-container {
+.c-container,
+.c-showroom,
+.c-team .c-col-4{
 	padding-bottom: 6em;
 }
 
@@ -33,13 +35,19 @@
 	padding-bottom: 3em;
 }
 
+.c-project-info {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+}
+
 .c-container-no-padding {
 	padding-bottom: 0;
 }
 
 .c-teaser-img-text,
 .c-teaser-cta,
-.c-quote {
+.c-quote,
+.c-project-info {
 	margin-bottom: 6em;
 }
 

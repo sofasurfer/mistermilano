@@ -32,22 +32,40 @@
 }
 
 /* ==========================================================================
-  Showroom
+  images 
    ========================================================================== */
 
-.c-showroom {
+.c-copyright-container {
+	display: block;
+	position: relative;
+}
+
+.c-copyright-text {
+	display: inline-block;
+	position: absolute;
+	bottom: 0.5em;
+	right: 15px;
+}
+
+.c-img-wide {
 	overflow: hidden;
 }
 
-
-
+.c-img-wide figure {
+	margin-right: -20px;
+}
 
 /* ==========================================================================
-  Text img
+  team
    ========================================================================== */
 
+.c-team figure {
+	margin-bottom: 1.5em;
+}
 
-
+/* ==========================================================================
+  Cookie notice
+   ========================================================================== */
 
 .c-cookie-notice{
   position: fixed;

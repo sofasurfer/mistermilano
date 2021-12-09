@@ -9,23 +9,24 @@ a[href^="tel:"] {
 }
 
 .c-text-block a {
-	background-image: linear-gradient(to bottom,$border-basic 0%,$border-basic 100%);
+	background-image: linear-gradient(to bottom,$text-color 0%,$text-color 100%);
     background-position: 0 100%;
     background-repeat: repeat-x;
-    background-size: 4px 4px;
+    background-size: 1px 1px;
   	transition: background .1s;
 }
 
 .c-text-block a:focus,
 .c-text-block a:hover {
-	background-size: 4px 10px;
+	background-size: 2px 2px;
 }
 
 .c-text-block .c-btn,
 .c-text-block .c-form-standard input[type="submit"],
 .c-text-block .c-link-arrow,
 .c-text-block .c-link-download,
-.c-text-block .c-link-extern {
+.c-text-block .c-link-extern,
+.c-text-block .c-link-back {
 	background-image: none;
 }
 
@@ -89,13 +90,35 @@ a[href^="tel:"] {
 }
 .c-link-arrow,
 .c-link-download,
-.c-link-extern {
+.c-link-extern,
+.c-link-back {
 	display: inline-block;
 	padding-left: 40px;
 	font-weight: bold;
 }
 
-.c-link-arrow::before {
+.c-link-back {
+	font-weight: normal;
+	padding-top: 0.15em;
+}
+
+.c-link-back-top {
+	position: absolute;
+	top: calc(-3em - 20px);
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	transition: 0.1s ease-in-out;
+}
+
+.c-link-back-top:hover,
+.c-link-back-top:focus{
+	transform: translate(-4px,0);
+}
+
+.c-link-arrow::before,
+.c-link-back::before,
+.c-link-back-top::before {
 	top: 0.25em;
 	left: 0;
 	width: 28px;
@@ -112,6 +135,21 @@ a[href^="tel:"] {
 .c-btn .c-link-arrow::before {
 	top: 0.1em;
 	background-position: 0 -20px;
+}
+
+.c-link-back::before,
+.c-link-back-top::before {
+	background-position: 0 -120px;
+}
+
+.c-link-back:hover::before,
+.c-link-back:focus::before {
+	left: -4px;
+}
+
+.c-link-back-top::before {
+	top: 50%;
+	margin-top: -8px;
 }
 
 .c-link-download::before {
