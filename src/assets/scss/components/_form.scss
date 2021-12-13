@@ -272,10 +272,11 @@ input:-webkit-autofill:active {
 
 .c-form-standard .wpcf7-response-output {
 	display: block;
-	border: solid 2px $text-color;
-	background-color: $bg-content;
+	background-color: $color-form-error;
 	padding: 1.5em 30px;
-	color: $color-form-error;
+	color: $text-color-light;
+	margin-bottom: 3em;
+	font-weight: bold;
 }
 
 @media only screen and (max-width:767px) {   
