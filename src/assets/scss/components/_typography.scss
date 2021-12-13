@@ -106,9 +106,15 @@ h3,
 	color: $text-color-medium;
 }
 
-.c-title-category {
+.c-title-category,
+.c-date {
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;	
+}
+
+.c-date {
+	display: block; 
+	color: $text-color-medium;
 }
 
 .c-title-category,
@@ -264,6 +270,21 @@ h3,
    Text sizes responsive
    ========================================================================== */
 
+@media only screen and (max-width:1360px) {    
+	h1, .c-h1,
+	h2, .c-h2,
+	h3, .c-h3{
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
+}
 
 @media only screen and (max-width:1100px) {    
 	h1, .c-h1 {

@@ -5,6 +5,7 @@
 /* small elements that don't need their own .scss */
 
 
+
 /* ==========================================================================
    Colors
    ========================================================================== */
@@ -47,11 +48,13 @@
 	right: 15px;
 }
 
-.c-img-wide {
+.c-img-wide,
+.c-teaser-img-text-big {
 	overflow: hidden;
 }
 
-.c-img-wide figure {
+.c-img-wide figure,
+.c-teaser-img-text-big figure {
 	margin-right: -20px;
 }
 
@@ -61,6 +64,47 @@
 
 .c-team figure {
 	margin-bottom: 1.5em;
+}
+
+/* ==========================================================================
+  services
+   ========================================================================== */
+
+.c-services {
+	padding-top: 1.5em;
+}
+
+.c-services .c-col-6:nth-child(odd) {
+	padding-left: $text-padding-small;
+}
+
+
+/* ==========================================================================
+   contact form open/close
+   ========================================================================== */
+
+.c-contact-form-check {
+    position: absolute;
+    left: -9999px;
+
+}
+
+.c-contact-form-container {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s cubic-bezier(0,1,0,1);
+	/*border-top: none;*/
+
+}
+
+.c-contact-form-container .c-contact-inner {
+  	padding-top: 6em;
+}
+
+.c-contact-form-check:checked + .c-contact-form-container {
+   	max-height: 9999px;
+    transition: max-height 0.3s cubic-bezier(1,0,1,0);
+	/*border-top: solid 1px $border-basic;*/
 }
 
 /* ==========================================================================

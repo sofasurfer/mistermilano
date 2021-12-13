@@ -22,7 +22,8 @@
 
 .c-container,
 .c-showroom,
-.c-team .c-col-4{
+.c-team .c-col-4,
+.c-services .c-col-6 {
 	padding-bottom: 6em;
 }
 
@@ -30,7 +31,12 @@
 	margin-top: 6em;
 }
 
-.c-teaser-cta {
+.c-container-no-padding {
+	padding-bottom: 0;
+}
+
+.c-teaser-cta,
+.c-contact-inner {
 	padding-top: 1.5em;
 	padding-bottom: 3em;
 }
@@ -40,14 +46,14 @@
 	padding-bottom: 1.5em;
 }
 
-.c-container-no-padding {
-	padding-bottom: 0;
-}
-
 .c-teaser-img-text,
 .c-teaser-cta,
 .c-quote,
-.c-project-info {
+.c-project-info,
+.c-teaser-text,
+.c-teaser-img-text-big,
+.c-services,
+.c-contact {
 	margin-bottom: 6em;
 }
 

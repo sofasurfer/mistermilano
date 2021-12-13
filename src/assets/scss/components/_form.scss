@@ -33,10 +33,10 @@ input:-webkit-autofill:active {
 .c-form-standard input[type="email"],
 .c-form-standard textarea {
 	width: 100%;
-	border: solid 1px $border-form;
+	border: solid 2px $border-form;
 	color: $text-color;
-	padding: 6px;
-	background-color: transparent;
+	padding: 0.75em 10px;
+	background-color: $bg-content;
 }
 
 .c-form-standard textarea {
@@ -58,7 +58,7 @@ input:-webkit-autofill:active {
 }
 
 .c-form-standard .c-form-label-text {
-	padding-bottom: 0.25em;
+	padding-bottom: 0.35em;
 }
 
 /* ==========================================================================
@@ -70,6 +70,10 @@ input:-webkit-autofill:active {
 	position: relative;
 }
 
+.c-form-standard .c-form-multiline .wpcf7-list-item {
+	display: inline-block;
+	padding-right: 1.6em;
+}
 
 .c-form-standard input[type="checkbox"],
 .c-form-standard input[type="radio"]{
@@ -101,12 +105,12 @@ input:-webkit-autofill:active {
 .c-form-standard input[type="radio"]:not(:checked)+span{
     position: relative;
 	display: inline-block;
-    padding-left: 44px;
-    padding-top: 0.25em;
+    padding-left: 50px;
+    padding-top: 0.55em;
 	line-height: 1.5;
     cursor: pointer;
     user-select: none;
-	min-height: 35px;
+	min-height: 44px;
 }
 
 .c-form-standard input[type="checkbox"]:checked+span::before,
@@ -117,10 +121,10 @@ input:-webkit-autofill:active {
     position: absolute;
     left: 0;
     top: 0.15em;
-    width: 32px;
-    height: 32px;
-    border: 1px solid $border-form;
-    background-color: transparent;
+    width: 38px;
+    height: 38px;
+    border: 2px solid $border-form;
+    background-color: $bg-content;
     transition: all 0.2s ease-in-out;
 }
 
@@ -132,12 +136,12 @@ input:-webkit-autofill:active {
 .c-form-standard input[type="checkbox"]:focus+span::before,
 .c-form-standard input[type="radio"]:focus+span::before{
     border-color: $border-form-focus;
-    background-color: transparent;
+    background-color: $bg-content;
 }
 
 .c-form-standard input[type="checkbox"]:checked+span::before,
 .c-form-standard input[type="radio"]:checked+span::before {
-    background-color: transparent;
+    background-color: $bg-content;
 }
 
 .c-form-standard input[type="checkbox"]:checked+span::after,
@@ -146,12 +150,12 @@ input:-webkit-autofill:active {
     display: block;
     position: absolute;
     top: calc(0.15em + 5px);
-    left: 10px;
+    left: 11px;
     transition: all .2s ease-in-out;
-    width: 12px;
-	height: 16px;
+    width: 16px;
+	height: 22px;
 	border: solid $color-highlight;
-	border-width: 0 2px 2px 0;
+	border-width: 0 4px 4px 0;
 	transform: rotate(45deg);
 }
 
@@ -160,11 +164,11 @@ input:-webkit-autofill:active {
     content: '';
     display: block;
     position: absolute;
-    top: calc(0.15em + 8px);
-    left: 8px;
+    top: calc(0.15em + 9px);
+    left: 9px;
     transition: all .2s ease-in-out;
-    height: 16px;
-    width: 16px;
+    height: 20px;
+    width: 20px;
 	border-radius: 50%;
 	background-color: $color-highlight;
 }
@@ -209,16 +213,16 @@ input:-webkit-autofill:active {
 
 .c-form-standard select {
     display: block;
-	padding: 0 30px 0 6px !important;
+	padding: 0.75em 30px 0.75em 10px !important;
 	width: 100%;
 	height: auto !important;
-	border: 1px solid $border-form;
+	border: 2px solid $border-form;
     border-radius: 0;
 	background: url("../images/icon-form-arrow.svg") right center no-repeat;
-	background-color: transparent;
+	background-color: $bg-content;
 	color: $text-color;
 	font-size: 100%;
-	line-height: 38px !important;
+	line-height: 1.5rem !important;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;	
@@ -253,7 +257,7 @@ input:-webkit-autofill:active {
    dropdown
    ========================================================================== */
 
-.c-form-standard .wpcf7-not-valid {
+.c-form-standard input.wpcf7-not-valid {
 	border-color: $color-form-error;
 }
 
@@ -261,7 +265,23 @@ input:-webkit-autofill:active {
 .c-form-standard .screen-reader-response,
 .c-form-standard .wpcf7-response-output {
 	display: block;
-	padding-top: 0.25em;
+	padding-top: 0.35em;
 	color: $color-form-error;
-	font-size: 0.85rem;
+	font-size: 0.77rem;
+}
+
+.c-form-standard .wpcf7-response-output {
+	display: block;
+	border: solid 2px $text-color;
+	background-color: $bg-content;
+	padding: 1.5em 30px;
+	color: $color-form-error;
+}
+
+@media only screen and (max-width:767px) {   
+	.c-form-standard .wpcf7-not-valid-tip,
+	.c-form-standard .screen-reader-response,
+	.c-form-standard .wpcf7-response-output {
+		font-size: 0.875rem;
+	}
 }
