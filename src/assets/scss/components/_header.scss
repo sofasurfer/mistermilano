@@ -50,6 +50,10 @@
    main nav / filter list
    ========================================================================== */
 
+.c-main-nav {
+	justify-content: flex-end;
+}
+
 .c-main-nav-list {
 	margin: 0;
 	padding: 16px 0 0 0;

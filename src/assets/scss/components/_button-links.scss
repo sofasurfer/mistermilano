@@ -114,7 +114,8 @@ a[href^="tel:"] {
   links with icons
    ========================================================================== */
 
-.c-icon {
+.c-icon,
+.c-title-icon {
 	position: relative;
 }
 
@@ -125,6 +126,7 @@ a[href^="tel:"] {
 	background-image:url(../images/sprite.svg);
 	background-repeat: no-repeat;
 }
+
 .c-link-arrow,
 .c-link-download,
 .c-link-extern,
@@ -213,4 +215,31 @@ a[href^="tel:"] {
 .c-link-extern:hover::before,
 .c-link-extern:focus::before {
 	background-position: -50px -80px;
+}
+
+.c-title-icon {
+	padding-top: 180px;
+}
+
+.c-title-icon::before {
+	content:'';
+	position: absolute;
+	left: -10px;
+	top: 0;
+	width: 167px;
+	height: 135px;
+	background-image:url(../images/sprite-services.svg);
+	background-repeat: no-repeat;
+}
+
+.c-title-icon-rating::before {
+	background-position: 0 -200px;
+}
+
+.c-title-icon-usage::before {
+	background-position: 0 0;
+}
+
+.c-title-icon-renovation::before {
+	background-position: 0 -400px;
 }
