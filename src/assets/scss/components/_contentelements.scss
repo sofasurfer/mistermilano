@@ -99,6 +99,23 @@
 
 .c-contact-form-container .c-contact-inner {
   	padding-top: 6em;
+	position: relative;
+}
+
+
+.c-contact-form-container .c-contact-inner:after {
+	top: 0;
+	left: calc(16.66667% + 20px);
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(235, 235, 235, 0);
+	border-top-color: #ebebeb;
+	border-width: 16px;
+	margin-left: -16px;
 }
 
 .c-contact-form-check:checked + .c-contact-form-container {
@@ -113,24 +130,27 @@
 
 .c-cookie-notice{
   position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 2rem;
-  background-color: $bg-dark;
-  color: white;
-  line-height: 1.8;
-  text-align: center;
+	right: 0;
+  bottom: 30px;
+  width: 400px;
+  padding: 1.5rem 30px;
+  background-color: $bg-light;
+  color: $text-color;
+  line-height: 1.5;
+  text-align: left;
+	border: solid 1px $border-basic;
+	border-right: none;
   display: none;
 }
 
-@media only screen and (max-width:768px) {    
+@media only screen and (max-width:767px) {    
 	.c-cookie-notice {
-		line-height: 1.5;
+		width: 100%;
+		bottom: 0;
+		border: none;
+		border-top: solid 1px $border-basic;
 	}
 	
-	.c-cookie-notice span {
-		display: block;
-		padding-top: 1em;
-	}
+	
 	
 }

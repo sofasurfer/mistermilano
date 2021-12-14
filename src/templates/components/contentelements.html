@@ -377,7 +377,7 @@
 				<div class="c-container-wide c-contact-form-container c-form-standard c-line-top">
 					<div class="c-container c-container-no-padding c-contact-inner">
 						<!-- close form-->
-						<label class="c-btn-close" for="c-contact-form-content">Formular schliessen</label>
+						<label class="c-btn-close c-ir" for="c-contact-form-content">Formular schliessen</label>
 						
 						<div class="c-row c-row-justify-center">
 							<div class="c-col-8 c-text-padding-var">
@@ -444,10 +444,18 @@
 										
 										<!-- formfield error-->
 										<div class="c-form-item">
-											<label><span class="c-form-label-text">Your name</span>
+											<label><span class="c-form-label-text">Vorname *</span>
 												<span class="wpcf7-form-control-wrap your-name">
 													<input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-not-valid" aria-required="true" aria-invalid="false">
 													<span class="wpcf7-not-valid-tip" aria-hidden="true">Dies ist ein Pflichtfeld.</span>
+												</span>
+											</label>
+										</div>
+										
+										<div class="c-form-item">
+											<label><span class="c-form-label-text">Name *</span>
+												<span class="wpcf7-form-control-wrap your-name2">
+													<input type="text" name="your-name2" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
 												</span>
 											</label>
 										</div>
@@ -499,12 +507,17 @@
 												</span>
 											</span>
 										</div>-->
+										
+										
+										<div class="c-form-item c-text-small">
+											*Pflichtfelder
+										</div>
 
 
 										
 
 										<div class="c-form-item">
-											<input type="submit" value="Submit" class="wpcf7-form-control wpcf7-submit">
+											<input type="submit" value="Anfrage senden" class="wpcf7-form-control wpcf7-submit">
 										</div>
 
 										
@@ -527,7 +540,7 @@
 				<div class="c-row">
 					<div class="c-col-12 c-text-padding">
 						<!-- link back , nur auf projektdetailseiten-->
-						<a class="c-icon c-link-back c-text-small" href="">Zurück zur Übersicht</a>
+						<a class="c-icon c-link-back c-text-small" href="../../../index.html">Zurück zur Übersicht</a>
 					</div>
 				</div>
 			</div>
@@ -570,9 +583,12 @@
 		</footer>
 
 		<!-- cookie notice-->
-		<!--<div class="c-cookie-notice" id="cookie-notice">
-            <p>This website uses cookies. If you continue to use the site, we assume your consent - <span><a href="/disclaimer.html" class="c-btn c-btn-small">More Info</a> - <a class="c-btn c-btn-small" href="#" id="accept-cookie-notice">OK</a></span></p>
-        </div>-->
+		<div class="c-cookie-notice c-text-block c-text-small" id="cookie-notice">
+            <p>Diese Website benutzt Cookies. Wenn Sie die Website weiter nutzen, gehen wir von Ihrem Einverständnis aus. 
+				<a href="/">Datenschutzerklärung.</a>
+			</p>
+			<a class="c-btn c-btn-small" href="#" id="accept-cookie-notice">OK</a>
+        </div>
 	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="../../../dist/assets/js/minimal.1.min.js?v=1.1"></script>
