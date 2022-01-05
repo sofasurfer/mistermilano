@@ -243,3 +243,26 @@ a[href^="tel:"] {
 .c-title-icon-renovation::before {
 	background-position: 0 -400px;
 }
+
+/* ==========================================================================
+  responsive
+   ========================================================================== */
+
+@media only screen and (max-width:767px) {   
+	.c-link-arrow::before,
+	.c-link-back::before {
+		top: 0.15em;
+	}
+	
+	.c-btn .c-link-arrow::before {
+		top: -0.05em;
+	}
+	
+	.c-link-download::before {
+		top: -.35em;
+	}
+	
+	.c-link-extern::before {
+		top: -.38em;
+	}
+}
