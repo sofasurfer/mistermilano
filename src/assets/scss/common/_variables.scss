@@ -1,47 +1,45 @@
 /* Variables, Naming may vary from project to project */
 
 /* ==========================================================================
-   Fonts
+   Fonts (see '_fonts.scss' for more information on license)
    ========================================================================== */
 
-$font-stack-default: 'TheSans', 'Arial', 'Helvetica', sans-serif;
+	/* @import must be at top of file, otherwise CSS will not work */
+	@import url('//hello.myfonts.net/count/426563');
+
+	$font-stack-default: 'TheSans', 'Arial', 'Helvetica', sans-serif;
 
 
 /* ==========================================================================
    Colors
    ========================================================================== */
 
-/* text */
-$text-color: #1D1D1B; /* dark grey */
-$text-color-light: #fff;
-$text-color-medium: #838382;
-$color-highlight: #1D1D1B; /* dark grey */
+	/* text */
+	$text-color: #1D1D1B; /* dark grey */
+	$text-color-light: #fff;
+	$text-color-medium: #838382;
+	$color-highlight: #1D1D1B; /* dark grey */
 
-/* background */
-$bg-content: #fff;
-$bg-dark: #1D1D1B; /* dark grey */
-$bg-light: #f9f9f9; /* light grey */
+	/* background */
+	$bg-content: #fff;
+	$bg-dark: #1D1D1B; /* dark grey */
+	$bg-light: #f9f9f9; /* light grey */
 
-/* line-colors */
-$border-basic: #ebebeb;
-
- 
-/* form */
-$border-form: #A8A8A8;
-$border-form-focus: #000;
-$form-disabled: #ccc;
-$color-form-error: #dd0000;
-
-/* padding text - padding auf container, col*/
-$text-padding-small: 30px; /* 20px */
-$text-padding-medium: 30px;
-$text-padding-big: 40px;
-/* padding text - padding innerhalb von container, col*/
-$text-padding-inside-small: 20px; /* 10px */
-$text-padding-inside-medium: 15px;
-$text-padding-inside-big: 20px;
+	/* line-colors */
+	$border-basic: #ebebeb;
 
 
-/* ==========================================================================
-   Breakpoints
-   ========================================================================== */
+	/* form */
+	$border-form: #A8A8A8;
+	$border-form-focus: #000;
+	$form-disabled: #ccc;
+	$color-form-error: #dd0000;
+
+	/* padding text - padding auf container, col*/
+	$text-padding-small: 30px; /* 20px */
+	$text-padding-medium: 30px;
+	$text-padding-big: 40px;
+	/* padding text - padding innerhalb von container, col*/
+	$text-padding-inside-small: 20px; /* 10px */
+	$text-padding-inside-medium: 15px;
+	$text-padding-inside-big: 20px;

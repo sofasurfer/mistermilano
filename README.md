@@ -7,7 +7,7 @@ Pork this project for future development
 ## Requirements to work on cubestrap
 
 ### Install tools for development on your computer
-* [Install npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm).
+* [Install npm (v. 5.6)](http://blog.npmjs.org/post/85484771375/how-to-install-npm).
 * Install gulp-cli globally `npm install gulp-cli -g` (if you have previously installed a version of gulp globally, please run `npm rm --global gulp` to make sure your old version doesn't collide with gulp-cli.).
 * Install Sass
   * [Install ruby](http://rubyinstaller.org/) (check ruby version: `ruby -v`)
@@ -50,7 +50,7 @@ Pork this project for future development
 |       |   |
 |       |   |___ background
 |       |   |___ icon
-|       |   
+|       |
 |       |___ js
 |       |   |
 |       |   |--- full.js

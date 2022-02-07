@@ -45,6 +45,13 @@ module.exports = {
 		server: {baseDir: "./"}
     },
 
+	fonts: {
+        build: { // Copies fonts from `src` to `build`
+            src: [src + 'assets/fonts/**/*(*.eot|*.svg|*.woff|*.woff2)'],
+            dest: build + 'assets/fonts/'
+        },
+    },
+
     images: {
         build: { // Copies images from `src` to `build`; does not optimize
             src: [src + '**/*(*.png|*.jpg|*.jpeg|*.gif|*.ico|*.svg)'],
