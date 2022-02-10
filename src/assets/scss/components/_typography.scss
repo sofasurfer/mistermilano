@@ -163,7 +163,7 @@ h3,
 .c-text-block ul li::before {
 	content:'';
 	position: absolute;
-	top: 0.3em;
+	top: 0.44em;
 	left: 0;
 	width: 20px;
 	height: 5px;
@@ -212,7 +212,7 @@ h3,
 }
 
 .c-info-list dd + dt{
-	padding-top: 0.5em;
+	padding-top: 1em;
 }
 
 /* ==========================================================================
@@ -237,7 +237,7 @@ h3,
 	display: block;
 	position: absolute;
 	left: -31px;
-	top: -1.7rem;
+	top: -2.8rem;
 	font-size: 14.44rem;
 	color: $border-basic;
 	font-weight: bold;
@@ -302,6 +302,10 @@ h3,
 	.c-text-block blockquote p {
 		font-size: 1.88rem;
 	}
+	
+	.c-text-block blockquote p {
+		padding-top: 2.8rem;
+	}
 }
 
 
@@ -321,9 +325,13 @@ h3,
 		font-size: 1.5rem;
 	}
 	
+	.c-text-block blockquote p {
+		padding-top: 2.6rem;
+	}
+	
 	.c-text-block blockquote p::before {
-		left: -21px;
-		top: -1.5rem;
+		left: -28px;
+		top: -2.5rem;
 		font-size: 12.5rem;
 	}
 	
