@@ -39,7 +39,7 @@ msgid "Leider können wir die von Ihnen gesuchte Seite nicht finden."
 msgstr ""
 "Malheureusement, nous ne pouvons pas trouver la page que vous recherchez."
 
-#: templates/page_footer.php:18 templates/rev_element_backlink.php:4
+#: templates/page_footer.php:18 templates/acf_element_backlink.php:4
 msgid "Back"
 msgstr "Retour"
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Nächster"
 msgstr ""
 
-#: templates/rev_element_expert.php:28
+#: templates/acf_element_expert.php:28
 msgid "Ihr Ansprechspartner"
 msgstr "Votre personne de contact"
 

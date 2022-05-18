@@ -4,22 +4,22 @@
         <div class="c-col-3">
             <div class="">
                 <ul class="c-profile-list c-line c-profile-list-portfolio">
-                    <?php if( get_field('rev_portfolio_customer') ): ?>
+                    <?php if( get_field('acf_portfolio_customer') ): ?>
                     <li class=" animation-element fade-up"><strong><div class="animation"><?= __('Kunde','neofluxe');?></strong><br />
-                        <?= get_field('rev_portfolio_customer'); ?></div>
+                        <?= get_field('acf_portfolio_customer'); ?></div>
                     </li>
                     <?php endif; ?>
-                    <?php if( get_field('rev_portfolio_client') ): ?>
+                    <?php if( get_field('acf_portfolio_client') ): ?>
                     <li class=" animation-element fade-up"><strong><div class="animation"><?= __('Auftraggeber','neofluxe');?></strong><br />
-                        <?= get_field('rev_portfolio_client'); ?></div>
+                        <?= get_field('acf_portfolio_client'); ?></div>
                     </li>
                     <?php endif; ?>
-                    <?php if( get_field('rev_portfolio_services') ): ?>
+                    <?php if( get_field('acf_portfolio_services') ): ?>
                     <li class=" animation-element fade-up"><strong><div class="animation"><?= __('Leistungen','neofluxe');?></strong><br />
                         <?php 
-                        $total = count(get_field('rev_portfolio_services'));
+                        $total = count(get_field('acf_portfolio_services'));
                         $counter = 2;
-                        foreach (get_field('rev_portfolio_services') as $service): ?>
+                        foreach (get_field('acf_portfolio_services') as $service): ?>
 
                         <?php
                         $args = array(
@@ -44,21 +44,21 @@
                         </div>
                     </li>
                     <?php endif; ?>
-                    <?php if( get_field('rev_portfolio_releasedate') ): ?>
+                    <?php if( get_field('acf_portfolio_releasedate') ): ?>
                     <li class=" animation-element fade-up"><strong><div class="animation"><?= __('Releasedatum','neofluxe');?></strong><br />
-                        <?= get_field('rev_portfolio_releasedate'); ?></div>
+                        <?= get_field('acf_portfolio_releasedate'); ?></div>
                     </li>
                     <?php endif; ?>
                 </ul>
-                <?php if( get_field('rev_portfolio_website') ): ?>
+                <?php if( get_field('acf_portfolio_website') ): ?>
                 <div  class=" animation-element fade-up">
-                    <div class="animation"><a class="c-link-extern" target="_blank" href="<?= get_field('rev_portfolio_website'); ?>"><?= __('Zum Projekt','neofluxe');?><span class="c-icon c-icon-extern"></span></a></div>
+                    <div class="animation"><a class="c-link-extern" target="_blank" href="<?= get_field('acf_portfolio_website'); ?>"><?= __('Zum Projekt','neofluxe');?><span class="c-icon c-icon-extern"></span></a></div>
                 </div>
                 <?php endif; ?>
             </div>
         </div>
         <div class="c-col-8 c-text-block c-lead">
-            <?php $text = str_replace("'","’",get_field('rev_portfolio_leadtext')); ?>
+            <?php $text = str_replace("'","’",get_field('acf_portfolio_leadtext')); ?>
             <?= do_shortcode("[render_animation_elements text='".$text."']");?>
         </div>
     </div>

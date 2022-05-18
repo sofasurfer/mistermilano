@@ -223,13 +223,13 @@ class General {
         $obj = [];
         $obj['locale'] = ICL_LANGUAGE_CODE;
         $obj['title'] = $this->c_get_pagetitle();
-        $obj['description'] = get_field('rev_header_metadescription');
+        $obj['description'] = get_field('acf_header_metadescription');
 
         $image_id = false;
         if( get_post_thumbnail_id() ){
             $image_id = get_post_thumbnail_id();
-        }else if( get_field('rev_header_image_desktop') ){
-            $image_id = get_field('rev_header_image_desktop');
+        }else if( get_field('acf_header_image_desktop') ){
+            $image_id = get_field('acf_header_image_desktop');
         }
         if( $image_id  ){
 
@@ -488,7 +488,7 @@ class General {
         require_once 'csrest_general.php';
         require_once 'csrest_subscribers.php';
 
-        $newsletter_settings = get_field('rev_settings_newsletter', 'option');  
+        $newsletter_settings = get_field('acf_settings_newsletter', 'option');  
         $auth = array('api_key' => $this->c_get_option('campainmonitor_api_key') );
 
         $wrap = new \CS_REST_Subscribers( $this->c_get_option('campainmonitor_listid') , $auth);

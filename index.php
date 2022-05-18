@@ -12,7 +12,7 @@ get_template_part('templates/page_header');
 
 // Get Site Elements
 $page_id = get_queried_object_id();
-$site_elements = get_field('rev_elements',$page_id);
+$site_elements = get_field('acf_elements',$page_id);
 
 
 // Check if 404 Page

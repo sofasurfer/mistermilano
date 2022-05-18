@@ -20,8 +20,27 @@
         },
         {
             "key": "field_5f05b7b7b78c4",
-            "label": "Title",
-            "name": "rev_header_title",
+            "label": "Title (Fett)",
+            "name": "acf_header_title_bold",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6284e0a3adb6e",
+            "label": "Title (normal)",
+            "name": "acf_header_title_regular",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -40,7 +59,7 @@
         {
             "key": "field_5f05b7aab78c3",
             "label": "Subtitle",
-            "name": "rev_header_subtitle",
+            "name": "acf_header_subtitle",
             "type": "text",
             "instructions": "On portfolio pages, this will be replaced by the Categories.",
             "required": 0,
@@ -94,7 +113,7 @@
         {
             "key": "field_5f05b669b6174",
             "label": "Image desktop",
-            "name": "rev_header_image_desktop",
+            "name": "acf_header_image_desktop",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -118,7 +137,7 @@
         {
             "key": "field_5f05b684b6175",
             "label": "Image mobile",
-            "name": "rev_header_image_mobile",
+            "name": "acf_header_image_mobile",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -142,7 +161,7 @@
         {
             "key": "field_5f759bcf83d35",
             "label": "Video",
-            "name": "rev_header_video",
+            "name": "acf_header_video",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -177,7 +196,7 @@
         {
             "key": "field_5f05b7c7b78c5",
             "label": "MetaDescription",
-            "name": "rev_header_metadescription",
+            "name": "acf_header_metadescription",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -233,5 +252,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652795447
+    "modified": 1652864265
 }

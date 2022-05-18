@@ -1,7 +1,7 @@
 <?php
 // ToDo: use an filter
 if($site_element['manual_selection'] == 1 ){
-    $rev_posts = $site_element['items'];
+    $acf_posts = $site_element['items'];
 }else{
     // Get posts
     global $wp_query;
@@ -11,14 +11,14 @@ if($site_element['manual_selection'] == 1 ){
         'order'     => $site_element['order'],
         'posts_per_page' => $site_element['numberofposts']  
     );
-    $rev_posts = get_posts( $news_query ); 
+    $acf_posts = get_posts( $news_query ); 
 }
 ?>
 
 <?php if( $site_element['listlarge'] == 1 ): ?>
 
     <!-- teaser small home -->
-    <?php foreach($rev_posts as $post): ?>
+    <?php foreach($acf_posts as $post): ?>
         <?php 
         // Get taxonomy name
         $taxonomy = 'category';
@@ -31,8 +31,8 @@ if($site_element['manual_selection'] == 1 ){
                 <div class="c-col-7">
                     <figure class="c-teaser-img c-ratiobox c-ratiobox-16by9">
                         <a href="<?= get_permalink($post); ?>">
-                            <?php $rev_image = get_post_thumbnail_id($post); ?>
-                            <?= do_shortcode("[render_imagetag id=\"$rev_image\"]"); ?>
+                            <?php $acf_image = get_post_thumbnail_id($post); ?>
+                            <?= do_shortcode("[render_imagetag id=\"$acf_image\"]"); ?>
                         </a>
                     </figure>
                 </div>
@@ -45,7 +45,7 @@ if($site_element['manual_selection'] == 1 ){
                     <?php else: ?>
                         <span class="c-category-title"><?= do_shortcode("[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]"); ?></span>
                         <a class="c-link-teaser" href="<?= get_permalink($post); ?>">                           
-                            <h3 class="c-teaser-title animation"><span><?= get_field('rev_header_title',$post);?></span></h3>
+                            <h3 class="c-teaser-title animation"><span><?= get_field('acf_header_title',$post);?></span></h3>
                         </a>
                     <?php endif; ?>
                 </div>          
@@ -59,16 +59,16 @@ if($site_element['manual_selection'] == 1 ){
     <div class="c-container c-container-no-padding c-teaser-team">
         <div class="c-row">
             <!-- team member-->
-            <?php foreach($rev_posts as $post): ?>
+            <?php foreach($acf_posts as $post): ?>
             <div class="c-col-4">
                 <article class="c-teaser-item">
                     <figure class="c-teaser-img">
                         <a href="<?= get_permalink($post); ?>">
-                            <?php $rev_image = get_post_thumbnail_id($post); ?>
-                            <?= do_shortcode("[render_imagetag id=\"$rev_image\"]"); ?>
+                            <?php $acf_image = get_post_thumbnail_id($post); ?>
+                            <?= do_shortcode("[render_imagetag id=\"$acf_image\"]"); ?>
                             <span class="c-teaser-team-hover">
-                                <?php $rev_image = get_field('rev_team_secondimage'); ?>
-                                <?= do_shortcode("[render_imagetag id=\"$rev_image\"]"); ?>
+                                <?php $acf_image = get_field('acf_team_secondimage'); ?>
+                                <?= do_shortcode("[render_imagetag id=\"$acf_image\"]"); ?>
                             </span>                            
                         </a>
                     </figure>
@@ -79,7 +79,7 @@ if($site_element['manual_selection'] == 1 ){
                             </a>
                         </div>
                         <div  class="animation-element fade-up">
-                            <p class="animation"><?= get_field('rev_team_jobtitlefancy',$post);?></p>
+                            <p class="animation"><?= get_field('acf_team_jobtitlefancy',$post);?></p>
                         </div>
                     </div>
                 </article>
@@ -92,7 +92,7 @@ if($site_element['manual_selection'] == 1 ){
     <!-- teaser 2 col , für portfolio teaser, crossteaser, blog-teaser -->
     <div class="c-container c-container-no-padding c-teaser-2col">
         <div class="c-row">
-            <?php foreach($rev_posts as $post): ?>
+            <?php foreach($acf_posts as $post): ?>
             <?php 
             // Get taxonomy name
             $taxonomy = 'category';
@@ -104,15 +104,15 @@ if($site_element['manual_selection'] == 1 ){
                 <article class="c-teaser-item">
                     <figure class="c-teaser-img c-ratiobox c-ratiobox-16by9">
                         <a href="<?= get_permalink($post); ?>">
-                            <?php $rev_image = get_post_thumbnail_id($post); ?>
-                            <?= do_shortcode("[render_imagetag id=\"$rev_image\"]"); ?>
+                            <?php $acf_image = get_post_thumbnail_id($post); ?>
+                            <?= do_shortcode("[render_imagetag id=\"$acf_image\"]"); ?>
                         </a>
                     </figure>
                     <div class="c-teaser-text animation-element fade-up">
                         <?php if( $post->post_type == 'post' ): ?>
                         <span class="c-category-title"><?= get_the_date('d.m.Y', $post); ?> / <?= do_shortcode("[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]"); ?></span>
                         <?php elseif( $post->post_type == 'service' ): ?>
-                        <span class="c-category-title"><?= get_field('rev_header_subtitle', $post); ?></span>
+                        <span class="c-category-title"><?= get_field('acf_header_subtitle', $post); ?></span>
                         <?php else: ?>
                         <span class="c-category-title"><?= do_shortcode("[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]"); ?></span>
                         <?php endif; ?>                        
@@ -120,7 +120,7 @@ if($site_element['manual_selection'] == 1 ){
                             <?php if( $post->post_type == 'post' ): ?>
                                 <h3 class="c-teaser-title animation"><span><?= get_the_title($post);?></span></h3>
                             <?php else: ?>
-                                <h3 class="c-teaser-title animation"><span><?= get_field('rev_header_title',$post);?></span></h3>
+                                <h3 class="c-teaser-title animation"><span><?= get_field('acf_header_title',$post);?></span></h3>
                             <?php endif; ?>
                         </a>
                     </div>

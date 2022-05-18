@@ -8,16 +8,16 @@
                 <a href="<?= get_permalink($post); ?>">
                     <?php 
                     if( $site_element['team_second_image_first'] == 1 ){
-                        $rev_image = get_field('rev_team_secondimage',$post);
-                        $rev_image_2 = get_post_thumbnail_id($post);
+                        $acf_image = get_field('acf_team_secondimage',$post);
+                        $acf_image_2 = get_post_thumbnail_id($post);
                     }else{
-                        $rev_image = get_post_thumbnail_id($post);
-                        $rev_image_2 = get_field('rev_team_secondimage',$post);
+                        $acf_image = get_post_thumbnail_id($post);
+                        $acf_image_2 = get_field('acf_team_secondimage',$post);
                     }
                     ?>
-                    <?= do_shortcode("[render_imagetag id=\"$rev_image\"]"); ?>
+                    <?= do_shortcode("[render_imagetag id=\"$acf_image\"]"); ?>
                     <span class="c-teaser-team-hover">
-                    <?= do_shortcode("[render_imagetag id=\"$rev_image_2\"]"); ?>
+                    <?= do_shortcode("[render_imagetag id=\"$acf_image_2\"]"); ?>
                     </span>
                 </a>
             </figure>
@@ -29,14 +29,14 @@
                 <a class="c-link-teaser" href="<?= get_permalink($post); ?>">                           
                     <h3 class="c-teaser-title"><span><?= get_the_title($post);?></span></h3>
                 </a>
-                <p><?= get_field('rev_team_jobtitlefancy',$post);?><br />
-                <?= get_field('rev_team_jobtitlereal',$post);?></p>
+                <p><?= get_field('acf_team_jobtitlefancy',$post);?><br />
+                <?= get_field('acf_team_jobtitlereal',$post);?></p>
             </div>
             </div>
             <div class="animation-element fade-up">
             <div class="animation">
                 <p class="c-lead">
-                    <a href="mailto:<?= get_field('rev_team_email'); ?>"><?= get_field('rev_team_email'); ?></a><br />
+                    <a href="mailto:<?= get_field('acf_team_email'); ?>"><?= get_field('acf_team_email'); ?></a><br />
                     <a href="tel:<?= apply_filters('c_get_option','company_phone'); ?>"><?= apply_filters('c_get_option','company_phone'); ?></a>
                 </p>
             </div>
