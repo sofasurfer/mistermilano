@@ -128,18 +128,21 @@ class General {
         if (in_array('current-menu-item', $classes) ){
             $classes[] = 'c-active';
         }
-        if( $item->object_id == $this->c_get_option('archive_portfolio') && get_post_type(get_queried_object_id()) == 'portfolio' ){
+	    if( $item->object_id == $this->c_get_option('archive_blog') && get_post_type(get_queried_object_id()) == 'post' ){
+		    $classes[] = 'c-active ';
+	    }
+	    if( $item->object_id == $this->c_get_option('archive_portfolio') && get_post_type(get_queried_object_id()) == 'portfolio' ){
             $classes[] = 'c-active ';
         }
-        if( $item->object_id == $this->c_get_option('archive_team') && get_post_type(get_queried_object_id()) == 'team' ){
-            $classes[] = 'c-active';
-        }
+	    if( $item->object_id == $this->c_get_option('archive_sales') && get_post_type(get_queried_object_id()) == 'sales' ){
+		    $classes[] = 'c-active ';
+	    }
         if( $item->object_id == $this->c_get_option('archive_services') && get_post_type(get_queried_object_id()) == 'service' ){
             $classes[] = 'c-active ';
         }
-        if( $item->object_id == $this->c_get_option('archive_blog') && get_post_type(get_queried_object_id()) == 'post' ){
-            $classes[] = 'c-active ';
-        }    
+	    if( $item->object_id == $this->c_get_option('archive_team') && get_post_type(get_queried_object_id()) == 'team' ){
+		    $classes[] = 'c-active';
+	    }
         return $classes;
     }
 
@@ -331,19 +334,18 @@ class General {
         // error_log(print_r(get_intermediate_image_sizes(),true));
 
         // get different image sizes
-        if( $args['mobile'] && !empty($args['mobile']) ){
+        if( array_key_exists( 'mobile', $args) && !empty($args['mobile']) ){
             $src_small = wp_get_attachment_image_src( $args['mobile'], 'thumbnail' );
             $srcset  = $src_small[0] . ' 400w,';
             $scr_medium = wp_get_attachment_image_src( $args['mobile'], 'medium' );
-            $srcset  .= $scr_medium[0] . ' 1250w,';
         }else{
             $src_small = wp_get_attachment_image_src( $args['id'], 'thumbnail' );
             $srcset  = $src_small[0] . ' 400w,';
             $scr_medium = wp_get_attachment_image_src( $args['id'], 'medium' );
-            $srcset  .= $scr_medium[0] . ' 1250w,';
         }
-        
-        $scr_large =  wp_get_attachment_image_src( $args['id'], 'large' );
+	    $srcset .= $scr_medium[0] . ' 1250w,';
+
+	    $scr_large =  wp_get_attachment_image_src( $args['id'], 'large' );
         $srcset .= $scr_large[0] . ' 1840w,';
 
         $scr_full =  wp_get_attachment_image_src( $args['id'], 'full' ); 
@@ -355,10 +357,10 @@ class General {
         //             '(min-width: 1000px) 900px,    // ViewPort mindestens 1000 px, nimm Bild mit 900px Breite'.
         //             '100vw"';
 
-        $image .= '<noscript><img src="'.$scr_full[0].'" alt="'.$alt.'" /></noscript>';
+	    $image = '<noscript><img src="' . $scr_full[0] . '" alt="' . $alt . '" /></noscript>';
         $image .= '<img class="lazy" sizes="'.$sizes.'" data-srcset="'.$srcset.'" data-src="'.$scr_large[0].'" alt="'.$alt.'" />';
 
-        if( $args['legend'] ){            
+        if( array_key_exists( 'legend', $args) ){
             $attachment = get_post( $args['id'] );
             if($attachment){
                 $image .= '<figcaption class="c-legend">' . $attachment->post_excerpt. '</figcaption>';

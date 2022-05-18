@@ -1310,6 +1310,55 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6284e40fb5c5c": {
+                    "key": "layout_6284e40fb5c5c",
+                    "name": "acf_element_sales_objects",
+                    "label": "Verkaufsobjekte Liste",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6284e434b5c5d",
+                            "label": "Verkaufsobjekte Liste",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Zeigt eine Liste der Verkaufsobjekte auf der Seite.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_6284e476b5c5e",
+                            "label": "Objektauswahl",
+                            "name": "selected",
+                            "type": "post_object",
+                            "instructions": "Wenn dieses Feld ausgefüllt wird, werden NUR die ausgewählten Verkaufsobjekte angezeigt.\r\n(Leer = Alle)",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "sales"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 1,
+                            "return_format": "id",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_5f0d91ac0e456": {
                     "key": "layout_5f0d91ac0e456",
                     "name": "acf_element_expert",
@@ -1697,21 +1746,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
+                "value": "sales"
             }
         ]
     ],
@@ -1724,5 +1759,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652863866
+    "modified": 1652866348
 }
