@@ -22,6 +22,27 @@ if ( $site_element['selected'] ) {
 }
 
 $posts = get_posts( $query );
+
+/** check if two posts in a row have no image **/
+$post_iteration     = 0;
+$previous_has_image = null;
+foreach ( $posts as $post ):
+	$has_thumbnail = has_post_thumbnail();
+
+	if ( (! $previous_has_image) && (! $has_thumbnail) && ($post_iteration != null) ) {
+        $posts[$post_iteration - 1]->post_pair = true;
+        $post->post_pair = true;
+		$has_thumbnail = true;
+	}
+
+	if ( $has_thumbnail ) {
+		$previous_has_image = true;
+	} else {
+        $previous_has_image = false;
+    }
+
+	$post_iteration ++;
+endforeach;
 ?>
 
 <!-- teaser small home -->
@@ -37,22 +58,24 @@ $posts = get_posts( $query );
 		$taxonomy = $post->post_type . '_category';
 	}
 
-    /** if contains letter/s **/
-    if ( ! preg_match("/[a-z]/i", $fields['price'])) {
-	    $fields['price'] .= ' CHF';
-    }
+	/** if contains letter/s **/
+	if ( ! preg_match( "/[a-z]/i", $fields['price'] ) ) {
+		$fields['price'] .= ' CHF';
+	}
 
 	?>
     <div class="c-container-wide c-teaser-img-text c-line-top c-line-bottom">
         <div class="c-container c-container-no-padding">
             <!-- use c row reverse for switching img places-->
-            <div class="c-row <?php if ( $iteration % 2 == 0 ) { ?>c-row-reverse <?php } ?> ">
-                <div class="c-col-7 c-teaser-img-text-col-img">
-                    <figure>
-						<?= wp_get_attachment_image( $acf_image, 'full' ); ?>
-                    </figure>
-                </div>
-                <div class="c-col-5 c-teaser-img-text-col-text c-text-block c-text-padding-var">
+            <div class="c-row<?php if ( $iteration % 2 == 0 && has_post_thumbnail() ) { ?> c-row-reverse <?php } ?>">
+				<?php if ( has_post_thumbnail() ): ?>
+                    <div class="c-col-7 c-teaser-img-text-col-img">
+                        <figure>
+							<?= wp_get_attachment_image( $acf_image, 'full' ); ?>
+                        </figure>
+                    </div>
+				<?php endif; ?>
+                <div class="c-col-5 c-teaser-img-text-col-text c-text-block <?php echo( has_post_thumbnail() ? 'c-text-padding-var' : 'c-text-padding' ); ?>">
                     <span class="c-title-category"><?= __( 'Verkauf', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
                     <h2><?= $title['bold'] ?> <span><?= $title['regular'] ?></span></h2>
                     <p><?= $post->post_excerpt ?></p>
