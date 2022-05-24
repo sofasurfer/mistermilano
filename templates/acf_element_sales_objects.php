@@ -29,17 +29,19 @@ $previous_has_image = null;
 foreach ( $posts as $post ):
 	$has_thumbnail = has_post_thumbnail();
 
-	if ( (! $previous_has_image) && (! $has_thumbnail) && ($post_iteration != null) ) {
-        $posts[$post_iteration - 1]->post_pair = true;
-        $post->post_pair = true;
-		$has_thumbnail = true;
+	if ( ( ! $previous_has_image ) && ( ! $has_thumbnail ) && ( $post_iteration != null ) ) {
+		$posts[ $post_iteration - 1 ]->{'post_pair'}       = true;
+		$posts[ $post_iteration - 1 ]->{'post_pair_first'} = true;
+		$post->{'post_pair'}                               = true;
+		$post->{'post_pair_first'}                         = false;
+		$has_thumbnail                                     = true;
 	}
 
 	if ( $has_thumbnail ) {
 		$previous_has_image = true;
 	} else {
-        $previous_has_image = false;
-    }
+		$previous_has_image = false;
+	}
 
 	$post_iteration ++;
 endforeach;
@@ -63,49 +65,97 @@ endforeach;
 		$fields['price'] .= ' CHF';
 	}
 
-	?>
-    <div class="c-container-wide c-teaser-img-text c-line-top c-line-bottom">
-        <div class="c-container c-container-no-padding">
-            <!-- use c row reverse for switching img places-->
-            <div class="c-row<?php if ( $iteration % 2 == 0 && has_post_thumbnail() ) { ?> c-row-reverse <?php } ?>">
-				<?php if ( has_post_thumbnail() ): ?>
-                    <div class="c-col-7 c-teaser-img-text-col-img">
-                        <figure>
-							<?= wp_get_attachment_image( $acf_image, 'full' ); ?>
-                        </figure>
+	if ( ! $post->post_pair ) {
+		?>
+        <div class="c-container-wide c-teaser-img-text c-line-top c-line-bottom">
+            <div class="c-container c-container-no-padding">
+                <!-- use c row reverse for switching img places-->
+                <div class="c-row<?php if ( $iteration % 2 == 0 && has_post_thumbnail() ) { ?> c-row-reverse<?php } ?>">
+
+					<?php if ( has_post_thumbnail() ): ?>
+                        <div class="c-col-7 c-teaser-img-text-col-img">
+                            <figure>
+								<?= wp_get_attachment_image( $acf_image, 'full' ); ?>
+                            </figure>
+                        </div>
+					<?php endif; ?>
+
+                    <div class="c-col-5 c-text-block c-text-padding-var c-teaser-img-text-col-text<?php echo( has_post_thumbnail() ? ' c-text-padding-var' : ' c-text-padding' ); ?>">
+                        <span class="c-title-category"><?= __( 'Verkauf', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
+                        <h2><?= $title['bold'] ?> <span><?= $title['regular'] ?></span></h2>
+                        <p><?= $post->post_excerpt ?></p>
+                        <dl class="c-info-list">
+							<?php if ( $fields['location'] ) { ?>
+                                <dt><?= __( 'Ort', 'neofluxe' ) ?></dt>
+                                <dd><?= $fields['location'] ?></dd>
+							<?php } ?>
+
+							<?php if ( $fields['area'] ) { ?>
+                                <dt><?= __( 'Gesamtfläche', 'neofluxe' ) ?></dt>
+                                <dd><?= $fields['area'] ?></dd>
+							<?php } ?>
+
+							<?php if ( $fields['completion'] ) { ?>
+                                <dt><?= __( 'Fertigstellung', 'neofluxe' ) ?></dt>
+                                <dd><?= $fields['completion'] ?></dd>
+							<?php } ?>
+
+							<?php if ( $fields['price'] ) { ?>
+                                <dt><?= __( 'Preis', 'neofluxe' ) ?></dt>
+                                <dd><?= $fields['price'] ?></dd>
+							<?php } ?>
+
+                        </dl>
+                        <p><a class="c-icon c-link-arrow"
+                              href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
                     </div>
-				<?php endif; ?>
-                <div class="c-col-5 c-teaser-img-text-col-text c-text-block <?php echo( has_post_thumbnail() ? 'c-text-padding-var' : 'c-text-padding' ); ?>">
-                    <span class="c-title-category"><?= __( 'Verkauf', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
-                    <h2><?= $title['bold'] ?> <span><?= $title['regular'] ?></span></h2>
-                    <p><?= $post->post_excerpt ?></p>
-                    <dl class="c-info-list">
-						<?php if ( $fields['location'] ) { ?>
-                            <dt><?= __( 'Ort', 'neofluxe' ) ?></dt>
-                            <dd><?= $fields['location'] ?></dd>
-						<?php } ?>
 
-						<?php if ( $fields['area'] ) { ?>
-                            <dt><?= __( 'Gesamtfläche', 'neofluxe' ) ?></dt>
-                            <dd><?= $fields['area'] ?></dd>
-						<?php } ?>
-
-						<?php if ( $fields['completion'] ) { ?>
-                            <dt><?= __( 'Fertigstellung', 'neofluxe' ) ?></dt>
-                            <dd><?= $fields['completion'] ?></dd>
-						<?php } ?>
-
-						<?php if ( $fields['price'] ) { ?>
-                            <dt><?= __( 'Preis', 'neofluxe' ) ?></dt>
-                            <dd><?= $fields['price'] ?></dd>
-						<?php } ?>
-
-                    </dl>
-                    <p><a class="c-icon c-link-arrow"
-                          href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
                 </div>
             </div>
         </div>
-    </div>
+	<?php } ?>
+
+	<?php if ( $post->post_pair ) { ?>
+		<?php if ( $post->post_pair_first ) { ?>
+            <div class="c-container-wide c-teaser-img-text c-line-top c-line-bottom">
+            <div class="c-container c-container-no-padding">
+            <div class="c-row c-row-justify-between">
+		<?php } ?>
+
+        <div class="c-col-5 c-text-block c-teaser-img-text-col-text<?php echo( $post->post_pair_first ? ' c-text-padding' : ' c-text-padding-var' ); ?>">
+            <span class="c-title-category"><?= __( 'Verkauf', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
+            <h2><?= $title['bold'] ?> <span><?= $title['regular'] ?></span></h2>
+            <p><?= $post->post_excerpt ?></p>
+            <dl class="c-info-list">
+				<?php if ( $fields['location'] ) { ?>
+                    <dt><?= __( 'Ort', 'neofluxe' ) ?></dt>
+                    <dd><?= $fields['location'] ?></dd>
+				<?php } ?>
+
+				<?php if ( $fields['area'] ) { ?>
+                    <dt><?= __( 'Gesamtfläche', 'neofluxe' ) ?></dt>
+                    <dd><?= $fields['area'] ?></dd>
+				<?php } ?>
+
+				<?php if ( $fields['completion'] ) { ?>
+                    <dt><?= __( 'Fertigstellung', 'neofluxe' ) ?></dt>
+                    <dd><?= $fields['completion'] ?></dd>
+				<?php } ?>
+
+				<?php if ( $fields['price'] ) { ?>
+                    <dt><?= __( 'Preis', 'neofluxe' ) ?></dt>
+                    <dd><?= $fields['price'] ?></dd>
+				<?php } ?>
+            </dl>
+            <p><a class="c-icon c-link-arrow"
+                  href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
+        </div>
+
+		<?php if ( ! $post->post_pair_first ) { ?>
+            </div>
+            </div>
+            </div>
+		<?php } ?>
+	<?php } ?>
 <?php endforeach; ?>
 
