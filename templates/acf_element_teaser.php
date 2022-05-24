@@ -1,13 +1,13 @@
 <?php if($site_element['large']): ?>
     <!-- teaser big home, class c-color-change für abstand nach unten -->
     <article class="c-container-wide c-teaser-big c-text-light <?= ($site_element['padding_bottom']==1) ? 'c-color-change-bottom' : ''; ?> c-bg-primary">
-        <a class="c-link-teaser" href="<?= get_field('rev_teaser_cta',$site_element['teaser'])['url']; ?>">
+        <a class="c-link-teaser" href="<?= get_field('acf_teaser_cta',$site_element['teaser'])['url']; ?>">
             <figure class="c-teaser-big-img">
                 <?php 
-                $rev_image = get_post_thumbnail_id($site_element['teaser']); 
-                $rev_image_mobile = get_field('rev_teaser_image_mobile',$site_element['teaser']);
+                $acf_image = get_post_thumbnail_id($site_element['teaser']); 
+                $acf_image_mobile = get_field('acf_teaser_image_mobile',$site_element['teaser']);
                 ?>
-                <?= do_shortcode("[render_imagetag id=\"$rev_image\" mobile=\"$rev_image_mobile\"]"); ?>   ***     
+                <?= do_shortcode("[render_imagetag id=\"$acf_image\" mobile=\"$acf_image_mobile\"]"); ?>   ***     
 
             </figure>
             <!--div class="img-load-mask"></div-->
@@ -32,7 +32,7 @@
         <div class="c-container">
             <div class="c-row animation-element fade-right">
                 <div class="c-col-10 c-text-block animation">
-                    <a class="c-link-cta" href="<?= get_field('rev_teaser_cta',$site_element['teaser'])['url']; ?>"><?= get_the_title($site_element['teaser']);?><span class="c-icon c-icon-arrow-big"></span></a>                     
+                    <a class="c-link-cta" href="<?= get_field('acf_teaser_cta',$site_element['teaser'])['url']; ?>"><?= get_the_title($site_element['teaser']);?><span class="c-icon c-icon-arrow-big"></span></a>                     
                 </div>
             </div>              
         </div>

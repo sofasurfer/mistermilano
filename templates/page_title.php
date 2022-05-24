@@ -2,9 +2,9 @@
 
 // ToDo: use filter to get data
 $pageid = get_queried_object_id();
-$imageid = get_field('rev_header_image_desktop');
-$imageid_mobile = get_field('rev_header_image_mobile');
-$video_url = get_field('rev_header_video');
+$imageid = get_field('acf_header_image_desktop');
+$imageid_mobile = get_field('acf_header_image_mobile');
+$video_url = get_field('acf_header_video');
 if($video_url){
     $video_poster = wp_get_attachment_image_src($imageid, 'full');
 }
@@ -13,16 +13,16 @@ if($video_url){
 if( get_post_type() == 'team' || get_post_type() == 'post' ){
     $pagetitle = get_the_title($pageid);
 }else{
-    $pagetitle = get_field('rev_header_title');
+    $pagetitle = get_field('acf_header_title');
 }
 
 // Get category list
 if( get_post_type() == 'portfolio' ){
     $categories = do_shortcode("[c_get_categories pid=\"$pageid\" posttype=\"portfolio_category\"]");
 }elseif( get_post_type() == 'team' ){
-    $categories = get_field('rev_team_jobtitlereal');
-}elseif( get_field('rev_header_subtitle') ){
-    $categories = get_field('rev_header_subtitle');
+    $categories = get_field('acf_team_jobtitlereal');
+}elseif( get_field('acf_header_subtitle') ){
+    $categories = get_field('acf_header_subtitle');
 }
 
 
