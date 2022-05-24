@@ -1359,6 +1359,55 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_628ccea5c499c": {
+                    "key": "layout_628ccea5c499c",
+                    "name": "acf_element_projects",
+                    "label": "Architekturobjekte Liste",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_628ccea5c499d",
+                            "label": "Architekturobjekte Liste",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Zeigt eine Liste der Architekturobjekte auf der Seite.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_628ccea5c499e",
+                            "label": "Projektauswahl",
+                            "name": "selected",
+                            "type": "post_object",
+                            "instructions": "Wenn dieses Feld ausgefüllt wird, werden NUR die ausgewählten Architekturobjekte angezeigt.\r\n(Leer = Alle)",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "projects"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 1,
+                            "return_format": "id",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_5f0d91ac0e456": {
                     "key": "layout_5f0d91ac0e456",
                     "name": "acf_element_expert",
@@ -1748,6 +1797,13 @@
                 "operator": "==",
                 "value": "sales"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "projects"
+            }
         ]
     ],
     "menu_order": 0,
@@ -1759,5 +1815,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652866348
+    "modified": 1653393062
 }
