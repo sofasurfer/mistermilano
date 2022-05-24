@@ -147,8 +147,7 @@ endforeach;
                     <dd><?= $fields['price'] ?></dd>
 				<?php } ?>
             </dl>
-            <p><a class="c-icon c-link-arrow"
-                  href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
+            <p><a class="c-icon c-link-arrow" href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
         </div>
 
 		<?php if ( ! $post->post_pair_first ) { ?>
