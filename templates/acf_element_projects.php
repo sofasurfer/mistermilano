@@ -50,7 +50,7 @@ $posts = get_posts( $query );
                 </div>
 
                 <div class="c-col-5 c-text-block c-text-padding-var c-teaser-img-text-col-text<?php echo( has_post_thumbnail() ? ' c-text-padding-var' : ' c-text-padding' ); ?>">
-                    <span class="c-title-category"><?= __( 'Verkauf', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
+                    <span class="c-title-category"><?= __( 'Architektur', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
                     <h2><?= $title['bold'] ?> <span><?= $title['regular'] ?></span></h2>
                     <p><?= $post->post_excerpt ?></p>
                     <p><a class="c-icon c-link-arrow" href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
