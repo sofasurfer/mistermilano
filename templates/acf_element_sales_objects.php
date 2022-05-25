@@ -51,9 +51,9 @@ endforeach;
 <?php foreach ( $posts as $post ): ?>
 	<?php
 	$iteration ++;
-	$acf_image = get_post_thumbnail_id( $post );
+	$thumbnail = get_post_thumbnail_id( $post );
 	$title     = get_field( 'title' );
-	$fields    = get_fields()['data'];
+	$fields    = get_fields()['data'] ?? false;
 	// Get taxonomy name
 	$taxonomy = 'category';
 	if ( $post->post_type != 'post' ) {
@@ -75,7 +75,7 @@ endforeach;
 					<?php if ( has_post_thumbnail() ): ?>
                         <div class="c-col-7 c-teaser-img-text-col-img">
                             <figure>
-								<?= wp_get_attachment_image( $acf_image, 'full' ); ?>
+								<?= wp_get_attachment_image( $thumbnail, 'full' ); ?>
                             </figure>
                         </div>
 					<?php endif; ?>
@@ -84,28 +84,29 @@ endforeach;
                         <span class="c-title-category"><?= __( 'Verkauf', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
                         <h2><?= $title['bold'] ?> <span><?= $title['regular'] ?></span></h2>
                         <p><?= $post->post_excerpt ?></p>
-                        <dl class="c-info-list">
-							<?php if ( $fields['location'] ) { ?>
-                                <dt><?= __( 'Ort', 'neofluxe' ) ?></dt>
-                                <dd><?= $fields['location'] ?></dd>
-							<?php } ?>
+	                    <?php if ( $fields ) { ?>
+                            <dl class="c-info-list">
+			                    <?php if ( isset($fields['location']) ) { ?>
+                                    <dt><?= __( 'Ort', 'neofluxe' ) ?></dt>
+                                    <dd><?= $fields['location'] ?></dd>
+			                    <?php } ?>
 
-							<?php if ( $fields['area'] ) { ?>
-                                <dt><?= __( 'Gesamtfläche', 'neofluxe' ) ?></dt>
-                                <dd><?= $fields['area'] ?></dd>
-							<?php } ?>
+			                    <?php if ( isset($fields['area']) ) { ?>
+                                    <dt><?= __( 'Gesamtfläche', 'neofluxe' ) ?></dt>
+                                    <dd><?= $fields['area'] ?></dd>
+			                    <?php } ?>
 
-							<?php if ( $fields['completion'] ) { ?>
-                                <dt><?= __( 'Fertigstellung', 'neofluxe' ) ?></dt>
-                                <dd><?= $fields['completion'] ?></dd>
-							<?php } ?>
+			                    <?php if ( isset($fields['completion']) ) { ?>
+                                    <dt><?= __( 'Fertigstellung', 'neofluxe' ) ?></dt>
+                                    <dd><?= $fields['completion'] ?></dd>
+			                    <?php } ?>
 
-							<?php if ( $fields['price'] ) { ?>
-                                <dt><?= __( 'Preis', 'neofluxe' ) ?></dt>
-                                <dd><?= $fields['price'] ?></dd>
-							<?php } ?>
-
-                        </dl>
+			                    <?php if ( isset($fields['price']) ) { ?>
+                                    <dt><?= __( 'Preis', 'neofluxe' ) ?></dt>
+                                    <dd><?= $fields['price'] ?></dd>
+			                    <?php } ?>
+                            </dl>
+	                    <?php } ?>
                         <p><a class="c-icon c-link-arrow" href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
                     </div>
 
@@ -125,27 +126,29 @@ endforeach;
             <span class="c-title-category"><?= __( 'Verkauf', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
             <h2><?= $title['bold'] ?> <span><?= $title['regular'] ?></span></h2>
             <p><?= $post->post_excerpt ?></p>
-            <dl class="c-info-list">
-				<?php if ( $fields['location'] ) { ?>
-                    <dt><?= __( 'Ort', 'neofluxe' ) ?></dt>
-                    <dd><?= $fields['location'] ?></dd>
-				<?php } ?>
+	        <?php if ( $fields ) { ?>
+                <dl class="c-info-list">
+			        <?php if ( isset($fields['location']) ) { ?>
+                        <dt><?= __( 'Ort', 'neofluxe' ) ?></dt>
+                        <dd><?= $fields['location'] ?></dd>
+			        <?php } ?>
 
-				<?php if ( $fields['area'] ) { ?>
-                    <dt><?= __( 'Gesamtfläche', 'neofluxe' ) ?></dt>
-                    <dd><?= $fields['area'] ?></dd>
-				<?php } ?>
+			        <?php if ( isset($fields['area']) ) { ?>
+                        <dt><?= __( 'Gesamtfläche', 'neofluxe' ) ?></dt>
+                        <dd><?= $fields['area'] ?></dd>
+			        <?php } ?>
 
-				<?php if ( $fields['completion'] ) { ?>
-                    <dt><?= __( 'Fertigstellung', 'neofluxe' ) ?></dt>
-                    <dd><?= $fields['completion'] ?></dd>
-				<?php } ?>
+			        <?php if ( isset($fields['completion']) ) { ?>
+                        <dt><?= __( 'Fertigstellung', 'neofluxe' ) ?></dt>
+                        <dd><?= $fields['completion'] ?></dd>
+			        <?php } ?>
 
-				<?php if ( $fields['price'] ) { ?>
-                    <dt><?= __( 'Preis', 'neofluxe' ) ?></dt>
-                    <dd><?= $fields['price'] ?></dd>
-				<?php } ?>
-            </dl>
+			        <?php if ( isset($fields['price']) ) { ?>
+                        <dt><?= __( 'Preis', 'neofluxe' ) ?></dt>
+                        <dd><?= $fields['price'] ?></dd>
+			        <?php } ?>
+                </dl>
+	        <?php } ?>
             <p><a class="c-icon c-link-arrow" href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
         </div>
 
