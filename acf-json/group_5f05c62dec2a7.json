@@ -1337,7 +1337,7 @@
                             "key": "field_6284e476b5c5e",
                             "label": "Objektauswahl",
                             "name": "selected",
-                            "type": "post_object",
+                            "type": "relationship",
                             "instructions": "Wenn dieses Feld ausgefüllt wird, werden NUR die ausgewählten Verkaufsobjekte angezeigt.\r\n(Leer = Alle)",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1350,10 +1350,15 @@
                                 "sales"
                             ],
                             "taxonomy": "",
-                            "allow_null": 0,
-                            "multiple": 1,
-                            "return_format": "id",
-                            "ui": 1
+                            "filters": [
+                                "search"
+                            ],
+                            "elements": [
+                                "featured_image"
+                            ],
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
                         }
                     ],
                     "min": "",
@@ -1386,7 +1391,7 @@
                             "key": "field_628ccea5c499e",
                             "label": "Projektauswahl",
                             "name": "selected",
-                            "type": "post_object",
+                            "type": "relationship",
                             "instructions": "Wenn dieses Feld ausgefüllt wird, werden NUR die ausgewählten Architekturobjekte angezeigt.\r\n(Leer = Alle)",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1399,10 +1404,13 @@
                                 "projects"
                             ],
                             "taxonomy": "",
-                            "allow_null": 0,
-                            "multiple": 1,
-                            "return_format": "id",
-                            "ui": 1
+                            "filters": [
+                                "search"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
                         }
                     ],
                     "min": "",
@@ -1815,5 +1823,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653393062
+    "modified": 1653458812
 }
