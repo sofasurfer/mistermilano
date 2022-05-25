@@ -9,7 +9,6 @@
         <meta name="author" content="cubegrafik GmbH">
         <meta name="description" content="<?= $og_info['description']; ?>">
 
-
         <meta property="og:locale" content="<?= $og_info['locale']; ?>"/>
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="<?= $og_info['title']; ?>"/>
@@ -22,11 +21,9 @@
         <link rel="apple-touch-icon" sizes="180x180" href="<?= get_stylesheet_directory_uri(); ?>/dist/assets/images/ico/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="<?= get_stylesheet_directory_uri(); ?>/dist/assets/images/ico/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="<?= get_stylesheet_directory_uri(); ?>/dist/assets/images/ico/favicon-16x16.png">
-        <link rel="manifest" href="<?= get_stylesheet_directory_uri(); ?>/dist/assets/images/ico/site.webmanifest">
         <link rel="mask-icon" href="<?= get_stylesheet_directory_uri(); ?>/dist/assets/images/ico/safari-pinned-tab.svg" color="#2e1aa9">
         <meta name="msapplication-TileColor" content="#2e1aa9">
         <meta name="theme-color" content="#ffffff">
-
 
         <!-- Preventing IE11 to request by default the /browserconfig.xml more than one time -->
         <meta name="msapplication-config" content="none">
@@ -39,14 +36,9 @@
         <!-- Disable Skype browser-plugin -->
         <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
 
-
-
         <link rel="stylesheet" href="<?= get_stylesheet_directory_uri(); ?>/dist/assets/css/main.1.min.css?v=<?= do_shortcode('[wp_version]') ;?>">
-
     </head>
     <body>
-
-        
         <!-- header-->
         <header class="c-header" role="banner">
             <!-- line vertical-->

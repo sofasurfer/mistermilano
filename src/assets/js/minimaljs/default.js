@@ -75,8 +75,4 @@
     When page is loaded
     */
     var scrollPos = 0;
-    $(function() {
-
-
-
-    });
+    $(function() {});

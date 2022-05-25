@@ -334,7 +334,7 @@ class General {
         // error_log(print_r(get_intermediate_image_sizes(),true));
 
         // get different image sizes
-        if( array_key_exists( 'mobile', $args) && !empty($args['mobile']) ){
+        if( !empty($args['mobile']) ){
             $src_small = wp_get_attachment_image_src( $args['mobile'], 'thumbnail' );
             $srcset  = $src_small[0] . ' 400w,';
             $scr_medium = wp_get_attachment_image_src( $args['mobile'], 'medium' );
