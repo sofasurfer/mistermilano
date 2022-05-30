@@ -1,9 +1,12 @@
 <?php
 global $wp_query;
-$post_type     = 'projects';
-$iteration     = 0;
-$selected      = $site_element['selected'] ?? false;
-$featured_post = false;
+global $post;
+$post_type           = 'projects';
+$iteration           = 0;
+$selected            = $site_element['selected'] ?? false;
+$featured_post       = false;
+$current_parent_page = get_permalink( $post->ID );
+$filter_category     = $_GET['category'] ?? false;
 
 $taxonomy_args = array(
 	'taxonomy' => $post_type . '_category',
@@ -16,6 +19,16 @@ $query = array(
 	'numberposts' => - 1,
 	'order'       => 'DESC',
 );
+
+if ( $filter_category ) {
+	$query['tax_query'] = array(
+		[
+			'taxonomy' => $post_type . '_category',
+			'field'    => 'slug',
+			'terms'    => $filter_category,
+		]
+	);
+}
 
 if ( $selected ) {
 	$acf_posts = $selected;
@@ -49,12 +62,17 @@ foreach ( $posts as $key => $post ) {
  * Create HTML filter for categories
  * then output the filter with JS data attributes
  **/
-$categories     = get_categories( $taxonomy_args );
-$category_items = '<li class="c-active" data-filter=""><a href="">' . __( 'Alle', 'neofluxe' ) . '</a></li>';
+$categories      = get_categories( $taxonomy_args );
+$category_items  = '';
+$has_active_item = false;
 
 foreach ( $categories as $category ) {
-	$category_items .= '<li class="" data-filter="' . $category->slug . '"><a href="">' . $category->name . '</a></li>';
+	$active          = ( $category->slug === $filter_category ? 'c-active' : false );
+	$has_active_item = $has_active_item || ( $active != false );
+	$category_items  .= '<li class="' . $active . '"><a href="' . add_query_arg( "category", $category->slug, $current_parent_page ) . '">' . $category->name . '</a></li>';
 }
+
+$category_items = '<li class="' . ( $has_active_item ? '' : 'c-active' ) . '" data-filter=""><a href="' . $current_parent_page . '">' . __( 'Alle', 'neofluxe' ) . '</a></li>' . $category_items;
 
 $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_items . '</ul>';
 
@@ -89,13 +107,13 @@ $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_
 			$taxonomy = $post->post_type . '_category';
 		}
 
-        $terms_json = json_encode(wp_list_pluck(wp_get_object_terms($post->ID, $taxonomy), 'slug'));
+		$terms_json = json_encode( wp_list_pluck( wp_get_object_terms( $post->ID, $taxonomy ), 'slug' ) );
 
 		if ( ! $selected
 		     && $iteration == 1
 		     && $acf_images ) {
 			?>
-            <div class="c-container-wide c-content__projects__item c-teaser-img-text-big c-line-top c-line-bottom" data-filter='<?= $terms_json ?>'>
+            <div class="c-container-wide c-content__projects__item c-teaser-img-text-big c-line-top c-line-bottom">
                 <div class="c-container c-container-no-padding">
                     <div class="c-row">
                         <div class="c-col-12">
@@ -119,7 +137,7 @@ $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_
 			<?php
 		} else {
 			?>
-            <div class="c-container-wide c-content__projects__item c-teaser-img-text c-line-top c-line-bottom" data-filter='<?= $terms_json ?>'>
+            <div class="c-container-wide c-content__projects__item c-teaser-img-text c-line-top c-line-bottom">
                 <div class="c-container c-container-no-padding">
                     <!-- use c row reverse for switching img places-->
                     <div class="c-row<?php if ( $iteration % 2 == 0 && $acf_images ) { ?> c-row-reverse<?php } ?>">
