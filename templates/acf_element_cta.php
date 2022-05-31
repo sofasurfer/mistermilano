@@ -9,7 +9,6 @@ $query = array(
 );
 
 $cta = get_posts( $query );
-
 ?>
 
 <?php foreach ( $cta as $post ) {
@@ -33,14 +32,11 @@ $cta = get_posts( $query );
 		                echo $return;
 	                }
 	                ?></span>
-                    <h2 class="c-h1"><?= $field['acf_header_title_bold'] ?: '' ?>
-                        <span><?= $field['acf_header_title_regular'] ?: '' ?></span></h2>
+                    <h2 class="c-h1"><?= $field['acf_header_title_bold'] ?: '' ?> <span><?= $field['acf_header_title_regular'] ?: '' ?></span></h2>
 					<?= $field['text'] ? '<p>' . $field['text'] . '</p>' : '' ?>
 
 					<?php if ( isset( $field['link'] ) && $field['link']['url'] ) { ?>
-                        <a class="c-btn" href="<?= $field['link']['url'] ?>"
-                           target="<?= $field['link']['target'] ?: '_self' ?>"><span
-                                    class="c-icon c-link-arrow"><?= $field['link']['title'] ?></span></a>
+                        <a class="c-btn" href="<?= $field['link']['url'] ?>" target="<?= $field['link']['target'] ?: '_self' ?>"><span class="c-icon c-link-arrow"><?= $field['link']['title'] ?></span></a>
 					<?php } ?>
                 </div>
             </div>
