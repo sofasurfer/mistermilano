@@ -232,14 +232,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "team"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "service"
+                "value": "post"
             }
         ]
     ],
@@ -252,5 +245,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652864265
+    "modified": 1653919336
 }

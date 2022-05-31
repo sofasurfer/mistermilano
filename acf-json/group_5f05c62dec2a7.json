@@ -1418,50 +1418,26 @@
                 },
                 "layout_5f0d91ac0e456": {
                     "key": "layout_5f0d91ac0e456",
-                    "name": "acf_element_expert",
-                    "label": "Expert (team member)",
+                    "name": "acf_element_team",
+                    "label": "Team Members",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5f5625ac927d8",
-                            "label": "Show second image first",
-                            "name": "team_second_image_first",
-                            "type": "true_false",
+                            "key": "field_6294d2521d731",
+                            "label": "Team Mitglieder",
+                            "name": "",
+                            "type": "message",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "20",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 1,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_5f0d91cf0e457",
-                            "label": "Team member",
-                            "name": "team_member",
-                            "type": "post_object",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "80",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [
-                                "team"
-                            ],
-                            "taxonomy": "",
-                            "allow_null": 1,
-                            "multiple": 0,
-                            "return_format": "object",
-                            "ui": 1
+                            "message": "Zeigt die Team Mitglieder in einem Grid an.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
                         }
                     ],
                     "min": "",
@@ -1823,5 +1799,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653458812
+    "modified": 1653920395
 }
