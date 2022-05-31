@@ -1,59 +1,30 @@
+<!-- team teaser-->
 <?php
-$categories = get_the_terms(get_queried_object_id(),'service_category');
+global $wp_query;
+$post_type     = 'service';
 
-$list1 = array();
-$list2 = array();
-$counter = 1 ;
+$query = array(
+	'post_type'   => $post_type,
+	'numberposts' => - 1,
+	'order'       => 'DESC',
+);
 
-if($categories && count($categories)>0){
-
-    // Filter by main categories
-    $cat_list = [];
-    foreach($categories as $category){
-        $parent = get_term( $category->parent );
-        if( $parent->parent == 0 ){
-            $cat_list[] = $category;
-        }
-    }
-
-    // Split equal to two cols
-    foreach($cat_list as $category){
-        if( $counter <= round(count($cat_list)/2) ){
-            $list1[$counter] = $category->name;
-        }else{
-            $list2[$counter] = $category->name;
-        }
-        $counter++;
-    }
-}
-
+$services = get_posts( $query );
 ?>
-<?php if( $counter > 2 ): ?>
-<!-- service leistungen-->
-<div class="c-container c-features">
-    <div class="c-row c-row-justify-right">
-        <div class="c-col-4  animation-element fade-up">
-            <ul class="c-features-list animation">
-                <?php foreach($list1 as $key => $value): ?>
-                    <li><span class="c-features-nr c-text-small"><?= sprintf("%02d", $key);?></span><?= $value;?></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-        <div class="c-col-4  animation-element fade-up">
-            <ul class="c-features-list animation">
-                <?php foreach($list2 as $key => $value): ?>
-                    <li><span class="c-features-nr c-text-small"><?= sprintf("%02d", $key);?></span><?= $value;?></li>
-                <?php endforeach; ?>
-            </ul>
+
+<div class="c-container-wide c-services c-line-top c-line-bottom">
+    <div class="c-container c-container-no-padding">
+        <div class="c-row">
+			<?php foreach ( $services as $post ) { ?>
+                <!-- Service -->
+                <div class="c-col-6 c-text-block">
+                    <h2 class="c-title-icon c-title-icon-rating"><?= $post->post_title ?></h2>
+	                <?php if ( $post->post_content ) { ?>
+                        <p><?= $post->post_content ?></p>
+	                <?php } ?>
+                </div>
+                <!-- END -->
+			<?php }; ?>
         </div>
     </div>
 </div>
-<?php else:?>
-<div class="c-container c-features">
-    <div class="c-row c-row-justify-right">
-        <div class="c-col-4">
-            No services defines, please add service categories.
-        </div>
-    </div>
-</div>
-<?php endif;?>

@@ -2,7 +2,6 @@
 <?php
 global $wp_query;
 $post_type     = 'team';
-$featured_post = false;
 
 $query = array(
 	'post_type'   => $post_type,

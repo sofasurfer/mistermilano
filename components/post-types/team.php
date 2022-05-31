@@ -36,7 +36,7 @@ class Team {
             'not_found_in_trash' => 'Team member not found in the trash'
         ], [
             'en' => 'team'
-        ], false, true, ['title', 'excerpt', 'thumbnail', 'revisions', 'page-attributes']);
+        ], false, false, ['title', 'excerpt', 'thumbnail', 'revisions', 'page-attributes']);
 
         if(!function_exists("register_field_group"))
             return;

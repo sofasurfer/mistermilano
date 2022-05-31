@@ -21,7 +21,7 @@ class Service {
     }
 
     public function register() {
-        PostTypes::instance()->register_post_type('service', 'dashicons-star-filled', [
+        PostTypes::instance()->register_post_type('service', 'dashicons-clipboard', [
             'name' => 'Service',
             'singular_name' => 'Service',
             'menu_name' => 'Services',
@@ -36,7 +36,7 @@ class Service {
             'not_found_in_trash' => 'Service not found in the trash'
         ], [
             'en' => 'services'
-        ], false, true,['title', 'excerpt', 'thumbnail', 'revisions', 'page-attributes']);
+        ], false, false,['title', 'editor', 'revisions', 'page-attributes']);
 
         if(!function_exists("register_field_group"))
             return;

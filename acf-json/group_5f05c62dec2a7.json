@@ -1302,7 +1302,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "List all the services (categories) automatically. Can only be used on the services detail page.",
+                            "message": "List all the services automatically.",
                             "new_lines": "wpautop",
                             "esc_html": 0
                         }
@@ -1799,5 +1799,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653920395
+    "modified": 1653963015
 }
