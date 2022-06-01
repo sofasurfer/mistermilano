@@ -25,16 +25,10 @@ if ( is_404() ) {
     // Get LeadTitle
     get_template_part('templates/page_title');
 
-    // Get post type 
-    if( get_post_type() == 'portfolio' ){
-        get_template_part('templates/page_portfolio');
-    }elseif( get_post_type() == 'team' ){
-        get_template_part('templates/page_team');
-    }elseif( get_post_type() == 'post' ){
-        get_template_part('templates/page_post');
-    }
-    
-    // Loop all site elements
+    // Get post type
+	get_template_part('templates/page_' . get_post_type());
+
+	// Loop all site elements
     if( !empty($site_elements)){
         foreach( $site_elements as $site_element ){
             include( locate_template( 'templates/' . $site_element['acf_fc_layout'] . '.php', false, false ) );
