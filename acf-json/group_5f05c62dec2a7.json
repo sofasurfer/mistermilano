@@ -1475,6 +1475,95 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6295eccc522c9": {
+                    "key": "layout_6295eccc522c9",
+                    "name": "acf_element_contact",
+                    "label": "Contact with CTA",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6295ecec522cb",
+                            "label": "Title (Bold)",
+                            "name": "title_bold",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6295ed08522cc",
+                            "label": "Title (Regular)",
+                            "name": "title_regular",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6295ed15522cd",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_6295eccc522ca",
+                            "label": "Call To Action Auswählen",
+                            "name": "cta",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "cta"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "id",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_5f071edebdd9d": {
                     "key": "layout_5f071edebdd9d",
                     "name": "acf_element_teaser",
@@ -1831,5 +1920,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653968100
+    "modified": 1653972408
 }
