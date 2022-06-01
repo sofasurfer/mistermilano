@@ -1310,6 +1310,33 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_629721d1d2bf6": {
+                    "key": "layout_629721d1d2bf6",
+                    "name": "acf_element_news",
+                    "label": "News Listing",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_629721d1d2bf7",
+                            "label": "Info",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Shows the latest news (blog) elements",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6284e40fb5c5c": {
                     "key": "layout_6284e40fb5c5c",
                     "name": "acf_element_sales_objects",
@@ -1920,5 +1947,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653972408
+    "modified": 1654048178
 }
