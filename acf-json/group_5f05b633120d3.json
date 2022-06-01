@@ -19,42 +19,59 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f05b7b7b78c4",
-            "label": "Title (Fett)",
-            "name": "acf_header_title_bold",
-            "type": "text",
+            "key": "field_62976f580f07c",
+            "label": "Title",
+            "name": "title",
+            "type": "group",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_6284e0a3adb6e",
-            "label": "Title (normal)",
-            "name": "acf_header_title_regular",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_62976f770f07d",
+                    "label": "Titel (Bold)",
+                    "name": "bold",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_62976f8c0f07e",
+                    "label": "Titel (Regular)",
+                    "name": "regular",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         },
         {
             "key": "field_5f05b7aab78c3",
@@ -245,5 +262,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653967837
+    "modified": 1654068111
 }

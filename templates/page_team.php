@@ -11,19 +11,19 @@
                 <div class="animation">
                     <h3><?= get_field('acf_team_jobtitlefancy'); ?><br />
                         <?= get_field('acf_team_jobtitlereal'); ?>
-                    </h3>                       
+                    </h3>
                     <p class="c-lead">
                         <a href="mailto:<?= get_field('acf_team_email'); ?>"><?= get_field('acf_team_email'); ?></a>
                     </p>
                 </div>
             </div>
             <div class="animation-element fade-up">
-                <div class="animation">            
+                <div class="animation">
                     <?php if(get_field('acf_team_socialmediaaccounts')): ?>
                     <ul class="c-list-social">
-                        <?php foreach(get_field('acf_team_socialmediaaccounts' ) as $s_account): ?>  
+                        <?php foreach(get_field('acf_team_socialmediaaccounts' ) as $s_account): ?>
                         <li><a target="<?= $s_account['link']['target']; ?>" class="c-icon c-btn-social c-btn-social-<?= $s_account['icon']; ?> c-ir" href="<?= $s_account['link']['url']; ?>"><?= $s_account['link']['title']; ?></a></li>
-                        <?php endforeach; ?>                       
+                        <?php endforeach; ?>
                     </ul>
                     <?php endif; ?>
                 </div>

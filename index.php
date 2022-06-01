@@ -28,7 +28,10 @@ if ( is_404() ) {
     // Get post type
 	get_template_part('templates/page_' . get_post_type());
 
-	// Loop all site elements
+	if ( get_post_type() == 'projects' ) {
+		get_template_part('templates/page_details');
+	}
+		// Loop all site elements
     if( !empty($site_elements)){
         foreach( $site_elements as $site_element ){
             include( locate_template( 'templates/' . $site_element['acf_fc_layout'] . '.php', false, false ) );
