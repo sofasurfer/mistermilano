@@ -3,16 +3,10 @@
 $pageid         = get_queried_object_id();
 $fields         = get_fields();
 $post_type      = get_post_type();
-$title_largey   = $fields['title']['regular'] || $fields['acf_header_title_regular'];
+$title_bold     = $fields['title']['bold'] ?? '';
+$title_regular  = $fields['title']['regular'] ?? '';
 $imageid        = ( isset( $fields['image']['size_large'] ) && $fields['image']['size_large'] ) ? $fields['image']['size_large'] : false;
 $imageid_mobile = ( isset( $fields['image']['size_small'] ) && $fields['image']['size_small'] ) ? $fields['image']['size_small'] : false;
-
-// Get page title
-if ( get_post_type() == 'team' || get_post_type() == 'post' ) {
-	$pagetitle = get_the_title( $pageid );
-} else {
-	$pagetitle = get_field( 'acf_header_title' );
-}
 
 ?>
     <!-- line vertical-->
@@ -30,7 +24,7 @@ if ( get_post_type() == 'team' || get_post_type() == 'post' ) {
 					<?php if ( $post_type == 'projects' ) { ?>
                         <span class="c-title-category">Architektur / <?= do_shortcode( "[c_get_categories pid=\"$pageid\" posttype=\"" . $post_type . "_category\"]" ); ?></span>
 					<?php } ?>
-                    <h1><?= $fields['title']['bold']; ?> <span><?= $fields['title']['regular']; ?></span></h1>
+                    <h1><?= $title_bold; ?> <span><?= $title_regular ?></span></h1>
                     <p class="c-lead">
 						<?= $post->post_excerpt ?>
                     </p>

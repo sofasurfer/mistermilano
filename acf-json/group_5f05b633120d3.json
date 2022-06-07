@@ -3,24 +3,8 @@
     "title": "Header",
     "fields": [
         {
-            "key": "field_62836153e903a",
-            "label": "Title",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_62976f580f07c",
-            "label": "Title",
+            "key": "field_629eff584956e",
+            "label": "Titel",
             "name": "title",
             "type": "group",
             "instructions": "",
@@ -31,15 +15,15 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "table",
             "sub_fields": [
                 {
-                    "key": "field_62976f770f07d",
-                    "label": "Titel (Bold)",
+                    "key": "field_629eff584956f",
+                    "label": "Titel Fett (Bold)",
                     "name": "bold",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -53,8 +37,8 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_62976f8c0f07e",
-                    "label": "Titel (Regular)",
+                    "key": "field_629eff5849570",
+                    "label": "Titel Schmal (Regular)",
                     "name": "regular",
                     "type": "text",
                     "instructions": "",
@@ -262,5 +246,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654068111
+    "modified": 1654587271
 }
