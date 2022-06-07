@@ -7,6 +7,7 @@ $title_bold     = $fields['title']['bold'] ?? '';
 $title_regular  = $fields['title']['regular'] ?? '';
 $imageid        = ( isset( $fields['image']['size_large'] ) && $fields['image']['size_large'] ) ? $fields['image']['size_large'] : false;
 $imageid_mobile = ( isset( $fields['image']['size_small'] ) && $fields['image']['size_small'] ) ? $fields['image']['size_small'] : false;
+$subtitle       = get_field( 'acf_header_subtitle', $pageid ) ? get_field( 'acf_header_subtitle', $pageid ) : $post->post_excerpt;
 
 ?>
     <!-- line vertical-->
@@ -26,7 +27,7 @@ $imageid_mobile = ( isset( $fields['image']['size_small'] ) && $fields['image'][
 					<?php } ?>
                     <h1><?= $title_bold; ?> <span><?= $title_regular ?></span></h1>
                     <p class="c-lead">
-						<?= $post->post_excerpt ?>
+						<?= $subtitle ?>
                     </p>
                 </div>
             </div>
