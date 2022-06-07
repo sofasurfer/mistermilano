@@ -143,6 +143,100 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_629f1bd25f0aa": {
+                    "key": "layout_629f1bd25f0aa",
+                    "name": "acf_element_header_image",
+                    "label": "Header Bild",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_629f1bd25f0ab",
+                            "label": "Images",
+                            "name": "images",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "sub_fields": [
+                                {
+                                    "key": "field_629f1bf85f0ad",
+                                    "label": "Image (Desktop)",
+                                    "name": "large",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_629f1c155f0ae",
+                                    "label": "Image (Mobile)",
+                                    "name": "small",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_629f21a7f9561",
+                            "label": "Beschriftung",
+                            "name": "text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_5f05d2752d629": {
                     "key": "layout_5f05d2752d629",
                     "name": "acf_element_image_gallery",
@@ -1187,5 +1281,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654593162
+    "modified": 1654597043
 }
