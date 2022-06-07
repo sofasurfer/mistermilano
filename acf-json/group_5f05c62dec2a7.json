@@ -274,25 +274,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5f05ccbfe6868",
-                            "label": "Largelist",
-                            "name": "largelist",
-                            "type": "true_false",
-                            "instructions": "If checked the list can contain an image.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 1,
-                            "ui": 1,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
                             "key": "field_5f05cbff65399",
                             "label": "Items",
                             "name": "items",
@@ -311,49 +292,6 @@
                             "layout": "table",
                             "button_label": "",
                             "sub_fields": [
-                                {
-                                    "key": "field_5f05cc0f6539a",
-                                    "label": "Image",
-                                    "name": "image",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "20",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "id",
-                                    "preview_size": "medium",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": ""
-                                },
-                                {
-                                    "key": "field_5f05cc1d6539b",
-                                    "label": "Title",
-                                    "name": "title",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "30",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
                                 {
                                     "key": "field_5f05cc486539c",
                                     "label": "Text",
@@ -1947,5 +1885,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654590075
+    "modified": 1654591550
 }
