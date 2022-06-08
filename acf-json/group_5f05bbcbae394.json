@@ -146,8 +146,8 @@
             "sub_fields": [
                 {
                     "key": "field_5f06e257f1829",
-                    "label": "Portfolio archive",
-                    "name": "archive_portfolio",
+                    "label": "Project archive",
+                    "name": "archive_project",
                     "type": "post_object",
                     "instructions": "",
                     "required": 0,
@@ -168,8 +168,8 @@
                 },
                 {
                     "key": "field_5f0818c4a5b43",
-                    "label": "Team archive",
-                    "name": "archive_team",
+                    "label": "Sales archive",
+                    "name": "archive_sales",
                     "type": "post_object",
                     "instructions": "",
                     "required": 0,
@@ -416,5 +416,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653987560
+    "modified": 1654692099
 }
