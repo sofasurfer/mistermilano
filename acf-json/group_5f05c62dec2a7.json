@@ -257,10 +257,10 @@
                                 "id": ""
                             },
                             "collapsed": "",
-                            "min": 0,
-                            "max": 0,
+                            "min": 1,
+                            "max": 2,
                             "layout": "table",
-                            "button_label": "",
+                            "button_label": "Bild einfügen",
                             "sub_fields": [
                                 {
                                     "key": "field_5f05d41cfc27a",
@@ -298,15 +298,14 @@
                                     "key": "field_5f05d4c40a15a",
                                     "label": "Caption",
                                     "name": "caption",
-                                    "type": "textarea",
+                                    "type": "text",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": [
                                         [
                                             {
-                                                "field": "field_5f05d28b2d62a",
-                                                "operator": "!=",
-                                                "value": "tiles"
+                                                "field": "field_5f05c6351a30b",
+                                                "operator": "!=empty"
                                             }
                                         ]
                                     ],
@@ -317,11 +316,75 @@
                                     },
                                     "default_value": "",
                                     "placeholder": "",
-                                    "maxlength": "",
-                                    "rows": "",
-                                    "new_lines": ""
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_629f3d5c23165",
+                                    "label": "Bildbeschreibung",
+                                    "name": "legend",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5f05c6351a30b",
+                                                "operator": "!=empty"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_629f3dfd4ab2c",
+                                    "label": "Dunkler Bildtext",
+                                    "name": "dark_text",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_629f37752ea4a",
+                            "label": "Left image is large",
+                            "name": "left_image_is_large",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Macht die linke Spalte breiter als die rechte",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -920,6 +983,28 @@
                             "multiple": 0,
                             "return_format": "id",
                             "ui": 1
+                        },
+                        {
+                            "key": "field_629f50c6aabe6",
+                            "label": "Contactform",
+                            "name": "contactform",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "wpcf7_contact_form"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "id",
+                            "ui": 1
                         }
                     ],
                     "min": "",
@@ -1281,5 +1366,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654597043
+    "modified": 1654612309
 }
