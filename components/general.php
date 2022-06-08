@@ -132,7 +132,7 @@ class General {
 		if ( $item->object_id == $this->c_get_option( 'archive_blog' ) && get_post_type( get_queried_object_id() ) == 'post' ) {
 			$classes[] = 'c-active ';
 		}
-		if ( $item->object_id == $this->c_get_option( 'archive_portfolio' ) && get_post_type( get_queried_object_id() ) == 'portfolio' ) {
+		if ( $item->object_id == $this->c_get_option( 'archive_projects' ) && get_post_type( get_queried_object_id() ) == 'projects' ) {
 			$classes[] = 'c-active ';
 		}
 		if ( $item->object_id == $this->c_get_option( 'archive_sales' ) && get_post_type( get_queried_object_id() ) == 'sales' ) {
@@ -140,9 +140,6 @@ class General {
 		}
 		if ( $item->object_id == $this->c_get_option( 'archive_services' ) && get_post_type( get_queried_object_id() ) == 'service' ) {
 			$classes[] = 'c-active ';
-		}
-		if ( $item->object_id == $this->c_get_option( 'archive_team' ) && get_post_type( get_queried_object_id() ) == 'team' ) {
-			$classes[] = 'c-active';
 		}
 
 		return $classes;
@@ -216,12 +213,12 @@ class General {
 	public function c_get_pagetitle() {
 
 		$pagetitle = get_the_title() . ' | ';
-		if ( get_post_type() == 'portfolio' ) {
-			$pagetitle .= get_the_title( $this->c_get_option( 'archive_portfolio' ) ) . ' | ';
+		if ( get_post_type() == 'projects' ) {
+			$pagetitle .= get_the_title( $this->c_get_option( 'archive_projects' ) ) . ' | ';
 		} else if ( get_post_type() == 'service' ) {
 			$pagetitle .= get_the_title( $this->c_get_option( 'archive_services' ) ) . ' | ';
-		} else if ( get_post_type() == 'team' ) {
-			$pagetitle .= get_the_title( $this->c_get_option( 'archive_team' ) ) . ' | ';
+		} else if ( get_post_type() == 'sales' ) {
+			$pagetitle .= get_the_title( $this->c_get_option( 'archive_sales' ) ) . ' | ';
 		} else if ( get_post_type() == 'post' ) {
 			$pagetitle .= get_the_title( $this->c_get_option( 'archive_blog' ) ) . ' | ';
 		}
