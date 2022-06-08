@@ -36,7 +36,7 @@ $posts = get_posts( $query );
 
                     <div class="c-col-5 c-text-block c-text-padding-var c-teaser-img-text-col-text c-text-padding-var">
                         <span class="c-title-category"><?= get_the_date('d.m.Y') ?></span>
-                        <h2><?= $fields['acf_header_title_bold'] ?> <span><?= $fields['acf_header_title_regular'] ?></span></h2>
+                        <h2><?= $fields['title']['bold'] ?> <span><?= $fields['title']['regular'] ?></span></h2>
                         <p><?= $post->post_excerpt ?></p>
                     </div>
 
