@@ -35,7 +35,7 @@ jobs:
       - name: RSync Deployments
         uses: burnett01/rsync-deployments@5.2
         with:
-          switches: -avzr --delete --prune-empty-dirs --exclude="node_modules" --exclude=".github" --exclude="*.json" --exclude="*.lock" --exclude="release.sh" --exclude="*.md" --exclude="*.html" --exclude="src" --exclude="gulpfile.js" --exclude="gulpconfig.js" --exclude=".nvmrc" --exclude=".gitignore"
+          switches: -avzr --delete --prune-empty-dirs --exclude="node_modules" --exclude=".github" --exclude="package.json" --exclude="package-lock.json" --exclude="*.lock" --exclude="release.sh" --exclude="*.md" --exclude="*.html" --exclude="src" --exclude="gulpfile.js" --exclude="gulpconfig.js" --exclude=".nvmrc" --exclude=".gitignore"
           path: ./
           remote_path: public_html/lanzarchitekten/wp-content/themes/wptheme.lanza
           remote_host: s094.cyon.net
