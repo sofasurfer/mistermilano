@@ -24,10 +24,10 @@ jobs:
           node-version: 14.19.1
 
       - name: NPM Install
-        run: npm install
+        run: yarn install
 
       - name: NPM Install
-        run: npm install gulp-cli -g
+        run: yarn add gulp-cli -g
 
       - name: Gulp Build
         run: gulp build
