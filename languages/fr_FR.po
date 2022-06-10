@@ -1,0 +1,449 @@
+# Copyright (C) 2018 cubegrafik
+# This file is distributed under the same license as the cubegrafik package.
+msgid ""
+msgstr ""
+"Project-Id-Version: cubegrafik\n"
+"Report-Msgid-Bugs-To: https://cubegrafik.com\n"
+"POT-Creation-Date: 2021-06-03 14:37+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
+"_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;"
+"esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: components/general.php:119
+msgid "Header Menu"
+msgstr "Header Menu"
+
+#: components/general.php:120
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+#: templates/page_404.php:6
+msgid "Seite nicht gefunden"
+msgstr "Page introuvable"
+
+#: templates/page_404.php:14
+msgid "Leider können wir die von Ihnen gesuchte Seite nicht finden."
+msgstr ""
+"Malheureusement, nous ne pouvons pas trouver la page que vous recherchez."
+
+#: templates/page_footer.php:18 templates/acf_element_backlink.php:4
+msgid "Back"
+msgstr "Retour"
+
+#: templates/page_footer.php:41
+msgid "swiss made software"
+msgstr ""
+
+#: templates/page_footer.php:54
+msgid "Newsletter abonnieren"
+msgstr "S’abonner à la newsletter"
+
+#: templates/page_footer.php:59
+msgid "Vorname"
+msgstr "Prénom"
+
+#: templates/page_footer.php:61
+msgid "Ungültiger Vorname."
+msgstr "Prénom invalide."
+
+#: templates/page_footer.php:67
+msgid "Nachname"
+msgstr "Nom"
+
+#: templates/page_footer.php:69
+msgid "Ungültiger Nachname."
+msgstr "Nom invalide."
+
+#: templates/page_footer.php:75
+msgid "Email"
+msgstr ""
+
+#: templates/page_footer.php:79
+msgid "Ungültige E-Mail Adresse."
+msgstr "Adresse e-mail invalide."
+
+#: templates/page_footer.php:83
+msgid "Senden"
+msgstr "Envoyer"
+
+#: templates/page_footer.php:89
+msgid "Vielen Dank."
+msgstr "Merci beaucoup."
+
+#: templates/page_footer.php:110
+msgid "&copy; neofluxe"
+msgstr "&copy; neofluxe"
+
+#: templates/page_header.php:147
+msgid "Navigation öffnen"
+msgstr "Ouvrir la navigation"
+
+#: templates/page_header.php:157
+msgid "Zurück zum Inhalt"
+msgstr "Retour au sommaire"
+
+#: templates/page_header.php:163
+msgid "La même chose en"
+msgstr "Das Gleiche auf"
+
+#: templates/page_header.php:166
+msgid "français"
+msgstr "deutsch"
+
+#: templates/page_portfolio.php:8
+msgid "Kunde"
+msgstr "Client"
+
+#: templates/page_portfolio.php:13
+msgid "Auftraggeber"
+msgstr "Donneur d’ordre"
+
+#: templates/page_portfolio.php:18
+msgid "Leistungen"
+msgstr "Prestations"
+
+#: templates/page_portfolio.php:48
+msgid "Releasedatum"
+msgstr "Date de publication"
+
+#: templates/page_portfolio.php:55
+msgid "Zum Projekt"
+msgstr "Le projet"
+
+#: templates/page_post.php:5
+msgid "Autor"
+msgstr "Auteur"
+
+#: templates/page_post.php:15
+msgid "Veröffentlicht"
+msgstr "Publié"
+
+#: templates/page_post.php:18
+msgid "Kategorie"
+msgstr "Catégorie"
+
+#: templates/page_team.php:45
+msgid "Zur Übersicht"
+msgstr ""
+
+#: templates/page_team.php:49
+msgid "Zurück"
+msgstr ""
+
+#: templates/page_team.php:51
+msgid "Nächster"
+msgstr ""
+
+#: templates/acf_element_expert.php:28
+msgid "Ihr Ansprechspartner"
+msgstr "Votre personne de contact"
+
+#~ msgid "E-Mail"
+#~ msgstr "E-mail"
+
+#~ msgid "Von"
+#~ msgstr "Auteur"
+
+#~ msgid "Kontakt"
+#~ msgstr "Contact"
+
+#~ msgid "Adresse"
+#~ msgstr "Address"
+
+#~ msgid "Folge mir"
+#~ msgstr "Follow me"
+
+#~ msgid "mehr auf Instagram"
+#~ msgstr "more on Instagram"
+
+#~ msgid "Abgesagt"
+#~ msgstr "Cancelled"
+
+#~ msgid "Datum"
+#~ msgstr "Date"
+
+#~ msgid "Ort"
+#~ msgstr "Location"
+
+#~ msgid "Rennen"
+#~ msgstr "Race"
+
+#~ msgid "Rang"
+#~ msgstr "Result"
+
+#~ msgid "Abonniere meinen Newsletter"
+#~ msgstr "Subscribe to my newsletter"
+
+#~ msgid "Breaking News"
+#~ msgstr "Dernières actualités"
+
+#~ msgid "Link extern"
+#~ msgstr "Lien externe"
+
+#~ msgid "Mehr erfahren"
+#~ msgstr "En savoir plus"
+
+#~ msgid "Wenn Probleme mit der Darstellungsweise dieser Email bestehen,"
+#~ msgstr "Si vous ne voyez pas ce mail correctement,"
+
+#~ msgid "klicken Sie hier."
+#~ msgstr "cliquez ici."
+
+#~ msgid "Revisia"
+#~ msgstr "REVISIA SA"
+
+#~ msgid ""
+#~ "Praxisorientierte Treuhandleistungen in den verschiedensten Bereichen."
+#~ msgstr ""
+#~ "Des prestations fiduciaires pratiques dans les domaines les plus divers."
+
+#~ msgid "Wollen Sie in Zukunft keine Newsletter mehr erhalten?"
+#~ msgstr "Si vous souhaitez vous désinscrire de cette newsletter, "
+
+#~ msgid "Abmelden"
+#~ msgstr "désinscrire"
+
+#~ msgid "Pflichtfeld"
+#~ msgstr "Champ obligatoire"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#, php-format
+#~ msgid ""
+#~ "Ich habe die <a href=\\\"%s\\\" target=\\\"_blank\\"
+#~ "\">Datenschutzerklärung</a> gelesen"
+#~ msgstr ""
+#~ "J’ai pris connaissance de <a href=%s  target=_blank>la déclaration de "
+#~ "protection</a> des données"
+
+#~ msgid "Sie müssen die Datenschutzerklärung akzeptieren."
+#~ msgstr "Vous devez accepter la déclaration de protection des données."
+
+#~ msgid "Abonnieren"
+#~ msgstr "M’abonner"
+
+#~ msgid "Sie haben sich erfolgreich für unseren Newsletter angemeldet."
+#~ msgstr "Votre abonnement à notre newsletter a bien été enregistré."
+
+#~ msgid "Error"
+#~ msgstr "Erreur"
+
+#~ msgid ""
+#~ "Leider ist ein Fehler aufgetreten, bitte versuchen Sie es später noch "
+#~ "einmal."
+#~ msgstr ""
+#~ "Malheureusement, une erreur s’est produite, veuillez réessayer plus tard."
+
+#~ msgid "The field is required"
+#~ msgstr "Le champ est obligatoire"
+
+#~ msgid "Invalid E-Mail address"
+#~ msgstr "Adresse e-mail non valable"
+
+#~ msgid "Auf Karte anzeigen"
+#~ msgstr "Afficher sur la carte"
+
+#~ msgid "Ältere News anzeigen"
+#~ msgstr "Afficher des actualités plus anciennes"
+
+#~ msgid "Alle News"
+#~ msgstr "Toutes les actualités"
+
+#~ msgid "Mitgliedschaften"
+#~ msgstr "Adhésion"
+
+#~ msgid "Wir bieten Ihnen"
+#~ msgstr "Notre offre"
+
+#~ msgid "Erfahren Sie mehr über uns"
+#~ msgstr "En savoir plus à notre sujet"
+
+#~ msgid "Besuchen Sie uns"
+#~ msgstr "Rendez-nous visite"
+
+#~ msgid "E-Mail senden"
+#~ msgstr "Envoyer un e-mail"
+
+#~ msgid "Crew Overview"
+#~ msgstr "Aperçu du Team"
+
+#~ msgid "Map"
+#~ msgstr "Carte"
+
+#~ msgid "Enter your location"
+#~ msgstr "Entrez votre position"
+
+#~ msgid "Filter by type"
+#~ msgstr "Filtrer par type"
+
+#~ msgid "Stories Overview"
+#~ msgstr "Survol des histoires"
+
+#~ msgid "Technologies Overview"
+#~ msgstr "Présentation des technologies"
+
+#~ msgid "Including %s taxes"
+#~ msgstr "TVA de %s incluse"
+
+#~ msgid "Price without taxes"
+#~ msgstr "Prix sans taxes"
+
+#~ msgid "(excl. VAT)"
+#~ msgstr "(hors TVA)"
+
+#~ msgid "Saved configurations"
+#~ msgstr "Configurations enregistrées"
+
+#~ msgid "The User %s just saved a bike configuration"
+#~ msgstr "L’utilisateur %s vient de sauvegarder la configuration d’un vélo"
+
+#~ msgid "%s would like to share a bike with you"
+#~ msgstr "%s voudrait partager la configuration d’un vélo avec vous"
+
+#~ msgid "&larr; Older comments"
+#~ msgstr "&larr; Commentaires plus anciens"
+
+#~ msgid "Newer comments &rarr;"
+#~ msgstr "Nouveaux commentaires &rarr;"
+
+#~ msgid "Comments are closed."
+#~ msgstr "Les commentaires sont fermés."
+
+#~ msgid "Services"
+#~ msgstr "Services"
+
+#~ msgid "Login / Register"
+#~ msgstr "Connexion / Inscription"
+
+#~ msgid "Toggle Navigation"
+#~ msgstr "Basculer la navigation"
+
+#~ msgid "Hello %1$s"
+#~ msgstr "Bonjour %1$s"
+
+#~ msgid "Price from"
+#~ msgstr "Prix à partir"
+
+#~ msgid "Configure this bike"
+#~ msgstr "Configurez ce vélo"
+
+#~ msgid "Shop your bold now!"
+#~ msgstr "Achetez votre bold maintenant!"
+
+#~ msgid "Not compatible with"
+#~ msgstr "Non compatible avec"
+
+#~ msgid "Colour"
+#~ msgstr "Couleur"
+
+#~ msgid "Frame size"
+#~ msgstr "Taille du cadre"
+
+#~ msgid "Overview"
+#~ msgstr "Vue d’ensemble"
+
+#~ msgid "Configuration"
+#~ msgstr "Configuration"
+
+#~ msgid "Details"
+#~ msgstr "Détails"
+
+#~ msgid "Configure"
+#~ msgstr "Configurer"
+
+#~ msgid "Download as PDF"
+#~ msgstr "Télécharger en PDF"
+
+#~ msgid "You have currently no saved configurations."
+#~ msgstr "Vous n’avez actuellement aucune configuration enregistrée."
+
+#~ msgid "Share configuration"
+#~ msgstr "Partager la configuration"
+
+#~ msgid "Send your configuration to a friend"
+#~ msgstr "Envoyer votre configuration à un ami"
+
+#~ msgid ""
+#~ "I would like to share my bike configuration \"%s\" with you.\n"
+#~ "\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Je voudrais partager ma configuration de vélo ”%s”  avec vous\n"
+#~ "\n"
+#~ "%s"
+
+#~ msgid "Your message was sent sucessfully to %s"
+#~ msgstr "Votre message a bien été envoyer à %s"
+
+#~ msgid "Next"
+#~ msgstr "Suivant"
+
+#~ msgid "To Name"
+#~ msgstr "Au nom"
+
+#~ msgid "Message"
+#~ msgstr "Message"
+
+#~ msgid "Save configuration"
+#~ msgstr "Sauvegarder la configuration"
+
+#~ msgid "Save"
+#~ msgstr "Sauvegarder"
+
+#~ msgid "Reset configuration"
+#~ msgstr "Réinitialiser la configuration"
+
+#~ msgid "To save this configuration you have to be logged in."
+#~ msgstr "Pour sauvegarder cette configuration, vous devez être identifié."
+
+#~ msgid "back"
+#~ msgstr "retour"
+
+#~ msgid "(leave blank to leave unchanged)"
+#~ msgstr "(laisser vide pour laisser inchangé)"
+
+#~ msgid "Current password"
+#~ msgstr "Mot de passe actuel"
+
+#~ msgid "Shipping method"
+#~ msgstr "Méthode d’envoi"
+
+#~ msgid "incl."
+#~ msgstr "incl."
+
+#~ msgid ""
+#~ "The exporter of the goods to which this commercial paper refers declares "
+#~ "that these goods, unless otherwise indicated, are preferential Swiss "
+#~ "origin articles."
+#~ msgstr ""
+#~ "L’exportateur des marchandises auxquelles se réfère ce papier commercial "
+#~ "déclare que ces produits, sauf indication contraire, sont des articles "
+#~ "d’origine suisse préférentiels."
+
+#~ msgid "Biel/Bienne"
+#~ msgstr "Bienne"
+
+#~ msgid "Vinzenz Droux"
+#~ msgstr "Vinzenz Droux"
+
+#~ msgid "taxes"
+#~ msgstr "les taxes"
+
+#, fuzzy
+#~| msgid "Name"
+#~ msgid "From Name"
+#~ msgstr "Nom"

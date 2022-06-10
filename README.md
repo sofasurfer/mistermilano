@@ -84,4 +84,4 @@ OpenSource Dependencies to evaluate for specified use cases/components:
 * Carousel/Slider: [Siema](https://pawelgrzybek.github.io/siema/)
 * Lazy loading of images: [Lazysizes](https://github.com/aFarkas/lazysizes)
 
-These dependencies could be loaded automatically via a package manager (npm) and copied into `src` folder of cubestrap via gulp task `gulp dependencies`.
+These dependencies could be loaded automatically via a package manager (npm <V14) and copied into `src` folder of cubestrap via gulp task `gulp dependencies`.
