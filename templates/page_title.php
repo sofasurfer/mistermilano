@@ -37,7 +37,7 @@ if ( is_singular( 'projects' ) ) {
 					<?php } ?>
                     <h1><?= $title_bold; ?> <span><?= $title_regular ?></span></h1>
                     <p class="c-lead">
-						<?= $lead ? $lead : $subtitle ?>
+						<?= $lead ?: $subtitle ?>
                     </p>
                 </div>
             </div>

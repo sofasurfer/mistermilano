@@ -2,7 +2,9 @@
 
 $options = get_fields('options');
 $posttype = get_post_type( get_queried_object_id() );
+$back_button    = false;
 $backlist = array( 'projects', 'sales', 'post' );
+
 if ( in_array( $posttype, $backlist ) ) {
 	if ( $posttype == 'projects' ) {
 		$backlink = get_permalink( apply_filters( 'c_get_option', 'archive_projects' ) );
@@ -13,7 +15,25 @@ if ( in_array( $posttype, $backlist ) ) {
 	}
 }
 
+if ( is_singular( 'projects' ) ) {
+	$back_button = true;
+	$back_link   = get_the_permalink( $options['site']['archive_project'] ) ?? false;
+}
+
 ?>
+
+<?php if ( $back_button ) { ?>
+    <!-- link back top, nur auf projektdetailseiten-->
+    <div class="c-container c-back">
+        <div class="c-row">
+            <div class="c-col-12 c-text-padding">
+                <!-- link back , nur auf projektdetailseiten-->
+                <a class="c-icon c-link-back c-text-small" href="<?= $back_link ?>"><?= __('Zurück zur Übersicht', 'neofluxe') ?></a>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
 </main>
 
 <!-- footer-->
