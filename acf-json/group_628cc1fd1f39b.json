@@ -123,6 +123,25 @@
             ]
         },
         {
+            "key": "field_62a71d9fd4d14",
+            "label": "Copyright",
+            "name": "copyright",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_628e220157944",
             "label": "Featured",
             "name": "featured",
@@ -367,5 +386,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655115047
+    "modified": 1655119296
 }

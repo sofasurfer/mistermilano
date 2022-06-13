@@ -51,7 +51,7 @@ if ( is_singular( 'projects' ) ) {
             <span class="c-copyright-container">
                 <?= do_shortcode( "[render_imagetag id=\"$imageid\" mobile=\"$imageid_mobile\"]" ); ?>
                 <!-- class c-text-light hinzufügen, wenn text hell sein soll-->
-                <span class="c-copyright-text c-text-small c-text-light">&copy; Vorname Name</span>
+                <span class="c-copyright-text c-text-small c-text-light"><?= $fields['copyright'] ?? '' ?></span>
             </span>
         </figure>
     </div>
