@@ -296,7 +296,7 @@
                                 },
                                 {
                                     "key": "field_5f05d4c40a15a",
-                                    "label": "Caption",
+                                    "label": "Copyright",
                                     "name": "caption",
                                     "type": "text",
                                     "instructions": "",
@@ -310,7 +310,7 @@
                                         ]
                                     ],
                                     "wrapper": {
-                                        "width": "50",
+                                        "width": "15",
                                         "class": "",
                                         "id": ""
                                     },
@@ -336,7 +336,7 @@
                                         ]
                                     ],
                                     "wrapper": {
-                                        "width": "50",
+                                        "width": "",
                                         "class": "",
                                         "id": ""
                                     },
@@ -825,5 +825,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655123181
+    "modified": 1655128891
 }
