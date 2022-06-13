@@ -58,6 +58,25 @@
             ]
         },
         {
+            "key": "field_62a7329e0e431",
+            "label": "Lead",
+            "name": "lead",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_628cca9509309",
             "label": "Bild",
             "name": "image",
@@ -386,5 +405,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655119296
+    "modified": 1655124650
 }
