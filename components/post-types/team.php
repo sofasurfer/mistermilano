@@ -33,7 +33,8 @@ class Team {
             'view_item' => 'Show Team member',
             'search_items' => 'Search Team',
             'not_found' => 'Team member has not been found.',
-            'not_found_in_trash' => 'Team member not found in the trash'
+            'not_found_in_trash' => 'Team member not found in the trash',
+            'publicly_queryable'  => false,
         ], [
             'en' => 'team'
         ], false, false, ['title', 'excerpt', 'thumbnail', 'revisions', 'page-attributes']);

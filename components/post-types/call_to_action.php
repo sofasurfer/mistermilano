@@ -33,7 +33,8 @@ class Call_to_action {
             'view_item' => 'Show CTA',
             'search_items' => 'Search CTA',
             'not_found' => 'CTA has not been found.',
-            'not_found_in_trash' => 'CTA not found in the trash'
+            'not_found_in_trash' => 'CTA not found in the trash',
+            'publicly_queryable'  => false,
         ], [
             'en' => 'cta'
         ], false, true,['title', 'revisions', 'page-attributes']);

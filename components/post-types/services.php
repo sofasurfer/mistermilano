@@ -33,7 +33,8 @@ class Service {
             'view_item' => 'Show Service',
             'search_items' => 'Search Service',
             'not_found' => 'Service has not been found.',
-            'not_found_in_trash' => 'Service not found in the trash'
+            'not_found_in_trash' => 'Service not found in the trash',
+            'publicly_queryable'  => false,
         ], [
             'en' => 'services'
         ], false, false,['title', 'editor', 'revisions', 'page-attributes']);
