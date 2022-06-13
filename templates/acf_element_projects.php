@@ -101,6 +101,7 @@ $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_
 		$acf_images      = $fields['image'] ?? false;
 		$acf_image_small = $acf_images['size_small'] ?? false;
 		$acf_image_large = $acf_images['size_large'] ?? false;
+		$reversed        = (bool) $selected;
 		// Get taxonomy name
 		$taxonomy = 'category';
 		if ( $post->post_type != 'post' ) {
@@ -115,12 +116,16 @@ $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_
 			?>
             <div class="c-container-wide c-content__projects__item c-teaser-img-text-big c-line-top c-line-bottom">
                 <div class="c-container c-container-no-padding">
-                    <div class="c-row c-row-reverse">
-                        <?php $iteration ++; /** "fake" count, so that row|reverse is correct **/ ?>
+                    <div class="c-row">
 
                         <div class="c-col-12">
                             <!-- anderes bildratio für mobile -->
-                            <figure class="c-showroom-img"><?= do_shortcode( "[render_imagetag id=\"$acf_image_large\" mobile=\"$acf_image_small\"]" ); ?></figure>
+                            <figure>
+                                <span class="c-copyright-container">
+                                    <?= do_shortcode( "[render_imagetag id=\"$acf_image_large\" mobile=\"$acf_image_small\"]" ); ?>
+                                    <span class="c-copyright-text c-text-small c-text-light">Test</span>
+                                </span>
+                            </figure>
                         </div>
 
                         <div class="c-col-8 c-text-block c-text-padding">
@@ -139,7 +144,7 @@ $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_
             <div class="c-container-wide c-content__projects__item c-teaser-img-text c-line-top c-line-bottom">
                 <div class="c-container c-container-no-padding">
                     <!-- use c row reverse for switching img places-->
-                    <div class="c-row<?php if ( $iteration % 2 == 0 && $acf_images ) { ?> c-row-reverse<?php } ?>">
+                    <div class="c-row<?php if ( ($iteration % 2 == 0) != $reversed && $acf_images ) { ?> c-row-reverse<?php } ?>">
 
                         <div class="c-col-7 c-teaser-img-text-col-img">
                             <figure class="c-showroom-img"><?= do_shortcode( "[render_imagetag id=\"$acf_image_large\" mobile=\"$acf_image_small\"]" ); ?></figure>
