@@ -11,12 +11,37 @@ $query = array(
 );
 
 $posts = get_posts( $query );
+
+function checkLinkType( $url ) {
+	$icon   = 'c-link-arrow';
+    $internal = ($url && strpos( $url, $_SERVER['SERVER_NAME'] ));
+
+	/**
+	 * check if link is internal or external
+	 */
+	if ( $internal ) {
+		$icon = 'c-link-extern';
+
+		/**
+		 * check if link looks like a downloadable file (.pdf or similar)
+         */
+        $match = preg_match('/\.\w+$/', $url);
+        if ($match) {
+	        $icon = 'c-link-download';
+        }
+	}
+
+    return $icon;
+}
+
 ?>
 <div class="c-content__projects">
 	<?php foreach ( $posts as $post ): ?>
 		<?php
 		$iteration ++;
 		$fields = get_fields() ?? false;
+		$link   = $fields['link'] ?? false;
+        $icon = checkLinkType( $link['url'] );
 
 		// Get taxonomy name
 		$taxonomy = 'category';
@@ -35,9 +60,12 @@ $posts = get_posts( $query );
                     </div>
 
                     <div class="c-col-5 c-text-block c-text-padding-var c-teaser-img-text-col-text c-text-padding-var">
-                        <span class="c-title-category"><?= get_the_date('d.m.Y') ?></span>
+                        <span class="c-title-category"><?= get_the_date( 'd.m.Y' ) ?></span>
                         <h2><?= $fields['title']['bold'] ?> <span><?= $fields['title']['regular'] ?></span></h2>
-                        <p><?= $post->post_excerpt ?></p>
+                        <p><?= $fields['text'] ?? '' ?></p>
+						<?php if ( $link ): ?>
+                            <p><a class="c-icon <?= $icon ?>" href="<?= $link['url'] ?>" target="<?= $link['target'] ?? '_self' ?>"><?= $link['title'] ?></a></p>
+						<?php endif; ?>
                     </div>
 
                 </div>
