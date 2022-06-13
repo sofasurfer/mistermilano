@@ -25,8 +25,7 @@ function checkLinkType( $url ) {
 		/**
 		 * check if link looks like a downloadable file (.pdf or similar)
          */
-        $match = preg_match('/\.\w+$/', $url);
-        if ($match) {
+        if (preg_match('/\.\w+$/', $url)) {
 	        $icon = 'c-link-download';
         }
 	}
