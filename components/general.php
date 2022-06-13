@@ -240,7 +240,6 @@ class General {
 			$image_id = get_field( 'acf_header_image_desktop' );
 		}
 		if ( $image_id ) {
-
 			$obj['image'] = wp_get_attachment_image_src( $image_id, 'medium' );
 		}
 
