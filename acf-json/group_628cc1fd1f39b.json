@@ -19,7 +19,7 @@
             "sub_fields": [
                 {
                     "key": "field_628ccc68d7d03",
-                    "label": "Titel Fett (Bold)",
+                    "label": "Titel (Bold)",
                     "name": "bold",
                     "type": "text",
                     "instructions": "",
@@ -38,7 +38,7 @@
                 },
                 {
                     "key": "field_628ccc84d7d04",
-                    "label": "Titel Schmal (Regular)",
+                    "label": "Titel (Regular)",
                     "name": "regular",
                     "type": "text",
                     "instructions": "",
@@ -121,6 +121,25 @@
                     "mime_types": ""
                 }
             ]
+        },
+        {
+            "key": "field_62a71d9fd4d14",
+            "label": "Copyright",
+            "name": "copyright",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_628e220157944",
@@ -305,7 +324,7 @@
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "m²",
+                    "append": "",
                     "maxlength": ""
                 },
                 {
@@ -367,5 +386,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654587241
+    "modified": 1655119296
 }
