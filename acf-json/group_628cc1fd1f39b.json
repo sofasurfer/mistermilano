@@ -19,7 +19,7 @@
             "sub_fields": [
                 {
                     "key": "field_628ccc68d7d03",
-                    "label": "Titel Fett (Bold)",
+                    "label": "Titel (Bold)",
                     "name": "bold",
                     "type": "text",
                     "instructions": "",
@@ -38,7 +38,7 @@
                 },
                 {
                     "key": "field_628ccc84d7d04",
-                    "label": "Titel Schmal (Regular)",
+                    "label": "Titel (Regular)",
                     "name": "regular",
                     "type": "text",
                     "instructions": "",
@@ -367,5 +367,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655114231
+    "modified": 1655115047
 }
