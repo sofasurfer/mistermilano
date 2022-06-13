@@ -1,12 +1,12 @@
 <?php
 
 $fields         = get_fields();
-$details        = $fields['details'];
+$details        = $fields['details'] ?? false;
 
 if ($details) {
 	/** Yes this is beautiful... **/
 	$details_html                   = [];
-	$details_html['place']          = false ? [ 'slug' => 'place', 'value' => $details['place'], 'title' => __( 'Ort', 'neofluxe' ) ] : false;
+	$details_html['place']          = $details['place'] ? [ 'slug' => 'place', 'value' => $details['place'], 'title' => __( 'Ort', 'neofluxe' ) ] : false;
 	$details_html['client']         = $details['client'] ? [ 'slug' => 'client', 'value' => $details['client'], 'title' => __( 'Auftraggeber', 'neofluxe' ) ] : false;
 	$details_html['cooperation']    = $details['cooperation'] ? [ 'slug' => 'cooperation', 'value' => $details['cooperation'], 'title' => __( 'Zusammenarbeit', 'neofluxe' ) ] : false;
 	$details_html['date']           = $details['date'] ? [ 'slug' => 'date', 'value' => $details['date'], 'title' => __( 'Fertigstellung', 'neofluxe' ) ] : false;
@@ -24,7 +24,7 @@ if ($details) {
 	}
 }
 
-if ( isset( $details ) ) { ?>
+if ( $details ) { ?>
     <div class="c-container-wide c-project-info c-line-top c-line-bottom">
         <div class="c-container c-container-no-padding">
             <div class="c-row">
@@ -32,7 +32,8 @@ if ( isset( $details ) ) { ?>
                     <dl class="c-info-list">
 						<?php
 						$index = 0;
-						$half  = floor( count( $details_html ) / 2 ) + 1;
+                        $half = ceil( count( $details_html ) / 2 );
+
 						foreach ( $details_html as $detail ) {
 							$index ++;
 							?>

@@ -305,7 +305,7 @@
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "m²",
+                    "append": "",
                     "maxlength": ""
                 },
                 {
@@ -367,5 +367,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654587241
+    "modified": 1655114231
 }
