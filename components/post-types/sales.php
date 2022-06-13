@@ -34,6 +34,7 @@ class Sale {
 			'search_items'       => __( 'Search Sale', 'neofluxe' ),
 			'not_found'          => __( 'Sale has not been found.', 'neofluxe' ),
 			'not_found_in_trash' => __( 'Sale not found in the trash', 'neofluxe' ),
+			'publicly_queryable'  => false,
 		], [
 			'en' => 'sales'
 		], false, true, [ 'title', 'excerpt', 'thumbnail', 'revisions', 'page-attributes' ] );

@@ -8,12 +8,13 @@ $title_bold     = $fields['title']['bold'] ?? '';
 $title_regular  = $fields['title']['regular'] ?? '';
 $imageid        = ( isset( $fields['image']['size_large'] ) && $fields['image']['size_large'] ) ? $fields['image']['size_large'] : false;
 $imageid_mobile = ( isset( $fields['image']['size_small'] ) && $fields['image']['size_small'] ) ? $fields['image']['size_small'] : false;
+$lead           = get_field( 'lead', $pageid ) ?? false;
 $subtitle       = get_field( 'acf_header_subtitle', $pageid ) ? get_field( 'acf_header_subtitle', $pageid ) : $post->post_excerpt;
 $back_button    = false;
 
 if ( is_singular( 'projects' ) ) {
 	$back_button = true;
-    $back_link  = get_the_permalink($options['site']['archive_project']) ?? false;
+	$back_link   = get_the_permalink( $options['site']['archive_project'] ) ?? false;
 }
 
 ?>
@@ -36,7 +37,7 @@ if ( is_singular( 'projects' ) ) {
 					<?php } ?>
                     <h1><?= $title_bold; ?> <span><?= $title_regular ?></span></h1>
                     <p class="c-lead">
-						<?= $subtitle ?>
+						<?= $lead ? $lead : $subtitle ?>
                     </p>
                 </div>
             </div>
