@@ -2,12 +2,19 @@
 
 $pageid         = get_queried_object_id();
 $fields         = get_fields();
+$options        = get_fields( 'options' );
 $post_type      = get_post_type();
 $title_bold     = $fields['title']['bold'] ?? '';
 $title_regular  = $fields['title']['regular'] ?? '';
 $imageid        = ( isset( $fields['image']['size_large'] ) && $fields['image']['size_large'] ) ? $fields['image']['size_large'] : false;
 $imageid_mobile = ( isset( $fields['image']['size_small'] ) && $fields['image']['size_small'] ) ? $fields['image']['size_small'] : false;
 $subtitle       = get_field( 'acf_header_subtitle', $pageid ) ? get_field( 'acf_header_subtitle', $pageid ) : $post->post_excerpt;
+$back_button    = false;
+
+if ( is_singular( 'projects' ) ) {
+	$back_button = true;
+    $back_link  = get_the_permalink($options['site']['archive_project']) ?? false;
+}
 
 ?>
     <!-- line vertical-->
@@ -18,8 +25,10 @@ $subtitle       = get_field( 'acf_header_subtitle', $pageid ) ? get_field( 'acf_
         <div class="c-container">
             <div class="c-row">
                 <div class="c-col-9 c-text-padding">
-                    <!-- link back top, nur auf projektdetailseiten-->
-                    <a class="c-icon c-link-back-top c-ir" href="<?= site_url() ?>">Zurück zur Übersicht</a>
+					<?php if ( $back_button ) { ?>
+                        <!-- link back top, nur auf projektdetailseiten-->
+                        <a class="c-icon c-link-back-top c-ir" href="<?= $back_link ?>"></a>
+					<?php } ?>
 
                     <!-- category title nur bei projekten-->
 					<?php if ( $post_type == 'projects' ) { ?>
