@@ -54,6 +54,7 @@ endforeach;
 	$thumbnail = get_post_thumbnail_id( $post );
 	$title     = get_field( 'title' );
 	$fields    = get_fields()['data'] ?? false;
+	$link      = get_field( 'link' );
 	// Get taxonomy name
 	$taxonomy = 'category';
 	if ( $post->post_type != 'post' ) {
@@ -84,30 +85,32 @@ endforeach;
                         <span class="c-title-category"><?= __( 'Verkauf', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
                         <h2><?= $title['bold'] ?> <span><?= $title['regular'] ?></span></h2>
                         <p><?= $post->post_excerpt ?></p>
-	                    <?php if ( $fields ) { ?>
+						<?php if ( $fields ) { ?>
                             <dl class="c-info-list">
-			                    <?php if ( isset($fields['location']) ) { ?>
+								<?php if ( isset( $fields['location'] ) ) { ?>
                                     <dt><?= __( 'Ort', 'neofluxe' ) ?></dt>
                                     <dd><?= $fields['location'] ?></dd>
-			                    <?php } ?>
+								<?php } ?>
 
-			                    <?php if ( isset($fields['area']) ) { ?>
+								<?php if ( isset( $fields['area'] ) ) { ?>
                                     <dt><?= __( 'Gesamtfläche', 'neofluxe' ) ?></dt>
                                     <dd><?= $fields['area'] ?></dd>
-			                    <?php } ?>
+								<?php } ?>
 
-			                    <?php if ( isset($fields['completion']) ) { ?>
+								<?php if ( isset( $fields['completion'] ) ) { ?>
                                     <dt><?= __( 'Fertigstellung', 'neofluxe' ) ?></dt>
                                     <dd><?= $fields['completion'] ?></dd>
-			                    <?php } ?>
+								<?php } ?>
 
-			                    <?php if ( isset($fields['price']) ) { ?>
+								<?php if ( isset( $fields['price'] ) ) { ?>
                                     <dt><?= __( 'Preis', 'neofluxe' ) ?></dt>
                                     <dd><?= $fields['price'] ?></dd>
-			                    <?php } ?>
+								<?php } ?>
                             </dl>
-	                    <?php } ?>
-                        <p><a class="c-icon c-link-arrow" href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
+						<?php } ?>
+						<?php if ($link) { ?>
+                            <p><a class="c-icon c-link-arrow" href="<?= $link['url'] ?>" target="<?= $link['target'] ?? '_self' ?>"><?= $link['title'] ?></a></p>
+						<?php } ?>
                     </div>
 
                 </div>
@@ -126,30 +129,32 @@ endforeach;
             <span class="c-title-category"><?= __( 'Verkauf', 'neofluxe' ) ?> / <?= do_shortcode( "[c_get_categories pid=\"$post->ID\" posttype=\"$taxonomy\"]" ); ?></span>
             <h2><?= $title['bold'] ?> <span><?= $title['regular'] ?></span></h2>
             <p><?= $post->post_excerpt ?></p>
-	        <?php if ( $fields ) { ?>
+			<?php if ( $fields ) { ?>
                 <dl class="c-info-list">
-			        <?php if ( isset($fields['location']) ) { ?>
+					<?php if ( isset( $fields['location'] ) ) { ?>
                         <dt><?= __( 'Ort', 'neofluxe' ) ?></dt>
                         <dd><?= $fields['location'] ?></dd>
-			        <?php } ?>
+					<?php } ?>
 
-			        <?php if ( isset($fields['area']) ) { ?>
+					<?php if ( isset( $fields['area'] ) ) { ?>
                         <dt><?= __( 'Gesamtfläche', 'neofluxe' ) ?></dt>
                         <dd><?= $fields['area'] ?></dd>
-			        <?php } ?>
+					<?php } ?>
 
-			        <?php if ( isset($fields['completion']) ) { ?>
+					<?php if ( isset( $fields['completion'] ) ) { ?>
                         <dt><?= __( 'Fertigstellung', 'neofluxe' ) ?></dt>
                         <dd><?= $fields['completion'] ?></dd>
-			        <?php } ?>
+					<?php } ?>
 
-			        <?php if ( isset($fields['price']) ) { ?>
+					<?php if ( isset( $fields['price'] ) ) { ?>
                         <dt><?= __( 'Preis', 'neofluxe' ) ?></dt>
                         <dd><?= $fields['price'] ?></dd>
-			        <?php } ?>
+					<?php } ?>
                 </dl>
+			<?php } ?>
+	        <?php if ($link) { ?>
+                <p><a class="c-icon c-link-arrow" href="<?= $link['url'] ?>" target="<?= $link['target'] ?? '_self' ?>"><?= $link['title'] ?></a></p>
 	        <?php } ?>
-            <p><a class="c-icon c-link-arrow" href="<?= get_permalink( $post ); ?>"><?= __( 'mehr erfahren', 'neofluxe' ) ?></a></p>
         </div>
 
 		<?php if ( ! $post->post_pair_first ) { ?>
