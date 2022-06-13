@@ -7,7 +7,7 @@ $left_is_large = $site_element['left_image_is_large'] ? 1 : 0;
 
 ?>
 
-<div class="c-container-wide c-img-2-col c-line-top">
+<div class="c-container-wide <?= ( $no_of_images < 2 ) ? 'c-img-wide' : 'c-img-2-col' ?> c-line-top">
     <div class="c-container">
         <div class="c-row">
             <!-- img 2 col -->
