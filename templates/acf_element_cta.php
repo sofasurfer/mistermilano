@@ -5,7 +5,7 @@ $post_type = 'cta';
 
 $query = array(
 	'post_type' => $post_type,
-	'posts__in' => [ $site_element['cta'] ],
+	'post__in' => [ $site_element['cta'] ],
 );
 
 $cta = get_posts( $query );
