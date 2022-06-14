@@ -2,6 +2,7 @@
 global $wp_query;
 $post_type = 'sales';
 $iteration = 0;
+$selected  = $site_element['selected'] ?? false;
 
 $query = array(
 	'post_type'      => $post_type,
@@ -9,7 +10,7 @@ $query = array(
 	'order'          => 'DESC',
 );
 
-if ( $site_element['selected'] ) {
+if ( $selected ) {
 	$acf_posts = $site_element['selected'];
 
 	/** overwrites the query attributes with the ones needed for the "selected post list" **/
@@ -71,7 +72,7 @@ endforeach;
         <div class="c-container-wide c-teaser-img-text c-line-top c-line-bottom">
             <div class="c-container c-container-no-padding">
                 <!-- use c row reverse for switching img places-->
-                <div class="c-row<?php if ( $iteration % 2 == 0 && has_post_thumbnail() ) { ?> c-row-reverse<?php } ?>">
+                <div class="c-row<?php if ( $iteration % 2 != 0 && has_post_thumbnail() ) { ?> c-row-reverse<?php } ?>">
 
 					<?php if ( has_post_thumbnail() ): ?>
                         <div class="c-col-7 c-teaser-img-text-col-img">
@@ -108,7 +109,7 @@ endforeach;
 								<?php } ?>
                             </dl>
 						<?php } ?>
-						<?php if ($link) { ?>
+						<?php if ( $link ) { ?>
                             <p><a class="c-icon c-link-arrow" href="<?= $link['url'] ?>" target="<?= $link['target'] ?? '_self' ?>"><?= $link['title'] ?></a></p>
 						<?php } ?>
                     </div>
@@ -152,9 +153,9 @@ endforeach;
 					<?php } ?>
                 </dl>
 			<?php } ?>
-	        <?php if ($link) { ?>
+			<?php if ( $link ) { ?>
                 <p><a class="c-icon c-link-arrow" href="<?= $link['url'] ?>" target="<?= $link['target'] ?? '_self' ?>"><?= $link['title'] ?></a></p>
-	        <?php } ?>
+			<?php } ?>
         </div>
 
 		<?php if ( ! $post->post_pair_first ) { ?>
