@@ -52,7 +52,7 @@ function checkLinkType( $url ) {
         <div class="c-container-wide c-content__projects__item c-teaser-img-text c-line-top c-line-bottom">
             <div class="c-container c-container-no-padding">
                 <!-- use c row reverse for switching img places-->
-                <div class="c-row<?php if ( $iteration % 2 == 0 ) { ?> c-row-reverse<?php } ?>">
+                <div class="c-row<?php if ( $iteration % 2 != 0 ) { ?> c-row-reverse<?php } ?>">
 
                     <div class="c-col-7 c-teaser-img-text-col-img">
                         <figure class="c-showroom-img"><?= get_the_post_thumbnail() ?></figure>

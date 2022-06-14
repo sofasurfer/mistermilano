@@ -24,7 +24,7 @@
                     "sub_fields": [
                         {
                             "key": "field_5f05c8ecbb4e3",
-                            "label": "Text",
+                            "label": "Text (Bold)",
                             "name": "title",
                             "type": "text",
                             "instructions": "",
@@ -43,7 +43,7 @@
                         },
                         {
                             "key": "field_629f0a5eda4fd",
-                            "label": "Text (small)",
+                            "label": "Text (Regular)",
                             "name": "title_small",
                             "type": "text",
                             "instructions": "",
@@ -825,5 +825,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655128891
+    "modified": 1655195601
 }
