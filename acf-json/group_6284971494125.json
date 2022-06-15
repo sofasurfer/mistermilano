@@ -95,7 +95,7 @@
                     "key": "field_6284c3b7cd370",
                     "label": "Gesamtfläche (m²)",
                     "name": "area",
-                    "type": "number",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -107,10 +107,8 @@
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "m2",
-                    "min": "",
-                    "max": "",
-                    "step": ""
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_6284c426cd371",
@@ -188,5 +186,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655115099
+    "modified": 1655329849
 }

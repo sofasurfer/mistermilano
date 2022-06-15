@@ -196,6 +196,7 @@ class General {
 	*/
 	public function c_shortcode_get_categories( $args ) {
 
+		$separator = $args['separator'] ?? ' / ';
 		$categories = get_the_terms( $args['pid'], $args['posttype'] );
 		if ( ! empty( $categories ) && count( $categories ) > 0 ) {
 			$cats = array();
@@ -203,7 +204,7 @@ class General {
 				array_push( $cats, $cat->name );
 			}
 
-			return implode( " / ", $cats );
+			return implode( $separator, $cats );
 		} else {
 			return '';
 		}
