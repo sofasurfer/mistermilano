@@ -683,6 +683,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_62aaf8558be77",
+                            "label": "Kategorie-Titel",
+                            "name": "subtitle",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_6295ecec522cb",
                             "label": "Title (Bold)",
                             "name": "title_bold",
@@ -740,10 +759,10 @@
                             "new_lines": ""
                         },
                         {
-                            "key": "field_6295eccc522ca",
-                            "label": "Call To Action Auswählen",
-                            "name": "cta",
-                            "type": "post_object",
+                            "key": "field_62aaf540848a6",
+                            "label": "Innerer Call To Action",
+                            "name": "inner_cta",
+                            "type": "group",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -752,14 +771,85 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "post_type": [
-                                "cta"
-                            ],
-                            "taxonomy": "",
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "return_format": "id",
-                            "ui": 1
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_62aaf561848a7",
+                                    "label": "Title (Bold)",
+                                    "name": "title_bold",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62aaf575848a8",
+                                    "label": "Title (Regular)",
+                                    "name": "title_regular",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62aaf593848a9",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": "",
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_62aaf5ab848aa",
+                                    "label": "Button-Text",
+                                    "name": "button_text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
                         },
                         {
                             "key": "field_629f50c6aabe6",
@@ -825,5 +915,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655195601
+    "modified": 1655333305
 }

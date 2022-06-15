@@ -1,19 +1,10 @@
 <!-- Contact Element with CTA -->
 <?php
 global $wp_query;
-$post_type     = 'cta';
 $fields        = $site_element;
+$inner_fields  = $fields['inner_cta'] ?? false;
 $option_fields = get_field( 'company', 'options' );
-$contact_form  = $site_element['contactform'];
-
-$query = array(
-	'post_type' => $post_type,
-	'posts__in' => [ $site_element['cta'] ],
-);
-
-$cta        = get_posts( $query );
-$cta        = $cta[0];
-$cta_fields = get_fields( $cta->ID );
+$contact_form  = $fields['contactform'];
 
 function make_phone_number( $number ) {
 	return preg_replace( '~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3', $number ) . "\n";
@@ -28,7 +19,7 @@ function make_phone_number( $number ) {
         <div class="c-container c-container-no-padding c-contact-inner">
             <div class="c-row c-row-justify-center">
                 <div class="c-col-8 c-text-block c-text-padding-var">
-                    <span class="c-title-category"><?= __( 'Kontakt', 'neofluxe' ) ?></span>
+                    <span class="c-title-category"><?= $fields['subtitle'] ?: '' ?></span>
                     <h2 class="c-h1"><?= $fields['title_bold'] ?: '' ?> <span><?= $fields['title_regular'] ?: '' ?></span></h2>
 					<?= $fields['text'] ? '<p>' . $fields['text'] . '</p>' : '' ?>
 
@@ -48,24 +39,29 @@ function make_phone_number( $number ) {
         </div>
     </div>
 
-    <!-- CTA -->
-    <div class="c-container-wide c-line-top">
-        <!-- content-->
-        <div class="c-container c-container-no-padding c-contact-inner ">
-            <div class="c-row c-row-justify-center">
-                <div class="c-col-8 c-text-block c-text-padding-var">
-                    <h3 class="c-h2"><?= $cta_fields['acf_header_title_bold'] ?: '' ?>
-                        <span><?= $cta_fields['acf_header_title_regular'] ?: '' ?></span></h3>
-					<?= $cta_fields['text'] ? '<p>' . $cta_fields['text'] . '</p>' : '' ?>
+	<?php if ( $inner_fields ) { ?>
+        <!-- CTA -->
+        <div class="c-container-wide c-line-top">
+            <!-- content-->
+            <div class="c-container c-container-no-padding c-contact-inner ">
+                <div class="c-row c-row-justify-center">
+                    <div class="c-col-8 c-text-block c-text-padding-var">
+                        <h3 class="c-h2"><?= $inner_fields['title_bold'] ?: '' ?>
+                            <span><?= $inner_fields['title_regular'] ?: '' ?></span></h3>
+						<?= $inner_fields['text'] ? '<p>' . $inner_fields['text'] . '</p>' : '' ?>
 
-                    <!-- label um forminhalt aufzuklappen-->
-                    <label class="c-btn" for="c-contact-form-content"><span class="c-icon c-link-arrow"><?= __( 'Anfrage schreiben', 'neofluxe' ) ?></span></label>
+						<?php if ( $inner_fields['button_text'] && $contact_form ) { ?>
+                            <!-- label um forminhalt aufzuklappen-->
+                            <label class="c-btn" for="c-contact-form-content"><span class="c-icon c-link-arrow"><?= $inner_fields['button_text'] ?></span></label>
+						<?php } ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+	<?php } ?>
 
-	<?php if ( $contact_form ) { ?>
+	<?php if ( $inner_fields['button_text'] && $contact_form ) { ?>
+        <input class="c-contact-form-check" id="c-contact-form-content" type="checkbox">
         <div class="c-container-wide c-contact-form-container c-form-standard c-line-top">
             <div class="c-container c-container-no-padding c-contact-inner">
                 <!-- close form-->
