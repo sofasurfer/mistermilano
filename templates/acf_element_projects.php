@@ -96,12 +96,14 @@ $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_
 	<?php foreach ( $posts as $post ): ?>
 		<?php
 		$iteration ++;
-		$title           = get_field( 'title' );
-		$fields          = get_fields() ?? false;
-		$acf_images      = $fields['image'] ?? false;
-		$acf_image_small = $acf_images['size_small'] ?? false;
-		$acf_image_large = $acf_images['size_large'] ?? false;
-		$reversed        = (bool) $selected;
+		$title               = get_field( 'title' );
+		$fields              = get_fields() ?? false;
+		$acf_images          = $fields['image'] ?? false;
+		$acf_image_small     = $acf_images['size_small'] ?? false;
+		$acf_image_large     = $acf_images['size_large'] ?? false;
+		$acf_image_highlight = $fields['highlight_teaser_image'] ?? $acf_image_large;
+		$thumbnail           = get_the_post_thumbnail( $post->ID, 'large' ) ?? $acf_image_small;
+		$reversed            = (bool) $selected;
 		// Get taxonomy name
 		$taxonomy = 'category';
 		if ( $post->post_type != 'post' ) {
@@ -122,7 +124,7 @@ $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_
                             <!-- anderes bildratio für mobile -->
                             <figure>
                                 <span class="c-copyright-container">
-                                    <?= do_shortcode( "[render_imagetag id=\"$acf_image_large\" mobile=\"$acf_image_small\"]" ); ?>
+                                    <?= do_shortcode( "[render_imagetag id=\"$acf_image_highlight\" mobile=\"$thumbnail\"]" ); ?>
                                     <span class="c-copyright-text c-text-small c-text-light">Test</span>
                                 </span>
                             </figure>
@@ -144,7 +146,7 @@ $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_
             <div class="c-container-wide c-content__projects__item c-teaser-img-text c-line-top c-line-bottom">
                 <div class="c-container c-container-no-padding">
                     <!-- use c row reverse for switching img places-->
-                    <div class="c-row<?php if ( ($iteration % 2 == 0) != $reversed && $acf_images ) { ?> c-row-reverse<?php } ?>">
+                    <div class="c-row<?php if ( ( $iteration % 2 == 0 ) != $reversed && $acf_images ) { ?> c-row-reverse<?php } ?>">
 
                         <div class="c-col-7 c-teaser-img-text-col-img">
                             <figure class="c-showroom-img"><?= do_shortcode( "[render_imagetag id=\"$acf_image_large\" mobile=\"$acf_image_small\"]" ); ?></figure>

@@ -36,7 +36,7 @@ class Projects {
 			'not_found_in_trash' => __( 'Project not found in the trash', 'neofluxe' ),
 		], [
 			'en' => 'projects'
-		], false, true, [ 'title', 'excerpt', 'revisions', 'page-attributes' ] );
+		], false, true, [ 'title', 'excerpt', 'revisions', 'page-attributes', 'thumbnail' ] );
 
 		if ( ! function_exists( "register_field_group" ) ) {
 			return;

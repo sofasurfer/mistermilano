@@ -142,6 +142,30 @@
             ]
         },
         {
+            "key": "field_62ab216e16caa",
+            "label": "Highlight Teaser Bild",
+            "name": "highlight_teaser_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_62a71d9fd4d14",
             "label": "Copyright",
             "name": "copyright",
@@ -405,5 +429,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655124650
+    "modified": 1655343856
 }
