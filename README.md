@@ -61,7 +61,7 @@ Pork this project for future development
 |       |
 |       |___ scss
 |           |
-|           |--- main.js
+|           |--- minimal.js
 |           |___ common
 |           |___ components
 |           |___ helper
