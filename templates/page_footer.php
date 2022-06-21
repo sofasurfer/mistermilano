@@ -77,7 +77,7 @@ if ( is_singular( 'projects' ) ) {
 </footer>
 
 <!-- cookie notice-->
-<div class="c-cookie-notice c-text-block c-text-small" id="cookie-notice" id="cookie-notice">
+<div id="cookie-notice" class="c-cookie-notice c-text-block c-text-small">
 	<?= apply_filters( 'c_get_option', 'archive_cookie_message' ); ?>
 </div>
 

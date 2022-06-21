@@ -98,12 +98,13 @@ $category_html = '<ul class="c-filter-list c-text-padding-inside">' . $category_
 		$iteration ++;
 		$title               = get_field( 'title' );
 		$fields              = get_fields() ?? false;
-		$acf_images          = $fields['image'] ?? false;
-		$acf_image_small     = $acf_images['size_small'] ?? false;
-		$acf_image_large     = $acf_images['size_large'] ?? false;
+		$acf_images          = $fields['image'] ?? null;
+		$acf_image_large     = $acf_images['size_large'] ?? null;
+		$acf_image_small     = $acf_images['size_small'] ?? $acf_image_large;
 		$acf_image_highlight = $fields['highlight_teaser_image'] ?? $acf_image_large;
 		$thumbnail           = get_the_post_thumbnail( $post->ID, 'large' ) ?? $acf_image_small;
 		$reversed            = (bool) $selected;
+
 		// Get taxonomy name
 		$taxonomy = 'category';
 		if ( $post->post_type != 'post' ) {
