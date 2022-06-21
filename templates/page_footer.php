@@ -46,7 +46,7 @@ if ( is_singular( 'projects' ) ) {
     <div class="c-container-wide c-line-top c-line-bottom">
         <div class="c-container c-container-no-padding c-footer-main">
             <div class="c-footer-logo">
-                <span class="c-header-logo-stripes"><img src="<?= get_stylesheet_directory_uri(); ?>/dist/assets/images/logo-lanz-stripes.svg" alt="Lanz Architekten"/></span>
+                <span class="c-header-logo-stripes"><img src="<?= get_stylesheet_directory_uri(); ?>/dist/logo-lanz-stripes.svg" alt="Lanz Architekten"/></span>
             </div>
             <div class="c-footer-main-address c-text-padding-inside">
                 <strong><?= strstr( $options['company']['company_title'], ' ', true ) ?></strong> <?= strstr( $options['company']['company_title'], ' ' ) ?><br/>
@@ -80,6 +80,3 @@ if ( is_singular( 'projects' ) ) {
 <div id="cookie-notice" class="c-cookie-notice c-text-block c-text-small">
 	<?= apply_filters( 'c_get_option', 'archive_cookie_message' ); ?>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="<?= get_stylesheet_directory_uri(); ?>/dist/assets/js/minimal.1.min.js?v=1.1"></script>

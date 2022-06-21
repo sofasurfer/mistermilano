@@ -13,8 +13,7 @@ module.exports = async (app) => {
          * meaning of the "@" symbol https://stackoverflow.com/a/42711271/7262739
          */
         .entry({
-            app: ['@src/scripts/index', '@src/styles/main'],
-            // editor: ['@scripts/editor', '@styles/app', '@styles/editor'],
+            index: ['@src/scripts/index', '@src/styles/main'],
         })
 
         /**

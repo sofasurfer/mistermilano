@@ -35,6 +35,15 @@ class General {
 	 */
 	private function __construct() {
 
+		add_action('wp_enqueue_style', function () {
+			$file_with_path = $this->c_get_file_with_hash_from_manifest('index.css', true);
+			wp_enqueue_style( 'neofluxe-styles', $file_with_path, '', false, 'all' );
+		}, 100);
+
+		add_action('wp_enqueue_scripts', function () {
+			$file_with_path = $this->c_get_file_with_hash_from_manifest('index.js', true);
+			wp_enqueue_style( 'neofluxe-scripts', $file_with_path, '', false, 'all' );
+		}, 100);
 
 		// add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);
 		add_action( 'init', [ $this, 'c_init' ] );
@@ -87,6 +96,26 @@ class General {
 		}
 	}
 
+	/**
+	 * Gets file from the dist folder through the manifest.json file.
+	 */
+	public function c_get_file_with_hash_from_manifest($filename, $with_template_path = true) {
+		$path_to_manifest = get_template_directory() . "/dist/manifest.json";
+		// Grab contents and decode them into an array
+		$data = json_decode(file_get_contents($path_to_manifest), true);
+		$filename = $data[$filename] ?? false;
+
+		if ( ! $filename) {
+			return false;
+		}
+
+		if ($with_template_path) {
+			$filename = get_template_directory_uri() . "/dist" . $filename;
+		}
+
+		return $filename;
+
+	}
 
 	public function c_init() {
 
