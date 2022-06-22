@@ -14,6 +14,7 @@ module.exports = async (app) => {
                 }
             }
         )
+
         .hash()
         /**
          * Set up alias paths for referencing files
@@ -36,7 +37,7 @@ module.exports = async (app) => {
          * These files should be processed as part of the build
          * even if they are not explicitly imported in application assets.
          */
-        .assets('fonts', 'images')
+        .assets('images')
 
         /**
          * These files will trigger a full page reload
@@ -54,11 +55,10 @@ module.exports = async (app) => {
         /**
          * Development URL to be used in the browser.
          */
-        .serve('http://localhost:3010/')
+        .serve('http://localhost:3010/nf-starter/')
 
-    /**
-     * Public path of application assets
-     */
-    // .setPublicPath('/wp-content/themes/nf-starter/dist/');
-}
-;
+        /**
+         * Public path of application assets
+         */
+        // .setPublicPath('');
+};
