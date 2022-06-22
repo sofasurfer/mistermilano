@@ -36,10 +36,10 @@ class General {
 	private function __construct() {
 
 		add_action( 'wp_enqueue_scripts', function () {
-			$file_with_path_js = $this->c_get_file_with_hash_from_manifest( 'index.js', true );
+			$file_with_path_js = apply_filters( 'get_file_from_dist', 'index.js', true);
 			wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', false );
 
-			$file_with_path_css = $this->c_get_file_with_hash_from_manifest( 'index.css', true );
+			$file_with_path_css = apply_filters( 'get_file_from_dist', 'index.css', true);
 			wp_enqueue_style( 'nf-styles', $file_with_path_css, '', false, 'all' );
 
 //			echo '<pre>'; var_dump($file_with_path_css); var_dump($file_with_path_js); wp_die();
@@ -85,6 +85,7 @@ class General {
 		add_filter( 'nav_menu_css_class', [ $this, 'c_special_nav_class' ], 10, 2 );
 		add_filter( 'nav_menu_link_attributes', [ $this, 'add_class_to_menu' ], 10, 4 );
 
+		add_filter( 'get_file_from_dist', [ $this, 'c_get_file_with_hash_from_manifest' ], 10, 2);
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -517,47 +518,6 @@ class General {
 
 		return $settings;
 
-	}
-
-
-	/*
-		Newsletter AJAX
-	*/
-
-	function campainmonitor_subscribe() {
-
-		require_once 'csrest_general.php';
-		require_once 'csrest_subscribers.php';
-
-		$newsletter_settings = get_field( 'acf_settings_newsletter', 'option' );
-		$auth                = array( 'api_key' => $this->c_get_option( 'campainmonitor_api_key' ) );
-
-		$wrap = new \CS_REST_Subscribers( $this->c_get_option( 'campainmonitor_listid' ), $auth );
-
-		$result = $wrap->add( array(
-			'EmailAddress'   => $_REQUEST['email'],
-			'Name'           => $_REQUEST['firstname'] . ' ' . $_REQUEST['lastname'],
-			'CustomFields'   => array(
-				array(
-					'Key'   => 'Language',
-					'Value' => $_REQUEST['language']
-				),
-				array(
-					'Key'   => 'FirstName',
-					'Value' => $_REQUEST['firstname']
-				),
-				array(
-					'Key'   => 'LastName',
-					'Value' => $_REQUEST['lastname']
-				),
-
-			),
-			'ConsentToTrack' => 'yes',
-			'Resubscribe'    => true
-		) );
-		//error_log( 'RESULT' . print_r($result,true) );
-		echo json_encode( $result );
-		wp_die();
 	}
 
 }
