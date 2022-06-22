@@ -35,15 +35,15 @@ class General {
 	 */
 	private function __construct() {
 
-		add_action('wp_enqueue_style', function () {
-			$file_with_path = $this->c_get_file_with_hash_from_manifest('index.css', true);
-			wp_enqueue_style( 'neofluxe-styles', $file_with_path, '', false, 'all' );
-		}, 100);
+		add_action( 'wp_enqueue_scripts', function () {
+			$file_with_path_js = $this->c_get_file_with_hash_from_manifest( 'index.js', true );
+			wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', false );
 
-		add_action('wp_enqueue_scripts', function () {
-			$file_with_path = $this->c_get_file_with_hash_from_manifest('index.js', true);
-			wp_enqueue_style( 'neofluxe-scripts', $file_with_path, '', false, 'all' );
-		}, 100);
+			$file_with_path_css = $this->c_get_file_with_hash_from_manifest( 'index.css', true );
+			wp_enqueue_style( 'nf-styles', $file_with_path_css, '', false, 'all' );
+
+//			echo '<pre>'; var_dump($file_with_path_css); var_dump($file_with_path_js); wp_die();
+		}, 100 );
 
 		// add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);
 		add_action( 'init', [ $this, 'c_init' ] );
@@ -99,17 +99,17 @@ class General {
 	/**
 	 * Gets file from the dist folder through the manifest.json file.
 	 */
-	public function c_get_file_with_hash_from_manifest($filename, $with_template_path = true) {
+	public function c_get_file_with_hash_from_manifest( $filename, $with_template_path = true ) {
 		$path_to_manifest = get_template_directory() . "/dist/manifest.json";
 		// Grab contents and decode them into an array
-		$data = json_decode(file_get_contents($path_to_manifest), true);
-		$filename = $data[$filename] ?? false;
+		$data     = json_decode( file_get_contents( $path_to_manifest ), true );
+		$filename = $data[ $filename ] ?? false;
 
-		if ( ! $filename) {
+		if ( ! $filename ) {
 			return false;
 		}
 
-		if ($with_template_path) {
+		if ( $with_template_path ) {
 			$filename = get_template_directory_uri() . "/dist" . $filename;
 		}
 
@@ -225,7 +225,7 @@ class General {
 	*/
 	public function c_shortcode_get_categories( $args ) {
 
-		$separator = $args['separator'] ?? ' / ';
+		$separator  = $args['separator'] ?? ' / ';
 		$categories = get_the_terms( $args['pid'], $args['posttype'] );
 		if ( ! empty( $categories ) && count( $categories ) > 0 ) {
 			$cats = array();
@@ -356,8 +356,8 @@ class General {
 	}
 
 	/**
-	 *	Renders an image tag by it's ID
-	**/
+	 *    Renders an image tag by it's ID
+	 **/
 	public function c_shortcode_render_image( $args ) {
 
 		// get alttext

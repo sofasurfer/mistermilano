@@ -5,6 +5,10 @@
   "main": "index.js",
   "repository": "git@github.com:cubegrafik/wptheme.starter.git",
   "author": "erin@neofluxe.ch",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.4.0"
+  },
   "scripts": {
     "dev": "bud dev",
     "build": "bud build",

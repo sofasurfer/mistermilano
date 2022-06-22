@@ -6,6 +6,14 @@
 
 module.exports = async (app) => {
     app
+        .hash()
+        /**
+         * Set up alias paths for referencing files
+         */
+        .alias('scripts', app.path('@src/scripts'))
+        .alias('styles', app.path('@src/styles'))
+        .alias('images', app.path('@src/images'))
+        .alias('fonts', app.path('@src/fonts'))
         /**
          * Application entrypoints
          *
@@ -13,7 +21,7 @@ module.exports = async (app) => {
          * meaning of the "@" symbol https://stackoverflow.com/a/42711271/7262739
          */
         .entry({
-            index: ['@src/scripts/index', '@src/styles/main'],
+            index: ['@src/scripts/index.js', '@src/styles/main.scss'],
         })
 
         /**
@@ -26,22 +34,22 @@ module.exports = async (app) => {
          * These files will trigger a full page reload
          * when modified.
          */
-        .watch('src/**/*')
+        .watch('@src/**/*')
 
-        // /**
-        //  * Target URL to be proxied by the dev server.
-        //  *
-        //  * This should be the URL you use to visit your local development server.
-        //  */
-        // .proxy(app.env.get('BUD_URL_PROXY'))
-        //
-        // /**
-        //  * Development URL to be used in the browser.
-        //  */
-        // .serve(app.env.get('BUD_URL_SERVE'))
-        //
-        // /**
-        //  * Public path of application assets
-        //  */
-        // .setPublicPath(app.env.get('BUD_URL_PUBLICPATH'));
+        /**
+         * Target URL to be proxied by the dev server.
+         *
+         * This should be the URL you use to visit your local development server.
+         */
+        .proxy('http://localhost/')
+
+        /**
+         * Development URL to be used in the browser.
+         */
+        .serve('http://localhost:3010/nf-starter/')
+
+        /**
+         * Public path of application assets
+         */
+        // .setPublicPath('/wp-content/themes/nf-starter/dist/');
 };
