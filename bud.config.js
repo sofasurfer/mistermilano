@@ -6,6 +6,14 @@
 
 module.exports = async (app) => {
     app
+        .template({
+                template: '/src/templates/contentelements.html',
+                replace: {
+                    IMAGES_URL: '/src/images',
+                    PUBLIC_URL: '@dist/',
+                }
+            }
+        )
         .hash()
         /**
          * Set up alias paths for referencing files
@@ -48,8 +56,9 @@ module.exports = async (app) => {
          */
         .serve('http://localhost:3010/nf-starter/')
 
-        /**
-         * Public path of application assets
-         */
-        // .setPublicPath('/wp-content/themes/nf-starter/dist/');
-};
+    /**
+     * Public path of application assets
+     */
+    // .setPublicPath('/wp-content/themes/nf-starter/dist/');
+}
+;
