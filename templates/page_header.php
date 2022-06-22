@@ -18,10 +18,10 @@
         <meta property="og:image:height" content="<?= $og_info['image'][2]; ?>" />
 
         <!-- favicon-->
-        <link rel="apple-touch-icon" sizes="180x180" href="<?= get_stylesheet_directory_uri(); ?>/dist/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="<?= get_stylesheet_directory_uri(); ?>/dist/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="<?= get_stylesheet_directory_uri(); ?>/dist/favicon-16x16.png">
-        <link rel="mask-icon" href="<?= get_stylesheet_directory_uri(); ?>/dist/safari-pinned-tab.svg" color="#2e1aa9">
+        <link rel="apple-touch-icon" sizes="180x180" href="<?= apply_filters( 'get_file_from_dist', 'apple-touch-icon.png'); ?>">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?= apply_filters( 'get_file_from_dist', 'favicon-32x32.png'); ?>">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?= apply_filters( 'get_file_from_dist', 'favicon-16x16.png'); ?>">
+        <link rel="mask-icon" href="<?= apply_filters( 'get_file_from_dist', 'safari-pinned-tab.svg'); ?>" color="#2e1aa9">
         <meta name="msapplication-TileColor" content="#2e1aa9">
         <meta name="theme-color" content="#ffffff">
 
@@ -48,8 +48,8 @@
                 <div class="c-container c-container-no-padding c-header-inner">
                     <div class="c-header-logo">
                         <a href="<?php echo get_home_url(); ?>">
-                            <span class="c-header-logo-stripes"><img src="<?= get_stylesheet_directory_uri(); ?>/dist/logo-lanz-stripes.svg" alt="Lanz Architekten" /></span>
-                            <span class="c-header-logo-text"><img src="<?= get_stylesheet_directory_uri(); ?>/dist/logo-lanz-text.svg" alt="Lanz Architekten" /></span>
+                            <span class="c-header-logo-stripes"><img src="<?= apply_filters( 'get_file_from_dist', 'logo-lanz-stripes.svg'); ?>" alt="Lanz Architekten" /></span>
+                            <span class="c-header-logo-text"><img src="<?= apply_filters( 'get_file_from_dist', 'logo-lanz-text.svg'); ?>" alt="Lanz Architekten" /></span>
                         </a>
                     </div>
                     

@@ -46,7 +46,7 @@ if ( is_singular( 'projects' ) ) {
     <div class="c-container-wide c-line-top c-line-bottom">
         <div class="c-container c-container-no-padding c-footer-main">
             <div class="c-footer-logo">
-                <span class="c-header-logo-stripes"><img src="<?= get_stylesheet_directory_uri(); ?>/dist/logo-lanz-stripes.svg" alt="Lanz Architekten"/></span>
+                <span class="c-header-logo-stripes"><img src="<?= apply_filters( 'get_file_from_dist', 'logo-lanz-stripes.svg'); ?>" alt="Lanz Architekten"/></span>
             </div>
             <div class="c-footer-main-address c-text-padding-inside">
                 <strong><?= strstr( $options['company']['company_title'], ' ', true ) ?></strong> <?= strstr( $options['company']['company_title'], ' ' ) ?><br/>
