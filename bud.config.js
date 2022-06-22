@@ -54,7 +54,7 @@ module.exports = async (app) => {
         /**
          * Development URL to be used in the browser.
          */
-        .serve('http://localhost:3010/nf-starter/')
+        .serve('http://localhost:3010/')
 
     /**
      * Public path of application assets
