@@ -1,11 +1,48 @@
 /**
  * @typedef {import('@roots/bud').Bud} bud
  *
- * @param {bud} app
+ * @param {bud} bud
  */
 
-module.exports = async (app) => {
-    app
+/**
+ * Creates a SCSS file with variables including the fonts
+ */
+function createFontFile () {
+    const fontPath = './src/fonts/'
+    const fs = require('fs')
+    fs.readdir(fontPath, (err, filenames) => {
+        let fontArray = [];
+        let cssString = '';
+
+        filenames.forEach(filename => {
+            if (filename.endsWith('.woff') || filename.endsWith('.woff2') || filename.endsWith('.ttf') || filename.endsWith('.otf') || filename.endsWith('.eot')) {
+                const fontName = filename.split('.')[0]
+                const fontExtension = filename.split('.')[1]
+                let font = fs.readFileSync(fontPath + filename)
+                font = Buffer.from(font).toString('base64')
+
+                fontArray.push({
+                    name: fontName + '_' + fontExtension,
+                    data: `data:font/woff2;charset=utf-8;base64,${font}`,
+                    fileExtension: filename.split('.').pop()
+                })
+            }
+        })
+
+        fontArray.forEach(font => {
+            cssString += `
+            $${font.name}: '${font.data}';
+        `
+        })
+
+        fs.writeFileSync(fontPath + 'inlineFonts.scss', cssString);
+    })
+}
+
+createFontFile();
+
+module.exports = async (bud) => {
+    bud
         .template({
                 template: '/src/templates/contentelements.html',
                 replace: {
@@ -15,14 +52,15 @@ module.exports = async (app) => {
             }
         )
 
+
+        .when(
+            bud.isProduction,
+            () => bud.minimize(),
+        )
+
+
         .hash()
-        /**
-         * Set up alias paths for referencing files
-         */
-        .alias('scripts', app.path('@src/scripts'))
-        .alias('styles', app.path('@src/styles'))
-        .alias('images', app.path('@src/images'))
-        .alias('fonts', app.path('@src/fonts'))
+
         /**
          * Application entrypoints
          *
@@ -37,7 +75,7 @@ module.exports = async (app) => {
          * These files should be processed as part of the build
          * even if they are not explicitly imported in application assets.
          */
-        .assets('images', 'fonts')
+        .assets('images')
 
         /**
          * These files will trigger a full page reload
