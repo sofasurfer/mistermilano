@@ -52,12 +52,10 @@ module.exports = async (bud) => {
             }
         )
 
-
         .when(
             bud.isProduction,
             () => bud.minimize(),
         )
-
 
         .hash()
 
