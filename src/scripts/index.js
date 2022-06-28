@@ -7,6 +7,9 @@
  * new defaultExport();
  */
 
+import Cookie from './modules/Cookie.mjs';
+import LazyLoadImages from './modules/LazyLoadImages.mjs';
+
 /**
  * app.main
  */
@@ -34,6 +37,8 @@ const main = async (err) => {
 const app = () => {
     document.addEventListener("DOMContentLoaded", function (event) {
         // Add your imported code here, for example: new defaultExport();
+        new Cookie(true);
+        new LazyLoadImages();
     });
 }
 
