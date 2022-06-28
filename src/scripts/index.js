@@ -1,15 +1,19 @@
-// import Navigation from './navigation';
-// import ScrollToTop from './scroll-to-top';
+/**
+ * Import a file with the correct ES6 Module way:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+ * import defaultExport from "module-name";
+ *
+ * Then use it like this:
+ * new defaultExport();
+ */
 
-console.log('WORKS');
 /**
  * app.main
  */
 const main = async (err) => {
-    console.log('WORKS_inner');
 
     if (err) {
-        // handle hmr errors
+        // handle HMR errors
         console.error(err);
     }
 
@@ -21,18 +25,19 @@ const main = async (err) => {
      *
      * @see https://webpack.js.org/api/hot-module-replacement
      */
-    // domReady(main);
     import.meta.webpackHot?.accept(main);
 };
 
 /**
- * Now runs without HMR too
+ * Add custom code inside this function
  */
 const app = () => {
     document.addEventListener("DOMContentLoaded", function (event) {
-        // new Navigation();
-        // new ScrollToTop();
+        // Add your imported code here, for example: new defaultExport();
     });
 }
 
+/**
+ * Run the application even if HMR is not enabled/used
+ */
 app();
