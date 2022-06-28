@@ -32,6 +32,11 @@ export default class Cookie {
 
     /**
      * Adds a cookie to the browser.
+     *
+     * Usage example:
+     * let cookie = new Cookie();
+     * cookie.setCookie('cookieName', 'value');
+     *
      * @param key
      * @param value
      */
