@@ -1,0 +1,36 @@
+name: Deployment (staging)
+
+on:
+  push:
+    branches: [ deployment ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 18.4.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.4.0
+
+      - name: NPM | yarn - Install 🔴 🟠 🟡 🟢 🔵 🟣
+        run: yarn install
+
+      - name: NPM | yarn - Build for production 🏗🕌
+        run: yarn build
+
+      - name: RSync Deployments 🚚
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches: -avzr --delete --prune-empty-dirs --exclude="node_modules" --exclude=".github" --exclude="package.json" --exclude="package-lock.json" --exclude="*.lock" --exclude="release.sh" --exclude="bud.config.mjs" --exclude="*.md" --exclude="*.html" --exclude="src" --exclude=".nvmrc" --exclude=".gitignore"
+          path: ./
+          remote_path: public_html/project_directory/wp-content/themes/wptheme.starter
+          remote_host: s094.cyon.net
+          remote_user: username
+          remote_key: ${{ secrets.LANZ_SSH_PRIVATE_KEY }}
