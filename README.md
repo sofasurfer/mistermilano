@@ -11,6 +11,7 @@ These technologies are used:
 - [Javascript ES6](https://javascript.info/)
 - [yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
 - [node (v18)](https://nodejs.org/)
+- [github workflows](https://docs.github.com/en/actions/using-workflows)
 
 # A quick word about bud.js 💮
 
@@ -87,4 +88,81 @@ This projects requires you to use ES6 conventions. Like the extensions ``.mjs`` 
 import defaultExport from "module-name";
 // or
 import { export1 } from "module-name";
+```
+
+# Fonts in sass 🖤
+
+Add your font files to the ``./src/fonts/`` folder. The files will be compiled into the dynamic ``./src/fonts/inlineFonts.scss`` file.
+If you import that file into SCSS the fonts will be available in your CSS as variables.
+
+``./src/fonts/webfont_open_sans.woff`` will be available in SCSS as ``$webfont_open_sans_woff``.
+ 
+⚠️The fonts are only recompiled on initial run of ``dev`` or ``build``, and are not watched.
+
+# Images/Icons 🖼
+
+Images and icons are copied into the ``./dist/`` folder and can be referenced in HTML and SASS.
+
+
+| Plain HTML                                 | SASS / SCSS                       |
+|--------------------------------------------|-----------------------------------|
+| ``src="../../dist/logo-lanz-stripes.svg"`` | ``url(../../images/sprite.svg)``  |
+
+⚠️Note that in plain HTML you reference the built files in the ``./dist/`` folder, however in SASS/SCSS you reference the files in the ``./src/images/`` folder (uncompiled).
+
+
+# Github Workflows 🚀
+
+Workflows are located in the ``.github/workflows/`` folder.
+
+# For Developers 🎮
+
+Functions, Classes and Methods are to be documented. Use this convention:
+[PHP Docstrings](http://phpdocu.sourceforge.net/howto.php)
+
+You should use the same convention for Javascript.
+
+```php
+/**
+* The short description
+*
+* As many lines of extendend description as you want {@link element} links to an element
+* {@link http://www.example.com Example hyperlink inline link} links to a website
+* Below this goes the tags to further describe element you are documenting
+*
+* @param  	type	$varname	description
+* @return 	type	description
+* @access 	public or private
+* @author 	author name 
+* @copyright	name date
+* @version	version
+* @see		name of another element that can be documented, produces a link to it in the documentation
+* @link		a url
+* @since  	a version or a date
+* @deprecated	description
+* @deprec	alias for deprecated
+* @magic	phpdoc.de compatibility
+* @todo		phpdoc.de compatibility
+* @exception	Javadoc-compatible, use as needed
+* @throws  	Javadoc-compatible, use as needed
+* @var		type	a data type for a class variable
+* @package	package name
+* @subpackage	sub package name, groupings inside of a project
+*/
+```
+
+Example:
+```php
+/**
+* return the day of the week
+*
+* @param string $month 3-letter Month abbreviation
+* @param integer $day day of the month
+* @param integer $year year
+* @return integer 0 = Sunday, value returned is from 0 (Sunday) to 6 (Saturday)
+*/
+function day_week($month, $day, $year)
+{
+...
+}
 ```
