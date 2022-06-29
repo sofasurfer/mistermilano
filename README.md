@@ -1,4 +1,4 @@
-# Wordpress Theme: Starter
+# Wordpress Theme: Starter 📖
 
 This is a starter theme for Wordpress utilizing a modern build process with webpack 5.
 
