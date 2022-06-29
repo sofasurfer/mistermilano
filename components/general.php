@@ -36,13 +36,13 @@ class General {
 	private function __construct() {
 
 		add_action( 'wp_enqueue_scripts', function () {
+			$theme = wp_get_theme();
+
 			$file_with_path_js = apply_filters( 'get_file_from_dist', 'index.js', true);
-			wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', false );
+			wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', $theme->Version, true );
 
 			$file_with_path_css = apply_filters( 'get_file_from_dist', 'index.css', true);
-			wp_enqueue_style( 'nf-styles', $file_with_path_css, '', false, 'all' );
-
-//			echo '<pre>'; var_dump($file_with_path_css); var_dump($file_with_path_js); wp_die();
+			wp_enqueue_style( 'nf-styles', $file_with_path_css, '', $theme->Version , 'all' );
 		}, 100 );
 
 		// add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);

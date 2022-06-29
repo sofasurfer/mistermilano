@@ -74,6 +74,8 @@ if ( is_singular( 'projects' ) ) {
 
         </div>
     </div>
+
+    <?= wp_footer() ?>
 </footer>
 
 <!-- cookie notice-->
