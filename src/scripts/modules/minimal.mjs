@@ -33,25 +33,3 @@ export function isEmail(email) {
     const regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
 }
-
-/**
- * Adds a cookie to the browser.
- * @param key
- * @param value
- */
-export function setCookie(key, value) {
-    const expires = new Date();
-    expires.setTime(expires.getTime() + (24 * 60 * 60 * 1000));
-    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + "; path=/";
-}
-
-/**
- * Gets a cookie from the browser.
- * @param key
- * @returns {string|null}
- */
-export function getCookie(key) {
-    const keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-}
-
