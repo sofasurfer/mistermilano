@@ -38,11 +38,11 @@ class General {
 		add_action( 'wp_enqueue_scripts', function () {
 			$theme = wp_get_theme();
 
-			$file_with_path_js = apply_filters( 'get_file_from_dist', 'index.js', true);
+			$file_with_path_js = apply_filters( 'get_file_from_dist', 'index.js', true );
 			wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', $theme->Version, true );
 
-			$file_with_path_css = apply_filters( 'get_file_from_dist', 'index.css', true);
-			wp_enqueue_style( 'nf-styles', $file_with_path_css, '', $theme->Version , 'all' );
+			$file_with_path_css = apply_filters( 'get_file_from_dist', 'index.css', true );
+			wp_enqueue_style( 'nf-styles', $file_with_path_css, '', $theme->Version, 'all' );
 		}, 100 );
 
 		// add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);
@@ -52,6 +52,10 @@ class General {
 
 		add_action( 'wp_ajax_newsletter_subscribe', [ $this, 'campainmonitor_subscribe' ] );
 		add_action( 'wp_ajax_nopriv_newsletter_subscribe', [ $this, 'campainmonitor_subscribe' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $this, 'c_remove_wp_block_library_css' ], 100 );
+
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 
 		add_shortcode( 'render_animation_elements', [ $this, 'render_animation_elements' ] );
 		add_shortcode( 'render_imagetag', [ $this, 'c_shortcode_render_image' ] );
@@ -85,7 +89,7 @@ class General {
 		add_filter( 'nav_menu_css_class', [ $this, 'c_special_nav_class' ], 10, 2 );
 		add_filter( 'nav_menu_link_attributes', [ $this, 'add_class_to_menu' ], 10, 4 );
 
-		add_filter( 'get_file_from_dist', [ $this, 'c_get_file_with_hash_from_manifest' ], 10, 2);
+		add_filter( 'get_file_from_dist', [ $this, 'c_get_file_with_hash_from_manifest' ], 10, 2 );
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -95,6 +99,15 @@ class General {
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			acf_add_options_page();
 		}
+	}
+
+	/**
+	 * Remove Gutenberg Block Library CSS from loading on the frontend
+	 */
+	function c_remove_wp_block_library_css() {
+		wp_dequeue_style( 'wp-block-library' );
+		wp_dequeue_style( 'wp-block-library-theme' );
+		wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
 	}
 
 	/**
