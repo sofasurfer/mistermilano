@@ -54,6 +54,7 @@ class General {
 		add_action( 'wp_ajax_nopriv_newsletter_subscribe', [ $this, 'campainmonitor_subscribe' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'c_remove_wp_block_library_css' ], 100 );
+		add_action('wp_print_styles', [$this, 'c_remove_dashicons'], 100);
 
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 
@@ -98,6 +99,15 @@ class General {
 
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			acf_add_options_page();
+		}
+	}
+
+	/** Remove Dashicons from Admin Bar for non logged in users **/
+	function c_remove_dashicons()
+	{
+		if (!is_admin_bar_showing() && !is_customize_preview()) {
+			wp_dequeue_style('dashicons');
+			wp_deregister_style('dashicons');
 		}
 	}
 
