@@ -34,9 +34,9 @@ class General {
 	 * Creates a new instance of this singleton.
 	 */
 	private function __construct() {
-		$theme = wp_get_theme();
 
-		add_action( 'wp_enqueue_scripts', function ($theme) {
+		add_action( 'wp_enqueue_scripts', function () {
+			$theme = wp_get_theme();
 			$file_with_path_js = apply_filters( 'get_file_from_dist', 'index.js', true );
 			wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', $theme->Version, true );
 
@@ -44,7 +44,8 @@ class General {
 			wp_enqueue_style( 'nf-styles', $file_with_path_css, '', $theme->Version, 'all' );
 		}, 100 );
 
-		add_action( 'admin_enqueue_scripts', function ($theme) {
+		add_action( 'admin_enqueue_scripts', function () {
+			$theme = wp_get_theme();
 			$file_with_path_js = apply_filters( 'get_file_from_dist', 'editor.js', true );
 			wp_enqueue_script( 'nf-editor-scripts', $file_with_path_js, '', $theme->Version, true );
 
