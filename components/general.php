@@ -34,16 +34,23 @@ class General {
 	 * Creates a new instance of this singleton.
 	 */
 	private function __construct() {
+		$theme = wp_get_theme();
 
-		add_action( 'wp_enqueue_scripts', function () {
-			$theme = wp_get_theme();
-
+		add_action( 'wp_enqueue_scripts', function ($theme) {
 			$file_with_path_js = apply_filters( 'get_file_from_dist', 'index.js', true );
 			wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', $theme->Version, true );
 
 			$file_with_path_css = apply_filters( 'get_file_from_dist', 'index.css', true );
 			wp_enqueue_style( 'nf-styles', $file_with_path_css, '', $theme->Version, 'all' );
 		}, 100 );
+
+		add_action( 'admin_enqueue_scripts', function ($theme) {
+			$file_with_path_js = apply_filters( 'get_file_from_dist', 'editor.js', true );
+			wp_enqueue_script( 'nf-editor-scripts', $file_with_path_js, '', $theme->Version, true );
+
+			$file_with_path_css = apply_filters( 'get_file_from_dist', 'editor.css', true );
+			wp_enqueue_style( 'nf-editor-styles', $file_with_path_css, '', $theme->Version, 'all' );
+		}, 100);
 
 		// add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);
 		add_action( 'init', [ $this, 'c_init' ] );
@@ -54,7 +61,7 @@ class General {
 		add_action( 'wp_ajax_nopriv_newsletter_subscribe', [ $this, 'campainmonitor_subscribe' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'c_remove_wp_block_library_css' ], 100 );
-		add_action('wp_print_styles', [$this, 'c_remove_dashicons'], 100);
+		add_action( 'wp_print_styles', [ $this, 'c_remove_dashicons' ], 100 );
 
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 
@@ -103,11 +110,10 @@ class General {
 	}
 
 	/** Remove Dashicons from Admin Bar for non logged in users **/
-	function c_remove_dashicons()
-	{
-		if (!is_admin_bar_showing() && !is_customize_preview()) {
-			wp_dequeue_style('dashicons');
-			wp_deregister_style('dashicons');
+	function c_remove_dashicons() {
+		if ( ! is_admin_bar_showing() && ! is_customize_preview() ) {
+			wp_dequeue_style( 'dashicons' );
+			wp_deregister_style( 'dashicons' );
 		}
 	}
 

@@ -60,18 +60,33 @@ This will start watching the files and recompile them when they change. Everythi
 
 ---
 
-# HTML & Styling 🎨
+# BrowserSync with static HTML & CSS - for Designers 🎨
 
 Go to your file ``./src/templates/...html`` and open it in a browser. For example:
 
-``http://localhost/your_folder/wp-content/themes/wptheme.starter/src/templates/contentelements.html``
+``./wptheme.starter/src/templates/contentelements.html``
 
 Start the development server (2️⃣).
-Now add the port specified in the ``bud.config.mjs`` file (default **``:3010``** or ``:3000``), then add it to your path:
+Then add the port specified in the ``bud.config.mjs`` file (default **``:3010``** or ``:3000``) to your path:
 
-````http://localhost:3010/your_folder/wp-content/themes/wptheme.starter/src/templates/contentelements.html````
+````./wptheme.starter/src/templates/contentelements.html````
 
-Your browser should now reload on changes.
+Your browser should now reload on changes made in CSS or Javascript.
+
+
+# BrowserSync with Wordpress - for Devs 👾
+
+Go to your running website. For example:
+
+``http://localhost/your_project/``
+
+Start the development server (2️⃣).
+Then add the port specified in the ``bud.config.mjs`` file (default **``:3010``** or ``:3000``) to your path:
+
+````http://localhost:3010/your_project/````
+
+Your browser should now reload on changes made in CSS or Javascript.
+
 
 # Hot reloading in Wordpress 🔥
 
@@ -82,7 +97,7 @@ Start the development server (2️⃣), then add the port to your URL and enjoy 
 # Javascript 💻
 
 This projects requires you to use ES6 conventions. Like the extensions ``.mjs`` (module javascript) and ``.cjs`` (common javascript _for compatibility_).
-``require()`` will not work. Insted you will have to use [ES6 imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import):
+``require()`` will not work. However you will have to use [ES6 imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import):
 
 ```js
 import defaultExport from "module-name";

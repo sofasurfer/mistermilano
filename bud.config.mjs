@@ -23,6 +23,7 @@ export default async (bud) => {
          */
         .entry({
             index: ['@src/scripts/index.js', '@src/styles/main.scss'],
+            editor: ['@src/scripts/editor.js', '@src/styles/editor.scss'],
         })
 
         /**
