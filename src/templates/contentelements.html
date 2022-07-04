@@ -18,6 +18,8 @@
 
 	<!-- Include Styles & Scripts -->
 	<script src="../../dist/index.js"></script>
+	<!-- Replaces data-src simplified paths with src actual paths -->
+	<script src="./imagePathRewrite.js"></script>
 </head>
 <body>
 <!-- header-->
@@ -29,7 +31,8 @@
 		<div class="c-container c-container-no-padding c-header-inner">
 			<div class="c-header-logo">
 				<a href="/">
-					<span class="c-header-logo-stripes"><img src="../../dist/logo-lanz-stripes.svg" alt="Lanz Architekten" /></span>
+					<span class="c-header-logo-stripes"><img data-src="logo-lanz-stripes.svg" src="" alt="Lanz Architekten" /></span>
+<!--					<span class="c-header-logo-stripes"><img src="../../dist/logo-lanz-stripes.svg" alt="Lanz Architekten" /></span>-->
 					<span class="c-header-logo-text"><img src="../../dist/logo-lanz-text.svg" alt="Lanz Architekten" /></span>
 				</a>
 			</div>
