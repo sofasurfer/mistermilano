@@ -35,23 +35,8 @@ class General {
 	 */
 	private function __construct() {
 
-		add_action( 'wp_enqueue_scripts', function () {
-			$theme = wp_get_theme();
-			$file_with_path_js = apply_filters( 'get_file_from_dist', 'index.js', true );
-			wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', $theme->Version, true );
-
-			$file_with_path_css = apply_filters( 'get_file_from_dist', 'index.css', true );
-			wp_enqueue_style( 'nf-styles', $file_with_path_css, '', $theme->Version, 'all' );
-		}, 100 );
-
-		add_action( 'admin_enqueue_scripts', function () {
-			$theme = wp_get_theme();
-			$file_with_path_js = apply_filters( 'get_file_from_dist', 'editor.js', true );
-			wp_enqueue_script( 'nf-editor-scripts', $file_with_path_js, '', $theme->Version, true );
-
-			$file_with_path_css = apply_filters( 'get_file_from_dist', 'editor.css', true );
-			wp_enqueue_style( 'nf-editor-styles', $file_with_path_css, '', $theme->Version, 'all' );
-		}, 100);
+		add_action( 'wp_enqueue_scripts', [$this, 'c_wp_enqueue_scripts'], 100 );
+		add_action( 'admin_enqueue_scripts', [$this, 'c_admin_enqueue_scripts'], 100);
 
 		// add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);
 		add_action( 'init', [ $this, 'c_init' ] );
@@ -108,6 +93,30 @@ class General {
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			acf_add_options_page();
 		}
+	}
+
+	/**
+	 * Load the CSS & Javascript files
+	 */
+	function c_wp_enqueue_scripts() {
+		$theme = wp_get_theme();
+		$file_with_path_js = apply_filters( 'get_file_from_dist', 'index.js', true );
+		wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', $theme->Version, true );
+
+		$file_with_path_css = apply_filters( 'get_file_from_dist', 'index.css', true );
+		wp_enqueue_style( 'nf-styles', $file_with_path_css, '', $theme->Version, 'all' );
+	}
+
+	/**
+	 * Load the CSS & Javascript files for the admin
+	 */
+	function c_admin_enqueue_scripts() {
+		$theme = wp_get_theme();
+		$file_with_path_js = apply_filters( 'get_file_from_dist', 'editor.js', true );
+		wp_enqueue_script( 'nf-editor-scripts', $file_with_path_js, '', $theme->Version, true );
+
+		$file_with_path_css = apply_filters( 'get_file_from_dist', 'editor.css', true );
+		wp_enqueue_style( 'nf-editor-styles', $file_with_path_css, '', $theme->Version, 'all' );
 	}
 
 	/** Remove Dashicons from Admin Bar for non logged in users **/
