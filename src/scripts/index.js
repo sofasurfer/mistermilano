@@ -35,14 +35,11 @@ const main = async (err) => {
  * Add custom code inside this function
  */
 const app = () => {
-    document.addEventListener("DOMContentLoaded", function (event) {
-        // Add your imported code here, for example: new defaultExport();
-        new Cookie(true);
-        new LazyLoadImages();
-    });
+    // Add your imported code here, for example: new defaultExport();
+    new Cookie(true);
+    new LazyLoadImages();
 }
 
-/**
- * Run the application even if HMR is not enabled/used
- */
-app();
+document.addEventListener("DOMContentLoaded", function (event) {
+    main();
+});

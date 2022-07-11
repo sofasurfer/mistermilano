@@ -32,12 +32,9 @@ const main = async (err) => {
  * Add custom code inside this function
  */
 const app = () => {
-    document.addEventListener("DOMContentLoaded", function (event) {
-        // Add your imported code here, for example: new defaultExport();
-    });
+    // Add your imported code here, for example: new defaultExport();
 }
 
-/**
- * Run the application even if HMR is not enabled/used
- */
-app();
+document.addEventListener("DOMContentLoaded", function (event) {
+    main();
+});
