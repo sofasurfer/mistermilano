@@ -64,6 +64,7 @@ class General {
 		add_shortcode( 'c_contact_info', [ $this, 'c_shortcode_contact_info' ] );
 
 		add_filter( 'c_get_pagetitle', [ $this, 'c_get_pagetitle' ] );
+		add_filter( 'c_convert_phone_number', [ $this, 'c_convert_phone_number' ] );
 		add_filter( 'c_get_ogobj', [ $this, 'c_get_ogobj' ] );
 		add_filter( 'login_redirect', [ $this, 'glue_login_redirect' ], 999 );
 		add_filter( 'upload_mimes', [ $this, 'cc_mime_types' ] );
@@ -278,7 +279,10 @@ class General {
 			return '';
 		}
 	}
-
+	
+	public function c_convert_phone_number( $number ) {
+		return preg_replace( '~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3', $number ) . "\n";
+	}
 
 	public function c_get_pagetitle() {
 

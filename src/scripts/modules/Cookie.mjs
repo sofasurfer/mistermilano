@@ -20,6 +20,8 @@ export default class Cookie {
             let cookie = document.getElementById('cookie-notice');
             let cookieAccept = document.getElementById('accept-cookie-notice');
 
+            if (!cookie) return;
+            
             cookie.style.display = 'block';
 
             cookieAccept?.addEventListener('click', (event) => {
