@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackBar = require('webpackbar');
 const htmlPageNames = ['index', 'teaser'];
 let entryPoints = {};
 
@@ -35,7 +36,12 @@ module.exports = {
     devServer: {
         static: ['./dist', './html'],
     },
-    plugins: [].concat(multipleHtmlPlugins),
+    plugins: [
+        new WebpackBar({
+            name: 'neofluxe webpack',
+            color: '#00D4B4'
+        })
+    ].concat(multipleHtmlPlugins),
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),

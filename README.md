@@ -62,14 +62,29 @@ This will start watching the files and recompile them when they change. Everythi
 
 # BrowserSync with static HTML & CSS - for Designers 🎨
 
-Go to your file ``./src/templates/...html`` and open it in a browser. For example:
+Go to your folder ``./src/templates/`` and open/edit it.
 
-``./wptheme.starter/src/templates/contentelements.html``
+In here run:
 
-Start the development server (2️⃣).
-Then add the port specified in the ``bud.config.mjs`` file (default **``:3010``** or ``:3000``) to your path:
+🟠 Select the Node version needed (default v18.4.0) with ``Node Version Manager``
 
-````./wptheme.starter/src/templates/contentelements.html````
+| nvm                   | example            |
+|-----------------------|--------------------|
+| ``nvm use <version>`` | ``nvm use 18.4.0`` |
+
+tip: you can use ``nvm use 18``, and it will use the most recent version of it.
+
+🟡 Install the dependencies with the following command:
+
+| yarn             | npm             |
+|------------------|-----------------|
+| ``yarn install`` | ``npm install`` |
+
+🟢 Run browserSync:
+
+| yarn         | npm             |
+|--------------|-----------------|
+| ``yarn dev`` | ``npm run dev`` |
 
 Your browser should now reload on changes made in CSS or Javascript.
 
