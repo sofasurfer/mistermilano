@@ -2,6 +2,10 @@
 
 This is a starter theme for Wordpress utilizing a modern build process with webpack 5.
 
+💡 there are two webpack instances. The one in the root (with budJS) is for developers. While the one in ``./src/templates/`` 
+is meant for HTML/CSS template designers. There is no need for developers to touch it, unless you want to view the
+ design. If so, follow the steps for designers.
+
 These technologies are used:
 
 - [Wordpress](https://wordpress.org/)
@@ -86,8 +90,24 @@ tip: you can use ``nvm use 18``, and it will use the most recent version of it.
 |--------------|-----------------|
 | ``yarn dev`` | ``npm run dev`` |
 
-Your browser should now reload on changes made in CSS or Javascript.
 
+✨ BrowserSync is running on port 8080 now. It should automatically open the URL ``http://localhost:8080``.
+Your browser should now reload on changes made in HTML, CSS or Javascript.
+---
+
+🔵 OPTIONAL: build the files. (this has no influence on the commit)
+
+| yarn           | npm               |
+|----------------|-------------------|
+| ``yarn build`` | ``npm run build`` |
+
+In general there is no need for this.
+
+☘️ Extras:
+
+- Filepath for images: ``../../images/<image-name>.jpg``
+- Use filepath from images. Not from the dist folder. Subfolders are accepted.
+- Javascript goes into ``./src/templates/index.js``
 
 # BrowserSync with Wordpress - for Devs 👾
 
