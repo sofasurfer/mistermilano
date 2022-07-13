@@ -68,6 +68,7 @@ This will start watching the files and recompile them when they change. Everythi
 
 Go to your folder ``./src/templates/`` and open it.
 
+---
 
 🟠 Select the Node version needed (default v18.4.0) with ``Node Version Manager``
 
