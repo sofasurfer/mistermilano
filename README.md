@@ -66,9 +66,8 @@ This will start watching the files and recompile them when they change. Everythi
 
 # BrowserSync with static HTML & CSS - for Designers 🎨
 
-Go to your folder ``./src/templates/`` and open/edit it.
+Go to your folder ``./src/templates/`` and open it.
 
-In here run:
 
 🟠 Select the Node version needed (default v18.4.0) with ``Node Version Manager``
 
