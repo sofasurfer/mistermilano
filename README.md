@@ -91,8 +91,9 @@ tip: you can use ``nvm use 18``, and it will use the most recent version of it.
 | ``yarn dev`` | ``npm run dev`` |
 
 
-🌟 BrowserSync is running on port 8080 now. It should automatically open the URL ``http://localhost:8080``.
+✨ BrowserSync is running on port 8080 now. It should automatically open the URL ``http://localhost:8080``.
 Your browser should now reload on changes made in HTML, CSS or Javascript.
+
 ---
 
 🔵 OPTIONAL: build the files. (this has no influence on the commit)
