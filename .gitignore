@@ -18,3 +18,5 @@ data/**
 ehthumbs.db
 Thumbs.db
 /src/fonts/inlineFonts.scss
+/src/templates/dist/
+/src/templates/node_modules/
