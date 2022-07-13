@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "private": true,
+  "engines": {
+    "node": ">=18.4.0"
+  },
   "scripts": {
     "build": "webpack",
     "start": "webpack serve --open",
     "dev": "webpack serve --open",
+    "debug": "webpack serve --open --stats-children",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Neofluxe | Erin McGowan",

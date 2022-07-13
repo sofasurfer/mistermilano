@@ -1,22 +1,41 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const HtmlWebpackPlugin = require('lodash-template-webpack');
+const htmlPageNames = ['index', 'teaser'];
+let entryPoints = {};
+
+/**
+ * Creates a new entry for each page provided in htmlPageNames
+ */
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+    return new HtmlWebpackPlugin({
+        template: `./html/${name}.html`, // relative path to the HTML files
+        filename: `${name}.html`, // output HTML files
+        chunks: [`${name}`] // respective JS files
+    })
+});
+
+/**
+ * Example output
+ * entry: {
+ *         index: './index.js',
+ *         teaser: './index.js',
+ *     }
+ *
+ * Using the same JS file for both pages
+ */
+htmlPageNames.map(name => {
+    entryPoints = {...entryPoints, [name]: './index.js'};
+});
 
 module.exports = {
     mode: 'development',
-    entry: {
-        index: './index.js',
-    },
+    entry: entryPoints,
     // not meant for production
     devtool: 'inline-source-map',
     devServer: {
-        static: './dist',
+        static: ['./dist', './html'],
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './index.html',
-        }),
-    ],
+    plugins: [].concat(multipleHtmlPlugins),
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),

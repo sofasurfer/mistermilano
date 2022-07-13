@@ -1,14 +1,8 @@
 import '../styles/main.scss';
-// import template from './index.html';
-import html from './index.html';
 
-
-// let html = template({
-//     title: 'Hello world',
-// });
-
-function component() {
-    console.log('Hello webpack');
+function run() {
+    /** Run some Javascript here */
+    console.log('Hello from webpack');
 }
 
-component();
+run();
