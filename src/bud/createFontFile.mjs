@@ -6,7 +6,12 @@ import fs from "fs";
  */
 
 export default function createFontFile (fontPath = './src/fonts/') {
-
+    
+     if (!fs.existsSync(fontPath)) {
+        fs.mkdirSync(fontPath);
+        return;
+    }
+    
     fs.readdir(fontPath, (err, filenames) => {
         let fontArray = [];
         let cssString = '';
