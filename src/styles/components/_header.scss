@@ -32,6 +32,15 @@
 	height: 100%;
 }
 
+// TODO: REMOVE - seems to work with dev and dev:3010
+// TODO: DOESN'T work with Build
+.c-container {
+	background-image: url(../../images/tmp/team.jpg)
+}
+.c-content {
+	background-image: url(../../images/logo-lanz.svg)
+}
+
 .c-header-logo-text {
 	display: block;
 	position: absolute;

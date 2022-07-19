@@ -10,6 +10,11 @@ export default async (bud) => {
     createFontFile('./src/fonts/');
 
     bud
+        .hooks.action('config.after', async () => {
+            bud.hooks.on('build.output.publicPath', publicPath =>
+                bud.isDevelopment ? `/` : publicPath,
+            )
+        })
         .when(
             bud.isProduction,
             () => bud.hash().minimize(),
@@ -30,7 +35,10 @@ export default async (bud) => {
          * These files should be processed as part of the build
          * even if they are not explicitly imported in application assets.
          */
-        .assets(['images'])
+        .assets([
+            {from: bud.path("@src/images"), to: bud.path("@dist/images/@file")},
+            {from: bud.path("@src/fonts"), to: bud.path("@dist/fonts/@file")},
+        ])
 
         /**
          * These files will trigger a full page reload
@@ -53,5 +61,5 @@ export default async (bud) => {
         /**
          * Public path of application assets
          */
-        .setPublicPath('/');
+        // .setPublicPath('/');
 };
