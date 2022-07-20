@@ -1,8 +1,11 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackBar = require('webpackbar');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import WebpackBar from 'webpackbar';
+import createFontFile from '../bud/createFontFile.mjs';
 const htmlPageNames = ['index', 'teaser'];
 let entryPoints = {};
+
+createFontFile('../fonts/');
 
 /**
  * Creates a new entry for each page provided in htmlPageNames
@@ -28,7 +31,7 @@ htmlPageNames.map(name => {
     entryPoints = {...entryPoints, [name]: './index.js'};
 });
 
-module.exports = {
+export default{
     mode: 'development',
     entry: entryPoints,
     // not meant for production
@@ -43,8 +46,9 @@ module.exports = {
         })
     ].concat(multipleHtmlPlugins),
     output: {
+        assetModuleFilename: "[name][ext]",
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve('dist'),
         clean: true,
     },
     module: {
@@ -60,7 +64,7 @@ module.exports = {
                         // Rewrites URLs
                         loader: 'resolve-url-loader',
                         options: {}
-                    },
+                   },
                     {
                         // Compiles Sass to CSS
                         loader: 'sass-loader',
@@ -74,10 +78,6 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
-            // {
-            //     test: /(\.tpl|\.html)$/,
-            //     loader: 'lodash-template-webpack-loader',
-            // },
             {
                 test: /\.html$/i,
                 loader: "html-loader",
