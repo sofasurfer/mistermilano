@@ -151,7 +151,7 @@ class General {
 		}
 
 		if ( $with_template_path ) {
-			$filename = get_template_directory_uri() . "/dist" . $filename;
+			$filename = get_template_directory_uri() . "/dist/" . $filename;
 		}
 
 		return $filename;
