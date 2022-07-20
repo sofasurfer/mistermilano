@@ -10,11 +10,6 @@ export default async (bud) => {
     createFontFile('./src/fonts/');
 
     bud
-        .hooks.action('config.after', async () => {
-            bud.hooks.on('build.output.publicPath', publicPath =>
-                bud.isDevelopment ? `/` : publicPath,
-            )
-        })
         .when(
             bud.isProduction,
             () => bud.hash().minimize(),
