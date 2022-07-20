@@ -110,6 +110,19 @@ In general there is no need for this.
 - Use filepath from images. Not from the dist folder. Subfolders are accepted.
 - Javascript goes into ``./src/templates/index.js``
 
+# Adding HTML files and viewing them - for Designers 🍭
+
+By default you can view your "entrypoints" in the browser with ``http://localhost:8080/``.
+If you have added multiple HTML files, and added these to array in ``webpack.config.js`` like this:
+
+```js
+const htmlPageNames = ['index', 'teaser', 'about', 'contact'];
+```
+
+Webpack will look for the files called ``index.html``, ``teaser.html``, ``about.html``, and ``contact.html`` in the HTML folder.
+Accessing them is simple. Just add the filename behind your browserSync URL: ``http://localhost:8080/teaser.html``
+
+
 # BrowserSync with Wordpress - for Devs 👾
 
 Go to your running website. For example:
