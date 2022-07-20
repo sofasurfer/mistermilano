@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
 import createFontFile from '../bud/createFontFile.mjs';
@@ -38,6 +39,7 @@ export default{
     devtool: 'inline-source-map',
     devServer: {
         static: ['./dist', './html'],
+        open: true,
     },
     plugins: [
         new WebpackBar({
@@ -46,7 +48,7 @@ export default{
         })
     ].concat(multipleHtmlPlugins),
     output: {
-        assetModuleFilename: "[name][ext]",
+        assetModuleFilename: "[name]_[hash:4][ext]",
         filename: '[name].js',
         path: path.resolve('dist'),
         clean: true,
@@ -74,10 +76,19 @@ export default{
                     },
                 ],
             },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
+            // {
+            //     test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            //     exclude: /node_modules/,
+            //     use: [
+            //         {
+            //             loader: 'url-loader',
+            //             options: {
+            //                 limit: 1000,
+            //                 name : '/images/[name].[ext]'
+            //             }
+            //         }
+            //     ]
+            // },
             {
                 test: /\.html$/i,
                 loader: "html-loader",
