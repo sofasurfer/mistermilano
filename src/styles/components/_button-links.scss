@@ -73,42 +73,6 @@ a[href^="tel:"] {
    padding: 0.5em 20px;
 }
 
-.c-btn-close {
-	position: absolute;
-	top: 2em;
-	right: 30px;
-	width: 50px;
-	height: 50px;
-	background-color: $text-color;
-	border-radius: 50%;
-}
-
-.c-btn-close::before,
-.c-btn-close::after {
-	content:'';
-	display: block;
-	position: absolute;
-	right: 50%;
-	top: 50%;
-	margin-right: -10px;
-	background-color: $text-color-light;
-    height: 2px;
-    width: 20px;
-    transition: all .5s;
-}
-
-.c-btn-close::before {
-	transform: rotate(-45deg);
-}
-
-.c-btn-close::after {
-	transform: rotate(45deg);
-}
-
-.c-btn-close:hover::before,
-.c-btn-close:hover::after {
-	transform: rotate(0deg);
-}
 
 /* ==========================================================================
   links with icons
@@ -136,28 +100,8 @@ a[href^="tel:"] {
 	font-weight: bold;
 }
 
-.c-link-back {
-	font-weight: normal;
-	padding-top: 0.15em;
-}
-
-.c-link-back-top {
-	position: absolute;
-	top: calc(-3em - 20px);
-	width: 40px;
-	height: 40px;
-	overflow: hidden;
-	transition: 0.1s ease-in-out;
-}
-
-.c-link-back-top:hover,
-.c-link-back-top:focus{
-	transform: translate(-4px,0);
-}
-
 .c-link-arrow::before,
-.c-link-back::before,
-.c-link-back-top::before {
+.c-link-back::before {
 	top: 0.25em;
 	left: 0;
 	width: 28px;
@@ -171,24 +115,14 @@ a[href^="tel:"] {
 	left: 4px;
 }
 
-.c-btn .c-link-arrow::before {
-	top: 0.1em;
-	background-position: 0 -20px;
-}
 
-.c-link-back::before,
-.c-link-back-top::before {
+.c-link-back::before {
 	background-position: 0 -120px;
 }
 
 .c-link-back:hover::before,
 .c-link-back:focus::before {
 	left: -4px;
-}
-
-.c-link-back-top::before {
-	top: 50%;
-	margin-top: -8px;
 }
 
 .c-link-download::before {
@@ -217,33 +151,6 @@ a[href^="tel:"] {
 	background-position: -50px -80px;
 }
 
-.c-title-icon {
-	padding-top: 180px;
-}
-
-.c-title-icon::before {
-	content:'';
-	position: absolute;
-	left: -10px;
-	top: 0;
-	width: 167px;
-	height: 135px;
-	background-image:url(../../images/sprite-services.svg);
-	background-repeat: no-repeat;
-}
-
-.c-title-icon-rating::before {
-	background-position: 0 -200px;
-}
-
-.c-title-icon-usage::before {
-	background-position: 0 0;
-}
-
-.c-title-icon-renovation::before {
-	background-position: 0 -400px;
-}
-
 /* ==========================================================================
   responsive
    ========================================================================== */
@@ -252,10 +159,6 @@ a[href^="tel:"] {
 	.c-link-arrow::before,
 	.c-link-back::before {
 		top: 0.15em;
-	}
-	
-	.c-btn .c-link-arrow::before {
-		top: -0.05em;
 	}
 	
 	.c-link-download::before {

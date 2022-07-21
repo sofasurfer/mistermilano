@@ -28,24 +28,6 @@ h1,
 	font-weight: bold;
 }
 
-.c-title-main h1,
-.c-title-main .c-h1,
-.c-title-secondary h2,
-.c-title-secondary .c-h1 {
-	padding-top: 1.5rem;
-}
-
-.c-title-main .c-title-category + h1 {
-	padding-top: 0;
-}
-
-h1 span,
-.c-h1 span,
-h2 span,
-.c-h2 span{
-	font-weight: 300;
-}
-
 h2,
 .c-h2 {
 	padding-bottom: .5em;
@@ -98,30 +80,9 @@ h3,
 	line-height: 1.33;
 }
 
-.c-title-category,
-.c-text-block blockquote cite{
-	display: block; 
-	text-transform: uppercase;
-	letter-spacing: 0.01em;
-	color: $text-color-medium;
-}
-
-.c-title-category,
-.c-date {
-	padding-top: 1.5rem;
-	padding-bottom: 1.5rem;	
-}
-
-.c-date {
-	display: block; 
-	color: $text-color-medium;
-}
-
-.c-title-category,
 .c-text-small,
 .c-text-block blockquote cite,
-.c-legend,
-.c-info-list dt {	
+.c-legend {	
 	font-size: 0.77rem; /* 14px */
 }
 
@@ -134,10 +95,7 @@ h3,
 	font-size: 0.88rem; /* 18px */
 }
 
-.c-offcanvas-content {
-	line-height: 1.2;
-	font-size: 2.22rem; /* 40px */
-}
+
 
 /* ==========================================================================
    Basic Lists Content 
@@ -188,31 +146,6 @@ h3,
 	color: $text-color;
 	font-weight: bold;
 	text-align: right;
-}
-
-.c-info-list {
-	margin: 0;
-	padding: 0 0 1.5em 0;
-}
-
-.c-project-info .c-info-list {
-	padding-bottom: 0;
-}
-
-.c-info-list dt {
-	margin: 0;
-	padding: 0;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-.c-info-list dd {
-	margin: 0;
-	padding: 0;
-}
-
-.c-info-list dd + dt{
-	padding-top: 1em;
 }
 
 /* ==========================================================================
@@ -286,28 +219,6 @@ h3,
 	}
 }
 
-@media only screen and (max-width:1100px) {    
-	h1, .c-h1 {
-		font-size: 3.33rem; 
-	}
-}
-
-@media only screen and (max-width:900px) {  
-	h1, .c-h1,
-	.c-offcanvas-content {
-		font-size: 3rem; 
-	}
-	
-	h2, c-h2,
-	.c-text-block blockquote p {
-		font-size: 1.88rem;
-	}
-	
-	.c-text-block blockquote p {
-		padding-top: 2.8rem;
-	}
-}
-
 
 @media only screen and (max-width:767px) {    
 	
@@ -315,24 +226,12 @@ h3,
 		font-size: 16px;
 	}
 	
-	h1, .c-h1,
-	.c-offcanvas-content {
+	h1, .c-h1 {
 		font-size: 2rem; 
 	}
 	
-	h2, c-h2,
-	.c-text-block blockquote p {
+	h2, c-h2 {
 		font-size: 1.5rem;
-	}
-	
-	.c-text-block blockquote p {
-		padding-top: 2.6rem;
-	}
-	
-	.c-text-block blockquote p::before {
-		left: -28px;
-		top: -2.5rem;
-		font-size: 12.5rem;
 	}
 	
 	.c-lead,
@@ -340,19 +239,12 @@ h3,
 		font-size: 1.125rem;
 	}
 	
-	.c-title-category,
 	.c-text-small,
-	.c-text-block blockquote cite,
-	.c-legend,
-	.c-info-list dt {	
+	.c-legend {	
 		font-size: 0.875rem; 
 	}
 
 
-
-	.c-footer-disclaimer {
-		font-size: 1rem; 
-	}
 }
 
 

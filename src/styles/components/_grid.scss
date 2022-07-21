@@ -12,22 +12,17 @@
     z-index: auto;
 }
 
-.c-content {
-	overflow: hidden;
-}
+
 
 /* ==========================================================================
    Standard Padding between Components 
    ========================================================================== */
 
-.c-container,
-.c-showroom,
-.c-team .c-col-4,
-.c-services .c-col-6 {
+.c-container {
 	padding-bottom: 6em;
 }
 
-.c-title-main {
+.c-main-title {
 	margin-top: 6em;
 }
 
@@ -35,27 +30,8 @@
 	padding-bottom: 0;
 }
 
-.c-teaser-cta,
-.c-contact-inner {
-	padding-top: 1.5em;
+.c-section-title {
 	padding-bottom: 3em;
-}
-
-.c-project-info,
-.c-text-element {
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
-}
-
-.c-teaser-img-text,
-.c-teaser-cta,
-.c-quote,
-.c-project-info,
-.c-teaser-text,
-.c-teaser-img-text-big,
-.c-services,
-.c-contact {
-	margin-bottom: 6em;
 }
 
 
@@ -68,8 +44,6 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-
-
 
 .c-row {
     margin-right: -10px;
@@ -284,11 +258,3 @@
    Grid Varianten
    ========================================================================== */
 
-.c-text-padding,
-.c-teaser-img-text .c-row-reverse .c-text-padding-var {
-	padding-left: $text-padding-small;
-}
-
-.c-text-padding-inside {
-	padding-left: $text-padding-inside-small;
-}

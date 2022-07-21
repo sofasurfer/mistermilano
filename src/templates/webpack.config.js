@@ -2,7 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
 import createFontFile from '../bud/createFontFile.mjs';
-const htmlPageNames = ['index', 'teaser'];
+const htmlPageNames = ['index', 'contentelements'];
 let entryPoints = {};
 
 createFontFile('../fonts/');

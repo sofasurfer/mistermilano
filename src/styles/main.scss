@@ -3,24 +3,13 @@
    Settings
    ========================================================================== */
 
-@import "../fonts/inlineFonts.scss";
+/*@import "../fonts/inlineFonts.scss";*/
 
 @import "common/_variables";
-@import "common/_fonts";
+/*@import "common/_fonts";*/
 @import "common/_normalize";
 @import "common/_mixins";
 @import "common/_helpers";
-
-
-/* ==========================================================================
-   Saas Tools (imported from node_modules)
-   ========================================================================== */
-
-// Scut: Sass-CSS Utitilies (https://davidtheclark.github.io/scut/)
-/*@import 'scut/dist/scut';*/
-
-// Media Queries with superpowers (https://github.com/sass-mq/sass-mq)
-/*@import 'sass-mq/mq';*/
 
 
 
