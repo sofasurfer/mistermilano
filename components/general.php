@@ -303,7 +303,7 @@ class General {
 	public function c_get_ogobj() {
 
 		$obj                = [];
-		$obj['locale']      = ICL_LANGUAGE_CODE;
+		$obj['locale']      = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : get_locale();
 		$obj['title']       = $this->c_get_pagetitle();
 		$obj['description'] = get_field( 'acf_header_metadescription' );
 
@@ -481,7 +481,7 @@ class General {
 		Returns default locale
 	*/
 	public function c_shortcode_post_locale() {
-		$lang  = ICL_LANGUAGE_CODE;
+		$lang  = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : get_locale();
 		$langs = icl_get_languages( 'skip_missing=0' );
 		if ( isset( $langs[ $lang ]['default_locale'] ) ) {
 			return $langs[ $lang ]['default_locale'];
