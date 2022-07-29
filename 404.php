@@ -1,4 +1,8 @@
-<!-- section-title-->
+<?php
+
+get_template_part('templates/header');
+
+?><!-- section-title-->
 <!-- title main-->
 <div class="c-container c-title-main">
     <div class="c-row">
@@ -15,3 +19,6 @@
         </div>
     </div>
 </div>
+
+<?php
+get_template_part('templates/footer');

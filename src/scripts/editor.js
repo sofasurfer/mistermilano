@@ -7,6 +7,9 @@
  * new defaultExport();
  */
 
+import './blocks/anchors/index.js';
+import './blocks/anchors/inner.js';
+
 /**
  * app.main
  */
