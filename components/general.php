@@ -114,6 +114,7 @@ class General {
 	}
 
 	function render_block_core_notice($block_attributes, $content) {
+		var_dump($block_attributes);
 		return '<h1>ServersideRender2</h1>';
 	}
 

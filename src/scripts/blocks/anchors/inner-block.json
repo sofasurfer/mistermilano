@@ -13,5 +13,17 @@
     "anchor": true
   },
   "textdomain": "neofluxe",
-  "attributes": {}
+  "attributes": {
+    "preTitle": {
+      "type": "string",
+      "selector": "h6"
+    },
+    "title": {
+      "type": "string",
+      "selector": "p"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
 }
