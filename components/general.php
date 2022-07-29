@@ -35,18 +35,17 @@ class General {
 	 */
 	private function __construct() {
 
-		add_action( 'wp_enqueue_scripts', [$this, 'c_wp_enqueue_scripts'], 100 );
-		add_action( 'admin_enqueue_scripts', [$this, 'c_admin_enqueue_scripts'], 100);
+		add_action( 'wp_enqueue_scripts', [ $this, 'c_wp_enqueue_scripts' ], 100 );
+		add_action( 'admin_enqueue_scripts', [ $this, 'c_admin_enqueue_scripts' ], 100 );
 
 		// add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);
 		add_action( 'init', [ $this, 'c_init' ] );
 		add_action( 'init', [ $this, 'c_register_maim_menu' ] );
 		add_action( 'admin_head', [ $this, 'my_custom_admin_css' ] );
 
-		add_action( 'wp_ajax_newsletter_subscribe', [ $this, 'campainmonitor_subscribe' ] );
-		add_action( 'wp_ajax_nopriv_newsletter_subscribe', [ $this, 'campainmonitor_subscribe' ] );
+		add_action( 'init', [ $this, 'register_blocks' ] );
 
-		add_action( 'wp_enqueue_scripts', [ $this, 'c_remove_wp_block_library_css' ], 100 );
+//		add_action( 'wp_enqueue_scripts', [ $this, 'c_remove_wp_block_library_css' ], 100 );
 		add_action( 'wp_print_styles', [ $this, 'c_remove_dashicons' ], 100 );
 
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -70,8 +69,6 @@ class General {
 		add_filter( 'upload_mimes', [ $this, 'cc_mime_types' ] );
 		add_filter( 'acf/format_value/type=textarea', [ $this, 'c_format_value' ], 10, 3 );
 		add_filter( 'acf/fields/google_map/api', [ $this, 'my_acf_google_map_api' ] );
-		add_filter( 'use_block_editor_for_post', '__return_false', 10 );
-		add_filter( 'use_block_editor_for_post_type', '__return_false', 10 );
 		add_filter( 'c_latest_post', [ $this, 'c_latest_post' ] );
 		add_filter( 'c_get_instagram_feed', [ $this, 'get_instagram_feed' ], 10, 3 );
 		add_filter( 'c_get_document_info', [ $this, 'c_get_document_info' ], 10, 1 );
@@ -97,10 +94,34 @@ class General {
 	}
 
 	/**
+	 * Registers the block using the metadata loaded from the `block.json` file.
+	 * Behind the scenes, it registers also all assets so they can be enqueued
+	 * through the block editor in the corresponding context.
+	 *
+	 * @see https://developer.wordpress.org/reference/functions/register_block_type/
+	 */
+	function register_blocks() {
+		$directory = get_template_directory() . '/src/scripts/blocks';
+		register_block_type(
+			$directory . '/anchors/block.json',
+//			[ 'render_callback' => [$this, 'render_block_core_notice'] ]
+		);
+		register_block_type(
+			$directory . '/anchors/inner-block.json',
+//			[ 'render_callback' => [$this, 'render_block_core_notice'] ]
+		);
+
+	}
+
+	function render_block_core_notice($block_attributes, $content) {
+		return '<h1>ServersideRender2</h1>';
+	}
+
+	/**
 	 * Load the CSS & Javascript files
 	 */
 	function c_wp_enqueue_scripts() {
-		$theme = wp_get_theme();
+		$theme             = wp_get_theme();
 		$file_with_path_js = apply_filters( 'get_file_from_dist', 'index.js', true );
 		wp_enqueue_script( 'nf-scripts', $file_with_path_js, '', $theme->Version, true );
 
@@ -112,7 +133,7 @@ class General {
 	 * Load the CSS & Javascript files for the admin
 	 */
 	function c_admin_enqueue_scripts() {
-		$theme = wp_get_theme();
+		$theme             = wp_get_theme();
 		$file_with_path_js = apply_filters( 'get_file_from_dist', 'editor.js', true );
 		wp_enqueue_script( 'nf-editor-scripts', $file_with_path_js, '', $theme->Version, true );
 
@@ -163,10 +184,6 @@ class General {
 		setcookie( "hideloader", 'true' );
 
 		add_post_type_support( 'page', 'excerpt' );
-
-		remove_post_type_support( 'page', 'editor' );
-		remove_post_type_support( 'post', 'editor' );
-		remove_post_type_support( 'project', 'editor' );
 
 		// Remove comments page in menu
 		add_action( 'admin_menu', function () {
@@ -279,7 +296,7 @@ class General {
 			return '';
 		}
 	}
-	
+
 	public function c_convert_phone_number( $number ) {
 		return preg_replace( '~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3', $number ) . "\n";
 	}
@@ -303,7 +320,7 @@ class General {
 	public function c_get_ogobj() {
 
 		$obj                = [];
-		$obj['locale']      = ICL_LANGUAGE_CODE;
+		$obj['locale']      = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : get_locale();
 		$obj['title']       = $this->c_get_pagetitle();
 		$obj['description'] = get_field( 'acf_header_metadescription' );
 
@@ -481,7 +498,7 @@ class General {
 		Returns default locale
 	*/
 	public function c_shortcode_post_locale() {
-		$lang  = ICL_LANGUAGE_CODE;
+		$lang  = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : get_locale();
 		$langs = icl_get_languages( 'skip_missing=0' );
 		if ( isset( $langs[ $lang ]['default_locale'] ) ) {
 			return $langs[ $lang ]['default_locale'];

@@ -23,5 +23,11 @@
     "@roots/bud-preset-wordpress": "^6.0.0",
     "@roots/bud-sass": "^6.0.0",
     "mocha": "^10.0.0"
+  },
+  "dependencies": {
+    "@wordpress/block-editor": "^9.6.0",
+    "@wordpress/blocks": "^11.13.0",
+    "@wordpress/components": "^19.16.0",
+    "@wordpress/i18n": "^4.14.0"
   }
 }
