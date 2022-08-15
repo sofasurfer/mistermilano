@@ -37,9 +37,14 @@ export default{
     entry: entryPoints,
     // not meant for production
     devtool: 'inline-source-map',
+    // https://webpack.js.org/configuration/dev-server/#devserverdevmiddleware
     devServer: {
         static: ['./dist', './html'],
         open: true,
+        devMiddleware: {
+            index: true,
+            writeToDisk: true,
+        },
     },
     plugins: [
         new WebpackBar({
