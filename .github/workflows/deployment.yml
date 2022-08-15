@@ -28,7 +28,7 @@ jobs:
       - name: RSync Deployments 🚚
         uses: burnett01/rsync-deployments@5.2
         with:
-          switches: -avzr --delete --prune-empty-dirs --exclude="node_modules" --exclude=".github" --exclude="package.json" --exclude="package-lock.json" --exclude="*.lock" --exclude="release.sh" --exclude="bud.config.mjs" --exclude="*.md" --exclude="*.html" --exclude="src" --exclude=".nvmrc" --exclude=".gitignore"
+          switches: -avzr --delete --prune-empty-dirs --exclude="node_modules" --exclude=".github" --exclude="package.json" --exclude="package-lock.json" --exclude="*.lock" --exclude="release.sh" --exclude="bud.config.mjs" --exclude="*.md" --exclude="*.html" --exclude="src/fonts" --exclude="src/styles" --exclude="src/images" --exclude="src/bud" --exclude="src/templates" --exclude=".nvmrc" --exclude=".gitignore"
           path: ./
           remote_path: public_html/project_directory/wp-content/themes/wptheme.starter
           remote_host: s094.cyon.net
