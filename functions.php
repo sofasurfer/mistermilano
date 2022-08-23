@@ -19,14 +19,3 @@ foreach ( new DirectoryIterator( $dir ) as $fileinfo ) {
 	}
 }
 unset( $dir, $fileinfo, $file );
-
-/**
- * Redirect Single Post to Home Page
- */
-add_action( 'template_redirect', function () {
-	if ( is_singular( 'post' ) ) {
-		wp_redirect( home_url(), 301 );
-		exit;
-	}
-} );
-
