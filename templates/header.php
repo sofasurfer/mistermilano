@@ -18,9 +18,9 @@
         <meta property="og:image:height" content="<?= $og_info['image'][2]; ?>" />
 
         <!-- favicon-->
-        <link rel="apple-touch-icon" sizes="180x180" href="<?= apply_filters( 'get_file_from_dist', 'apple-touch-icon.png'); ?>">
-        <link rel="icon" type="image/png" sizes="32x32" href="<?= apply_filters( 'get_file_from_dist', 'favicon-32x32.png'); ?>">
-        <link rel="icon" type="image/png" sizes="16x16" href="<?= apply_filters( 'get_file_from_dist', 'favicon-16x16.png'); ?>">
+        <link rel="apple-touch-icon" sizes="180x180" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/apple-touch-icon.png'); ?>">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/favicon-32x32.png'); ?>">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/favicon-16x16.png'); ?>">
         <link rel="mask-icon" href="<?= apply_filters( 'get_file_from_dist', 'safari-pinned-tab.svg'); ?>" color="#2e1aa9">
         <meta name="msapplication-TileColor" content="#2e1aa9">
         <meta name="theme-color" content="#ffffff">
