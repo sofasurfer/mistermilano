@@ -7,7 +7,7 @@
 	/* @import must be at top of file, otherwise CSS will not work */
 	/* @import url('//hello.myfonts.net/count/426563'); */
 
-	$font-stack-default: 'TheSans', 'Arial', 'Helvetica', sans-serif;
+	$font-stack-default: 'Roboto', 'Arial', 'Helvetica', sans-serif;
 
 
 /* ==========================================================================
@@ -17,7 +17,6 @@
 	/* text */
 	$text-color: #1D1D1B; /* dark grey */
 	$text-color-light: #fff;
-	$text-color-medium: #838382;
 	$color-highlight: #1D1D1B; /* dark grey */
 
 	/* background */
@@ -35,11 +34,3 @@
 	$form-disabled: #ccc;
 	$color-form-error: #dd0000;
 
-	/* padding text - padding auf container, col*/
-	$text-padding-small: 30px; /* 20px */
-	$text-padding-medium: 30px;
-	$text-padding-big: 40px;
-	/* padding text - padding innerhalb von container, col*/
-	$text-padding-inside-small: 20px; /* 10px */
-	$text-padding-inside-medium: 15px;
-	$text-padding-inside-big: 20px;
