@@ -12,6 +12,7 @@
    ========================================================================== */
 
 
+
 @media only screen and (min-width:1200px) {    
 	/* grid gap */	
 	.c-container {
@@ -38,15 +39,46 @@
 		padding-right: 20px;
 		padding-left: 20px;
 	}
+}
+
+@media only screen and (min-width:1400px) {    
+	/* grid gap */	
+	.c-container {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+	.c-row {
+		margin-right: -30px;
+		margin-left: -30px;
+	}
 	
-	
+	.c-col-1,
+	.c-col-2,
+	.c-col-3,
+	.c-col-4,
+	.c-col-5,
+	.c-col-6,
+	.c-col-7,
+	.c-col-8,
+	.c-col-9,
+	.c-col-10,
+	.c-col-11,
+	.c-col-12 {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+    
+    .c-footer-main .c-col-5::before {
+        right: 30px;
+    }
 }
 
 
-@media only screen and (min-width:1330px) {    
+
+@media only screen and (min-width:1740px) {    
 	/* container max width */
 	.c-container {
-        max-width: 1320px;
+        max-width: 1730px;
         margin-left: auto;
 		margin-right: auto;
     }
