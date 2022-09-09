@@ -18,8 +18,7 @@
 
 .c-header-logo {
 	position: relative;
-	width: 200px;
-	height: 40px;
+	width: 310px;
 }
 
 .c-header-logo a {
@@ -51,8 +50,8 @@
 	display: inline-block;
 }
 
-.c-main-nav-list li + li {
-	padding-left: 2em;
+.c-main-nav-list li {
+	padding-right: 2em;
 }
 
 .c-meta-list li + li {
@@ -71,8 +70,8 @@
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 100%;
-	height: 0;
+	width: 0;
+	height: 3px;
 	background-color: $color-highlight;
 	transition: all 0.2s linear;
 }
@@ -81,7 +80,7 @@
 .c-main-nav-list a:focus::before,
 .c-main-nav-list a:hover::before,
 .c-main-nav-list .c-active a::before {
-	height: 3px;
+	width: 100%;
 }
 
 
