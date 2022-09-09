@@ -18,7 +18,7 @@
    Standard Padding between Components 
    ========================================================================== */
 
-.c-container {
+.c-container{
 	padding-bottom: $spacing-l;
 }
 
@@ -33,6 +33,11 @@
 
 .c-container-no-padding {
 	padding-bottom: 0;
+}
+
+.c-teaser,
+.c-teaser-item {
+	padding-bottom: $spacing-m;
 }
 
 .c-section-title {

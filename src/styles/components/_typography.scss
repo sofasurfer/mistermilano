@@ -75,6 +75,10 @@ h5,
 	padding-bottom: 1.5em;
 }
 
+.c-teaser-item p {
+    padding-bottom: 0.75em;
+}
+
 .c-text-block p + h2,
 .c-text-block p + h3,
 .c-text-block p + h4,
@@ -115,10 +119,19 @@ h5,
 	padding-top: 1em;
 }
 
+.c-category-title {
+    display: block;
+    padding-bottom: 0.2em;
+}
+
 b, strong {
     font-weight: 900;
 }
 
+.c-btn,
+.c-form-standard input[type="submit"] {
+    font-size: 1rem;
+}
 
 /* ==========================================================================
    Basic Lists Content 
@@ -243,7 +256,9 @@ b, strong {
 @media only screen and (min-width:1400px) {   
     .c-text-body,
     .c-main-nav,
-    h5,.c-h5 {
+    h5,.c-h5,
+    .c-btn,
+    .c-form-standard input[type="submit"] {
         font-size: 1.2rem; 
     }
 
@@ -298,7 +313,7 @@ b, strong {
 
 
 
-/*
+
 @media only screen and (max-width:767px) {    
 	
 	html {
@@ -306,24 +321,27 @@ b, strong {
 	}
 	
 	h1, .c-h1 {
-		font-size: 2rem; 
-	}
-	
-	h2, c-h2 {
-		font-size: 1.5rem;
-	}
-	
-	.c-lead,
-	h3, .c-h3 {
-		font-size: 1.125rem;
-	}
-	
-	.c-text-small,
-	.c-legend {	
-		font-size: 0.875rem; 
-	}
+        font-size: 40px; /* 85px */
+    }
+
+    h2,
+    .c-h2 {
+        font-size: 30px; /* 60px */
+    }
 
 
-}*/
+    h3,
+    .c-h3 {
+        font-size: 28px; /* 40px */
+    }
+
+    h4, .c-h4,
+    .c-lead,
+    .c-text-block blockquote p {
+        font-size: 20px; /* 30px */
+    }
+
+
+}
 
 

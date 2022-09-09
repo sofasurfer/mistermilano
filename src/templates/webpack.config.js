@@ -3,7 +3,7 @@ import fs from 'fs';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
 import createFontFile from '../bud/createFontFile.mjs';
-const htmlPageNames = ['index', 'contentelements'];
+const htmlPageNames = ['index', 'contentelements', 'teaser'];
 let entryPoints = {};
 
 createFontFile('../fonts/');
