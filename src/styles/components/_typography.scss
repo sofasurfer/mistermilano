@@ -116,7 +116,7 @@ h5,
 
 .c-legend {
 	display: block;
-	padding-top: 1em;
+	padding-top: $spacing-xs;
 }
 
 .c-category-title {
@@ -137,7 +137,8 @@ b, strong {
    Basic Lists Content 
    ========================================================================== */
 .c-text-block ul,
-.c-text-block ol {
+.c-text-block ol,
+.c-link-list {
 	margin: 0;
 	padding: 0 0 1.5em 0; 
 	list-style: none;
@@ -150,18 +151,29 @@ b, strong {
 }
 
 .c-text-block ul li + li,
-.c-text-block ol li + li {
+.c-text-block ol li + li, {
 	margin-top: 0.5em;
 }
 
+.c-text-block .c-link-list li + li,
+.c-link-list li + li {
+	margin-top: 1em;
+}
+
 .c-text-block ul li::before {
-	content:'';
-	position: absolute;
-	top: 0.44em;
-	left: 0;
-	width: 20px;
-	height: 5px;
-	background-color: $border-basic;
+	content: '\25CF';
+    position: absolute;
+    left: 0;
+    top: 0;
+	color: $color-highlight;
+}
+
+.c-text-block .c-link-list li::before {
+   content:'';
+}
+
+.c-text-block .c-link-list li {
+    padding-left: 0;
 }
 
 .c-text-block ol {
@@ -183,6 +195,8 @@ b, strong {
 	font-weight: bold;
 	text-align: right;
 }
+
+
 
 /* ==========================================================================
    Quote

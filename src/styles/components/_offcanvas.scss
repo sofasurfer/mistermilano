@@ -14,10 +14,8 @@
 	transform: perspective(1px) translateZ(0);
     transform: translateY(-50%);
 	transition: all 0.2s ease-in-out;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
-
-
 
 .c-offcanvas-trigger::before,
 .c-offcanvas-trigger::after {
@@ -69,6 +67,15 @@
 	transform: rotate(45deg);
 }
 
+.c-offcanvas-trigger-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    font-weight: bold;
+    color: $text-color-medium;
+}
+
 /* ==========================================================================
    Offcanvas nav main container
    ========================================================================== */
@@ -114,7 +121,8 @@
 }
 
 .c-offcanvas-nav-list,
-.c-offcanvas-nav-list ul {
+.c-offcanvas-nav-list ul,
+.c-lang-list {
     margin: 0;
 	padding: 0;
 	list-style: none;
@@ -157,6 +165,20 @@
 .c-offcanvas-nav-list ul a,
 .c-offcanvas-nav-list ul a:visited {
 	color: $color-highlight;
+}
+
+.c-lang-list li {
+    display: inline-block;
+    padding-left: 1em;
+}
+
+.c-lang-list a {
+   display: inline-block;
+}
+
+.c-lang-list .c-active a {
+    font-weight: bold;
+    color: $text-color;
 }
 
 /*.c-offcanvas-nav-list a::before {

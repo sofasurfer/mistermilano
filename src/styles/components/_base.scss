@@ -13,11 +13,14 @@ body {
 
 /* links */
 a,
-a:visited,
+a:visited {
+	color: $color-highlight;
+	text-decoration: none;
+}
+
 a:focus,
 a:hover {
 	color: $text-color;
-	text-decoration: none;
 }
 
 .c-text-light a,

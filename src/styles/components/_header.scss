@@ -50,14 +50,29 @@
 	display: inline-block;
 }
 
+.c-main-nav-list {
+	padding-right: 40px;
+}
+
 .c-main-nav-list li {
-	padding-right: 2em;
+	padding-right: 1.5em;
 }
 
 .c-meta-list li + li {
-	padding-left: 2em;
+	padding-left: 1.5em;
 }
 
+
+.c-main-nav-list a,
+.c-main-nav-list a:focus,
+.c-main-nav-list a:hover,
+.c-main-nav-list a:visited,
+.c-meta-list a,
+.c-meta-list a:focus,
+.c-meta-list a:hover,
+.c-meta-list a:visited {
+	color: $text-color;
+}
 
 .c-main-nav-list a {
 	display: inline-block;

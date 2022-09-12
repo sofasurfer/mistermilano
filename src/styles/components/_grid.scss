@@ -18,7 +18,8 @@
    Standard Padding between Components 
    ========================================================================== */
 
-.c-container{
+.c-container,
+.c-teaser-2col-asym {
 	padding-bottom: $spacing-l;
 }
 
@@ -31,6 +32,10 @@
     padding-bottom: $spacing-l;
 }
 
+.c-showroom {
+    margin-bottom: $spacing-l;
+}
+
 .c-container-no-padding {
 	padding-bottom: 0;
 }
@@ -41,7 +46,7 @@
 }
 
 .c-section-title {
-	padding-bottom: 3em;
+	padding-bottom: 0.5em;
 }
 
 
@@ -268,3 +273,25 @@
    Grid Varianten
    ========================================================================== */
 
+.c-teaser-2col-asym .c-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.c-teaser-2col-asym-img {
+    margin-left: -15px;
+}
+
+.c-teaser-2col-asym-text {
+    padding-right: 15px;
+}
+
+.c-row-reverse .c-teaser-2col-asym-img {
+    margin-left: 0;
+    margin-right: -15px;
+}
+
+.c-row-reverse .c-teaser-2col-asym-text {
+    padding-left: 15px;
+    padding-right: 0;
+}
