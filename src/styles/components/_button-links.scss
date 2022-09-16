@@ -41,7 +41,7 @@ a[href^="tel:"] {
     margin: 0;
 	padding: 0.7em 36px 0.7em 36px;
 	border: none;
-    border-radius: 8px;
+    border-radius: 3em;
 	background-color: $color-highlight;
     line-height: 1.2;
     text-align: center;  
@@ -72,6 +72,8 @@ a[href^="tel:"] {
 .c-btn-small:focus {
    padding: 0.5em 20px;
 }
+
+
 
 
 /* ==========================================================================
@@ -148,6 +150,70 @@ a[href^="tel:"] {
 .c-link-top:hover::before,
 .c-link-top:focus::before {
 	background-position: -100px -120px;
+}
+
+
+.c-btn-quicklink {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+	padding: 0.7em 60px 0.7em 20px;
+    border-radius: 3em;
+    height: 2.4em;
+    line-height: 1;
+    text-align: left; 
+	transition: all 0.2s ease-out;
+	text-decoration: none;
+    overflow: hidden; 
+    z-index: auto;
+}
+
+.c-btn-quicklink::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.4em;
+    width: 2.4em;
+    border-radius: 3em;
+    background-color: $color-highlight;
+    opacity: 0.3;
+    transition: all 0.2s ease-out;
+    background-image: none;
+    z-index: -1;
+}
+
+.c-btn-quicklink,
+.c-btn-quicklink:visited {
+    color: $color-highlight;  
+}
+
+.c-btn-quicklink:focus,
+.c-btn-quicklink:hover {
+    color: $text-color-light;
+}
+
+.c-btn-quicklink:focus::before,
+.c-btn-quicklink:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+
+.c-btn-quicklink::after {
+	top: 50%;
+	right: 10px;
+	width: 41px;
+	height: 17px;
+    margin-top: -9px;
+	background-position: 0 0;
+    z-index: 1;
+}
+
+.c-btn-quicklink:focus::after,
+.c-btn-quicklink:hover::after {
+	background-position: 0 -40px;
 }
 
 /* ==========================================================================
