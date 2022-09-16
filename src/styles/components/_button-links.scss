@@ -18,8 +18,8 @@ a[href^="tel:"] {
 
 .c-text-block a:focus,
 .c-text-block a:hover {
-    background-image: linear-gradient(to bottom,$text-color 0%,$text-color 100%);
-	background-position: 0 50%;
+    color: $text-color-light;
+    background-size: 3px 100%;
 }
 
 .c-text-block .c-btn,
@@ -29,6 +29,8 @@ a[href^="tel:"] {
 .c-text-block .c-link-top {
 	background-image: none;
 }
+
+
 
 
 /* ==========================================================================
@@ -42,7 +44,7 @@ a[href^="tel:"] {
 	padding: 0.7em 36px 0.7em 36px;
 	border: none;
     border-radius: 3em;
-	background-color: $color-highlight;
+	background: $color-highlight;
     line-height: 1.2;
     text-align: center;  
 	font-weight: 900;
@@ -58,11 +60,15 @@ a[href^="tel:"] {
 
 .c-btn:hover, 
 .c-btn:focus,
+.c-text-block .c-btn:hover, 
+.c-text-block .c-btn:focus,
 .c-form-standard input[type="submit"]:hover,
 .c-form-standard input[type="submit"]:focus {
     color: $text-color-light;
-	background-color: $text-color;
+	/*background-color: $text-color;*/
 	text-decoration: none;
+    background: rgb(255,200,69);
+    background: linear-gradient(90deg, rgba(255,200,69,1) 0%, rgba(129,195,192,1) 100%); 
 }
 
 
@@ -100,6 +106,20 @@ a[href^="tel:"] {
 	padding-left: 60px;
 }
 
+.c-link-arrow:focus,
+.c-link-arrow:hover,
+.c-text-block .c-link-arrow:focus,
+.c-text-block .c-link-arrow:hover,
+.c-link-extern:focus,
+.c-link-extern:hover,
+.c-text-block .c-link-extern:focus,
+.c-text-block .c-link-extern:hover,
+.c-link-top:focus,
+.c-link-top:hover,
+.c-text-block .c-link-top:focus,
+.c-text-block .c-link-top:hover{
+	color: $text-color;
+}
 .c-link-top {
 	padding-left: 32px;
 }
