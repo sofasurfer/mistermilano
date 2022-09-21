@@ -18,6 +18,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.4.0
+          
+      - name: NPM | yarn - Caching 🚀
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: NPM | yarn - Install 🔴 🟠 🟡 🟢 🔵 🟣
         run: yarn install
