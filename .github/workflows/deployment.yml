@@ -33,4 +33,4 @@ jobs:
           remote_path: public_html/project_directory/wp-content/themes/wptheme.starter
           remote_host: s094.cyon.net
           remote_user: username
-          remote_key: ${{ secrets.LANZ_SSH_PRIVATE_KEY }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
