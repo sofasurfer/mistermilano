@@ -9,6 +9,7 @@
 
 import Cookie from './modules/Cookie.mjs';
 import LazyLoadImages from './modules/LazyLoadImages.mjs';
+import Slider from './modules/Slider.mjs';
 
 /**
  * app.main
