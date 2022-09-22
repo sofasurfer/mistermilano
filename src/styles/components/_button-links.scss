@@ -9,24 +9,24 @@ a[href^="tel:"] {
 }
 
 .c-text-block a {
-	background-image: linear-gradient(to bottom,$color-highlight 0%,$color-highlight 100%);
+	background-image: linear-gradient(to bottom,$text-color 0%,$text-color 100%);
     background-position: 0 100%;
     background-repeat: repeat-x;
-    background-size: 3px 3px;
+    background-size: 1px 1px;
   	transition: background .1s;
 }
 
 .c-text-block a:focus,
 .c-text-block a:hover {
-    background-image: linear-gradient(to bottom,$text-color 0%,$text-color 100%);
-	background-position: 0 50%;
+	background-size: 2px 2px;
 }
 
 .c-text-block .c-btn,
 .c-text-block .c-form-standard input[type="submit"],
 .c-text-block .c-link-arrow,
+.c-text-block .c-link-download,
 .c-text-block .c-link-extern,
-.c-text-block .c-link-top {
+.c-text-block .c-link-back {
 	background-image: none;
 }
 
@@ -92,62 +92,63 @@ a[href^="tel:"] {
 }
 
 .c-link-arrow,
+.c-link-download,
 .c-link-extern,
-.c-link-top {
+.c-link-back {
 	display: inline-block;
-	padding-left: 60px;
+	padding-left: 40px;
+	font-weight: bold;
 }
 
-.c-link-top {
-	padding-left: 32px;
-}
-
-.c-link-arrow::before {
+.c-link-arrow::before,
+.c-link-back::before {
 	top: 0.25em;
 	left: 0;
-	width: 41px;
-	height: 17px;
+	width: 28px;
+	height: 16px;
 	background-position: 0 0;
+	transition: 0.1s ease-in-out;
 }
 
 .c-link-arrow:hover::before,
 .c-link-arrow:focus::before {
-	background-position: -100px 0;
+	left: 4px;
 }
 
-.c-text-light .c-link-arrow::before {
-    background-position: 0 -40px;
+
+.c-link-back::before {
+	background-position: 0 -120px;
 }
 
-.c-text-light .c-link-arrow:hover::before,
-.c-text-light .c-link-arrow:focus::before {
-	background-position: -100px -40px;
+.c-link-back:hover::before,
+.c-link-back:focus::before {
+	left: -4px;
+}
+
+.c-link-download::before {
+	top: -0.25em;
+	left: 0;
+	width: 20px;
+	height: 25px;
+	background-position: 0 -40px;
+}
+
+.c-link-download:hover::before,
+.c-link-download:focus::before {
+	background-position: -50px -40px;
 }
 
 .c-link-extern::before {
-	top: 0.1em;
+	top: -0.28em;
 	left: 0;
-	width: 38px;
-	height: 22px;
+	width: 26px;
+	height: 26px;
 	background-position: 0 -80px;
 }
 
 .c-link-extern:hover::before,
 .c-link-extern:focus::before {
-	background-position: -100px -80px;
-}
-
-.c-link-top::before {
-	top: -0.1em;
-	left: 0;
-	width: 17px;
-	height: 23px;
-	background-position: 0 -120px;
-}
-
-.c-link-top:hover::before,
-.c-link-top:focus::before {
-	background-position: -100px -120px;
+	background-position: -50px -80px;
 }
 
 /* ==========================================================================

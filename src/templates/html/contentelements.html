@@ -62,24 +62,9 @@
     <nav class="c-offcanvas-nav">
         <div class="c-offcanvas-inner">
             <div class="c-container c-container-no-padding c-header-inner">
-               <div class="c-col-8">
-                   <form class="c-form-standard c-form-search">
-                       <div class="c-form-item">
-                            <input type="search" placeholder="Search..." aria-label="Search">
-                            <button class="c-btn-search" id="Search" type="button">Search</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="c-col-4">
-                    <ul class="c-lang-list">
-                        <li class="c-active"><a href="">Fr</a></li>
-                        <li><a href="">De</a></li>
-                    </ul>
-                </div>
-                
                 <!-- offcanvas trigger-->
                 <a href="#" class="c-offcanvas-trigger c-offcanvas-trigger-close">
-                    <span class="c-offcanvas-trigger-text">Fermer</span>
+                    <span class="c-hide-visually">fermer le menu</span>
                 </a>
             </div>
 
@@ -152,7 +137,7 @@
             <div class="c-container c-container-no-padding c-showroom-text"> 
                 <div class="c-row c-row-align-center"> 
                     <div class="c-col-6 c-showroom-text-inner c-text-light c-text-block"> 
-                        
+                        <span class="c-category-title c-text-small">Startseite</span> 
                         <h1 class="c-h2">Grand Chasseral</h1>
                         <p class="c-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <a class="c-btn" href="">Primary Button</a>
@@ -162,41 +147,14 @@
         </div>
     </div>
    
-   <!-- title main img -->
-    <div class="c-main-title-img">
-        <figure class="c-ratiobox c-ratiobox-3by1">
-            <img src="../../images/tmp/img-header.jpg" alt="" />
-        </figure>
-        <div class="c-container">
-            <div class="c-row">
-                <div class="c-col-8">
-                    <div class="c-box">
-                        <span class="c-category-title c-text-small">Startseite</span> 
-                        <h1>H1 Titel Lorem ipsum dolor</h1>
-                        <p class="c-lead">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    
-    <!-- text / quicklinks-->
-    <div class="c-container c-text-quicklinks">
-        <div class="c-row c-row-justify-between">
-            <div class="c-col-6 c-text-block">
-                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
-            </div>
-            <div class="c-col-5">
-                <ul class="c-quicklinks-list c-link-list">
-                    <li><a class="c-icon c-link-arrow" href="">Lorem ipsum dolor </a></li>
-                    <li><a class="c-icon c-link-arrow" href="">Lorem ipsum dolor </a></li>
-                    <li><a class="c-icon c-link-arrow" href="">Lorem ipsum dolor </a></li>
-                </ul>
+    <!-- main title -->
+    <div class="c-container c-main-title">
+        <div class="c-row">
+            <div class="c-col-8">
+                <h1>H1 Titel Lorem ipsum dolor</h1>
+                <p class="c-lead">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+                </p>
             </div>
         </div>
     </div>
@@ -210,8 +168,6 @@
 
                 <h3>Titel h3 lorem ipsum</h3>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, <a href="">Textlink</a> no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                
-                <h4>Titel h4 lorem ipsum</h4>
 
                 <ul>
                     <li>Beispiel #1 – Consectetur adipiscing elit tempor incididunt</li>
@@ -219,31 +175,10 @@
                     <li>Beispiel #3 – Aliquip ex ea commodo consequat officia deserunt mollit anim</li>
                     <li>Beispiel #4 – Duis aute irure dolor in reprehenderit in voluptate deserunt mollit anim</li>
                 </ul>
-                
-                <!-- link-list separator-->
-                <hr class="c-link-list-separator" />                
-                <h4>Link list</h4>
-                <ul class="c-link-list">
-                    <li><a class="c-icon c-link-arrow" href="">mehr erfahren</a></li>
-                    <li><a class="c-icon c-link-extern" href="">Link Extern</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <!-- text img-->
-    <div class="c-container c-text-img">
-        <!-- class c-row-reverse hinzufügen, für bild rechts-->
-        <div class="c-row">
-            <div class="c-col-5">
-                <figure>
-                    <img src="../../images/tmp/img-teaser.jpg" alt="" />
-                    <figcaption class="c-legend"><strong>Caption</strong> – Lorem ipsum dolor</figcaption>
-                </figure>
-            </div>
-            <div class="c-col-7 c-text-body c-text-block">
-                <h3>Titel h3 lorem ipsum</h3>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, <a href="">Textlink</a> no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+                <p><a class="c-icon c-link-arrow" href="">mehr erfahren</a></p>
+                <p><a class="c-icon c-link-download" href="">Link Download</a></p>
+                <p><a class="c-icon c-link-extern" href="">Link Extern</a></p>
             </div>
         </div>
     </div>
@@ -320,58 +255,16 @@
     <!-- img content wide-->
     <div class="c-container c-img-wide">
        <figure>
-           <img src="../../images/tmp/img-content.jpg" alt="" />
-           <figcaption class="c-legend"><strong>Caption</strong> – Lorem ipsum dolor</figcaption>
+           <img src="../../images/tmp/img-placeholder.jpg" alt="" />
+           <figcaption class="c-legend c-text-padding-inside">Optionale Bildlegende</figcaption>
         </figure>
-    </div>
-    
-    <!-- img 2col-->
-    <div class="c-container c-img-2col">
-        <div class="c-row">
-            <div class="c-col-6">
-                <figure>
-                   <img src="../../images/tmp/img-content.jpg" alt="" />
-                   <figcaption class="c-legend"><strong>Caption</strong> – Lorem ipsum dolor</figcaption>
-                </figure>
-            </div>
-            <div class="c-col-6">
-                <figure>
-                   <img src="../../images/tmp/img-content.jpg" alt="" />
-                   <figcaption class="c-legend"><strong>Caption</strong> – Lorem ipsum dolor</figcaption>
-                </figure>
-            </div>
-        </div>
-    </div>
-    
-    <!-- section title img left class c-section-title-img-left / right class="c-section-title-img-right"-->
-    <div class="c-section-title-img c-section-title-img-right">
-        <div class="c-section-title-img-img">
-            <figure class="c-ratiobox c-ratiobox-3by1">
-                <img src="../../images/tmp/img-header.jpg" alt="" />
-            </figure>
-        </div>
-        <div class="c-container">
-            <div class="c-row">
-                <div class="c-col-8">
-                    <div class="c-box c-text-block">
-                        <span class="c-category-title c-text-small">Startseite</span> 
-                        <h2>H2 Titel Lorem ipsum dolor</h2>
-                        <p class="c-lead">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-                        </p>
-                        <a class="c-btn" href="">Primary Button</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- section title -->
     <div class="c-container c-section-title">
         <div class="c-row">
             <div class="c-col-8">
-                <!-- kann h2 oder h3 sein-->
-                <h2>Section title Cela pourrait aussi vous intéresser</h2>
+                <h2>Section title</h2>
             </div>
         </div>
     </div>

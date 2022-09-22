@@ -17,7 +17,6 @@
 	/* text */
 	$text-color: #000; 
 	$text-color-light: #fff;
-    $text-color-medium: #707070;
 	$color-highlight: #004584; /* dark blue */
     $color-blue-light: #81C3C0;
 
@@ -28,11 +27,10 @@
 
 	/* line-colors */
 	$border-basic: #ccc;
-    $border-dark: #707070;
 
 
 	/* form */
-	$border-form: #707070;
+	$border-form: #ccc;
 	$border-form-focus: #000;
 	$form-disabled: #ccc;
 	$color-form-error: #dd0000;

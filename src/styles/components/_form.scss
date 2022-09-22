@@ -5,7 +5,6 @@
 input,
 input[type="text"],
 input[type="email"],
-input[type="tel"],
 textarea {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
@@ -32,11 +31,9 @@ input:-webkit-autofill:active {
 
 .c-form-standard input[type="text"],
 .c-form-standard input[type="email"],
-.c-form-standard input[type="tel"],
 .c-form-standard textarea {
 	width: 100%;
-	border: solid 1px $border-form;
-    border-radius: 8px;
+	border: solid 2px $border-form;
 	color: $text-color;
 	padding: 0.75em 10px;
 	background-color: $bg-content;
@@ -48,7 +45,6 @@ input:-webkit-autofill:active {
 
 .c-form-standard input[type="text"]:focus,
 .c-form-standard input[type="email"]:focus,
-.c-form-standard input[type="tel"]:focus,
 .c-form-standard textarea:focus {
 	border-color: $border-form-focus;
 	outline: none;
@@ -56,7 +52,6 @@ input:-webkit-autofill:active {
 
 .c-form-standard input[type="text"]:disabled,
 .c-form-standard input[type="email"]:disabled,
-.c-form-standard input[type="tel"]:disabled,
 .c-form-standard textarea:disabled {
 	border-color: $form-disabled;
 	color: $form-disabled;
@@ -221,8 +216,8 @@ input:-webkit-autofill:active {
 	padding: 0.75em 30px 0.75em 10px !important;
 	width: 100%;
 	height: auto !important;
-	border: 1px solid $border-form;
-    border-radius: 8px;
+	border: 2px solid $border-form;
+    border-radius: 0;
 	background: url("../../images/icon-form-arrow.svg") right center no-repeat;
 	background-color: $bg-content;
 	color: $text-color;

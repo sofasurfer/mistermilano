@@ -83,48 +83,6 @@
         right: 60px;
     }
     
-    
-    .c-teaser-2col-asym-img {
-        margin-left: -30px;
-    }
-
-    .c-teaser-2col-asym-text {
-        padding-right: 30px;
-    }
-
-    .c-row-reverse .c-teaser-2col-asym-img {
-        margin-left: 0;
-        margin-right: -30px;
-    }
-
-    .c-row-reverse .c-teaser-2col-asym-text {
-        padding-left: 30px;
-        padding-right: 0;
-    }
-    
-    .c-quicklinks-list {
-        padding-left: 60px;
-    }
-    
-    .c-main-nav-list li {
-        padding-right: 2em;
-    }
-
-    .c-meta-list li + li {
-        padding-left: 2em;
-    }
-    
-    .c-box {
-        padding: 3em 60px;
-    }
-    
-    .c-section-title-img-left .c-section-title-img-img {
-        padding-left: 60px;
-    }
-
-    .c-section-title-img-right .c-section-title-img-img {
-        padding-right: 60px;
-    }
 }
 
 
@@ -136,24 +94,7 @@
         margin-left: auto;
 		margin-right: auto;
     }
-    
-    .c-teaser-2col-asym-text {
-        max-width: calc(835px - 30px);
-    }
-    
-    .c-row-reverse .c-teaser-2col-asym-text {
-        margin-left: auto;
-    }
-    
-    .c-section-title-img-left .c-section-title-img-img {
-        margin-left: calc(50% - 865px);
-    }
-    
-    .c-section-title-img-right .c-section-title-img-img {
-        margin-right: calc(50% - 865px);
-    }
 }
-
 
 @media only screen and (max-width:1199px) {  
 	.c-teaser-4col .c-col-3 {
@@ -166,25 +107,16 @@
 }
 
 
-@media only screen and (max-width:980px) {  
+@media only screen and (max-width:950px) {  
 	.c-text-only .c-col-8,
 	.c-main-title .c-col-8,
-	.c-section-title .c-col-8,
-    .c-main-title-img .c-col-8 {
+	.c-section-title .c-col-8 {
 		-webkit-box-flex: 0;
         -webkit-flex: 0 0 83.33333%;
         -ms-flex: 0 0 83.33333%;
         flex: 0 0 83.33333%;
         max-width: 83.33333%;	
 	}
-    
-    .c-text-quicklinks .c-col-6 {
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 58.33333%;
-        -ms-flex: 0 0 58.33333%;
-        flex: 0 0 58.33333%;
-        max-width: 58.33333%;
-    }
     
     
     .c-teaser-4col .c-col-3,
@@ -228,96 +160,29 @@
 
 
 
-@media only screen and (max-width:768px) {  
+@media only screen and (max-width:767px) {  
 	.c-text-only .c-col-8,
 	.c-main-title .c-col-8,
 	.c-section-title .c-col-8,
-    .c-showroom-text-inner,
-    .c-main-title-img .c-col-8 {
+    .c-showroom-text-inner {
 		-webkit-box-flex: 0;
 		-webkit-flex: 0 0 100%;
 		-ms-flex: 0 0 100%;
 		flex: 0 0 100%;
 		max-width: 100%;    	
 	}
-    
-    .c-title-subpage-img .c-box,
-    .c-section-title-img .c-box{
-        margin-top: -$spacing-m;
-    }
-    
-    .c-section-title-img .c-col-8 {
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 91.66667%;
-        -ms-flex: 0 0 91.66667%;
-        flex: 0 0 91.66667%;
-        max-width: 91.66667%;
-    }
-
-	.c-text-img .c-col-5,
-	.c-text-img .c-col-7 {
-		-webkit-box-flex: 0;
-		-webkit-flex: 0 0 100%;
-		-ms-flex: 0 0 100%;
-		flex: 0 0 100%;
-		max-width: 100%;    	
-	}
-    
-    .c-text-img .c-col-5 {
-		padding-bottom: $spacing-s;   	
-	}
-    
-    .c-img-2col .c-col-6 {
-        -webkit-box-flex: 0;
-		-webkit-flex: 0 0 100%;
-		-ms-flex: 0 0 100%;
-		flex: 0 0 100%;
-		max-width: 100%;  
-    }
-    
-    .c-img-2col .c-col-6 + .c-col-6 {
-        padding-top: $spacing-l; 
-    }
-}
-
-@media only screen and (max-width:650px) {  
-    .c-text-quicklinks .c-col-6,
-    .c-text-quicklinks .c-col-5 {
-        -webkit-box-flex: 0;
-		-webkit-flex: 0 0 100%;
-		-ms-flex: 0 0 100%;
-		flex: 0 0 100%;
-		max-width: 100%;
-    }
-    
-    .c-quicklinks-list {
-        padding-left: 0;
-        border-left: 0;
-        border-top: solid 3px $border-dark;
-    }
 }
 
 @media only screen and (max-width:600px) {  
     .c-teaser-2col .c-col-6,
     .c-teaser-4col .c-col-3,
-    .c-teaser-3col .c-col-4,
-    .c-teaser-2col-asym .c-col-6 {
+    .c-teaser-3col .c-col-4 {
 		-webkit-box-flex: 0;
 		-webkit-flex: 0 0 100%;
 		-ms-flex: 0 0 100%;
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
-    
-    .c-teaser-2col-asym-text {
-        padding: $spacing-xs 15px 0 15px;
-    }
-    
-    .c-teaser-2col-asym-img,
-    .c-row-reverse .c-teaser-2col-asym-img {
-        margin-left: -15px;
-        margin-right: -15px;
-    }
 }
 
 @media only screen and (max-width:540px) {  
