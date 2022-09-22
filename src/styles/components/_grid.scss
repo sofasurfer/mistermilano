@@ -19,16 +19,16 @@
    ========================================================================== */
 
 .c-container {
-	padding-bottom: $spacing-l;
+	padding-bottom: 6em;
 }
 
 .c-main-title {
-	margin-top: $spacing-l;
+	margin-top: 6em;
 }
 
 .c-showroom-text-inner {
-    padding-top: $spacing-l;
-    padding-bottom: $spacing-l;
+    padding-top: 6em;
+    padding-bottom: 6em;
 }
 
 .c-container-no-padding {
@@ -46,13 +46,13 @@
    ========================================================================== */
 
 .c-container {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .c-row {
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -10px;
+    margin-left: -10px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -114,8 +114,8 @@
 .c-col-12 {
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .c-col-12 {
