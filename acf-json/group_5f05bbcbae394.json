@@ -167,6 +167,50 @@
                     "ui": 1
                 },
                 {
+                    "key": "field_5f0818c4a5b43",
+                    "label": "Sales archive",
+                    "name": "archive_sales",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1
+                },
+                {
+                    "key": "field_5f0f1ff0d31c2",
+                    "label": "Services archive",
+                    "name": "archive_services",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1
+                },
+                {
                     "key": "field_5f0f20de4568f",
                     "label": "Blog archive",
                     "name": "archive_blog",
@@ -298,8 +342,7 @@
                     "min": 0,
                     "max": 0,
                     "layout": "table",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
+                    "button_label": "",
                     "sub_fields": [
                         {
                             "key": "field_5f05be6e24980",
@@ -326,8 +369,7 @@
                             "ui": 0,
                             "return_format": "value",
                             "ajax": 0,
-                            "placeholder": "",
-                            "parent_repeater": "field_5f05bdcd6c93b"
+                            "placeholder": ""
                         },
                         {
                             "key": "field_5f05bead24981",
@@ -342,8 +384,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "parent_repeater": "field_5f05bdcd6c93b"
+                            "return_format": "array"
                         }
                     ]
                 }
@@ -375,5 +416,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663817230
+    "modified": 1654692099
 }
