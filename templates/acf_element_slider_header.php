@@ -1,7 +1,6 @@
 <?php
 $fields  = $site_element;
 $slides  = $fields['repeater'];
-$index   = 0;
 $classes = [ 'splide--header', 'splide--narrow' ]
 ?>
 
@@ -20,7 +19,7 @@ $classes = [ 'splide--header', 'splide--narrow' ]
 				?>
                 <li class="splide__slide c-showroom-slide">
                     <figure class="c-showroom-img">
-                        <?= $image ?>
+						<?= $image ?>
                     </figure>
                     <div class="c-container c-container-no-padding c-showroom-text">
                         <div class="c-row c-row-align-center">
@@ -36,9 +35,7 @@ $classes = [ 'splide--header', 'splide--narrow' ]
                         </div>
                     </div>
                 </li>
-				<?php
-				$index ++;
-			} ?>
+			<?php } ?>
         </ul>
     </div>
 </div>
