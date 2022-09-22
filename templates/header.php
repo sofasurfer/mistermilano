@@ -65,7 +65,7 @@
 
                     <!-- offcanvas trigger-->
                     <a href="#open-navigation" class="c-offcanvas-trigger c-offcanvas-trigger-open">
-                        <span class="c-hide-visually"><?= __('Menü öffnen','lanzarchitekten');?></span>
+                        <span class="c-hide-visually"><?= __('Menü öffnen','neofluxe');?></span>
                     </a>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         <div class="c-container c-container-no-padding c-header-inner">
                             <!-- offcanvas trigger-->
                             <a href="#" class="c-offcanvas-trigger c-offcanvas-trigger-close">
-                                <span class="c-hide-visually"><?= __('Menu schliessen','lanzarchitekten');?></span>
+                                <span class="c-hide-visually"><?= __('Menu schliessen','neofluxe');?></span>
                             </a>
                         </div>
                     </div>
