@@ -48,9 +48,7 @@
                 <div class="c-container c-container-no-padding c-header-inner">
                     <div class="c-header-logo">
                         <a href="<?php echo get_home_url(); ?>">
-                            <!-- TODO: seems to work with dev/dev:3010 -->
-                            <span class="c-header-logo-stripes"><img src="<?= apply_filters( 'get_file_from_dist', 'images/logo-lanz-stripes.svg'); ?>" alt="Lanz Architekten" /></span>
-                            <span class="c-header-logo-text"><img src="<?= apply_filters( 'get_file_from_dist', 'images/logo-lanz-text.svg'); ?>" alt="Lanz Architekten" /></span>
+                            <img src="<?= apply_filters( 'get_file_from_dist', 'images/logo.svg'); ?>" alt="Logo <?= get_bloginfo('name') ?>" />
                         </a>
                     </div>
                     
