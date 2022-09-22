@@ -86,7 +86,7 @@ class General {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
 
-		load_theme_textdomain( 'lanzarchitekten', get_stylesheet_directory() . '/languages' );
+		load_theme_textdomain( 'neofluxe', get_stylesheet_directory() . '/languages' );
 
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			acf_add_options_page();
@@ -247,7 +247,7 @@ class General {
 	}
 
 	public function c_shortcode_version() {
-		$my_theme = wp_get_theme( 'lanzarchitekten' );
+		$my_theme = wp_get_theme( 'neofluxe' );
 		if ( $my_theme->exists() ) {
 			return $my_theme->get( 'Version' );
 		}
