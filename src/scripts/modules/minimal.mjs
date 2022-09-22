@@ -33,3 +33,17 @@ export function isEmail(email) {
     const regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
 }
+
+/**
+ * Checks the DOM for existing elements that should execute the scroll to top event and binds events on them.
+ *
+ * @param query - The query selector to find the elements.
+ */
+export function activateGoToTopOfPageListener(query = '.c-link-top') {
+    document.querySelectorAll(query).forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    });
+}
