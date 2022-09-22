@@ -95,7 +95,7 @@
                                     array( 
                                         'theme_location'    => 'header-menu',
                                         'container'         => false,
-                                        'menu_class'        => 'c-main-nav-list',
+                                        'menu_class'        => 'c-offcanvas-nav-list',
                                     )
                                 ); ?>  
                             </div>
