@@ -35,7 +35,7 @@
 }
 
 .c-header-meta {
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
 }
 
 .c-main-nav-list,
@@ -55,7 +55,7 @@
 }
 
 .c-main-nav-list li {
-	padding-right: 1rem;
+	padding-right: 1.5em;
 }
 
 .c-meta-list li + li {
@@ -77,49 +77,10 @@
 .c-main-nav-list a {
 	display: inline-block;
 	position: relative;
-    padding: 0.5em 20px;
-    border-radius: 2em;
-    border: solid 2px $border-basic;
-    transition: all 0.2s linear;
+	padding-bottom: 0.5em;
 }
 
-.c-main-nav-list a:focus,
-.c-main-nav-list a:hover,
-.c-main-nav-list .c-active a {
-	background-color: $color-highlight;
-    border-color: $color-highlight;
-    color: $text-color-light;
-}
-
-.c-main-nav-list li:nth-child(1) a:focus,
-.c-main-nav-list li:nth-child(1) a:hover,
-.c-main-nav-list li.c-active:nth-child(1) a {
-    background-color: #669164;
-    border-color: #669164;
-}
-
-.c-main-nav-list li:nth-child(2) a:focus,
-.c-main-nav-list li:nth-child(2) a:hover,
-.c-main-nav-list li.c-active:nth-child(2) a {
-    background-color: #d1d3e0;
-    border-color: #d1d3e0;
-}
-
-.c-main-nav-list li:nth-child(3) a:focus,
-.c-main-nav-list li:nth-child(3) a:hover,
-.c-main-nav-list li.c-active:nth-child(3) a {
-    background-color: #ebcf4a;
-    border-color: #ebcf4a;
-}
-
-.c-main-nav-list li:nth-child(4) a:focus,
-.c-main-nav-list li:nth-child(4) a:hover,
-.c-main-nav-list li.c-active:nth-child(4) a {
-    background-color: #4f8cbb;
-    border-color: #4f8cbb;
-}
-
-/*.c-main-nav-list a::before {
+.c-main-nav-list a::before {
 	content:'';
 	position: absolute;
 	left: 0;
@@ -135,6 +96,6 @@
 .c-main-nav-list a:hover::before,
 .c-main-nav-list .c-active a::before {
 	width: 100%;
-}*/
+}
 
 
