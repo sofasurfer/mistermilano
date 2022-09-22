@@ -4,12 +4,37 @@
 
 .c-footer {
 	padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    background-color: $bg-light;
+    
+}
+
+.c-footer-top {
+    padding-bottom: $spacing-xs;
+}
+
+.c-footer-bg {
+    background-color: $bg-dark;
+}
+
+.c-footer-main {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.c-footer-main p {
+    max-width: 390px;
+}
+
+.c-footer-main .c-col-5::before {
+    content:'';
+    position: absolute;
+    right: 20px;
+    width: 3px;
+    height: 100%;
+    background-color: #336a9d;
 }
 
 .c-footer-disclaimer {
-	padding-top: 1.5em;
+	padding-bottom: 1.5em;
 }
 
 .c-footer-disclaimer-list {
@@ -20,18 +45,5 @@
 
 .c-footer-disclaimer-list li {
 	display: inline-block;
-}
-
-.c-footer-disclaimer-list > li + li {
-	padding-left: 10px;
-}
-
-.c-footer a,
-.c-footer a:visited {
-	color: $text-color;
-}
-
-.c-footer a:hover,
-.c-footer a:focus {
-	color: $text-color;
+    padding-right: 1em;
 }

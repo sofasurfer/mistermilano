@@ -8,17 +8,17 @@
 
 
 .c-header-inner {
-	height: 60px;
+	height: 220px;
 	display: flex;
 	flex-flow: row;
+    align-items: center;
 	justify-content: space-between;
 }
 
 
 .c-header-logo {
 	position: relative;
-	width: 200px;
-	height: 40px;
+	width: 310px;
 }
 
 .c-header-logo a {
@@ -30,64 +30,146 @@
    main nav / filter list
    ========================================================================== */
 
-.c-main-nav {
-	justify-content: flex-end;
+.c-header-nav {
+	text-align: right;
 }
 
-.c-main-nav-list {
+.c-header-meta {
+    padding-bottom: 2rem;
+}
+
+.c-main-nav-list,
+.c-meta-list {
 	margin: 0;
-	padding: 16px 0 0 0;
+	padding: 0;
 	list-style: none;
 }
 
 .c-main-nav-list li,
-.c-filter-list li {
+.c-meta-list li {
 	display: inline-block;
 }
 
-.c-filter-list {
-	margin: 0;
-	padding-top: 1.25em;
-	padding-right: 0;
-	padding-bottom: 1em;
-	list-style: none;
+.c-main-nav-list {
+	padding-right: 40px;
 }
 
-.c-main-nav-list li + li {
-	padding-left: 2em;
+.c-main-nav-list li {
+	padding-right: 1rem;
 }
 
-.c-filter-list li {
-	padding: 0.75em 2em 0.25em 0;
+.c-meta-list li + li {
+	padding-left: 1.5em;
 }
+
 
 .c-main-nav-list a,
-.c-filter-list a {
+.c-main-nav-list a:focus,
+.c-main-nav-list a:hover,
+.c-main-nav-list a:visited,
+.c-meta-list a,
+.c-meta-list a:focus,
+.c-meta-list a:hover,
+.c-meta-list a:visited {
+	color: $text-color;
+}
+
+.c-main-nav-list a {
 	display: inline-block;
 	position: relative;
-	padding-bottom: 0.5em;
+    padding: 0.5em 20px;
+    border-radius: 2em;
+    border: solid 2px $border-basic;
+    transition: all 0.2s ease-out;
+    overflow: hidden;
+    z-index: auto;
 }
 
-.c-main-nav-list a::before,
-.c-filter-list a::before {
+.c-main-nav-list a::before {
 	content:'';
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 0;
-	background-color: $border-basic;
-	transition: all 0.2s linear;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -3em;
+    height: 100%;
+    width: 0;
+    border-radius: 3em;
+    background-color: transparent;
+    transition: all 0.2s ease-out;
+    background-image: none;
+    z-index: -1;
 }
 
+.c-main-nav-list a:focus,
+.c-main-nav-list a:hover,
+.c-main-nav-list .c-active a {
+	/*background-color: $color-highlight;*/
+    border-color: $color-highlight;
+    color: $text-color-light;
+}
 
 .c-main-nav-list a:focus::before,
 .c-main-nav-list a:hover::before,
-.c-main-nav-list .c-active a::before,
-.c-filter-list a:focus::before,
-.c-filter-list a:hover::before,
-.c-filter-list .c-active a::before {
-	height: 8px;
+.c-main-nav-list .c-active a::before{
+	width: calc(100% + 3em);
 }
 
+.c-main-nav-list li:nth-child(1) a:focus,
+.c-main-nav-list li:nth-child(1) a:hover,
+.c-main-nav-list li.c-active:nth-child(1) a {
+    border-color: #669164;
+}
 
+.c-main-nav-list li:nth-child(1) a:focus::before,
+.c-main-nav-list li:nth-child(1) a:hover::before,
+.c-main-nav-list li.c-active:nth-child(1) a::before {
+    background-color: #669164;
+}
+
+.c-main-nav-list li:nth-child(2) a:focus,
+.c-main-nav-list li:nth-child(2) a:hover,
+.c-main-nav-list li.c-active:nth-child(2) a {
+    border-color: #d1d3e0;
+}
+
+.c-main-nav-list li:nth-child(2) a:focus::before,
+.c-main-nav-list li:nth-child(2) a:hover::before,
+.c-main-nav-list li.c-active:nth-child(2) a::before {
+    background-color: #d1d3e0;
+}
+
+.c-main-nav-list li:nth-child(3) a:focus,
+.c-main-nav-list li:nth-child(3) a:hover,
+.c-main-nav-list li.c-active:nth-child(3) a {
+    border-color: #ebcf4a;
+}
+
+.c-main-nav-list li:nth-child(3) a:focus::before,
+.c-main-nav-list li:nth-child(3) a:hover::before,
+.c-main-nav-list li.c-active:nth-child(3) a::before {
+    background-color: #ebcf4a;
+}
+
+.c-main-nav-list li:nth-child(4) a:focus,
+.c-main-nav-list li:nth-child(4) a:hover,
+.c-main-nav-list li.c-active:nth-child(4) a {
+    border-color: #4f8cbb;
+}
+
+.c-main-nav-list li:nth-child(4) a:focus::before,
+.c-main-nav-list li:nth-child(4) a:hover::before,
+.c-main-nav-list li.c-active:nth-child(4) a::before {
+    background-color: #4f8cbb;
+}
+
+.c-main-nav-list li:nth-child(5) a:focus,
+.c-main-nav-list li:nth-child(5) a:hover,
+.c-main-nav-list li.c-active:nth-child(5) a {
+    border-color: $color-highlight;
+}
+
+.c-main-nav-list li:nth-child(5) a:focus::before,
+.c-main-nav-list li:nth-child(5) a:hover::before,
+.c-main-nav-list li.c-active:nth-child(5) a::before {
+    background-color: $color-highlight;
+}

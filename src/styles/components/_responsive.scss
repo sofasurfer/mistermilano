@@ -12,8 +12,8 @@
    ========================================================================== */
 
 
-@media only screen and (min-width:1200px) {    
-	/* grid gap */	
+
+/*@media only screen and (min-width:1200px) {    
 	.c-container {
 		padding-left: 40px;
 		padding-right: 40px;
@@ -38,45 +38,292 @@
 		padding-right: 20px;
 		padding-left: 20px;
 	}
-	
-	
-}
+    
+    .c-offcanvas-trigger {
+        right: 40px;
+    }
+    
+    .c-offcanvas-nav-list > li {
+        padding-left: 40px;
+    }
+}*/
 
-
-@media only screen and (min-width:1330px) {    
-	/* container max width */
+@media only screen and (min-width:1400px) {    
+	/* grid gap */	
 	.c-container {
-        max-width: 1320px;
-        margin-left: auto;
-		margin-right: auto;
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+	.c-row {
+		margin-right: -30px;
+		margin-left: -30px;
+	}
+	
+	.c-col-1,
+	.c-col-2,
+	.c-col-3,
+	.c-col-4,
+	.c-col-5,
+	.c-col-6,
+	.c-col-7,
+	.c-col-8,
+	.c-col-9,
+	.c-col-10,
+	.c-col-11,
+	.c-col-12 {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+    
+    .c-footer-main .c-col-5::before {
+        right: 30px;
+    }
+    
+    .c-offcanvas-trigger {
+        right: 60px;
+    }
+    
+    
+    .c-teaser-2col-asym-img {
+        margin-left: -30px;
+    }
+
+    .c-teaser-2col-asym-text {
+        padding-right: 30px;
+    }
+
+    .c-row-reverse .c-teaser-2col-asym-img {
+        margin-left: 0;
+        margin-right: -30px;
+    }
+
+    .c-row-reverse .c-teaser-2col-asym-text {
+        padding-left: 30px;
+        padding-right: 0;
+    }
+    
+    .c-quicklinks-list {
+        padding-left: 60px;
+    }
+    
+    
+    .c-meta-list li + li {
+        padding-left: 2em;
+    }
+    
+    .c-box {
+        padding: 3em 60px;
+    }
+    
+    .c-section-title-img-left .c-section-title-img-img {
+        padding-left: 60px;
+    }
+
+    .c-section-title-img-right .c-section-title-img-img {
+        padding-right: 60px;
     }
 }
 
 
 
+@media only screen and (min-width:1740px) {    
+	/* container max width */
+	.c-container {
+        max-width: 1730px;
+        margin-left: auto;
+		margin-right: auto;
+    }
+    
+    .c-teaser-2col-asym-text {
+        max-width: calc(835px - 30px);
+    }
+    
+    .c-row-reverse .c-teaser-2col-asym-text {
+        margin-left: auto;
+    }
+    
+    .c-section-title-img-left .c-section-title-img-img {
+        margin-left: calc(50% - 865px);
+    }
+    
+    .c-section-title-img-right .c-section-title-img-img {
+        margin-right: calc(50% - 865px);
+    }
+}
 
-/* header show offcanvas */
-@media only screen and (max-width:900px) {  
-	.c-offcanvas-trigger-open {
-		display: block;
-	}
-	
-	.c-main-nav {
-		display: none;
+
+@media only screen and (max-width:1199px) {  
+	.c-teaser-4col .c-col-3 {
+		-webkit-box-flex: 0;
+        -webkit-flex: 0 0 33.33333%;
+        -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
 	}
 }
 
-@media only screen and (max-width:767px) {  
+
+@media only screen and (max-width:980px) {  
 	.c-text-only .c-col-8,
 	.c-main-title .c-col-8,
 	.c-section-title .c-col-8,
-	.c-quote .c-col-8 {
+    .c-main-title-img .c-col-8 {
+		-webkit-box-flex: 0;
+        -webkit-flex: 0 0 83.33333%;
+        -ms-flex: 0 0 83.33333%;
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;	
+	}
+    
+    .c-text-quicklinks .c-col-6 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 58.33333%;
+        -ms-flex: 0 0 58.33333%;
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    
+    
+    .c-teaser-4col .c-col-3,
+    .c-teaser-3col .c-col-4 {
+		-webkit-box-flex: 0;
+        -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+	}
+}
+
+
+@media only screen and (max-width:900px) {  
+	
+	/* header show offcanvas */
+	.c-header-nav {
+		display: none;
+	}
+    
+    .c-header-inner {
+        height: 100px;
+    }
+    
+    .c-header-logo {
+        width: 200px;
+    }
+    
+    .c-offcanvas-trigger {
+        top: 50%;
+    }
+    
+    .c-offcanvas-nav-list > li {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+
+
+@media only screen and (max-width:768px) {  
+	.c-text-only .c-col-8,
+	.c-main-title .c-col-8,
+	.c-section-title .c-col-8,
+    .c-showroom-text-inner,
+    .c-main-title-img .c-col-8 {
 		-webkit-box-flex: 0;
 		-webkit-flex: 0 0 100%;
 		-ms-flex: 0 0 100%;
 		flex: 0 0 100%;
 		max-width: 100%;    	
 	}
+    
+    .c-title-subpage-img .c-box,
+    .c-section-title-img .c-box{
+        margin-top: -$spacing-m;
+    }
+    
+    .c-section-title-img .c-col-8 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 91.66667%;
+        -ms-flex: 0 0 91.66667%;
+        flex: 0 0 91.66667%;
+        max-width: 91.66667%;
+    }
+
+	.c-text-img .c-col-5,
+	.c-text-img .c-col-7 {
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 0 100%;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;    	
+	}
+    
+    .c-text-img .c-col-5 {
+		padding-bottom: $spacing-s;   	
+	}
+    
+    .c-img-2col .c-col-6 {
+        -webkit-box-flex: 0;
+		-webkit-flex: 0 0 100%;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;  
+    }
+    
+    .c-img-2col .c-col-6 + .c-col-6 {
+        padding-top: $spacing-l; 
+    }
 }
 
+@media only screen and (max-width:650px) {  
+    .c-text-quicklinks .c-col-6,
+    .c-text-quicklinks .c-col-5 {
+        -webkit-box-flex: 0;
+		-webkit-flex: 0 0 100%;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+    }
+    
+    .c-quicklinks-list {
+        padding-left: 0;
+        border-left: 0;
+        border-top: solid 3px $border-dark;
+    }
+}
+
+@media only screen and (max-width:600px) {  
+    .c-teaser-2col .c-col-6,
+    .c-teaser-4col .c-col-3,
+    .c-teaser-3col .c-col-4,
+    .c-teaser-2col-asym .c-col-6 {
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 0 100%;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+    
+    .c-teaser-2col-asym-text {
+        padding: $spacing-xs 15px 0 15px;
+    }
+    
+    .c-teaser-2col-asym-img,
+    .c-row-reverse .c-teaser-2col-asym-img {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+@media only screen and (max-width:540px) {  
+	.c-offcanvas-nav-list > li {
+        -webkit-box-flex: 0;
+		-webkit-flex: 0 0 100%;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%; 
+    }
+}
 

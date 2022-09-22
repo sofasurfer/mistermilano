@@ -9,26 +9,28 @@ a[href^="tel:"] {
 }
 
 .c-text-block a {
-	background-image: linear-gradient(to bottom,$text-color 0%,$text-color 100%);
+	background-image: linear-gradient(to bottom,$color-highlight 0%,$color-highlight 100%);
     background-position: 0 100%;
     background-repeat: repeat-x;
-    background-size: 1px 1px;
+    background-size: 3px 3px;
   	transition: background .1s;
 }
 
 .c-text-block a:focus,
 .c-text-block a:hover {
-	background-size: 2px 2px;
+    color: $text-color-light;
+    background-size: 3px 100%;
 }
 
 .c-text-block .c-btn,
 .c-text-block .c-form-standard input[type="submit"],
 .c-text-block .c-link-arrow,
-.c-text-block .c-link-download,
 .c-text-block .c-link-extern,
-.c-text-block .c-link-back {
+.c-text-block .c-link-top {
 	background-image: none;
 }
+
+
 
 
 /* ==========================================================================
@@ -39,13 +41,13 @@ a[href^="tel:"] {
 .c-form-standard input[type="submit"]{
     display: inline-block;
     margin: 0;
-	padding: 1.15em 40px 1.15em 40px;
+	padding: 0.7em 36px 0.7em 36px;
 	border: none;
-	background-color: $text-color;
+    border-radius: 3em;
+	background: $color-highlight;
     line-height: 1.2;
     text-align: center;  
-	font-weight: bold;
-	font-size: 1em;
+	font-weight: 900;
 	transition: all 0.2s ease-out;
 	text-decoration: none;
 }
@@ -58,11 +60,15 @@ a[href^="tel:"] {
 
 .c-btn:hover, 
 .c-btn:focus,
+.c-text-block .c-btn:hover, 
+.c-text-block .c-btn:focus,
 .c-form-standard input[type="submit"]:hover,
 .c-form-standard input[type="submit"]:focus {
     color: $text-color-light;
-	background-color: $text-color;
+	/*background-color: $text-color;*/
 	text-decoration: none;
+    background: rgb(255,200,69);
+    background: linear-gradient(90deg, rgba(255,200,69,1) 0%, rgba(129,195,192,1) 100%); 
 }
 
 
@@ -72,6 +78,8 @@ a[href^="tel:"] {
 .c-btn-small:focus {
    padding: 0.5em 20px;
 }
+
+
 
 
 /* ==========================================================================
@@ -92,63 +100,140 @@ a[href^="tel:"] {
 }
 
 .c-link-arrow,
-.c-link-download,
 .c-link-extern,
-.c-link-back {
+.c-link-top {
 	display: inline-block;
-	padding-left: 40px;
-	font-weight: bold;
+	padding-left: 60px;
 }
 
-.c-link-arrow::before,
-.c-link-back::before {
+.c-link-arrow:focus,
+.c-link-arrow:hover,
+.c-text-block .c-link-arrow:focus,
+.c-text-block .c-link-arrow:hover,
+.c-link-extern:focus,
+.c-link-extern:hover,
+.c-text-block .c-link-extern:focus,
+.c-text-block .c-link-extern:hover,
+.c-link-top:focus,
+.c-link-top:hover,
+.c-text-block .c-link-top:focus,
+.c-text-block .c-link-top:hover{
+	color: $text-color;
+}
+.c-link-top {
+	padding-left: 32px;
+}
+
+.c-link-arrow::before {
 	top: 0.25em;
 	left: 0;
-	width: 28px;
-	height: 16px;
+	width: 41px;
+	height: 17px;
 	background-position: 0 0;
-	transition: 0.1s ease-in-out;
 }
 
 .c-link-arrow:hover::before,
 .c-link-arrow:focus::before {
-	left: 4px;
+	background-position: -100px 0;
 }
 
-
-.c-link-back::before {
-	background-position: 0 -120px;
+.c-text-light .c-link-arrow::before {
+    background-position: 0 -40px;
 }
 
-.c-link-back:hover::before,
-.c-link-back:focus::before {
-	left: -4px;
-}
-
-.c-link-download::before {
-	top: -0.25em;
-	left: 0;
-	width: 20px;
-	height: 25px;
-	background-position: 0 -40px;
-}
-
-.c-link-download:hover::before,
-.c-link-download:focus::before {
-	background-position: -50px -40px;
+.c-text-light .c-link-arrow:hover::before,
+.c-text-light .c-link-arrow:focus::before {
+	background-position: -100px -40px;
 }
 
 .c-link-extern::before {
-	top: -0.28em;
+	top: 0.1em;
 	left: 0;
-	width: 26px;
-	height: 26px;
+	width: 38px;
+	height: 22px;
 	background-position: 0 -80px;
 }
 
 .c-link-extern:hover::before,
 .c-link-extern:focus::before {
-	background-position: -50px -80px;
+	background-position: -100px -80px;
+}
+
+.c-link-top::before {
+	top: -0.1em;
+	left: 0;
+	width: 17px;
+	height: 23px;
+	background-position: 0 -120px;
+}
+
+.c-link-top:hover::before,
+.c-link-top:focus::before {
+	background-position: -100px -120px;
+}
+
+
+.c-btn-quicklink {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+	padding: 0.7em 60px 0.7em 20px;
+    border-radius: 3em;
+    height: 2.4em;
+    line-height: 1;
+    text-align: left; 
+	transition: all 0.2s ease-out;
+	text-decoration: none;
+    overflow: hidden; 
+    z-index: auto;
+}
+
+.c-btn-quicklink::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.4em;
+    width: 2.4em;
+    border-radius: 3em;
+    background-color: $color-highlight;
+    opacity: 0.3;
+    transition: all 0.2s ease-out;
+    background-image: none;
+    z-index: -1;
+}
+
+.c-btn-quicklink,
+.c-btn-quicklink:visited {
+    color: $color-highlight;  
+}
+
+.c-btn-quicklink:focus,
+.c-btn-quicklink:hover {
+    color: $text-color-light;
+}
+
+.c-btn-quicklink:focus::before,
+.c-btn-quicklink:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+
+.c-btn-quicklink::after {
+	top: 50%;
+	right: 10px;
+	width: 41px;
+	height: 17px;
+    margin-top: -9px;
+	background-position: 0 0;
+    z-index: 1;
+}
+
+.c-btn-quicklink:focus::after,
+.c-btn-quicklink:hover::after {
+	background-position: 0 -40px;
 }
 
 /* ==========================================================================

@@ -7,7 +7,7 @@
 	/* @import must be at top of file, otherwise CSS will not work */
 	/* @import url('//hello.myfonts.net/count/426563'); */
 
-	$font-stack-default: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+	$font-stack-default: 'Strawford', 'Arial', 'Helvetica', sans-serif;
 
 
 /* ==========================================================================
@@ -15,22 +15,36 @@
    ========================================================================== */
 
 	/* text */
-	$text-color: #1D1D1B; /* dark grey */
+	$text-color: #000; 
 	$text-color-light: #fff;
-	$color-highlight: #1D1D1B; /* dark grey */
+    $text-color-medium: #707070;
+	$color-highlight: #004584; /* dark blue */
+    $color-blue-light: #81C3C0;
 
 	/* background */
 	$bg-content: #fff;
-	$bg-dark: #1D1D1B; /* dark grey */
+	$bg-dark: #004584; /* dark blue */
 	$bg-light: #f9f9f9; /* light grey */
 
 	/* line-colors */
-	$border-basic: #ebebeb;
+	$border-basic: #ccc;
+    $border-dark: #707070;
 
 
 	/* form */
-	$border-form: #A8A8A8;
+	$border-form: #707070;
 	$border-form-focus: #000;
 	$form-disabled: #ccc;
 	$color-form-error: #dd0000;
 
+
+
+/* ==========================================================================
+   Spacing
+   ========================================================================== */
+
+	/* text */
+	$spacing-l: 6rem; 
+    $spacing-m: 3rem; 
+    $spacing-s: 1.5rem; 
+    $spacing-xs: 1rem;

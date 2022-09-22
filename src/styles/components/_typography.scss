@@ -2,7 +2,7 @@
    Base
    ========================================================================== */
 html {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 /* ==========================================================================
@@ -24,27 +24,42 @@ h1,
 .c-h1 {
 	padding-bottom: .5em;
 	line-height: 1.1;
-	font-size: 4.44rem; /* 80px */
-	font-weight: bold;
+	font-size: 4.25rem; /* 85px */
+	font-weight: 900;
 }
 
 h2,
 .c-h2 {
 	padding-bottom: .5em;
 	line-height: 1.2;
-	font-size: 2.22rem; /* 40px */
-	font-weight: bold;
+	font-size: 3rem; /* 60px */
+	font-weight: 900;
 }
 
 
 h3,
 .c-h3 {
-	line-height: 1.5;
-	font-size: 1.33rem;
+	line-height: 1.2;
+	font-size: 2rem; /* 40px */
 	padding-bottom: 0.5em;
-	font-weight: bold;
+	font-weight: 900;
 }
 
+h4,
+.c-h4 {
+	line-height: 1.333;
+	font-size: 1.5rem; /* 30px */
+	padding-bottom: 0.5em;
+	font-weight: 900;
+}
+
+h5,
+.c-h5 {
+	line-height: 1.333;
+	font-size: 1rem; 
+	padding-bottom: 0.5em;
+	font-weight: 900;
+}
 
 
 /* ==========================================================================
@@ -58,6 +73,10 @@ h3,
 
 .c-text-block p {
 	padding-bottom: 1.5em;
+}
+
+.c-teaser-item p {
+    padding-bottom: 0.75em;
 }
 
 .c-text-block p + h2,
@@ -76,32 +95,47 @@ h3,
 }
 
 .c-lead {
-	font-size: 1.33rem;
-	line-height: 1.33;
+	line-height: 1.333;
+	font-size: 1.5rem; /* 30px */
 }
+
+.c-text-body,
+.c-main-nav {
+    font-size: 1rem;
+}
+
 
 .c-text-small,
 .c-text-block blockquote cite,
 .c-legend {	
-	font-size: 0.77rem; /* 14px */
+	font-size: 0.85rem;
 }
 
 .c-legend {
 	display: block;
-	padding-top: 1em;
+	padding-top: $spacing-xs;
 }
 
-.c-footer-disclaimer {
-	font-size: 0.88rem; /* 18px */
+.c-category-title {
+    display: block;
+    padding-bottom: 0.2em;
 }
 
+b, strong {
+    font-weight: 900;
+}
 
+.c-btn,
+.c-form-standard input[type="submit"] {
+    font-size: 1rem;
+}
 
 /* ==========================================================================
    Basic Lists Content 
    ========================================================================== */
 .c-text-block ul,
-.c-text-block ol {
+.c-text-block ol,
+.c-link-list {
 	margin: 0;
 	padding: 0 0 1.5em 0; 
 	list-style: none;
@@ -114,18 +148,29 @@ h3,
 }
 
 .c-text-block ul li + li,
-.c-text-block ol li + li {
+.c-text-block ol li + li, {
 	margin-top: 0.5em;
 }
 
+.c-text-block .c-link-list li + li,
+.c-link-list li + li {
+	margin-top: 1em;
+}
+
 .c-text-block ul li::before {
-	content:'';
-	position: absolute;
-	top: 0.44em;
-	left: 0;
-	width: 20px;
-	height: 5px;
-	background-color: $border-basic;
+	content: '\25CF';
+    position: absolute;
+    left: 0;
+    top: 0;
+	color: $color-highlight;
+}
+
+.c-text-block .c-link-list li::before {
+   content:'';
+}
+
+.c-text-block .c-link-list li {
+    padding-left: 0;
 }
 
 .c-text-block ol {
@@ -143,10 +188,12 @@ h3,
 	left: 0;
 	top: 0;
 	width: 26px;
-	color: $text-color;
+	color: $color-blue-light;
 	font-weight: bold;
 	text-align: right;
 }
+
+
 
 /* ==========================================================================
    Quote
@@ -154,32 +201,46 @@ h3,
 
 .c-text-block blockquote {
 	margin: 0; 
-	padding: 0 0 3rem 0;
+	padding: 0;
 }
 
 .c-text-block blockquote p {
 	position: relative;
-	padding: 2.6rem 0 0 0;
-	line-height: 1.25;
-	font-size: 2.22rem; /* 40px */
-	font-weight: 300;
+	padding: 3.3rem 0 0 0;
+	line-height: 1.333;
+	font-size: 1.5rem; /* 30px */
+	font-weight: 900;
 }
 
 .c-text-block blockquote p::before {
-	content: '\201C';
+	content: '\00ab';
 	display: block;
 	position: absolute;
-	left: -31px;
-	top: -2.8rem;
-	font-size: 14.44rem;
-	color: $border-basic;
-	font-weight: bold;
+	left: 0;
+	top: -3.3rem;
+	font-size: 6.1rem;
+	color: $color-blue-light;
+	font-weight: 900;
 	z-index: -1;
 }
 
 .c-text-block blockquote cite {
-	padding-top: 1.5em;
+    position: relative;
+    display: block;
+    margin-top: 1.5em;
+	padding-top: 0.85em;
 	font-style: normal;
+}
+
+.c-text-block blockquote cite::before {
+    content:'';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4.5em;
+    height: 3px;
+    background-color: $color-blue-light;
 }
 
 
@@ -203,6 +264,48 @@ h3,
    Text sizes responsive
    ========================================================================== */
 
+@media only screen and (min-width:1400px) {   
+    .c-text-body,
+    .c-main-nav,
+    h5,.c-h5,
+    .c-btn,
+    .c-form-standard input[type="submit"] {
+        font-size: 1.2rem; 
+    }
+
+    .c-text-small,
+    .c-text-block blockquote cite,
+    .c-legend {	
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width:1399px) { 
+    /* be resized to go with smaller body text */
+    
+    h1, .c-h1 {
+        font-size: 4.25rem; /* 85px */
+    }
+
+    h2,
+    .c-h2 {
+        font-size: 3rem; /* 60px */
+    }
+
+
+    h3,
+    .c-h3 {
+        font-size: 2rem; /* 40px */
+    }
+
+    h4, .c-h4,
+    .c-lead,
+    .c-text-block blockquote p {
+        font-size: 1.5rem; /* 30px */
+    }
+}
+
+
 @media only screen and (max-width:1360px) {    
 	h1, .c-h1,
 	h2, .c-h2,
@@ -220,6 +323,8 @@ h3,
 }
 
 
+
+
 @media only screen and (max-width:767px) {    
 	
 	html {
@@ -227,22 +332,25 @@ h3,
 	}
 	
 	h1, .c-h1 {
-		font-size: 2rem; 
-	}
-	
-	h2, c-h2 {
-		font-size: 1.5rem;
-	}
-	
-	.c-lead,
-	h3, .c-h3 {
-		font-size: 1.125rem;
-	}
-	
-	.c-text-small,
-	.c-legend {	
-		font-size: 0.875rem; 
-	}
+        font-size: 40px; /* 85px */
+    }
+
+    h2,
+    .c-h2 {
+        font-size: 30px; /* 60px */
+    }
+
+
+    h3,
+    .c-h3 {
+        font-size: 28px; /* 40px */
+    }
+
+    h4, .c-h4,
+    .c-lead,
+    .c-text-block blockquote p {
+        font-size: 20px; /* 30px */
+    }
 
 
 }

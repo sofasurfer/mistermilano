@@ -9,6 +9,142 @@
 
 
 /* ==========================================================================
+  Showroom Slider
+   ========================================================================== */
+
+.c-showroom {
+	overflow: hidden;
+}
+
+.c-showroom-slide,
+.c-showroom-text .c-row {
+	min-height: 100vh; 
+}
+
+
+/* min-height fix for ie11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   	.c-showroom-text .c-row:after {
+		content: '';
+		/*display: block;*/
+		display: inline-block;
+		min-height: inherit;
+		font-size: 0;
+	}
+}
+
+
+.c-showroom-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.c-showroom-img img,
+.c-showroom-img video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* ==========================================================================
+  Title subpage / section title
+   ========================================================================== */
+
+.c-box {
+    position: relative;
+    padding: 1.5em 30px;
+    background-color: $bg-content;
+}
+
+.c-box::before {
+    content:'';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: rgb(255,200,69);
+    background: linear-gradient(90deg, rgba(255,200,69,1) 0%, rgba(129,195,192,1) 100%); 
+}
+
+.c-main-title-img .c-box,
+.c-section-title-img .c-box {
+    margin-top: -9.5em;
+}
+
+.c-section-title-img-left .c-col-8 {
+    margin-left: 8.333%;
+}
+
+.c-section-title-img-left .c-section-title-img-img {
+    padding-left: 30px;
+}
+
+.c-section-title-img-right .c-section-title-img-img {
+    padding-right: 30px;
+}
+
+.c-section-title-img-right .c-row {
+    justify-content: flex-end;
+}
+
+.c-section-title-img-right .c-col-8 {
+    margin-right: 8.333%;
+}
+
+
+
+/* ==========================================================================
+  Separator 
+   ========================================================================== */
+
+.c-link-list-separator {
+    display: block;
+    margin: 0;
+    padding: 0 0 $spacing-xs 0;
+    border: none;
+    border-top: solid 3px $border-basic;
+}
+
+/* ==========================================================================
+  text / quicklinks
+   ========================================================================== */
+
+.c-text-quicklinks .c-col-6,
+.c-quicklinks-list {
+    padding-top: $spacing-s;
+}
+
+.c-quicklinks-list {
+    padding-left: 30px;
+    border-left: solid 3px $border-dark;
+}
+
+
+/* ==========================================================================
+  Teaser
+   ========================================================================== */
+
+.c-teaser-item figure {
+    border-radius: 3rem 0;
+    margin-bottom: $spacing-xs;
+}
+
+
+.c-teaser-2col-asym-img img{
+    border-radius: 0 0 3rem 0;
+}
+
+.c-row-reverse .c-teaser-2col-asym-img img{
+    border-radius: 0 0 0 3rem;
+}
+
+/* ==========================================================================
   Cookie notice
    ========================================================================== */
 
