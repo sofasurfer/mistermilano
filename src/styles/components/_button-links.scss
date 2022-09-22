@@ -39,13 +39,12 @@ a[href^="tel:"] {
 .c-form-standard input[type="submit"]{
     display: inline-block;
     margin: 0;
-	padding: 1em 36px 1em 36px;
+	padding: 1.15em 40px 1.15em 40px;
 	border: none;
-    border-radius: 8px;
-	background-color: $color-highlight;
+	background-color: $text-color;
     line-height: 1.2;
     text-align: center;  
-	font-weight: 900;
+	font-weight: bold;
 	font-size: 1em;
 	transition: all 0.2s ease-out;
 	text-decoration: none;

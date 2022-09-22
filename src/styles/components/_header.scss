@@ -8,10 +8,9 @@
 
 
 .c-header-inner {
-	height: 220px;
+	height: 60px;
 	display: flex;
 	flex-flow: row;
-    align-items: center;
 	justify-content: space-between;
 }
 
@@ -31,57 +30,64 @@
    main nav / filter list
    ========================================================================== */
 
-.c-header-nav {
-	text-align: right;
+.c-main-nav {
+	justify-content: flex-end;
 }
 
-.c-header-meta {
-    padding-bottom: 2.5rem;
-}
-
-.c-main-nav-list,
-.c-meta-list {
+.c-main-nav-list {
 	margin: 0;
-	padding: 0;
+	padding: 16px 0 0 0;
 	list-style: none;
 }
 
 .c-main-nav-list li,
-.c-meta-list li {
+.c-filter-list li {
 	display: inline-block;
+}
+
+.c-filter-list {
+	margin: 0;
+	padding-top: 1.25em;
+	padding-right: 0;
+	padding-bottom: 1em;
+	list-style: none;
 }
 
 .c-main-nav-list li + li {
 	padding-left: 2em;
 }
 
-.c-meta-list li + li {
-	padding-left: 2em;
+.c-filter-list li {
+	padding: 0.75em 2em 0.25em 0;
 }
 
-
-.c-main-nav-list a {
+.c-main-nav-list a,
+.c-filter-list a {
 	display: inline-block;
 	position: relative;
 	padding-bottom: 0.5em;
 }
 
-.c-main-nav-list a::before {
+.c-main-nav-list a::before,
+.c-filter-list a::before {
 	content:'';
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	width: 100%;
 	height: 0;
-	background-color: $color-highlight;
+	background-color: $border-basic;
 	transition: all 0.2s linear;
 }
 
 
 .c-main-nav-list a:focus::before,
 .c-main-nav-list a:hover::before,
-.c-main-nav-list .c-active a::before {
-	height: 3px;
+.c-main-nav-list .c-active a::before,
+.c-filter-list a:focus::before,
+.c-filter-list a:hover::before,
+.c-filter-list .c-active a::before {
+	height: 8px;
 }
 
 

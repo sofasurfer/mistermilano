@@ -2,7 +2,7 @@
    Base
    ========================================================================== */
 html {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 /* ==========================================================================
@@ -24,42 +24,27 @@ h1,
 .c-h1 {
 	padding-bottom: .5em;
 	line-height: 1.1;
-	font-size: 4.25rem; /* 85px */
-	font-weight: 900;
+	font-size: 4.44rem; /* 80px */
+	font-weight: bold;
 }
 
 h2,
 .c-h2 {
 	padding-bottom: .5em;
 	line-height: 1.2;
-	font-size: 3rem; /* 60px */
-	font-weight: 900;
+	font-size: 2.22rem; /* 40px */
+	font-weight: bold;
 }
 
 
 h3,
 .c-h3 {
-	line-height: 1.2;
-	font-size: 2rem; /* 40px */
+	line-height: 1.5;
+	font-size: 1.33rem;
 	padding-bottom: 0.5em;
-	font-weight: 900;
+	font-weight: bold;
 }
 
-h4,
-.c-h4 {
-	line-height: 1.333;
-	font-size: 1.5rem; /* 30px */
-	padding-bottom: 0.5em;
-	font-weight: 900;
-}
-
-h5,
-.c-h5 {
-	line-height: 1.333;
-	font-size: 1.2rem; /* 24px */
-	padding-bottom: 0.5em;
-	font-weight: 900;
-}
 
 
 /* ==========================================================================
@@ -91,23 +76,14 @@ h5,
 }
 
 .c-lead {
-	line-height: 1.333;
-	font-size: 1.5rem; /* 30px */
-}
-
-.c-text-body,
-.c-main-nav {
-    font-size: 1rem;
-}
-
-.c-main-nav {
-    font-weight: 900;
+	font-size: 1.33rem;
+	line-height: 1.33;
 }
 
 .c-text-small,
 .c-text-block blockquote cite,
 .c-legend {	
-	font-size: 0.85rem;
+	font-size: 0.77rem; /* 14px */
 }
 
 .c-legend {
@@ -115,6 +91,9 @@ h5,
 	padding-top: 1em;
 }
 
+.c-footer-disclaimer {
+	font-size: 0.88rem; /* 18px */
+}
 
 
 
@@ -223,20 +202,6 @@ h5,
 /* ==========================================================================
    Text sizes responsive
    ========================================================================== */
-
-@media only screen and (min-width:1400px) {   
-    .c-text-body,
-    .c-main-nav {
-        font-size: 1.2rem;
-    }
-
-    .c-text-small,
-    .c-text-block blockquote cite,
-    .c-legend {	
-        font-size: 1rem;
-    }
-}
-
 
 @media only screen and (max-width:1360px) {    
 	h1, .c-h1,
