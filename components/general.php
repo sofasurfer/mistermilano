@@ -505,13 +505,13 @@ class General {
 	 */
 	public function c_check_linktype( $attributes ) {
 		$url          = $attributes['url'];
-		$icon_classes = is_array($attributes['icon_classes']) ? $attributes['icon_classes'] : ['c-link-arrow', 'c-link-download', 'c-link-extern'];
+		$icon_classes = is_array($attributes['icon_classes']) ? $attributes['icon_classes'] : ['internal' => 'c-link-arrow', 'download' => 'c-link-download', 'external' => 'c-link-extern'];
 
 		if ( ! $url ) {
 			return '';
 		}
 
-		$icon_class = $icon_classes[0];
+		$icon_class = $icon_classes['internal'] ?? $icon_classes[0];
 		$internal   = ( $url && strpos( $url, $_SERVER['SERVER_NAME'] ) );
 
 		/**
@@ -522,10 +522,10 @@ class General {
 			 * check if link looks like a downloadable file (.pdf or similar)
 			 */
 			if ( preg_match( '/\.\w+$/', $url ) ) {
-				$icon_class = $icon_classes[1];
+				$icon_class = $icon_classes['download'] ?? $icon_classes[1];
 			}
 		} else {
-			$icon_class = $icon_classes[2];
+			$icon_class = $icon_classes['external'] ?? $icon_classes[2];
 		}
 
 		return $icon_class;
