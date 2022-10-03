@@ -498,7 +498,7 @@ class General {
 	
 	/**
 	 * Usage `apply_filters( 'c_check_linktype', ['url' => 'https://example.com/', 'icon_classes' => ['internal', 'download', 'external'] ] );`
-	 * External links can not be download, it will always display as external.
+	 * External links can not be download, it will always display as external. Anchor link is optional and must not be filled.
 	 *
 	 * @param $attributes array
 	 *
@@ -506,7 +506,7 @@ class General {
 	 */
 	public function c_check_linktype( $attributes ) {
 		$url          = $attributes['url'];
-		$icon_classes = is_array($attributes['icon_classes']) ? $attributes['icon_classes'] : ['internal' => 'c-link-arrow', 'download' => 'c-link-download', 'external' => 'c-link-extern'];
+		$icon_classes = is_array($attributes['icon_classes']) ? $attributes['icon_classes'] : ['internal' => 'c-link-arrow', 'download' => 'c-link-download', 'external' => 'c-link-extern', 'anchor' => 'c-icon-anchor'];
 
 		if ( ! $url ) {
 			return '';
@@ -525,6 +525,10 @@ class General {
 			if ( preg_match( '/\.\w+$/', $url ) ) {
 				$icon_class = $icon_classes['download'] ?? $icon_classes[1];
 			}
+			
+			if (str_contains($url, '#')) {
+				$icon_class = $icon_classes['anchor'] ?? $icon_classes[3] ?? $icon_class ?? '';
+		        }
 		} else {
 			$icon_class = $icon_classes['external'] ?? $icon_classes[2];
 		}
