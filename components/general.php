@@ -74,6 +74,7 @@ class General {
 		add_filter( 'c_get_document_info', [ $this, 'c_get_document_info' ], 10, 1 );
 		add_filter( 'c_get_team_paging', [ $this, 'c_get_team_paging' ], 10 );
 		add_filter( 'c_get_option', [ $this, 'c_get_option' ], 10, 1 );
+		add_filter( 'c_check_linktype', [ $this, 'c_check_linktype' ] );
 
 		add_filter( 'acf/fields/wysiwyg/toolbars', [ $this, 'c_toolbars' ] );
 		add_filter( 'tiny_mce_before_init', [ $this, 'c_tiny_mce_before_init' ] );
@@ -493,6 +494,41 @@ class General {
 		}
 
 		return $content;
+	}
+	
+	/**
+	 * Usage `apply_filters( 'c_check_linktype', ['url' => 'https://example.com/', 'icon_classes' => ['internal', 'download', 'external'] ] );`
+	 *
+	 * @param $attributes array
+	 *
+	 * @return string
+	 */
+	public function c_check_linktype( $attributes ) {
+		$url          = $attributes['url'];
+		$icon_classes = is_array($attributes['icon_classes']) ? $attributes['icon_classes'] : ['c-link-arrow', 'c-link-download', 'c-link-extern'];
+
+		if ( ! $url ) {
+			return '';
+		}
+
+		$icon_class = $icon_classes[0];
+		$internal   = ( $url && strpos( $url, $_SERVER['SERVER_NAME'] ) );
+
+		/**
+		 * check if link is internal or external
+		 */
+		if ( $internal ) {
+			/**
+			 * check if link looks like a downloadable file (.pdf or similar)
+			 */
+			if ( preg_match( '/\.\w+$/', $url ) ) {
+				$icon_class = $icon_classes[1];
+			}
+		} else {
+			$icon_class = $icon_classes[2];
+		}
+
+		return $icon_class;
 	}
 
 	/*
