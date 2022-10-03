@@ -498,6 +498,7 @@ class General {
 	
 	/**
 	 * Usage `apply_filters( 'c_check_linktype', ['url' => 'https://example.com/', 'icon_classes' => ['internal', 'download', 'external'] ] );`
+	 * External links can not be download, it will always display as external.
 	 *
 	 * @param $attributes array
 	 *
