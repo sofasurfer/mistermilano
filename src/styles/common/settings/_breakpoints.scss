@@ -16,14 +16,14 @@ $mq-responsive: true;
 // across team members. It will improve communication between
 // stakeholders, designers, developers, and testers.
 $mq-breakpoints: (
-	mobile: 320px,
-	palm: 500px,
- 	tablet: 740px,
-	bigtablet: 860px,
- 	desktop: 1024px,
- 	huge: 1200px,
-	bigger: 1300px,
-	gigantic: 2000px
+	mobile: 	320px,
+	palm: 		500px,
+ 	tablet: 	740px,
+	bigtablet: 	860px,
+ 	desktop: 	1024px,
+ 	huge: 		1200px,
+	bigger: 	1300px,
+	gigantic: 	2000px
 );
 
 // If you want to display the currently active breakpoint in the top

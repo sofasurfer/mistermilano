@@ -19,7 +19,6 @@ h6 {
 	padding: 0;
 }
 
-
 h1,
 .c-h1 {
 	padding-bottom: .5em;
@@ -36,7 +35,6 @@ h2,
 	font-weight: bold;
 }
 
-
 h3,
 .c-h3 {
 	line-height: 1.5;
@@ -44,8 +42,6 @@ h3,
 	padding-bottom: 0.5em;
 	font-weight: bold;
 }
-
-
 
 /* ==========================================================================
    Basic Text Content
@@ -82,7 +78,7 @@ h3,
 
 .c-text-small,
 .c-text-block blockquote cite,
-.c-legend {	
+.c-legend {
 	font-size: 0.77rem; /* 14px */
 }
 
@@ -95,15 +91,14 @@ h3,
 	font-size: 0.88rem; /* 18px */
 }
 
-
-
 /* ==========================================================================
    Basic Lists Content 
    ========================================================================== */
+
 .c-text-block ul,
 .c-text-block ol {
 	margin: 0;
-	padding: 0 0 1.5em 0; 
+	padding: 0 0 1.5em 0;
 	list-style: none;
 }
 
@@ -136,7 +131,6 @@ h3,
 	counter-increment: custom-counter;
 }
 
-
 .c-text-block ol li::before {
 	content: counter(custom-counter) ". ";
 	position: absolute;
@@ -153,7 +147,7 @@ h3,
    ========================================================================== */
 
 .c-text-block blockquote {
-	margin: 0; 
+	margin: 0;
 	padding: 0 0 3rem 0;
 }
 
@@ -182,17 +176,16 @@ h3,
 	font-style: normal;
 }
 
-
 /* ==========================================================================
    Text helpers
    ========================================================================== */
 
 .c-text-right {
-	text-align: right;	
+	text-align: right;
 }
 
 .c-text-center {
-	text-align: center;	
+	text-align: center;
 }
 
 .c-text-light {
@@ -203,7 +196,7 @@ h3,
    Text sizes responsive
    ========================================================================== */
 
-@media only screen and (max-width:1360px) {    
+@media only screen and (max-width:1360px) {
 	h1, .c-h1,
 	h2, .c-h2,
 	h3, .c-h3{
@@ -219,29 +212,28 @@ h3,
 	}
 }
 
+@media only screen and (max-width:767px) {
 
-@media only screen and (max-width:767px) {    
-	
 	html {
 		font-size: 16px;
 	}
-	
+
 	h1, .c-h1 {
-		font-size: 2rem; 
+		font-size: 2rem;
 	}
-	
-	h2, c-h2 {
+
+	h2, .c-h2 {
 		font-size: 1.5rem;
 	}
-	
+
 	.c-lead,
 	h3, .c-h3 {
 		font-size: 1.125rem;
 	}
-	
+
 	.c-text-small,
-	.c-legend {	
-		font-size: 0.875rem; 
+	.c-legend {
+		font-size: 0.875rem;
 	}
 
 

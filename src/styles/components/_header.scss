@@ -6,7 +6,6 @@
 	z-index: 10;
 }
 
-
 .c-header-inner {
 	height: 60px;
 	display: flex;
@@ -24,7 +23,6 @@
 .c-header-logo a {
 	display: block;
 }
-
 
 /* ==========================================================================
    main nav / filter list
@@ -79,7 +77,6 @@
 	background-color: $border-basic;
 	transition: all 0.2s linear;
 }
-
 
 .c-main-nav-list a:focus::before,
 .c-main-nav-list a:hover::before,
