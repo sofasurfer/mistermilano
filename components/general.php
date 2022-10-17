@@ -75,6 +75,8 @@ class General {
 		add_filter( 'c_get_team_paging', [ $this, 'c_get_team_paging' ], 10 );
 		add_filter( 'c_get_option', [ $this, 'c_get_option' ], 10, 1 );
 		add_filter( 'c_check_linktype', [ $this, 'c_check_linktype' ] );
+		add_filter( 'c_get_breadcrumbs', [ $this, 'the_breadcrumbs' ], 10, 1 );
+
 
 		add_filter( 'acf/fields/wysiwyg/toolbars', [ $this, 'c_toolbars' ] );
 		add_filter( 'tiny_mce_before_init', [ $this, 'c_tiny_mce_before_init' ] );
@@ -150,6 +152,33 @@ class General {
 			wp_deregister_style( 'dashicons' );
 		}
 	}
+	
+	/**
+     * Returns a list of all the breadcrumbs for the current page.
+     * usage: apply_filters( 'c_get_breadcrumbs', false )
+     *
+     * @param $max_depth int
+     *
+     * @return string
+     */
+    function the_breadcrumbs() {
+        $crumbs = '';
+        $current_page_id = get_the_ID();
+        $parent          = wp_get_post_parent_id( $current_page_id );
+        $index           = 0;
+
+        while ( $parent ) {
+            $index ++;
+            $crumbs = '<li><a href="' . get_permalink( $parent ) . '">' . get_the_title( $parent ) . '</a></li>' . $crumbs;
+            $parent = wp_get_post_parent_id( $parent );
+
+            if ( $index > 10 ) {
+                break;
+            }
+        }
+
+        return $crumbs . '<li><a>' . get_the_title( $current_page_id ) . '</a></li>';
+    }
 
 	/**
 	 * Remove Gutenberg Block Library CSS from loading on the frontend
