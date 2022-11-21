@@ -8,6 +8,9 @@
         <title><?= $og_info['title']; ?></title>
         <meta name="author" content="cubegrafik GmbH">
         <meta name="description" content="<?= $og_info['description']; ?>">
+        
+        <!-- Chrome Theme Color -->
+        <meta name="theme-color" content="#200EB0" >
 
         <meta property="og:locale" content="<?= $og_info['locale']; ?>"/>
         <meta property="og:type" content="article"/>
