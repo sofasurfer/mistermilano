@@ -16,9 +16,9 @@
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="<?= $og_info['title']; ?>"/>
         <meta property="og:description" content="<?= $og_info['description']; ?>"/>
-        <meta property="og:image" content="<?= $og_info['image'][0]; ?>"/>
-        <meta property="og:image:width" content="<?= $og_info['image'][1]; ?>" />
-        <meta property="og:image:height" content="<?= $og_info['image'][2]; ?>" />
+        <meta property="og:image" content="<?= $og_info['image'][0] ?? ''; ?>"/>
+        <meta property="og:image:width" content="<?= $og_info['image'][1] ?? ''; ?>" />
+        <meta property="og:image:height" content="<?= $og_info['image'][2] ?? ''; ?>" />
 
         <!-- favicon-->
         <link rel="apple-touch-icon" sizes="180x180" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/apple-touch-icon.png'); ?>">
