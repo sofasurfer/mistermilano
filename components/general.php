@@ -85,6 +85,7 @@ class General {
 		add_filter( 'nav_menu_link_attributes', [ $this, 'add_class_to_menu' ], 10, 4 );
 
 		add_filter( 'get_file_from_dist', [ $this, 'c_get_file_with_hash_from_manifest' ], 10, 2 );
+		add_filter( 'robots_txt', [$this, 'c_add_robots_entries'], 99, 2 );
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -94,6 +95,71 @@ class General {
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			acf_add_options_page();
 		}
+	}
+	
+	/**
+	 * Adds rules/entries to the WP Robots.txt file.
+	 *
+	 * Add Disallow for some file types.
+	 * Add "Disallow: /wp-login.php/\n".
+	 * Remove "Allow: /wp-admin/admin-ajax.php\n".
+	 * Calculate and add a "Sitemap:" link.
+	 *
+	 * @param $output
+	 * @param $public
+	 *
+	 * @return string
+	 */
+	function c_add_robots_entries( $output, $public ) {
+		/**
+		 * If "Search engine visibility" is disabled,
+		 * strongly tell all robots to go away.
+		 */
+		if ( '0' == $public ) {
+
+			$output = "User-agent: *\nDisallow: /\nDisallow: /*\nDisallow: /*?\n";
+
+		} else {
+
+			/**
+			 * Get site path.
+			 */
+			$site_url = parse_url( site_url() );
+			$path	  = ( ! empty( $site_url[ 'path' ] ) ) ? $site_url[ 'path' ] : '';
+
+			/**
+			 * Add new disallow.
+			 */
+			$output .= "Disallow: $path/wp-login.php\n";
+			$output .= "Disallow: $path/wp-admin\n";
+
+			/**
+			 * Disallow some file types
+			 */
+			foreach(['jpeg','jpg','gif','png','mp4','webm','woff','woff2','ttf','eot'] as $ext){
+				$output .= "Disallow: /*.{$ext}$\n";
+			}
+
+			/**
+			 * Remove line that allows robots to access AJAX interface.
+			 */
+			$robots = preg_replace( '/Allow: [^\0\s]*\/wp-admin\/admin-ajax\.php\n/', '', $output );
+
+			/**
+			 * If no error occurred, replace $output with modified value.
+			 */
+			if ( null !== $robots ) {
+				$output = $robots;
+			}
+			/**
+			 * Calculate and add a "Sitemap:" link.
+			 * Modify as needed.
+			 */
+			$output .= "Sitemap: {$site_url[ 'scheme' ]}://{$site_url[ 'host' ]}/wp_sitemap.xml\n";
+		}
+
+		return $output;
+
 	}
 
 	/**
