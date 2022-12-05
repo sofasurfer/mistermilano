@@ -27,6 +27,8 @@
         <link rel="mask-icon" href="<?= apply_filters( 'get_file_from_dist', 'safari-pinned-tab.svg'); ?>" color="#2e1aa9">
         <meta name="msapplication-TileColor" content="#2e1aa9">
         <meta name="theme-color" content="#ffffff">
+        
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="<?= get_sitemap_url('index') ?>">
 
         <!-- Preventing IE11 to request by default the /browserconfig.xml more than one time -->
         <meta name="msapplication-config" content="none">
