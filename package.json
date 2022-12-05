@@ -1,5 +1,6 @@
 {
   "name": "wptheme.starter",
+  "private": true,
   "version": "1.0.0",
   "description": "Neofluxe starter theme",
   "main": "index.js",
