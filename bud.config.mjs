@@ -51,10 +51,13 @@ export default async (bud) => {
         /**
          * Development URL to be used in the browser.
          */
-        .serve('http://localhost:3010/nf-starter/')
+        .serve({
+            host: 'http://localhost/nf-starter/',
+            port: 3010,
+        })
 
-        /**
-         * Public path of application assets
-         */
-        // .setPublicPath('/');
+    /**
+     * Public path of application assets
+     */
+    // .setPublicPath('/');
 };
