@@ -82,3 +82,6 @@ if ( is_singular( 'projects' ) ) {
 <div id="cookie-notice" class="c-cookie-notice c-text-block c-text-small">
 	<?= apply_filters( 'c_get_option', 'archive_cookie_message' ); ?>
 </div>
+
+</body>
+</html>

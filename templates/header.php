@@ -8,14 +8,17 @@
         <title><?= $og_info['title']; ?></title>
         <meta name="author" content="cubegrafik GmbH">
         <meta name="description" content="<?= $og_info['description']; ?>">
+        
+        <!-- Chrome Theme Color -->
+        <meta name="theme-color" content="#200EB0" >
 
         <meta property="og:locale" content="<?= $og_info['locale']; ?>"/>
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="<?= $og_info['title']; ?>"/>
         <meta property="og:description" content="<?= $og_info['description']; ?>"/>
-        <meta property="og:image" content="<?= $og_info['image'][0]; ?>"/>
-        <meta property="og:image:width" content="<?= $og_info['image'][1]; ?>" />
-        <meta property="og:image:height" content="<?= $og_info['image'][2]; ?>" />
+        <meta property="og:image" content="<?= $og_info['image'][0] ?? ''; ?>"/>
+        <meta property="og:image:width" content="<?= $og_info['image'][1] ?? ''; ?>" />
+        <meta property="og:image:height" content="<?= $og_info['image'][2] ?? ''; ?>" />
 
         <!-- favicon-->
         <link rel="apple-touch-icon" sizes="180x180" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/apple-touch-icon.png'); ?>">
@@ -24,6 +27,8 @@
         <link rel="mask-icon" href="<?= apply_filters( 'get_file_from_dist', 'safari-pinned-tab.svg'); ?>" color="#2e1aa9">
         <meta name="msapplication-TileColor" content="#2e1aa9">
         <meta name="theme-color" content="#ffffff">
+        
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="<?= get_sitemap_url('index') ?>">
 
         <!-- Preventing IE11 to request by default the /browserconfig.xml more than one time -->
         <meta name="msapplication-config" content="none">

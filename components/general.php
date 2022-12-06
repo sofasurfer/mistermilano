@@ -75,6 +75,8 @@ class General {
 		add_filter( 'c_get_team_paging', [ $this, 'c_get_team_paging' ], 10 );
 		add_filter( 'c_get_option', [ $this, 'c_get_option' ], 10, 1 );
 		add_filter( 'c_check_linktype', [ $this, 'c_check_linktype' ] );
+		add_filter( 'c_get_breadcrumbs', [ $this, 'the_breadcrumbs' ], 10, 1 );
+
 
 		add_filter( 'acf/fields/wysiwyg/toolbars', [ $this, 'c_toolbars' ] );
 		add_filter( 'tiny_mce_before_init', [ $this, 'c_tiny_mce_before_init' ] );
@@ -83,6 +85,7 @@ class General {
 		add_filter( 'nav_menu_link_attributes', [ $this, 'add_class_to_menu' ], 10, 4 );
 
 		add_filter( 'get_file_from_dist', [ $this, 'c_get_file_with_hash_from_manifest' ], 10, 2 );
+		add_filter( 'robots_txt', [$this, 'c_add_robots_entries'], 99, 2 );
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -92,6 +95,71 @@ class General {
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			acf_add_options_page();
 		}
+	}
+	
+	/**
+	 * Adds rules/entries to the WP Robots.txt file.
+	 *
+	 * Add Disallow for some file types.
+	 * Add "Disallow: /wp-login.php/\n".
+	 * Remove "Allow: /wp-admin/admin-ajax.php\n".
+	 * Calculate and add a "Sitemap:" link.
+	 *
+	 * @param $output
+	 * @param $public
+	 *
+	 * @return string
+	 */
+	function c_add_robots_entries( $output, $public ) {
+		/**
+		 * If "Search engine visibility" is disabled,
+		 * strongly tell all robots to go away.
+		 */
+		if ( '0' == $public ) {
+
+			$output = "User-agent: *\nDisallow: /\nDisallow: /*\nDisallow: /*?\n";
+
+		} else {
+
+			/**
+			 * Get site path.
+			 */
+			$site_url = parse_url( site_url() );
+			$path	  = ( ! empty( $site_url[ 'path' ] ) ) ? $site_url[ 'path' ] : '';
+
+			/**
+			 * Add new disallow.
+			 */
+			$output .= "Disallow: $path/wp-login.php\n";
+			$output .= "Disallow: $path/wp-admin\n";
+
+			/**
+			 * Disallow some file types
+			 */
+			foreach(['jpeg','jpg','gif','png','mp4','webm','woff','woff2','ttf','eot'] as $ext){
+				$output .= "Disallow: /*.{$ext}$\n";
+			}
+
+			/**
+			 * Remove line that allows robots to access AJAX interface.
+			 */
+			$robots = preg_replace( '/Allow: [^\0\s]*\/wp-admin\/admin-ajax\.php\n/', '', $output );
+
+			/**
+			 * If no error occurred, replace $output with modified value.
+			 */
+			if ( null !== $robots ) {
+				$output = $robots;
+			}
+			/**
+			 * Calculate and add a "Sitemap:" link.
+			 * Modify as needed.
+			 */
+			$output .= "Sitemap: {$site_url[ 'scheme' ]}://{$site_url[ 'host' ]}/wp_sitemap.xml\n";
+		}
+
+		return $output;
+
 	}
 
 	/**
@@ -150,6 +218,33 @@ class General {
 			wp_deregister_style( 'dashicons' );
 		}
 	}
+	
+	/**
+     * Returns a list of all the breadcrumbs for the current page.
+     * usage: apply_filters( 'c_get_breadcrumbs', false )
+     *
+     * @param $max_depth int
+     *
+     * @return string
+     */
+    function the_breadcrumbs() {
+        $crumbs = '';
+        $current_page_id = get_the_ID();
+        $parent          = wp_get_post_parent_id( $current_page_id );
+        $index           = 0;
+
+        while ( $parent ) {
+            $index ++;
+            $crumbs = '<li><a href="' . get_permalink( $parent ) . '">' . get_the_title( $parent ) . '</a></li>' . $crumbs;
+            $parent = wp_get_post_parent_id( $parent );
+
+            if ( $index > 10 ) {
+                break;
+            }
+        }
+
+        return $crumbs . '<li><a>' . get_the_title( $current_page_id ) . '</a></li>';
+    }
 
 	/**
 	 * Remove Gutenberg Block Library CSS from loading on the frontend
