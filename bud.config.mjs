@@ -1,10 +1,9 @@
 import createFontFile from './src/bud/createFontFile.mjs';
-
 /**
- * @typedef {import('@roots/bud').Bud} bud
- *
- * @param {bud} bud
+ * @see {@link https://bud.js.org/guides/configure}
+ * @param {import('@roots/bud').Bud} bud
  */
+
 
 export default async (bud) => {
     createFontFile('./src/fonts/');
@@ -46,18 +45,18 @@ export default async (bud) => {
          *
          * This should be the URL you use to visit your local development server.
          */
-        .proxy()
+        .proxy('http://localhost/')
 
         /**
          * Development URL to be used in the browser.
          */
         .serve({
-            host: 'http://localhost:3010/nf-starter/',
+            host: 'http://0.0.0.0/',
             port: 3010,
         })
 
     /**
      * Public path of application assets
      */
-    // .setPublicPath('/');
+    .setPublicPath('/');
 };

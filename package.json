@@ -2,7 +2,7 @@
   "name": "wptheme.starter",
   "private": true,
   "version": "1.0.0",
-  "description": "Neofluxe starter theme",
+  "description": "⚡️ Neofluxe starter theme",
   "main": "index.js",
   "repository": "git@github.com:cubegrafik/wptheme.starter.git",
   "author": "erin@neofluxe.ch",
@@ -13,16 +13,17 @@
   "scripts": {
     "dev": "bud dev",
     "build": "bud build",
+    "clean": "bud clean",
     "translate": "npm run translate:pot && npm run translate:js",
     "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --ignore-domain --include=\"app,resources\"",
     "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
     "test": "mocha"
   },
   "devDependencies": {
-    "@roots/bud": "^6.6.3",
-    "@roots/bud-postcss": "^6.6.3",
-    "@roots/bud-preset-wordpress": "^6.6.3",
-    "@roots/bud-sass": "^6.6.3",
+    "@roots/bud": "^6.6.5",
+    "@roots/bud-postcss": "^6.6.5",
+    "@roots/bud-preset-wordpress": "^6.6.5",
+    "@roots/bud-sass": "^6.6.5",
     "mocha": "^10.0.0"
   },
   "dependencies": {
