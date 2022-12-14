@@ -46,13 +46,13 @@ export default async (bud) => {
          *
          * This should be the URL you use to visit your local development server.
          */
-        .proxy('http://localhost/')
+        .proxy()
 
         /**
          * Development URL to be used in the browser.
          */
         .serve({
-            host: 'http://localhost/nf-starter/',
+            host: 'http://localhost:3010/nf-starter/',
             port: 3010,
         })
 
