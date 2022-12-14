@@ -85,7 +85,7 @@ class General {
 		add_filter( 'nav_menu_link_attributes', [ $this, 'add_class_to_menu' ], 10, 4 );
 
 		add_filter( 'get_file_from_dist', [ $this, 'c_get_file_with_hash_from_manifest' ], 10, 2 );
-		add_filter( 'robots_txt', [$this, 'c_add_robots_entries'], 99, 2 );
+		add_filter( 'robots_txt', [ $this, 'c_add_robots_entries' ], 99, 2 );
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -96,7 +96,7 @@ class General {
 			acf_add_options_page();
 		}
 	}
-	
+
 	/**
 	 * Adds rules/entries to the WP Robots.txt file.
 	 *
@@ -125,7 +125,7 @@ class General {
 			 * Get site path.
 			 */
 			$site_url = parse_url( site_url() );
-			$path	  = ( ! empty( $site_url[ 'path' ] ) ) ? $site_url[ 'path' ] : '';
+			$path     = ( ! empty( $site_url['path'] ) ) ? $site_url['path'] : '';
 
 			/**
 			 * Add new disallow.
@@ -136,7 +136,7 @@ class General {
 			/**
 			 * Disallow some file types
 			 */
-			foreach(['jpeg','jpg','gif','png','mp4','webm','woff','woff2','ttf','eot'] as $ext){
+			foreach ( [ 'jpeg', 'jpg', 'gif', 'png', 'mp4', 'webm', 'woff', 'woff2', 'ttf', 'eot' ] as $ext ) {
 				$output .= "Disallow: /*.{$ext}$\n";
 			}
 
@@ -182,8 +182,9 @@ class General {
 
 	}
 
-	function render_block_core_notice($block_attributes, $content) {
-		var_dump($block_attributes);
+	function render_block_core_notice( $block_attributes, $content ) {
+		var_dump( $block_attributes );
+
 		return '<h1>ServersideRender2</h1>';
 	}
 
@@ -218,33 +219,33 @@ class General {
 			wp_deregister_style( 'dashicons' );
 		}
 	}
-	
+
 	/**
-     * Returns a list of all the breadcrumbs for the current page.
-     * usage: apply_filters( 'c_get_breadcrumbs', false )
-     *
-     * @param $max_depth int
-     *
-     * @return string
-     */
-    function the_breadcrumbs() {
-        $crumbs = '';
-        $current_page_id = get_the_ID();
-        $parent          = wp_get_post_parent_id( $current_page_id );
-        $index           = 0;
+	 * Returns a list of all the breadcrumbs for the current page.
+	 * usage: apply_filters( 'c_get_breadcrumbs', false )
+	 *
+	 * @param $max_depth int
+	 *
+	 * @return string
+	 */
+	function the_breadcrumbs() {
+		$crumbs          = '';
+		$current_page_id = get_the_ID();
+		$parent          = wp_get_post_parent_id( $current_page_id );
+		$index           = 0;
 
-        while ( $parent ) {
-            $index ++;
-            $crumbs = '<li><a href="' . get_permalink( $parent ) . '">' . get_the_title( $parent ) . '</a></li>' . $crumbs;
-            $parent = wp_get_post_parent_id( $parent );
+		while ( $parent ) {
+			$index ++;
+			$crumbs = '<li><a href="' . get_permalink( $parent ) . '">' . get_the_title( $parent ) . '</a></li>' . $crumbs;
+			$parent = wp_get_post_parent_id( $parent );
 
-            if ( $index > 10 ) {
-                break;
-            }
-        }
+			if ( $index > 10 ) {
+				break;
+			}
+		}
 
-        return $crumbs . '<li><a>' . get_the_title( $current_page_id ) . '</a></li>';
-    }
+		return $crumbs . '<li><a>' . get_the_title( $current_page_id ) . '</a></li>';
+	}
 
 	/**
 	 * Remove Gutenberg Block Library CSS from loading on the frontend
@@ -417,7 +418,7 @@ class General {
 	public function c_get_ogobj() {
 
 		$obj                = [];
-		$obj['locale']      = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : get_locale();
+		$obj['locale']      = defined( 'ICL_LANGUAGE_CODE' ) ? ICL_LANGUAGE_CODE : get_locale();
 		$obj['title']       = $this->c_get_pagetitle();
 		$obj['description'] = get_field( 'acf_header_metadescription' );
 
@@ -514,7 +515,7 @@ class General {
 	}
 
 	/**
-	 *    Renders an image tag by it's ID
+	 *    Renders an image tag by its ID
 	 **/
 	public function c_shortcode_render_image( $args ) {
 
@@ -524,8 +525,6 @@ class General {
 		} else {
 			$alt = wp_get_attachment_caption( $args['id'] );
 		}
-
-		// error_log(print_r(get_intermediate_image_sizes(),true));
 
 		// get different image sizes
 		if ( ! empty( $args['mobile'] ) ) {
@@ -546,10 +545,6 @@ class General {
 		$srcset   .= $scr_full[0] . ' 2400w';
 
 		$sizes = '100vw';
-		// $sizes =    '(min-width: 1600px) 1200px,  // ViewPort mindestens 1600 px, nimm Bild mit 1200px Breite'.
-		//             '(min-width: 1400px) 1100px,  // ViewPort mindestens 1400 px, nimm Bild mit 1100px Breite'.
-		//             '(min-width: 1000px) 900px,    // ViewPort mindestens 1000 px, nimm Bild mit 900px Breite'.
-		//             '100vw"';
 
 		$image = '<noscript><img src="' . $scr_full[0] . '" alt="' . $alt . '" /></noscript>';
 		$image .= '<img class="lazy" sizes="' . $sizes . '" data-srcset="' . $srcset . '" data-src="' . $scr_large[0] . '" alt="' . $alt . '" />';
@@ -590,7 +585,7 @@ class General {
 
 		return $content;
 	}
-	
+
 	/**
 	 * Usage `apply_filters( 'c_check_linktype', ['url' => 'https://example.com/', 'icon_classes' => ['internal', 'download', 'external'] ] );`
 	 * External links can not be download, it will always display as external. Anchor link is optional and must not be filled.
@@ -601,7 +596,12 @@ class General {
 	 */
 	public function c_check_linktype( $attributes ) {
 		$url          = $attributes['url'];
-		$icon_classes = is_array($attributes['icon_classes']) ? $attributes['icon_classes'] : ['internal' => 'c-link-arrow', 'download' => 'c-link-download', 'external' => 'c-link-extern', 'anchor' => 'c-icon-anchor'];
+		$icon_classes = is_array( $attributes['icon_classes'] ) ? $attributes['icon_classes'] : [
+			'internal' => 'c-link-arrow',
+			'download' => 'c-link-download',
+			'external' => 'c-link-extern',
+			'anchor'   => 'c-icon-anchor'
+		];
 
 		if ( ! $url ) {
 			return '';
@@ -620,10 +620,10 @@ class General {
 			if ( preg_match( '/\.\w+$/', $url ) ) {
 				$icon_class = $icon_classes['download'] ?? $icon_classes[1];
 			}
-			
-			if (str_contains($url, '#')) {
+
+			if ( str_contains( $url, '#' ) ) {
 				$icon_class = $icon_classes['anchor'] ?? $icon_classes[3] ?? $icon_class ?? '';
-		        }
+			}
 		} else {
 			$icon_class = $icon_classes['external'] ?? $icon_classes[2];
 		}
@@ -635,7 +635,7 @@ class General {
 		Returns default locale
 	*/
 	public function c_shortcode_post_locale() {
-		$lang  = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : get_locale();
+		$lang  = defined( 'ICL_LANGUAGE_CODE' ) ? ICL_LANGUAGE_CODE : get_locale();
 		$langs = icl_get_languages( 'skip_missing=0' );
 		if ( isset( $langs[ $lang ]['default_locale'] ) ) {
 			return $langs[ $lang ]['default_locale'];

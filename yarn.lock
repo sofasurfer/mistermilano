@@ -2553,7 +2553,7 @@
     "@roots/bud-framework" "6.6.5"
     "@roots/bud-support" "6.6.5"
 
-"@roots/bud-postcss@6.6.5", "@roots/bud-postcss@^6.4.5":
+"@roots/bud-postcss@6.6.5", "@roots/bud-postcss@^6.6.5":
   version "6.6.5"
   resolved "https://registry.yarnpkg.com/@roots/bud-postcss/-/bud-postcss-6.6.5.tgz#f1689ef1830249399b9ac055650f6e21e9aac649"
   integrity sha512-WZlA6Xymns1Ze0iGmStf8YRK3K2FdHASuK4g64i3mk5JqPKedUmsCts1+MQsjeoUCMyAMDuCzmTOBQ+jHC3u9w==
@@ -2577,7 +2577,7 @@
     "@roots/bud-postcss" "6.6.5"
     webpack "5.75.0"
 
-"@roots/bud-preset-wordpress@^6.4.5":
+"@roots/bud-preset-wordpress@^6.6.5":
   version "6.6.5"
   resolved "https://registry.yarnpkg.com/@roots/bud-preset-wordpress/-/bud-preset-wordpress-6.6.5.tgz#9758a9ccd72d32348e881742db992aa167611dc2"
   integrity sha512-bIxWtK1z+4xWNpgMlaoQFv0SDz2TaIoB8dmtbhsbg9u1E3bL5aIjUZItizwxl5Wqyi6SaxzzVDCPO4XCEYoQGQ==
@@ -2605,7 +2605,7 @@
     react-hot-loader "^4.13.1"
     react-refresh "^0.14.0"
 
-"@roots/bud-sass@^6.4.5":
+"@roots/bud-sass@^6.6.5":
   version "6.6.5"
   resolved "https://registry.yarnpkg.com/@roots/bud-sass/-/bud-sass-6.6.5.tgz#9b000592cff88f2ba02653b4da72a9b2895f9a68"
   integrity sha512-FUO8emw/2iE1EyPpBiDEyLWrXl+XSLZ4SBZJ+Sg8Xr/r74Lpd1FyHjzALWw1oaZZDAr3gTWk9o9bU8eo9qTquQ==
@@ -2701,7 +2701,7 @@
   dependencies:
     "@roots/merged-manifest-webpack-plugin" "6.6.5"
 
-"@roots/bud@^6.4.5":
+"@roots/bud@^6.6.5":
   version "6.6.5"
   resolved "https://registry.yarnpkg.com/@roots/bud/-/bud-6.6.5.tgz#a384e2e4c0bacecd852d4819d5a8852316832e10"
   integrity sha512-4oJZEAw20tjANo8R/UtogSPk2T6u5yGHMg83ODk8CBRTqOVGqdDSfPcSpzpVeNhEm/bxK5LMHmTySQgoi70zQA==
