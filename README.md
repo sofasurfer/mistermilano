@@ -62,6 +62,16 @@ This will start watching the files and recompile them when they change. Everythi
 |----------------|-------------------|
 | ``yarn build`` | ``npm run build`` |
 
+🤬 Stuck on install?
+``
+[5/5] Building fresh packages...
+[1/2] ⠁ @roots/bud
+[-/2] ⠁ waiting...
+``
+| yarn           | npm               |
+|----------------|-------------------|
+| ``yarn clean`` | ``npm run clean`` |
+
 ---
 
 # BrowserSync with static HTML & CSS - for Designers 🎨
