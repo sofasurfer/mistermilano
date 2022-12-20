@@ -1,4 +1,4 @@
-name: Deployment (staging)
+name: 📡 Deployment (staging)
 
 on:
   push:
