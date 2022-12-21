@@ -54,9 +54,4 @@ export default async (bud) => {
             host: 'http://0.0.0.0/',
             port: 3010,
         })
-
-    /**
-     * Public path of application assets
-     */
-    .setPublicPath('/');
 };
