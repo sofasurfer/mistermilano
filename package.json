@@ -10,6 +10,11 @@
   "engines": {
     "node": ">=18.4.0"
   },
+  "volta": {
+    "node": "18.12.1",
+    "yarn": "1.22.19",
+    "npm": "8.12.1"
+  },
   "scripts": {
     "dev": "bud dev",
     "build": "bud build",
@@ -20,10 +25,10 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "@roots/bud": "^6.6.5",
-    "@roots/bud-postcss": "^6.6.5",
+    "@roots/bud": "^6.6.6",
+    "@roots/bud-postcss": "^6.6.6",
     "@roots/bud-preset-wordpress": "^6.6.5",
-    "@roots/bud-sass": "^6.6.5",
+    "@roots/bud-sass": "^6.6.6",
     "mocha": "^10.0.0"
   },
   "dependencies": {

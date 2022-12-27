@@ -163,6 +163,14 @@ If you import that file into SCSS the fonts will be available in your CSS as var
  
 ⚠️The fonts are only recompiled on initial run of ``dev`` or ``build``, and are not watched.
 
+# Inlining Assets 🥽
+Since bud 6.6.6
+```CSS
+.example {
+    background: url(@src/test.svg?inline)
+}
+```
+
 # Images/Icons 🖼
 
 Images and icons are copied into the ``./dist/`` folder and can be referenced in HTML and SASS.
