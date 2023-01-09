@@ -30,8 +30,8 @@ export default async (bud) => {
          * even if they are not explicitly imported in application assets.
          */
         .assets([
-            {from: bud.path("@src/images"), to: bud.path("@dist/images/@file")},
-            {from: bud.path("@src/fonts"), to: bud.path("@dist/fonts/@file")},
+            {from: bud.path("@src/images"), to: bud.path("images/@file")},
+            {from: bud.path("@src/fonts"), to: bud.path("fonts/@file")},
         ])
 
         /**
