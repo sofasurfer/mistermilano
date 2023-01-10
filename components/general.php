@@ -565,6 +565,7 @@ class General {
 	 *    Renders a picture, with images by their ID.
 	 *    The first image is the default image, the others are for different screen sizes.
 	 *
+	 *    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture
 	 *
 	 *    IMPORTANT:
 	 *    - If using **min-width**, the the images should go from **large-viewport** to small-viewport.
