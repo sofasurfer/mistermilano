@@ -576,7 +576,7 @@ class General {
 	 *$args = [
 	 *	'class'            => 'some-class',
 	 *	'id'               => 'some-id',
-	 *	'default_image_id' => 35,
+	 *	'fallback_image_id' => 35,
 	 *	'images'           => [
 	 *		[
 	 *			'id'    => 37,
@@ -607,9 +607,9 @@ class General {
 		$images = $args['images'];
 		$id     = $args['id'];
 		// the <img> tag, used if nothing else matches
-		$default_image_id  = $args['default_image_id'] ?? $images[0]['id'] ?? false;
-		$default_image_src = wp_get_attachment_image_src( $default_image_id );
-		$default_image_alt = wp_get_attachment_caption( $default_image_id );
+		$fallback_image_id  = $args['fallback_image_id'] ?? $images[0]['id'] ?? false;
+		$fallback_image_src = wp_get_attachment_image_src( $fallback_image_id );
+		$fallback_image_alt = wp_get_attachment_caption( $fallback_image_id );
 		$class_string      = $args['class'];
 		$html              = "<picture id='{$id}'class='$class_string}' >";
 
@@ -623,7 +623,7 @@ class General {
 			$html  .= "<source srcset='{$image[0]}' media='{$media}' />";
 		}
 
-		$html .= "<img src='{$default_image_src[0]}' alt='{$default_image_alt}' /></picture>";
+		$html .= "<img src='{$fallback_image_src[0]}' alt='{$fallback_image_alt}' /></picture>";
 
 		return $html;
 	}
