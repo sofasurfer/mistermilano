@@ -605,12 +605,12 @@ class General {
 	 **/
 	public function c_shortcode_render_picture( array $args ) {
 		$images = $args['images'];
-		$id     = $args['id'];
+		$id     = $args['id'] ?? '';
 		// the <img> tag, used if nothing else matches
 		$default_image_id  = $args['default_image_id'] ?? $images[0]['id'] ?? false;
 		$default_image_src = wp_get_attachment_image_src( $default_image_id );
 		$default_image_alt = wp_get_attachment_caption( $default_image_id );
-		$class_string      = $args['class'];
+		$class_string      = $args['class'] ?? 'c-picture;
 		$html              = "<picture id='{$id}'class='$class_string}' >";
 
 
