@@ -50,7 +50,6 @@ class General {
 
 		add_shortcode( 'render_animation_elements', [ $this, 'render_animation_elements' ] );
 		add_shortcode( 'render_imagetag', [ $this, 'c_shortcode_render_image' ] );
-		add_shortcode( 'render_picturetag', [ $this, 'c_shortcode_render_picture' ] );
 		add_shortcode( 'wp_version', [ $this, 'c_shortcode_version' ] );
 		add_shortcode( 'c_post_language_url', [ $this, 'c_shortcode_post_languages' ] );
 		add_shortcode( 'c_post_locale', [ $this, 'c_shortcode_post_locale' ] );
