@@ -43,32 +43,6 @@
 
 	<?php wp_head(); ?>
 </head>
-<?php
-$args = [
-	'class'            => 'some-class',
-	'id'               => 'some-id',
-	'default_image_id' => 35,
-	'images'           => [
-		[
-			'id'    => 37,
-			'media' => '(min-width: 1500px)',
-			'size'  => 'large'
-		],
-		[
-			'id'    => 36,
-			'media' => '(min-width: 1200px)',
-			'size'  => 'large'
-		],
-		[
-			'id'    => 34,
-			'media' => '(min-width: 800px)',
-			'size'  => 'large'
-		],
-	]
-];
-
-?>
-<?= apply_filters( 'c_render_picturetag', $args ); ?>
 <body>
 <!-- header-->
 <header class="c-header" role="banner">
