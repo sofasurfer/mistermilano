@@ -21,3 +21,4 @@ Thumbs.db
 /src/templates/dist/
 /src/templates/node_modules/
 ./*.sql
+/yarn-error.log

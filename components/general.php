@@ -41,10 +41,8 @@ class General {
 		// add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);
 		add_action( 'init', [ $this, 'c_init' ] );
 		add_action( 'init', [ $this, 'c_register_maim_menu' ] );
-		add_action( 'admin_head', [ $this, 'my_custom_admin_css' ] );
-
 		add_action( 'init', [ $this, 'register_blocks' ] );
-
+		add_action( 'admin_head', [ $this, 'my_custom_admin_css' ] );
 //		add_action( 'wp_enqueue_scripts', [ $this, 'c_remove_wp_block_library_css' ], 100 );
 		add_action( 'wp_print_styles', [ $this, 'c_remove_dashicons' ], 100 );
 
@@ -52,14 +50,13 @@ class General {
 
 		add_shortcode( 'render_animation_elements', [ $this, 'render_animation_elements' ] );
 		add_shortcode( 'render_imagetag', [ $this, 'c_shortcode_render_image' ] );
+		add_shortcode( 'render_picturetag', [ $this, 'c_shortcode_render_picture' ] );
 		add_shortcode( 'wp_version', [ $this, 'c_shortcode_version' ] );
 		add_shortcode( 'c_post_language_url', [ $this, 'c_shortcode_post_languages' ] );
 		add_shortcode( 'c_post_locale', [ $this, 'c_shortcode_post_locale' ] );
 		add_shortcode( 'c_get_categories', [ $this, 'c_shortcode_get_categories' ] );
 		add_shortcode( 'c_option', [ $this, 'c_shortcode_option' ] );
 		add_shortcode( 'c_socialmedia_list', [ $this, 'c_shortcode_socialmedia' ] );
-
-
 		add_shortcode( 'c_contact_info', [ $this, 'c_shortcode_contact_info' ] );
 
 		add_filter( 'c_get_pagetitle', [ $this, 'c_get_pagetitle' ] );
@@ -76,7 +73,9 @@ class General {
 		add_filter( 'c_get_option', [ $this, 'c_get_option' ], 10, 1 );
 		add_filter( 'c_check_linktype', [ $this, 'c_check_linktype' ] );
 		add_filter( 'c_get_breadcrumbs', [ $this, 'the_breadcrumbs' ], 10, 1 );
-
+		add_filter( 'c_render_picturetag', [ $this, 'c_shortcode_render_picture' ] );
+		add_filter( 'c_render_imagetag', [ $this, 'c_shortcode_render_image' ] );
+		add_filter( 'use_block_editor_for_post', '__return_false' );
 
 		add_filter( 'acf/fields/wysiwyg/toolbars', [ $this, 'c_toolbars' ] );
 		add_filter( 'tiny_mce_before_init', [ $this, 'c_tiny_mce_before_init' ] );
@@ -89,6 +88,8 @@ class General {
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
+
+		remove_post_type_support( 'page', 'editor' );
 
 		load_theme_textdomain( 'neofluxe', get_stylesheet_directory() . '/languages' );
 
@@ -558,6 +559,72 @@ class General {
 
 
 		return $image;
+	}
+
+	/**
+	 *    Renders a picture, with images by their ID.
+	 *    The first image is the default image, the others are for different screen sizes.
+	 *
+	 *
+	 *    IMPORTANT:
+	 *    - If using **min-width**, the the images should go from **large-viewport** to small-viewport.
+	 *    - If using **max-width**, the images should go from **small-viewport** to large-viewport.
+	 *
+	 * ``` php
+	 * <?php
+	 *$args = [
+	 *	'class'            => 'some-class',
+	 *	'id'               => 'some-id',
+	 *	'default_image_id' => 35,
+	 *	'images'           => [
+	 *		[
+	 *			'id'    => 37,
+	 *			'media' => '(min-width: 1500px)',
+	 *			'size'  => 'large'
+	 *		],
+	 *		[
+	 *			'id'    => 36,
+	 *			'media' => '(min-width: 1200px)',
+	 *			'size'  => 'large'
+	 *		],
+	 *		[
+	 *			'id'    => 34,
+	 *			'media' => '(min-width: 800px)',
+	 *			'size'  => 'large'
+	 *		],
+	 *	]
+	 *];
+	 * ?>
+	 * <?= apply_filters( 'c_render_picturetag', $args ); ?>
+	 * ```
+	 *
+	 * @param $args array
+	 *
+	 * @return string
+	 **/
+	public function c_shortcode_render_picture( array $args ) {
+		$images = $args['images'];
+		$id     = $args['id'];
+		// the <img> tag, used if nothing else matches
+		$default_image_id  = $args['default_image_id'] ?? $images[0]['id'] ?? false;
+		$default_image_src = wp_get_attachment_image_src( $default_image_id );
+		$default_image_alt = wp_get_attachment_caption( $default_image_id );
+		$class_string      = $args['class'];
+		$html              = "<picture id='{$id}'class='$class_string}' >";
+
+
+		foreach ( $images as $image ) {
+			$id   = $image['id'];
+			$size = $image['size'] ?? 'large';
+			// the media query
+			$media = $image['media'] ?? '';
+			$image = wp_get_attachment_image_src( $id, $size );
+			$html  .= "<source srcset='{$image[0]}' media='{$media}' />";
+		}
+
+		$html .= "<img src='{$default_image_src[0]}' alt='{$default_image_alt}' /></picture>";
+
+		return $html;
 	}
 
 
