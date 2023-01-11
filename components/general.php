@@ -49,7 +49,6 @@ class General {
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 
 		add_shortcode( 'render_animation_elements', [ $this, 'render_animation_elements' ] );
-		add_shortcode( 'render_imagetag', [ $this, 'c_shortcode_render_image' ] );
 		add_shortcode( 'wp_version', [ $this, 'c_shortcode_version' ] );
 		add_shortcode( 'c_post_language_url', [ $this, 'c_shortcode_post_languages' ] );
 		add_shortcode( 'c_post_locale', [ $this, 'c_shortcode_post_locale' ] );
@@ -73,7 +72,6 @@ class General {
 		add_filter( 'c_check_linktype', [ $this, 'c_check_linktype' ] );
 		add_filter( 'c_get_breadcrumbs', [ $this, 'the_breadcrumbs' ], 10, 1 );
 		add_filter( 'c_render_picturetag', [ $this, 'c_shortcode_render_picture' ] );
-		add_filter( 'c_render_imagetag', [ $this, 'c_shortcode_render_image' ] );
 		add_filter( 'use_block_editor_for_post', '__return_false' );
 
 		add_filter( 'acf/fields/wysiwyg/toolbars', [ $this, 'c_toolbars' ] );
@@ -515,52 +513,6 @@ class General {
 	}
 
 	/**
-	 *    Renders an image tag by its ID
-	 **/
-	public function c_shortcode_render_image( $args ) {
-
-		// get alttext
-		if ( ! empty( $args['alt'] ) ) {
-			$alt = $args['alt'];
-		} else {
-			$alt = wp_get_attachment_caption( $args['id'] );
-		}
-
-		// get different image sizes
-		if ( ! empty( $args['mobile'] ) ) {
-			$src_small  = wp_get_attachment_image_src( $args['mobile'], 'thumbnail' );
-			$srcset     = $src_small[0] . ' 400w,';
-			$scr_medium = wp_get_attachment_image_src( $args['mobile'], 'medium' );
-		} else {
-			$src_small  = wp_get_attachment_image_src( $args['id'], 'thumbnail' );
-			$srcset     = $src_small[0] . ' 400w,';
-			$scr_medium = wp_get_attachment_image_src( $args['id'], 'medium' );
-		}
-		$srcset .= $scr_medium[0] . ' 1250w,';
-
-		$scr_large = wp_get_attachment_image_src( $args['id'], 'large' );
-		$srcset    .= $scr_large[0] . ' 1840w,';
-
-		$scr_full = wp_get_attachment_image_src( $args['id'], 'full' );
-		$srcset   .= $scr_full[0] . ' 2400w';
-
-		$sizes = '100vw';
-
-		$image = '<noscript><img src="' . $scr_full[0] . '" alt="' . $alt . '" /></noscript>';
-		$image .= '<img class="lazy" sizes="' . $sizes . '" data-srcset="' . $srcset . '" data-src="' . $scr_large[0] . '" alt="' . $alt . '" />';
-
-		if ( array_key_exists( 'legend', $args ) ) {
-			$attachment = get_post( $args['id'] );
-			if ( $attachment ) {
-				$image .= '<figcaption class="c-legend">' . $attachment->post_excerpt . '</figcaption>';
-			}
-		}
-
-
-		return $image;
-	}
-
-	/**
 	 *    Renders a picture, with images by their ID.
 	 *    The first image is the default image, the others are for different screen sizes.
 	 *
@@ -573,26 +525,26 @@ class General {
 	 * ``` php
 	 * <?php
 	 *$args = [
-	 *	'class'            => 'some-class',
-	 *	'id'               => 'some-id',
-	 *	'fallback_image_id' => 35,
-	 *	'images'           => [
-	 *		[
-	 *			'id'    => 37,
-	 *			'media' => '(min-width: 1500px)',
-	 *			'size'  => 'large'
-	 *		],
-	 *		[
-	 *			'id'    => 36,
-	 *			'media' => '(min-width: 1200px)',
-	 *			'size'  => 'large'
-	 *		],
-	 *		[
-	 *			'id'    => 34,
-	 *			'media' => '(min-width: 800px)',
-	 *			'size'  => 'large'
-	 *		],
-	 *	]
+	 *    'class'            => 'some-class',
+	 *    'id'               => 'some-id',
+	 *    'fallback_image_id' => 35,
+	 *    'images'           => [
+	 *        [
+	 *            'id'    => 37,
+	 *            'media' => '(min-width: 1500px)',
+	 *            'size'  => 'large'
+	 *        ],
+	 *        [
+	 *            'id'    => 36,
+	 *            'media' => '(min-width: 1200px)',
+	 *            'size'  => 'large'
+	 *        ],
+	 *        [
+	 *            'id'    => 34,
+	 *            'media' => '(min-width: 800px)',
+	 *            'size'  => 'large'
+	 *        ],
+	 *    ]
 	 *];
 	 * ?>
 	 * <?= apply_filters( 'c_render_picturetag', $args ); ?>
@@ -603,14 +555,17 @@ class General {
 	 * @return string
 	 **/
 	public function c_shortcode_render_picture( array $args ) {
-		$images = $args['images'];
-		$id     = $args['id'];
+		$images       = $args['images'];
+		$id           = $args['id'] ?? false;
+		$id_attribute = $id ? "id=\"$id\"" : '';
 		// the <img> tag, used if nothing else matches
-		$fallback_image_id  = $args['fallback_image_id'] ?? $images[0]['id'] ?? false;
-		$fallback_image_src = wp_get_attachment_image_src( $fallback_image_id );
-		$fallback_image_alt = wp_get_attachment_caption( $fallback_image_id );
-		$class_string      = $args['class'];
-		$html              = "<picture id='{$id}'class='$class_string}' >";
+		$fallback_image_id     = $args['fallback_image_id'] ?? $images[0]['id'] ?? false;
+		$fallback_image_src    = wp_get_attachment_image_src( $fallback_image_id );
+		$fallback_image_srcset = wp_get_attachment_image_srcset( $fallback_image_id, 'medium' );
+		$fallback_image_alt    = wp_get_attachment_caption( $fallback_image_id );
+		$class_string          = $args['class'] ?? 'c-picture';
+		$class_string          = $class_string === '' ? 'c-picture' : $class_string;
+		$html                  = "<picture {$id_attribute} class='{$class_string}' >";
 
 
 		foreach ( $images as $image ) {
@@ -618,11 +573,11 @@ class General {
 			$size = $image['size'] ?? 'large';
 			// the media query
 			$media = $image['media'] ?? '';
-			$image = wp_get_attachment_image_src( $id, $size );
-			$html  .= "<source srcset='{$image[0]}' media='{$media}' />";
+			$image = wp_get_attachment_image_srcset( $id, $size );
+			$html  .= "<source srcset='{$image}' media='{$media}' />";
 		}
 
-		$html .= "<img src='{$fallback_image_src[0]}' alt='{$fallback_image_alt}' /></picture>";
+		$html .= "<img decoding='async' src='{$fallback_image_src[0]}' srcset='{$fallback_image_srcset}' alt='{$fallback_image_alt}' /></picture>";
 
 		return $html;
 	}
