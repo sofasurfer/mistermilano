@@ -38,7 +38,6 @@ class General {
 		add_action( 'wp_enqueue_scripts', [ $this, 'c_wp_enqueue_scripts' ], 100 );
 		add_action( 'admin_enqueue_scripts', [ $this, 'c_admin_enqueue_scripts' ], 100 );
 
-		// add_action('wp_enqueue_scripts', [$this, 'custom_scripts']);
 		add_action( 'init', [ $this, 'c_init' ] );
 		add_action( 'init', [ $this, 'c_register_maim_menu' ] );
 		add_action( 'init', [ $this, 'register_blocks' ] );
