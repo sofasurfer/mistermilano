@@ -8,10 +8,10 @@
   "author": "erin@neofluxe.ch",
   "license": "MIT",
   "engines": {
-    "node": ">=18.4.0"
+    "node": ">=18.13.0"
   },
   "volta": {
-    "node": "18.12.1",
+    "node": "18.13.0",
     "yarn": "1.22.19",
     "npm": "8.12.1"
   },
@@ -25,10 +25,10 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "@roots/bud": "6.6.10",
-    "@roots/bud-postcss": "6.6.10",
-    "@roots/bud-preset-wordpress": "6.6.10",
-    "@roots/bud-sass": "6.6.10",
+    "@roots/bud": "6.7.0",
+    "@roots/bud-postcss": "6.7.0",
+    "@roots/bud-preset-wordpress": "6.7.0",
+    "@roots/bud-sass": "6.7.0",
     "mocha": "^10.0.0"
   },
   "dependencies": {
