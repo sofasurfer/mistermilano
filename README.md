@@ -72,6 +72,11 @@ This will start watching the files and recompile them when they change. Everythi
 |----------------|-------------------|
 | ``yarn clean`` | ``npm run clean`` |
 
+## Common issues 💩
+
+1) Having an error locally or in Github actions / workflows (Something like ``ENOENT`` for example)?
+Try removing the ``yarn.lock`` file and ``node_modules`` folder. Start the installation process again.
+
 ---
 
 # BrowserSync with static HTML & CSS - for Designers 🎨
