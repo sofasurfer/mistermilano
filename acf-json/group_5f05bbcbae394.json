@@ -6,6 +6,7 @@
             "key": "field_5f06e0b3e0700",
             "label": "Company",
             "name": "company",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -21,6 +22,7 @@
                     "key": "field_5f05bce635a02",
                     "label": "Company Title",
                     "name": "company_title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -40,6 +42,7 @@
                     "key": "field_5f05bd012800a",
                     "label": "Company Slogan",
                     "name": "company_slogan",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -59,6 +62,7 @@
                     "key": "field_5f08417a576c3",
                     "label": "E-Mail",
                     "name": "company_email",
+                    "aria-label": "",
                     "type": "email",
                     "instructions": "",
                     "required": 0,
@@ -77,6 +81,7 @@
                     "key": "field_5f084ba5576c4",
                     "label": "Phone",
                     "name": "company_phone",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -96,6 +101,7 @@
                     "key": "field_5f05bbd3b7567",
                     "label": "Address",
                     "name": "company_address",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -115,6 +121,7 @@
                     "key": "field_6296282f3e6b1",
                     "label": "Map Link",
                     "name": "company_map_link",
+                    "aria-label": "",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -133,6 +140,7 @@
             "key": "field_5f06e244f1828",
             "label": "Site Settings",
             "name": "site",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -148,6 +156,7 @@
                     "key": "field_5f06e257f1829",
                     "label": "Project archive",
                     "name": "archive_project",
+                    "aria-label": "",
                     "type": "post_object",
                     "instructions": "",
                     "required": 0,
@@ -170,6 +179,7 @@
                     "key": "field_5f0818c4a5b43",
                     "label": "Sales archive",
                     "name": "archive_sales",
+                    "aria-label": "",
                     "type": "post_object",
                     "instructions": "",
                     "required": 0,
@@ -192,6 +202,7 @@
                     "key": "field_5f0f1ff0d31c2",
                     "label": "Services archive",
                     "name": "archive_services",
+                    "aria-label": "",
                     "type": "post_object",
                     "instructions": "",
                     "required": 0,
@@ -214,6 +225,7 @@
                     "key": "field_5f0f20de4568f",
                     "label": "Blog archive",
                     "name": "archive_blog",
+                    "aria-label": "",
                     "type": "post_object",
                     "instructions": "",
                     "required": 0,
@@ -236,6 +248,7 @@
                     "key": "field_5f745239301f4",
                     "label": "Cookie message",
                     "name": "archive_cookie_message",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -257,6 +270,7 @@
             "key": "field_5f06e1a844075",
             "label": "3 party integrations",
             "name": "integrations",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -272,6 +286,7 @@
                     "key": "field_5f0881c1184e2",
                     "label": "Google maps API key",
                     "name": "google_maps_api_key",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -291,6 +306,7 @@
                     "key": "field_5f749f8234935",
                     "label": "CampainMonitor API Key",
                     "name": "campainmonitor_api_key",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -310,6 +326,7 @@
                     "key": "field_5f749f9e34936",
                     "label": "CampainMonitor List ID",
                     "name": "campainmonitor_listid",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -329,6 +346,7 @@
                     "key": "field_5f05bdcd6c93b",
                     "label": "SocialMedia Accounts",
                     "name": "socialmedia_accounts",
+                    "aria-label": "",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -342,12 +360,14 @@
                     "min": 0,
                     "max": 0,
                     "layout": "table",
-                    "button_label": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_5f05be6e24980",
                             "label": "Icon",
                             "name": "icon",
+                            "aria-label": "",
                             "type": "select",
                             "instructions": "",
                             "required": 0,
@@ -369,12 +389,14 @@
                             "ui": 0,
                             "return_format": "value",
                             "ajax": 0,
-                            "placeholder": ""
+                            "placeholder": "",
+                            "parent_repeater": "field_5f05bdcd6c93b"
                         },
                         {
                             "key": "field_5f05bead24981",
                             "label": "Link",
                             "name": "link",
+                            "aria-label": "",
                             "type": "link",
                             "instructions": "",
                             "required": 0,
@@ -384,9 +406,232 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array"
+                            "return_format": "array",
+                            "parent_repeater": "field_5f05bdcd6c93b"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "key": "field_6405be49ba92e",
+            "label": "Social Media",
+            "name": "social_media",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6405be78ba931",
+                    "label": "Facebook",
+                    "name": "facebook",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405be9eba932",
+                    "label": "Facebook Messenger",
+                    "name": "facebook-messenger",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405bebaba933",
+                    "label": "Instagram",
+                    "name": "instagram",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405bec4ba934",
+                    "label": "LinkedIn",
+                    "name": "linkedin",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405bed6ba935",
+                    "label": "Meta",
+                    "name": "meta",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405bee3ba936",
+                    "label": "Pinterest",
+                    "name": "pinterest",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405bef3ba937",
+                    "label": "Telegram",
+                    "name": "telegram",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405beffba938",
+                    "label": "TikTok",
+                    "name": "tiktok",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405bf0eba939",
+                    "label": "Twitter",
+                    "name": "twitter",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405bf16ba93a",
+                    "label": "Vimeo",
+                    "name": "vimeo",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405bf23ba93b",
+                    "label": "WhatsApp",
+                    "name": "whatsapp",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6405bf38ba93c",
+                    "label": "YouTube",
+                    "name": "youtube",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
                 }
             ]
         }
@@ -416,5 +661,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1654692099
+    "modified": 1678098123
 }

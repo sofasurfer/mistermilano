@@ -71,6 +71,7 @@ class General {
 		add_filter( 'c_check_linktype', [ $this, 'c_check_linktype' ] );
 		add_filter( 'c_get_breadcrumbs', [ $this, 'the_breadcrumbs' ], 10, 1 );
 		add_filter( 'c_render_picturetag', [ $this, 'c_shortcode_render_picture' ] );
+		add_filter( 'c_render_socialmedia', [ $this, 'c_render_socialmedia' ] );
 		add_filter( 'use_block_editor_for_post', '__return_false' );
 
 		add_filter( 'acf/fields/wysiwyg/toolbars', [ $this, 'c_toolbars' ] );
@@ -239,6 +240,42 @@ class General {
 	}
 
 	/**
+	 * Returns a List of all the social media links that are filled in the theme options.
+	 * If you add a new file, check that the ACF-field is named the same as the file.
+	 *
+	 * Usage: apply_filters( 'c_render_socialmedia', false )
+	 */
+	function c_render_socialmedia(): string {
+		$options = get_fields( 'options' );
+		$fields  = $options['social_media'];
+
+		$html = '<ul class="social-media">';
+
+		foreach ( $fields as $key => $url ) {
+			if ( $url ) {
+				$title = $key ?? '';
+
+				$path  = "images/social_media/$key.svg";
+				$image = apply_filters( 'get_file_from_dist', $path );
+
+				if ( ! $image ) {
+					continue;
+				}
+
+				$html .= "<li class='social-media__item'>
+                        <a href='$url' target='_blank' class='social-media__item__link'>
+                            <img src='$image' alt='$title' class='social-media__item__icon'>
+                        </a>
+                    </li>";
+			}
+		}
+
+		$html .= '</ul>';
+
+		return $html;
+	}
+
+	/**
 	 * Remove Gutenberg Block Library CSS from loading on the frontend
 	 */
 	function c_remove_wp_block_library_css() {
@@ -249,6 +286,8 @@ class General {
 
 	/**
 	 * Gets file from the dist folder through the manifest.json file.
+	 *
+	 * Usage: apply_filters( 'get_file_from_dist', 'images/ico/example.png' );
 	 */
 	public function c_get_file_with_hash_from_manifest( $filename, $with_template_path = true ) {
 		$path_to_manifest = get_template_directory() . "/dist/manifest.json";
