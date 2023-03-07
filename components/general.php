@@ -53,7 +53,6 @@ class General {
 		add_shortcode( 'c_post_locale', [ $this, 'c_shortcode_post_locale' ] );
 		add_shortcode( 'c_get_categories', [ $this, 'c_shortcode_get_categories' ] );
 		add_shortcode( 'c_option', [ $this, 'c_shortcode_option' ] );
-		add_shortcode( 'c_socialmedia_list', [ $this, 'c_shortcode_socialmedia' ] );
 		add_shortcode( 'c_contact_info', [ $this, 'c_shortcode_contact_info' ] );
 
 		add_filter( 'c_get_pagetitle', [ $this, 'c_get_pagetitle' ] );
@@ -530,18 +529,6 @@ class General {
 	*/
 	public function c_shortcode_option( $args ) {
 		return $this->c_get_option( $args['key'] );
-	}
-
-	public function c_shortcode_socialmedia( $args ) {
-
-		$list = '<ul class="c-list-social">';
-		foreach ( apply_filters( 'c_get_option', 'socialmedia_accounts' ) as $s_account ) {
-			$list .= "<li><a class=\"c-icon c-btn-social c-btn-social-" . $s_account['icon'] . " c-ir\" href=\"" . $s_account['link']['url'] . "\" target=\"" . $s_account['link']['target'] . "\"></a></li>";
-		}
-		$list .= "</ul>";
-
-		return $list;
-
 	}
 
 	/**
