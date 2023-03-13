@@ -1,0 +1,26 @@
+name: 🧹 Delete WP Cache ($REMOTE_HOST)
+
+on:
+  push:
+    branches: [ deployment ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Remove WP Cache Directory 🧹
+        uses: tarunjangra/ssh-remote-cmd@v1
+        with:
+          # Add your WP Cache Directory here
+          command: |
+            DIR="public_html/PROJECT_DIRECTORY/wp-content/cache/"
+            [ -d $DIR ] && rm -rf $DIR
+          host: $REMOTE_HOST
+          user: $REMOTE_USER
+          key: ${{ secrets.SSH_PRIVATE_KEY}}
