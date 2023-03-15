@@ -258,4 +258,5 @@ function day_week($month, $day, $year)
 Please follow this conventions when commiting to this project. https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13
 
 Schema: `<type>(<optional scope>): <subject>`
+
 Example: `feat(shopping cart): add the amazing button`
