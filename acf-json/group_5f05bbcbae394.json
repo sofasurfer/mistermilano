@@ -112,10 +112,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
                     "maxlength": "",
                     "rows": "",
-                    "new_lines": ""
+                    "placeholder": "",
+                    "new_lines": "wpautop"
                 },
                 {
                     "key": "field_6296282f3e6b1",
@@ -661,5 +661,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678098123
+    "modified": 1679391895
 }

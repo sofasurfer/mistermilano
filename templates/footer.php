@@ -1,59 +1,29 @@
 <?php
 
-$options = get_fields('options');
-$posttype = get_post_type( get_queried_object_id() );
-$back_button    = false;
-$backlist = array( 'projects', 'sales', 'post' );
-$backlink = '';
-
-if ( in_array( $posttype, $backlist ) ) {
-	if ( $posttype == 'projects' ) {
-		$backlink = get_permalink( apply_filters( 'c_get_option', 'archive_projects' ) );
-	} else if ( $posttype == 'sales' ) {
-		$backlink = get_permalink( apply_filters( 'c_get_option', 'archive_sales' ) );
-	} else if ( $posttype == 'post' ) {
-		$backlink = get_permalink( apply_filters( 'c_get_option', 'archive_blog' ) );
-	}
-}
-
-if ( is_singular( 'projects' ) ) {
-	$back_button = true;
-	$backlink   = get_the_permalink( $options['site']['archive_project'] ) ?? false;
-}
+$options  = get_fields( 'options' );
+$title    = $options['company']['company_title'];
+$address  = $options['company']['company_address'];
+$phone    = apply_filters( 'c_get_option', 'company_phone' );
+$email    = apply_filters( 'c_get_option', 'company_email' );
+$logo_src = apply_filters( 'get_file_from_dist', 'images/logo-lanz-stripes.svg' );
 
 ?>
 
-<?php if ( $back_button ) { ?>
-    <!-- link back top, nur auf projektdetailseiten-->
-    <div class="c-container c-back">
-        <div class="c-row">
-            <div class="c-col-12 c-text-padding">
-                <!-- link back , nur auf projektdetailseiten-->
-                <a class="c-icon c-link-back c-text-small" href="<?= $backlink ?>"><?= __('Zurück zur Übersicht', 'neofluxe') ?></a>
-            </div>
-        </div>
-    </div>
-<?php } ?>
-
 </main>
 
-<!-- footer-->
 <footer class="c-footer" role="contentinfo">
-    <!-- line vertical-->
-    <span class="c-line-vertical"></span>
-
-
-    <!-- footer main-->
     <div class="c-container-wide c-line-top c-line-bottom">
         <div class="c-container c-container-no-padding c-footer-main">
             <div class="c-footer-logo">
-                <span class="c-header-logo-stripes"><img src="<?= apply_filters( 'get_file_from_dist', 'images/logo-lanz-stripes.svg'); ?>" alt="Lanz Architekten"/></span>
+                <span class="c-header-logo-stripes">
+                    <img src="<?= $logo_src ?>" alt="<?= __( 'Neofluxe', 'neofluxe' ) ?>"/>
+                </span>
             </div>
             <div class="c-footer-main-address c-text-padding-inside">
-                <strong><?= strstr( $options['company']['company_title'], ' ', true ) ?></strong> <?= strstr( $options['company']['company_title'], ' ' ) ?><br/>
-                <?= $options['company']['company_address'] ?>, Tel.
-                <a href="tel:<?= apply_filters( 'c_get_option', 'company_phone' ); ?>"><?= apply_filters( 'c_get_option', 'company_phone' ); ?></a>,
-                <a href="mailto:<?= apply_filters( 'c_get_option', 'company_email' ); ?>"><?= apply_filters( 'c_get_option', 'company_email' ); ?></a>
+				<?= $title ?><br/>
+				<?= $address ?><br/>
+                <a href="tel:<?= $phone ?>"><?= $phone ?></a><br/>
+                <a href="mailto:<?= $email ?>"><?= $email ?></a>
             </div>
         </div>
     </div>
@@ -70,16 +40,15 @@ if ( is_singular( 'projects' ) ) {
 				); ?>
             </div>
             <div class="c-col-6 c-text-padding">
-                &copy;<?= date("Y") ?> <?= $options['company']['company_title'] ?>
+                &copy;<?= date( "Y" ) ?> <?= $title ?>
             </div>
 
         </div>
     </div>
 
-    <?= wp_footer() ?>
+	<?= wp_footer() ?>
 </footer>
 
-<!-- cookie notice-->
 <div id="cookie-notice" class="c-cookie-notice c-text-block c-text-small">
 	<?= apply_filters( 'c_get_option', 'archive_cookie_message' ); ?>
 </div>
