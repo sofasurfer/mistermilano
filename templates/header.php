@@ -9,9 +9,6 @@
     <meta name="author" content="cubegrafik GmbH">
     <meta name="description" content="<?= $og_info['description']; ?>">
 
-    <!-- Chrome Theme Color -->
-    <meta name="theme-color" content="#200EB0">
-
     <meta property="og:locale" content="<?= $og_info['locale']; ?>"/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="<?= $og_info['title']; ?>"/>
@@ -20,13 +17,15 @@
     <meta property="og:image:width" content="<?= $og_info['image'][1] ?? ''; ?>"/>
     <meta property="og:image:height" content="<?= $og_info['image'][2] ?? ''; ?>"/>
 
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+
     <!-- favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/apple-touch-icon.png' ); ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/favicon-32x32.png' ); ?>">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/favicon-16x16.png' ); ?>">
     <link rel="mask-icon" href="<?= apply_filters( 'get_file_from_dist', 'safari-pinned-tab.svg' ); ?>" color="#2e1aa9">
-    <meta name="msapplication-TileColor" content="#2e1aa9">
-    <meta name="theme-color" content="#ffffff">
 
     <link rel="sitemap" type="application/xml" title="Sitemap" href="<?= get_sitemap_url( 'index' ) ?>">
 
@@ -52,7 +51,7 @@
     <div class="c-container-wide c-line-top c-line-bottom">
         <div class="c-container c-container-no-padding c-header-inner">
             <div class="c-header-logo">
-                <a href="<?php echo get_home_url(); ?>">
+                <a href="<?= get_home_url(); ?>">
                     <img src="<?= apply_filters( 'get_file_from_dist', 'images/logo.svg' ); ?>" alt="Logo <?= get_bloginfo( 'name' ) ?>"/>
                 </a>
             </div>
@@ -78,9 +77,6 @@
     <!-- offcanvas nav-->
     <nav class="c-offcanvas-nav">
         <div class="c-offcanvas-inner">
-            <!-- line vertical-->
-            <span class="c-line-vertical"></span>
-
             <div class="c-container-wide c-offcanvas-header c-line-top c-line-bottom">
                 <div class="c-container c-container-no-padding c-header-inner">
                     <!-- offcanvas trigger-->
@@ -93,7 +89,6 @@
             <div class="c-container c-offcanvas-content">
                 <div class="c-row">
                     <div class="c-col-12 c-text-padding">
-                        <!-- navigation -->
 						<?php wp_nav_menu(
 							array(
 								'theme_location' => 'header-menu',
