@@ -85,8 +85,6 @@ class General {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
 
-		remove_post_type_support( 'page', 'editor' );
-
 		load_theme_textdomain( 'neofluxe', get_stylesheet_directory() . '/languages' );
 
 		if ( function_exists( 'acf_add_options_page' ) ) {
@@ -311,6 +309,8 @@ class General {
 		setcookie( "hideloader", 'true' );
 
 		add_post_type_support( 'page', 'excerpt' );
+		remove_post_type_support( 'post', 'editor' );
+		remove_post_type_support( 'page', 'editor' );
 
 		// Remove comments page in menu
 		add_action( 'admin_menu', function () {
