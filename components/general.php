@@ -44,6 +44,7 @@ class General {
 		add_action( 'admin_head', [ $this, 'my_custom_admin_css' ] );
 //		add_action( 'wp_enqueue_scripts', [ $this, 'c_remove_wp_block_library_css' ], 100 );
 		add_action( 'wp_print_styles', [ $this, 'c_remove_dashicons' ], 100 );
+		add_action( 'admin_menu', [ $this, 'c_dynamic_archive_pages' ], 100 );
 
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 
@@ -90,6 +91,75 @@ class General {
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			acf_add_options_page();
 		}
+	}
+
+	/**
+	 * The c_dynamic_archive_pages function adds an options page to the WordPress admin area.
+	 * That page is titled “Archive Pages” and is accessible from the Settings menu.
+	 *
+	 * The options page contains a form with a dropdown for each custom post type.
+	 * Those dropdowns allow the user to select a page from a list of all available pages in the WordPress instance.
+	 * When the form is submitted, the selected pages are saved to the WordPress database using the update_option function.
+	 *
+	 * Nore that "post" is the blog
+	 *
+	 * @example
+	 * $post_type   = 'my_custom_post_type';
+	 * $page_id     = get_option('archive_' . $post_type);
+	 *
+	 * @return void
+	 */
+	function c_dynamic_archive_pages(): void {
+		add_options_page( 'Archive Pages', 'Archive Pages 🔗', 'manage_options', 'c-archive-pages', function () {
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+			}
+			$args       = array(
+				'public'   => true,
+				'_builtin' => false
+			);
+			$output     = 'names';
+			$operator   = 'and';
+			// used for blog posts
+			$post_types = get_post_types( $args, $output, $operator );
+			$post_types[] = 'post';
+			$pages      = get_pages();
+
+			echo '<div class="wrap">';
+			echo '<h2>' . __( 'Archive Page Linking', 'neofluxe' ) . '</h2>';
+
+			if ( isset( $_POST['submit'] ) ) {
+				foreach ( $post_types as $post_type ) {
+					$option_name = 'archive_' . $post_type;
+					update_option( $option_name, $_POST[ $post_type ] );
+				}
+				echo '<div id="message" class="updated"><p>' . __( 'Option saved.', 'neofluxe' ) . '</p></div>';
+			}
+
+			echo '<form method="post" action="" class="c-archivepage-form">';
+
+			foreach ( $post_types as $post_type ) {
+				$option_name = 'archive_' . $post_type;
+				$title = $post_type;
+
+				if ($title === 'post') {
+					$title = 'post (blog)';
+				}
+
+				echo '<h3>' . $title . '</h3>';
+				echo '<select name="' . $post_type . '">';
+				echo '<option value=""></option>';
+				foreach ( $pages as $page ) {
+					echo '<option value="' . $page->ID . '"' . selected( get_option( $option_name ), $page->ID ) . '>' . $page->post_title . '</option>';
+				}
+				echo '</select>';
+				echo '<br />';
+			}
+
+			echo '<input type="submit" class="button button-primary" name="submit" value="' . __( 'Save', 'neofluxe' ) . '" style="margin-top: 10px;" />';
+			echo '</form>';
+			echo '</div>';
+		} );
 	}
 
 	/**
@@ -343,16 +413,10 @@ class General {
 		if ( in_array( 'current-menu-item', $classes ) ) {
 			$classes[] = 'c-active';
 		}
-		if ( $item->object_id == $this->c_get_option( 'archive_blog' ) && get_post_type( get_queried_object_id() ) == 'post' ) {
+		if ( $item->object_id == get_option( 'archive_blog' ) && get_post_type( get_queried_object_id() ) == 'post' ) {
 			$classes[] = 'c-active ';
 		}
-		if ( $item->object_id == $this->c_get_option( 'archive_projects' ) && get_post_type( get_queried_object_id() ) == 'projects' ) {
-			$classes[] = 'c-active ';
-		}
-		if ( $item->object_id == $this->c_get_option( 'archive_sales' ) && get_post_type( get_queried_object_id() ) == 'sales' ) {
-			$classes[] = 'c-active ';
-		}
-		if ( $item->object_id == $this->c_get_option( 'archive_services' ) && get_post_type( get_queried_object_id() ) == 'service' ) {
+		if ( $item->object_id == get_option( 'archive_services' ) && get_post_type( get_queried_object_id() ) == 'service' ) {
 			$classes[] = 'c-active ';
 		}
 
@@ -431,14 +495,10 @@ class General {
 	public function c_get_pagetitle() {
 
 		$pagetitle = get_the_title() . ' | ';
-		if ( get_post_type() == 'projects' ) {
-			$pagetitle .= get_the_title( $this->c_get_option( 'archive_projects' ) ) . ' | ';
-		} else if ( get_post_type() == 'service' ) {
-			$pagetitle .= get_the_title( $this->c_get_option( 'archive_services' ) ) . ' | ';
-		} else if ( get_post_type() == 'sales' ) {
-			$pagetitle .= get_the_title( $this->c_get_option( 'archive_sales' ) ) . ' | ';
+		if ( get_post_type() == 'service' ) {
+			$pagetitle .= get_the_title( get_option( 'archive_services' ) ) . ' | ';
 		} else if ( get_post_type() == 'post' ) {
-			$pagetitle .= get_the_title( $this->c_get_option( 'archive_blog' ) ) . ' | ';
+			$pagetitle .= get_the_title( get_option( 'archive_blog' ) ) . ' | ';
 		}
 
 		return $pagetitle . get_bloginfo();

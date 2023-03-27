@@ -153,98 +153,6 @@
             "layout": "row",
             "sub_fields": [
                 {
-                    "key": "field_5f06e257f1829",
-                    "label": "Project archive",
-                    "name": "archive_project",
-                    "aria-label": "",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "page"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "id",
-                    "ui": 1
-                },
-                {
-                    "key": "field_5f0818c4a5b43",
-                    "label": "Sales archive",
-                    "name": "archive_sales",
-                    "aria-label": "",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "page"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "id",
-                    "ui": 1
-                },
-                {
-                    "key": "field_5f0f1ff0d31c2",
-                    "label": "Services archive",
-                    "name": "archive_services",
-                    "aria-label": "",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "page"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "id",
-                    "ui": 1
-                },
-                {
-                    "key": "field_5f0f20de4568f",
-                    "label": "Blog archive",
-                    "name": "archive_blog",
-                    "aria-label": "",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "page"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "id",
-                    "ui": 1
-                },
-                {
                     "key": "field_5f745239301f4",
                     "label": "Cookie message",
                     "name": "archive_cookie_message",
@@ -661,5 +569,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679391895
+    "modified": 1679909640
 }
