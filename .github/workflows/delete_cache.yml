@@ -1,4 +1,4 @@
-name: 🧹 Delete WP Cache (${{ vars.REMOTE_HOST }})
+name: 🧹 Delete WP Cache (🟡STAGING)
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: 📡 Deployment (${{ vars.REMOTE_HOST }})
+name: 📡 Deployment (🟡STAGING)
 
 on:
   push:
