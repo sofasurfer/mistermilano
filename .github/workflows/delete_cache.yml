@@ -21,6 +21,6 @@ jobs:
           command: |
             DIR="public_html/PROJECT_DIRECTORY/wp-content/cache/"
             [ -d $DIR ] && rm -rf $DIR
-          host: $REMOTE_HOST
-          user: $REMOTE_USER
+          host: ${{ vars.REMOTE_HOST }}
+          user: ${{ vars.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY}}

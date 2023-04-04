@@ -37,6 +37,6 @@ jobs:
           switches: -avzr --delete --prune-empty-dirs --exclude="node_modules" --exclude=".github" --exclude="package.json" --exclude="package-lock.json" --exclude="*.lock" --exclude="release.sh" --exclude="bud.config.mjs" --exclude="*.md" --exclude="*.html" --exclude="src/fonts" --exclude="src/styles" --exclude="src/images" --exclude="src/bud" --exclude="src/templates" --exclude=".nvmrc" --exclude=".gitignore"
           path: ./
           remote_path: public_html/PROJECT_DIRECTORY/wp-content/themes/wptheme.starter
-          remote_host: $REMOTE_HOST # example: s094.cyon.net
-          remote_user: $REMOTE_USER # example: nflxz
+          remote_host: ${{ vars.REMOTE_HOST }} # example: s094.cyon.net
+          remote_user: ${{ vars.REMOTE_USER }} # example: nflxz
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
