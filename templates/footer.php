@@ -5,7 +5,7 @@ $title    = $options['company']['company_title'];
 $address  = $options['company']['company_address'];
 $phone    = apply_filters( 'c_get_option', 'company_phone' );
 $email    = apply_filters( 'c_get_option', 'company_email' );
-$logo_src = apply_filters( 'get_file_from_dist', 'images/logo-lanz-stripes.svg' );
+$logo_src = apply_filters( 'get_file_from_dist', '../images/logo-lanz-stripes.svg' );
 
 ?>
 

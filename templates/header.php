@@ -22,9 +22,9 @@
     <meta name="msapplication-TileColor" content="#ffffff">
 
     <!-- favicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/apple-touch-icon.png' ); ?>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/favicon-32x32.png' ); ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= apply_filters( 'get_file_from_dist', 'images/ico/favicon-16x16.png' ); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= apply_filters( 'get_file_from_dist', '../images/ico/apple-touch-icon.png' ); ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= apply_filters( 'get_file_from_dist', '../images/ico/favicon-32x32.png' ); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= apply_filters( 'get_file_from_dist', '../images/ico/favicon-16x16.png' ); ?>">
     <link rel="mask-icon" href="<?= apply_filters( 'get_file_from_dist', 'safari-pinned-tab.svg' ); ?>" color="#2e1aa9">
 
     <link rel="sitemap" type="application/xml" title="Sitemap" href="<?= get_sitemap_url( 'index' ) ?>">
@@ -52,7 +52,7 @@
         <div class="c-container c-container-no-padding c-header-inner">
             <div class="c-header-logo">
                 <a href="<?= get_home_url(); ?>">
-                    <img src="<?= apply_filters( 'get_file_from_dist', 'images/logo.svg' ); ?>" alt="Logo <?= get_bloginfo( 'name' ) ?>"/>
+                    <img src="<?= apply_filters( 'get_file_from_dist', '../images/logo.svg' ); ?>" alt="Logo <?= get_bloginfo( 'name' ) ?>"/>
                 </a>
             </div>
 

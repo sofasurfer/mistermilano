@@ -41,17 +41,14 @@ export default async (bud) => {
         .watch('@src/**/*')
 
         /**
+         * Development URL to be used in the browser.
+         */
+        .serve('http://localhost:3010')
+
+        /**
          * Target URL to be proxied by the dev server.
          *
          * This should be the URL you use to visit your local development server.
          */
-        .proxy('http://localhost/')
-
-        /**
-         * Development URL to be used in the browser.
-         */
-        .serve({
-            host: 'http://0.0.0.0/',
-            port: 3010,
-        })
+        .proxy(new URL('http://localhost/nf-starter'))
 };
