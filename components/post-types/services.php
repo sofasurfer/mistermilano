@@ -37,7 +37,7 @@ class Service {
             'publicly_queryable'  => false,
         ], [
             'en' => 'services'
-        ], false, false,['title', 'editor', 'revisions', 'page-attributes']);
+        ], false, false, false, ['title', 'editor', 'revisions', 'page-attributes']);
 
         if(!function_exists("register_field_group"))
             return;
