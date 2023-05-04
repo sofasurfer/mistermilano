@@ -94,93 +94,22 @@ if( !empty($_GET['lang']) ){
         <div class="row">
             <div class="col-md-12">
             <h1>Plattenrelease Tour</h1>
-            <div>
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#upcomming" aria-controls="upcomming" role="tab" data-toggle="tab">Upcoming</a></li>
-                <li role="presentation"><a href="#past" aria-controls="past" role="tab" data-toggle="tab">Past</a></li>
-              </ul>
+            <table class="table table-hover" itemscope itemtype="http://schema.org/Event" >
+              <?php
+              $url = 'https://www.yagwud.com/cms/wp-admin/admin-ajax.php?action=events_list&bid=mistermilano';
+              $content = file_get_contents($url);
+              $json = json_decode($content, true);
 
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="upcomming">
-                    <div class="tablewrap">
-
-                    <table itemscope="" itemtype="http://schema.org/Event" class="table">
-                        <tbody>
-                            <tr class="bounce-table animation-element">
-                                <td class="subject">
-                                    <div class="date" itemprop="startDate" content="2019-12-14">
-                                        <span class="day">14</span>
-                                        <span class="month">Dez</span>
-                                        <span class="year">2019</span>
-                                    </div>
-                                </td>
-                                <td class="location subject" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
-                                    <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                                        <span itemprop="addressLocality">Genève</span>,
-                                        <span itemprop="addressRegion">(CH)</span>
-                                    </div>
-                                </td>
-                                <td class="venue subject" itemprop="name">
-                                    <a target="_blank" itemprop="url" title="Grütli Genève (CH)" href="https://www.cinemas-du-grutli.ch">Grütli</a>
-                                    <div class="location-small">Genève (CH)</div>
-                                </td>
-                                <td class="ticket subject">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </div>                
-                </div>
-                <div role="tabpanel" class="tab-pane" id="past">
-                    <div class="tablewrap">
-                    <table itemscope itemtype="http://schema.org/Event" class="table">
-                        <tr class="bounce-table animation-element">
-                            <td class="subject">
-                                <div class="date" itemprop="startDate" content="2019-07-18">
-                                    <span class="day">18</span>
-                                    <span class="month">July</span>
-                                    <span class="year">2019</span>
-                                </div>
-                            </td>
-                            <td class="location subject" itemprop="location" itemscope="" itemtype="http://schema.org/Place">
-                                <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                                    <span itemprop="addressLocality">Zürich</span>,
-                                    <span itemprop="addressRegion">(CH)</span>
-                                </div>
-                            </td>
-                            <td class="venue subject" itemprop="name">
-                                <a target="_blank" itemprop="url" title="Sommerkonzert Bäckeranlage Zürich (CH)" href="https://www.facebook.com/baeckirestaurant">Bäckeranlage</a>
-                                <div class="location-small">Zürich (CH)</div>
-                            </td>
-                            <td class="ticket subject">
-                            </td>
-                        </tr>                      
-                        <?php
-                        $url = 'http://tourdate.twogentlemen.net/json.php?id=574&past';
-                        $content = file_get_contents($url);
-                        $json = json_decode($content, true);
-
-                        // Check if tours exist
-                        if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
-                          foreach($json['shows'] as $item) {
-                            $item['event_link'] = $item['club_website'];
-                            if( !empty($item['show_link'])){
-                              $item['event_link'] = $item['show_link'];
-                            }
-                            include 'tpl/tour-item.php';
-                          }    
-                        }else{
-                          include 'tpl/mailchimp.php';
-                        }
-                        ?>                       
-                    </table>
-                    </div>                
-                </div>
-              </div>
-
-            </div>
+              // Check if tours exist
+              if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
+                foreach($json['shows'] as $item) {
+                  include 'tpl/tour-item.php';
+                }    
+              }else{
+                include 'tpl/mailchimp.php';
+              }
+              ?>
+            </table>
             </div>
         </div>
         <div class="row">
@@ -192,7 +121,7 @@ if( !empty($_GET['lang']) ){
                 <p><img class="img-responsive" src="/assets/images/cover.png" /></p>
                 <p>STANDARD EDITION</p>
                 <p>LP + CD + Free Digital Download</p>
-                <a class="btn btn-default order" target="_blank" href="http://store.twogentlemen.net/fr/277-mister-milano" role="button">Buy Now</a>
+                <a class="btn btn-default order" target="_blank" href="https://www.twogentlemen.net/products/mister-milano/" role="button">Buy Now</a>
               </center>
             </div>
         </div>    
@@ -320,3 +249,4 @@ if( !empty($_GET['lang']) ){
     <!-- End Piwik Code -->
   </body>
 </html>
+
