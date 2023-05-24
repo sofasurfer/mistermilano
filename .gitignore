@@ -5,6 +5,8 @@ vendor/**
 .gitattributes
 .budfiles
 dist/**
+fonts/**
+images/**
 
 data/**
 

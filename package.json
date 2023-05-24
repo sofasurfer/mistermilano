@@ -25,10 +25,10 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "@roots/bud": "6.12.2",
-    "@roots/bud-postcss": "6.12.2",
-    "@roots/bud-preset-wordpress": "6.12.2",
-    "@roots/bud-sass": "6.12.2",
+    "@roots/bud": "6.12.3",
+    "@roots/bud-postcss": "6.12.3",
+    "@roots/bud-preset-wordpress": "6.12.3",
+    "@roots/bud-sass": "6.12.3",
     "mocha": "^10.0.0"
   },
   "dependencies": {
