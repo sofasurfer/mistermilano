@@ -31,6 +31,8 @@ input:-webkit-autofill:active {
 
 .c-form-standard input[type="text"],
 .c-form-standard input[type="email"],
+.c-form-standard input[type="url"],
+.c-form-standard input[type="date"],
 .c-form-standard textarea {
 	width: 100%;
 	border: solid 2px $border-form;
@@ -45,19 +47,24 @@ input:-webkit-autofill:active {
 
 .c-form-standard input[type="text"]:focus,
 .c-form-standard input[type="email"]:focus,
+.c-form-standard input[type="url"]:focus,
+.c-form-standard input[type="date"]:focus,
 .c-form-standard textarea:focus {
 	border-color: $border-form-focus;
 	outline: none;
 }
 
 .c-form-standard input[type="text"]:disabled,
-.c-form-standard input[type="email"]:disabled,
+.c-form-standard input[type="email"]:disabled,,
+.c-form-standard input[type="url"]:disabled,
+.c-form-standard input[type="date"]:disabled,
 .c-form-standard textarea:disabled {
 	border-color: $form-disabled;
 	color: $form-disabled;
 }
 
 .c-form-standard .c-form-label-text {
+    display: block;
 	padding-bottom: 0.35em;
 }
 
@@ -251,30 +258,84 @@ input:-webkit-autofill:active {
 	border-color: $form-disabled;
 }
 
+
 /* ==========================================================================
-   dropdown
+   file button
+   ========================================================================== */ 
+
+.c-form-standard input[type=file] {
+    width: 100%;
+    padding: 0.75em 10px;
+    background-color: $bg-light;
+    font-size: 0.88rem;
+}
+
+
+.c-form-standard input[type="file"]::file-selector-button {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 0.75em;
+    padding: 1.15em 24px 1.15em 24px;
+    border: 2px solid $text-color;
+    color: $text-color;
+    background-color: $bg-content;
+    line-height: 1.2;
+    text-align: center; 
+	transition: all 0.2s ease-out;
+}
+
+
+
+.c-form-standard input[type="file"]::file-selector-button:hover {
+    color: $text-color-light;
+    background-color: $bg-dark;
+}
+
+
+
+/* ==========================================================================
+   wp7 error / ok message
    ========================================================================== */
 
-.c-form-standard input.wpcf7-not-valid {
-	border-color: $color-form-error;
+.c-form-standard .wpcf7-response-output {
+    /*display: block;*/
+	background-color: $color-form-initial;
+	padding: 1.5em 30px;
+	color: $text-color-light;
+	margin: 0 0 3em 0;
+	font-weight: bold;
+	border: none; 
 }
 
 .c-form-standard .wpcf7-not-valid-tip,
 .c-form-standard .screen-reader-response,
 .c-form-standard .wpcf7-response-output {
-	display: block;
-	padding-top: 0.35em;
-	color: $color-form-error;
-	font-size: 0.77rem;
+   font-size: 0.88rem;
 }
 
-.c-form-standard .wpcf7-response-output {
+/* error */
+.c-form-standard .wpcf7-not-valid-tip,
+.c-form-standard .screen-reader-response {
+	color: $color-form-error;
+}
+
+.c-form-standard .wpcf7-not-valid-tip {
 	display: block;
+	padding-top: 0.35em;
+}
+
+.c-form-standard input.wpcf7-not-valid {
+	border-color: $color-form-error;
+}
+
+.c-form-standard form.invalid .wpcf7-response-output {
 	background-color: $color-form-error;
-	padding: 1.5em 30px;
-	color: $text-color-light;
-	margin-bottom: 3em;
-	font-weight: bold;
+}
+
+/* ok */
+.c-form-standard form.sent .wpcf7-response-output {
+	background-color: $color-form-ok;
 }
 
 @media only screen and (max-width:767px) {   
