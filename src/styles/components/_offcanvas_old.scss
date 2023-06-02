@@ -1,0 +1,420 @@
+.scrollbar-test{
+  overscroll-behavior: contain;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+#open-navigation{
+	min-height: 100%;
+}
+
+
+/* ==========================================================================
+   Offcanvas trigger
+   ========================================================================== */
+
+.c-offcanvas-toggle{
+	display: block;
+	height: 40px;
+	margin-top: -4px;
+	position: absolute;
+   	right: 30px;
+   	top: 0;
+   	width: 40px;
+	z-index: 1200;
+	&:hover{
+		cursor: pointer;
+	}
+   	&:after,
+   	&:before{
+		content: '';
+	   	display: block;
+	   	position: absolute;
+		right: 0;
+		top: 50%;
+		z-index: -1
+   	}
+	&.open{
+		&:after{
+			background-color: $color-highlight;
+			margin-top: -2px;
+			height: 4px;
+			width: 24px;
+		}
+		&:before{
+			border-bottom: 4px solid $color-highlight;
+			border-top: 4px solid $color-highlight;
+			height: 24px;
+			margin-top: -12px;
+			width: 30px;
+		}
+	}
+}
+
+/* ==========================================================================
+   Language nav
+   ========================================================================== */
+
+.c-language-navigation{
+	line-height: 1;
+	@media only screen and (min-width:600px) {
+		margin-top: $padding-top;
+		position: absolute;
+		right: 100px;
+		top: 0;
+		width: 30em;
+	}
+}
+
+.c-language-navigation-title {
+	font-weight: 300;
+	margin: 0;
+	padding: 0 0.5em 0 0;
+	opacity: 0.5;
+	@media only screen and (min-width:600px) {
+		display: inline-block;
+	}
+}
+
+.c-lang-menu {
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	.menu-item{
+		display: inline-block;
+		margin: 0 0 0 1em;
+		padding: 0;
+	}
+}
+
+/* ==========================================================================
+   Offcanvas nav
+   ========================================================================== */
+
+.c-off-canvas{
+	/*color: $text-color;*/
+	position: absolute;
+	right: 0;
+	text-align: right;
+	top: 0;
+	width: 100%;
+}
+
+.c-header-navigation{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	transition: max-height 1s ease-in-out;
+}
+
+/* ==========================================================================
+   Offcanvas nav close
+   ========================================================================== */
+
+#open-navigation:not(:target){
+	.c-inner-off-canvas{
+		@media only screen and (min-width: 1600px){
+			max-width: 1560px;
+		    margin-left: auto;
+		    margin-right: auto;
+			position: relative;
+		}
+	}
+	.c-offcanvas-toggle{
+		&.close{
+			display: none;
+		}
+		&.open{
+			display: block;
+		}
+	}
+	.c-language-navigation-title{
+		/*color: $text-color-light;*/
+		@media only screen and (max-width:600px) {
+			@include visuallyhidden;
+		}
+	}
+	.c-lang-menu{
+		.menu-item-link{
+			/*color: $text-color-light;*/
+			@media only screen and (max-width:600px) {
+				@include visuallyhidden;
+			}
+		}
+	}
+	.c-additional-content{
+		display: none;
+		overflow: hidden;
+	}
+	.c-header-navigation{
+		.menu-item-link{
+			@include visuallyhidden;
+		}
+	}
+}
+
+
+
+/* ==========================================================================
+   Offcanvas nav open
+   ========================================================================== */
+
+#open-navigation:target{
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	.layout-scrollbar-obtrusive{
+		padding-right: 18px;
+		@media only screen and (min-width:1100px) {
+			padding-right: 16px;
+		}
+		.c-header{
+			padding-right: 18px;
+			@media only screen and (min-width:1100px) {
+				padding-right: 16px;
+			}
+		}
+	}
+	.c-header{
+		min-height: 100vh;
+	}
+	.c-header-logo{
+		opacity: .6;
+	}
+	&:before{
+		background-color: $color-primary;
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: .6;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 900;
+	}
+	.c-scroll-canvas{
+		overflow-y: scroll;
+	}
+	.c-off-canvas{
+		height: 100%;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		z-index: 1000;
+		.c-inner-off-canvas{
+			max-width: none;
+			width: auto;
+			min-width: 300px;
+			background-color: $bg-content;
+			display: inline-block;
+			min-height: 100vh;
+			/*padding-bottom: 60px;
+			padding-left: 30px;
+			padding-right: 30px;*/
+			padding-top: 3rem;
+			position: relative;
+			/*&:after,
+			&:before{
+				background-color: white;
+				content: '';
+				display: block;
+				left: 0;
+				position: absolute;
+				top: 0;
+				z-index: -1;
+			}
+			&:after{
+				height: 50%;
+				margin-left: -5em;
+				transform: skewX(20deg);
+				width: 11em;
+			}
+			&:before{
+				height: 100%;
+				margin-left: -10em;
+				transform: skewX(20deg);
+				width: 12em;
+			}*/
+			
+			&:before {
+				position: absolute;
+				content: '';
+				bottom: 0;
+				right: calc(100% - 1px);
+				width: 0;
+				height: 0;
+				border-top: 300vw solid $bg-content;
+				border-top-color: rgb(255, 255, 255);
+				border-left: 82vw solid transparent;
+				z-index: 1;
+			}
+		}
+	}
+	.c-offcanvas-toggle{
+ 		&.close{
+ 			display: block;
+			margin-top: calc(#{$padding-top} - 4px);
+			&:after{
+				background-color: $color-highlight;
+				margin-top: -2px;
+				height: 4px;
+				width: 30px;
+				transform: rotate(45deg);
+			}
+			&:before{
+				background-color: $color-highlight;
+				margin-top: -2px;
+				height: 4px;
+				width: 30px;
+				transform: rotate(-45deg);
+			}
+ 		}
+ 		&.open{
+ 			display: none;
+ 		}
+ 	}
+	.c-language-navigation{
+		@media only screen and (max-width:600px) {
+			margin-bottom: 1em;
+		}
+	}
+	.c-text-light .c-language-navigation {
+		color: $text-color;
+	}
+	.c-language-navigation-title{
+		@media only screen and (max-width:600px) {
+			@include visuallyunhidden;
+		}
+	}
+	.c-lang-menu{
+		.menu-item-link{
+			@media only screen and (max-width:600px) {
+				@include visuallyunhidden;
+			}
+		}
+	}
+	.c-additional-content{
+		display: block;
+		margin-top: 5em;
+		overflow: hidden;
+		padding-top: 2em;
+		position: relative;
+		&:before{
+			background-color: $color-primary;
+			left: auto;
+			right: 0;
+		}
+		p + p{
+			padding-top: .8em;
+		}
+	}
+	.c-header-navigation {
+		text-align: right;
+		/*font-size: 2rem;*/
+		font-weight: 600; 
+		padding-top: 1em;
+		text-transform: uppercase;
+		@media only screen and (min-width:800px) and (min-height: 600px) {
+			padding-top: 2em;
+		}
+		.menu-item-link{
+			@include visuallyunhidden;
+		}
+	}
+
+	.c-header-navigation .menu-item + .menu-item {
+		padding-top: 0.25em;
+	}
+
+	.c-header-navigation .menu-item-link {
+		display: inline-block;
+		position: relative;
+		padding: 0.05em 0.1em 0.05em 1em;
+		z-index: 1;
+	}
+
+	.c-header-navigation .menu-item-link::before {
+		content:'';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100%;
+		background-color: $color-highlight;
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00d4b4+0,00d4b4+50,00d4b4+100&0+0,1+50,1+100 */
+		background: -moz-linear-gradient(left,  rgba(0,212,180,0) 0%, rgba(0,212,180,1) 50%, rgba(0,212,180,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  rgba(0,212,180,0) 0%,rgba(0,212,180,1) 50%,rgba(0,212,180,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  rgba(0,212,180,0) 0%,rgba(0,212,180,1) 50%,rgba(0,212,180,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000d4b4', endColorstr='#00d4b4',GradientType=1 ); /* IE6-9 */
+
+
+		transition: width 0.2s ease-out;
+		z-index: -1;
+	}
+
+	.c-header-navigation .menu-item-link:hover::before,
+	.c-header-navigation .c-active .menu-item-link::before {
+		width: 100%;
+	}
+
+	.c-header-navigation a,
+	.c-header-navigation a:hover,
+	.c-header-navigation a:focus,
+	.c-text-light .c-header-navigation a,
+	.c-text-light .c-header-navigation a:hover,
+	.c-text-light .c-header-navigation a:focus,
+	.c-additional-content a,
+	.c-additional-content a:hover,
+	.c-additional-content a:focus,
+	.c-text-light .c-additional-content a,
+	.c-text-light .c-additional-content a:hover,
+	.c-text-light .c-additional-content a:focus,
+	.c-text-light .c-lang-menu a,
+	.c-text-light .c-lang-menu a:hover,
+	.c-text-light .c-lang-menu a:focus {
+		color: $text-color;
+	}
+
+}
+
+/* ==========================================================================
+   Offcanvas checkbox
+   ========================================================================== */
+
+
+#c-offcanvas[type=checkbox]{
+
+	display: none;
+
+	/*&:checked ~ div.c-offcanvas-dialog {
+		right: 0px;
+	}
+	&:checked ~ .c-header {
+		position: fixed;
+		z-index: 10;
+	}	*/
+	&:checked ~ .c-header .c-offcanvas-trigger span:nth-child(1),
+	&:checked ~ .c-header .c-offcanvas-trigger span:nth-child(3) {
+		position: absolute;
+		top: 6px;
+		right: 10px;
+		transform:rotate(45deg);
+	}
+
+	&:checked ~ .c-header .c-offcanvas-trigger span:nth-child(2) {
+		display: none;
+	}
+
+	&:checked ~ .c-header .c-offcanvas-trigger span:nth-child(3) {
+		transform:rotate(-45deg);
+		margin-top: 14px;
+	}
+
+	&:checked ~ .c-header .c-offcanvas-nav {
+		display: block;
+	}
+}

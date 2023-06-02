@@ -27,7 +27,7 @@ cp -v ./style.css ./_release/
 find ./_release/ -name '.DS*' -delete
 
 # Copy files to LIVE server
-rsync -rva ./_release/ nflxz@neofluxe.com:/home/nflxz/www/neofluxe.com/content/themes/neofluxe/
+# rsync -rva ./_release/ nflxz@neofluxe.com:/home/nflxz/www/neofluxe.com/content/themes/neofluxe/
 
 rm -rf "$DIR"
 

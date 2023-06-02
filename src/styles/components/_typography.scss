@@ -23,8 +23,8 @@ h1,
 .c-h1 {
 	padding-bottom: .5em;
 	line-height: 1.1;
-	font-size: 4.44rem; /* 80px */
-	font-weight: bold;
+	font-size: 2rem; /* 80px */
+	color: $text-color-light;
 }
 
 h2,
@@ -33,6 +33,7 @@ h2,
 	line-height: 1.2;
 	font-size: 2.22rem; /* 40px */
 	font-weight: bold;
+	color: $color-highlight;
 }
 
 h3,

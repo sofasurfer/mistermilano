@@ -1,0 +1,226 @@
+/*
+
+    CSS Styles for mistermilano.it
+
+*/
+
+@font-face {
+  font-family: 'ForwardRoughItalic';
+  src: url('/assets/fonts/Forward-RoughItalic.otf') format("opentype");
+}
+
+html {
+    margin: 0;
+}
+
+body{
+  height:100%;
+  font-weight: bolder;
+  font-size: 2.5em;  
+  text-align: center;
+  background-color: transparent; 
+}
+
+
+body.home{
+    font-family: 'ForwardRoughItalic', serif;
+}
+
+.showroom-home{
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.showroom-home figure{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+}
+.showroom-home figure img{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+h1{
+    font-weight: bolder;
+    font-size: 4em;    
+    margin-top: 200px;  
+    margin-bottom: 60px;  
+}
+h2{
+    margin-top: 50px;  
+    font-size: 2em;    
+}
+a{
+    padding: 2px 5px;
+    margin-left: -5px;
+    color: #ff1493;
+}
+a:hover{
+    color: #333;
+    text-decoration: none;
+    background-color: #ff1493;
+}
+
+.logo{
+    margin-bottom: 200px;
+}
+.logo-title {
+    margin-bottom: 100px;
+}
+.logo-title img{
+    width: 500px;    
+}
+.logo img{
+    width: 600px;
+}
+p.sharing a:link:hover,
+p.sharing a:visited:hover,
+a.carousel-control:link:hover,
+.supporter a:link:hover,
+.supporter a:visited:hover,
+.logo-title a:link:hover,
+.logo-title a:visited:hover,
+.logo a:link:hover,
+.logo a:visited:hover{
+    background-color: transparent;!important;
+}
+
+p.sharing i{
+    font-size: 6rem;
+}
+
+.carousel-control .glyphicon{
+    font-size: 6rem;
+    color: #ff1493;    
+}
+
+.parallax { 
+    height: 500px; 
+    margin-top: 250px;
+    margin-bottom: 100px;
+    background: url(/assets/images/overlay.png) repeat-x ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.about{
+    font-size: 3.5em;
+}
+
+.tourlist{
+    list-style: none;
+}
+.tourlist li{
+    list-style: none;
+}
+
+/* Tour Dates */
+table td{
+    text-align: left;
+    border-bottom: 1px solid #ff1493 !important;
+}
+table tr{
+    border-top:none;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border:none;
+}
+.date span{
+    display:block;
+    text-align: center;
+    line-height: 30px;
+}
+span.day{
+    font-size: 1.4em;
+}
+span.month{
+    font-size: 1.6em;
+}
+
+.tab-content{
+    margin-top: 20px;
+}
+
+
+.btn.order{
+    border: none;
+    font-size: 2.5rem;
+    background-color: #ff1493;    
+}
+.btn.order:hover{
+    background-color: white;
+}
+
+/* Tabs*/
+.nav-tabs{
+    border-bottom: 1px solid #ff1493;    
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    border: 1px solid #ff1493;
+    background-color: #ff1493;
+}
+
+
+/*
+    Footer
+*/
+footer{
+    display: block;
+    position: relative;
+    margin-top: 50px;
+    bottom: 0px;
+    font-size: 1rem;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 900px){
+    body{
+      font-size: 2em;  
+    }
+    h1{
+        font-size: 2em; 
+        margin-top: 100px;    
+
+    }
+    .logo{
+        margin-bottom: 100px;
+    }
+    .logo-title img,
+    .logo img{
+        width: 300px;
+    }    
+
+    .carousel-control .glyphicon{
+        font-size: 3rem;
+        color: #ff1493;    
+    }
+
+
+    span.day{
+        font-size: 1.0em;
+    }
+    span.month{
+        font-size: 1.2em;
+    }    
+
+}
+
+@media (max-width: 480px) {
+    td.location{
+        display:none;
+    }
+    .location-small{
+        display: block;
+    }
+    td.location,
+    td.venue{
+        line-height: 20px !important;
+    }
+}
+
