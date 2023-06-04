@@ -161,10 +161,15 @@
         </div>
     </div>
 
-    <div class="c-container">
+    <div class="c-container c-albums">
         <div class="c-row">
-            <div class="c-col4 c-text-block">
-                <img src="./images/cover.png" />
+            <div class="c-col-6">
+                <figure><img src="./images/IRAGAZZIDELLANEBBIA.png" /></figure>
+                <p>I RAGAZZI DELLA NEBBIA<br/>
+                <a class="btn" target="_blank" href="http://eepurl.com/isHXTk" role="button">Vorbestellen</a>
+            </div>
+            <div class="c-col-6">
+                <figure><img src="./images/cover.png" /></figure>
                 <p>STANDARD EDITION<br/>
                 LP + CD + Free Digital Download</p>
                 <a class="btn" target="_blank" href="https://www.twogentlemen.net/products/mister-milano/" role="button">Buy Now</a>
@@ -188,7 +193,23 @@
             </div>
         </div>
     </div>
-
+    <div class="c-container c-section-title">
+        <div class="c-row">
+            <div class="c-col-8">
+                <h2>Unterstütz durch:</h2>
+            </div>
+        </div>
+    </div>
+    <div class="c-container c-albums">
+        <div class="c-row">
+            <div class="c-col-6">
+                <a href="http://interpreten.ch/" target="_blank"><img src="./images/logo_sig.png" /></a>
+            </div>
+            <div class="c-col-6">
+            <a href="https://www.fondation-suisa.ch/" target="_blank"><img src="./images/logo_suisa.png" /></a>
+            </div>
+        </div>
+    </div> 
     <!-- img content wide-->
     <div class="c-container c-img-fullwidth">
        <figure>
