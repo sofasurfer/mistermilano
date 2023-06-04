@@ -54,7 +54,7 @@
     <div class="c-container c-section-title">
         <div class="c-row">
             <div class="c-col-8">
-                <h2>Plattenrelease Tour</h2>
+                <h2>Tour</h2>
             </div>
         </div>
     </div>
@@ -77,7 +77,7 @@
               // Check if tours exist
               if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
                 foreach($json['shows'] as $item) {
-                  include 'tpl/tour-item.php';
+                  include 'templates/tour-item.php';
                 }    
               }
               ?>
@@ -92,7 +92,7 @@
     <div class="c-container c-section-title">
         <div class="c-row">
             <div class="c-col-8">
-                <h2>Videos</h2>
+                <h2>Video</h2>
             </div>
         </div>
     </div>
@@ -140,11 +140,54 @@
             <div class="c-col-4 c-link-block">
                     <a href="#de" class="active">DE</a>
                     <a href="#fr" >FR</a>
-                    <a href="#en" >FR</a>
+                    <a href="#en" >EN</a>
             </div>
         </div>
     </div>
 
+    <!-- img content wide-->
+    <div class="c-container c-img-wide">
+    <figure>
+        <img src="./images/mistermilano.jpg" alt="" />
+        <figcaption class="c-legend">Mister Milano</figcaption>
+    </figure>
+    </div>
+    <!-- section title -->
+    <div class="c-container c-section-title">
+        <div class="c-row">
+            <div class="c-col-8">
+                <h2>Records:</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-container">
+        <div class="c-row">
+            <div class="c-col4 c-text-block">
+                <img src="./images/cover.png" />
+                <p>STANDARD EDITION<br/>
+                LP + CD + Free Digital Download</p>
+                <a class="btn" target="_blank" href="https://www.twogentlemen.net/products/mister-milano/" role="button">Buy Now</a>
+            </div>
+        </div>
+    </div>    
+
+    <!-- section title -->
+    <div class="c-container c-section-title">
+        <div class="c-row">
+            <div class="c-col-8">
+                <h2>Contact:</h2>
+            </div>
+        </div>
+    </div>
+    <!-- sponsor only -->
+    <div class="c-container c-text-contact">
+        <div class="c-row">
+            <div class="c-col12 c-text-block">
+                <a class="button" href="mailto:mistermilano@gmx.net">mistermilano@gmx.net</a>
+            </div>
+        </div>
+    </div>
 
     <!-- img content wide-->
     <div class="c-container c-img-fullwidth">

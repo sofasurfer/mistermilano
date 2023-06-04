@@ -45,6 +45,14 @@ table tr{
         }
     }
     */
+
+    .location{
+        font-size: 2rem;;
+    }
+
+    .venue{
+        font-size: 1.3rem;
+    }
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
     border:none;
@@ -55,7 +63,8 @@ table tr{
     line-height: 30px;
 }
 span.day{
-    font-size: 1.4em;
+    font-size: 4em;
+    margin-bottom: 1rem;
 }
 span.month{
     font-size: 1.6em;
