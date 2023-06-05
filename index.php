@@ -148,7 +148,6 @@
                   <p>Souvenirs d'une enfance passée à la périphérie d'une ville suisse en faillite. </p>
                   <p>La haute saison est terminée depuis longtemps. Un quartier de barres d'immeubles, de logements coopératifs, d'anciennes cités ouvrières, de petites maisons isolées, de chalets bizarres et de vilains immeubles en copropriété, conçus par les habitants eux-mêmes. Les personnes qui les habitent sont tout aussi variées que l'absence de plan architectural. Ils sont jetés là comme des dés : les exhibitionnistes, qui, plus animaux qu'humains, couverts de boue, passent devant la cour de récréation et courent vers la forêt, l'enfant du voisin qui doit veiller sur sa mère, douée pour le chamanisme et infantilisée par l'alcool. Tous ces enfants dans le brouillard, qui le découpent en blocs avec leurs sabres, le temps d'un gracieux mercredi après-midi, l'enlèvent le soir comme un vêtement, l'accrochent à leur vestiaire surchargé de vestes moches - s'ils le peuvent. Dans ce quartier, on parle italien, dans ce quartier, la misère n'est pas un secret, elle s'infiltre dans les rues à travers les rideaux toujours tirés. Personne n'appellerait la police, elle finira par venir d'elle-même.</p>
                   <p>L'espoir réside dans l'ambiguïté, dans le multilinguisme inhérent à la musique, scintillante, kitsch et multicolore, qui teinte les textes, parfois de façon triste et lourde, puis devenant bientôt inspirante et pleine d'espoir. Mister Milano revient ainsi cinq ans après leur premier album. Avec une collection de chansons, dans lesquelles défilent une suite de personnages. Les ragazzi posent devant leur décor embrumé, devant un monde qui n'a peut-être jamais été exactement comme celui-ci, mais qui est tout aussi vrai. Dans ce décor, un ensemble d'instruments : basse, batterie, orgue. Et des congas pour une nostalgie diffuse, tout juste suggérée. Un piano de bar pour le bar. Un piano de virtuose pour le rêve de devenir un jour célèbre. Et Lucio Battisti pour le rayon de soleil, le mercredi après-midi, derrière les haies négligées ou soigneusement taillées, derrière les clôtures inclinées et les petits jardins bien entretenus, entre la ferme, le champ de maïs, la boulangerie, la boucherie, le petit magasin, le kiosque.</p>
-
                 </div>
             </div>
             <div class="c-col-4 c-link-block">
@@ -214,7 +213,7 @@
             </div>
         </div>
     </div>
-    <div class="c-container c-albums">
+    <div class="c-container c-support">
         <div class="c-row">
             <div class="c-col-6">
                 <a href="http://interpreten.ch/" target="_blank"><img src="./images/logo_sig.png" /></a>

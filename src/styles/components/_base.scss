@@ -126,6 +126,31 @@ img {
 	}
 }
 
+.c-support{
+	img{
+		width: 50%;
+	}
+}
+
 .c-text-block{
 	font-size: 1.3rem;
+}
+
+@media only screen and (max-width:767px) {
+	.btn{
+		font-size: 1rem;
+	}
+	.c-albums{
+		.c-col-6 {
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 2rem;
+		  }
+	}
+	.c-text-contact{
+		a{
+			display:block;
+			font-size: 2rem;
+		}
+	}
 }

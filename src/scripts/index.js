@@ -39,13 +39,12 @@ const app = () => {
     new Cookie(true);
     new LazyLoadImages();
 
+    // Action for Language nav
     var contentLinks = document.querySelectorAll(".c-link-block a");
-
     for (var i = 0; i < contentLinks.length; i++) {
         var link = contentLinks[i].getAttribute("href");
         contentLinks[i].addEventListener("click", (event) => {
             const lang = event.target.href.split("#");
-            console.log(lang[1]);
             if(lang[1] == 'fr'){
                 document.getElementById('c-l-de').classList.remove('active');
                 document.getElementById('c-l-fr').classList.add('active');
