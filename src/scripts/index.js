@@ -38,6 +38,41 @@ const app = () => {
     // Add your imported code here, for example: new defaultExport();
     new Cookie(true);
     new LazyLoadImages();
+
+    var contentLinks = document.querySelectorAll(".c-link-block a");
+
+    for (var i = 0; i < contentLinks.length; i++) {
+        var link = contentLinks[i].getAttribute("href");
+        contentLinks[i].addEventListener("click", (event) => {
+            const lang = event.target.href.split("#");
+            console.log(lang[1]);
+            if(lang[1] == 'fr'){
+                document.getElementById('c-l-de').classList.remove('active');
+                document.getElementById('c-l-fr').classList.add('active');
+                document.getElementById('c-l-en').classList.remove('active');
+
+                document.getElementById('c-text-de').style.display = "none";
+                document.getElementById('c-text-fr').style.display = "block";
+                document.getElementById('c-text-en').style.display = "none";
+            }else if(lang[1] == 'en'){
+                document.getElementById('c-l-de').classList.remove('active');
+                document.getElementById('c-l-fr').classList.remove('active');
+                document.getElementById('c-l-en').classList.add('active');
+
+                document.getElementById('c-text-de').style.display = "none";
+                document.getElementById('c-text-fr').style.display = "none";
+                document.getElementById('c-text-en').style.display = "block";
+            }else if(lang[1] == 'de'){
+                document.getElementById('c-l-de').classList.add('active');
+                document.getElementById('c-l-fr').classList.remove('active');
+                document.getElementById('c-l-en').classList.remove('active');
+
+                document.getElementById('c-text-de').style.display = "block";
+                document.getElementById('c-text-fr').style.display = "none";
+                document.getElementById('c-text-en').style.display = "none";
+            }
+        });
+      }    
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {

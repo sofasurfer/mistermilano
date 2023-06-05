@@ -85,3 +85,39 @@ span.month{
     background-color: white;
 }
 */
+
+/* header show offcanvas */
+@media only screen and (max-width:900px) {  
+    table tr{
+    
+        .location{
+            font-size: 1.4rem;
+        }
+    
+        .venue{
+            font-size: 1.3rem;
+        }
+        span.day{
+            font-size: 3em;
+            margin-right: 1rem;
+        }
+    }
+    .c-video{
+        .c-col-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+    }
+    .c-link-block a{
+        display:inline-block;
+    }
+
+    .c-col-4.c-link-block{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .c-row.c-abouttext{
+        flex-direction: row-reverse;
+    }
+}
