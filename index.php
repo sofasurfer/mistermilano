@@ -202,8 +202,11 @@
     <!-- sponsor only -->
     <div class="c-container c-text-contact">
         <div class="c-row">
-            <div class="c-col12 c-text-block">
+            <div class="c-col-6 c-text-block">
                 <a class="button" href="mailto:mistermilano@gmx.net">mistermilano@gmx.net</a>
+            </div>
+            <div class="c-col-6 c-text-block">
+                <a class="button" target="_blank" href="https://www.youtube.com/channel/UCvX7RwA7dIyeo3A3zeb73Wg">youtube</a> / <a class="button" target="_blank" href="https://www.facebook.com/MisterMilanos/">facebook</a>
             </div>
         </div>
     </div>
