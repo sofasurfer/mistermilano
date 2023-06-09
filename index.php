@@ -6,11 +6,12 @@
   $json_data = json_decode($json,true);
 ?>
 <!DOCTYPE html>
-<html lang="de" id="open-navigation">
+<html lang="en" id="open-navigation">
 <head>
     <meta charset="utf-8">
-    <title>Prototype</title>
-    <meta name="author" content="neofluxe GmbH">
+    <title>Mister Milano | Official Website</title>
+    <meta name="description" content="The band Mister Milano clears the table of old disco clichés by creating nothing less than a new genre: Fazzoletti-Pop translating Handkerchief-Pop. Music for ambitious romanticists.">
+    <meta name="author" content="SofaSurfer">
     <!-- Preventing IE11 to request by default the /browserconfig.xml more than one time -->
     <meta name="msapplication-config">
     <!-- Disable touch highlighting in IE -->
@@ -159,11 +160,11 @@
     </div>
 
     <!-- img content wide-->
-    <div class="c-container c-img-wide">
-    <figure>
-        <img src="./images/mistermilano.jpg" alt="" />
-        <figcaption class="c-legend">Mister Milano</figcaption>
-    </figure>
+    <div class="c-container-wide c-img-wide">
+        <figure>
+            <img src="./images/mistermilano.jpg" alt="" />
+            <figcaption class="c-legend">Mister Milano</figcaption>
+        </figure>
     </div>
     <!-- section title -->
     <div class="c-container c-section-title">
@@ -254,6 +255,21 @@
         </div>
     </div>
 </footer-->
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.sofasurfer.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '26']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
 
 <script src="/dist/<?= $json_data['index.js']; ?>"></script>
 </body>
