@@ -22,6 +22,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Disable Skype browser-plugin -->
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <style>
     @font-face {
       font-family: 'ForwardRoughItalic';
@@ -152,9 +160,9 @@
                 </div>
             </div>
             <div class="c-col-4 c-link-block">
-                <a id="c-l-de" href="#de" class="active">DE</a>
+                <a id="c-l-en" href="#en" class="active" class="">EN</a>
+                <a id="c-l-de" href="#de">DE</a>
                 <a id="c-l-fr" href="#fr" class="">FR</a>
-                <a id="c-l-en" href="#en" class="">EN</a>
             </div>
         </div>
     </div>
