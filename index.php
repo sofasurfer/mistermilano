@@ -236,11 +236,11 @@
         </div>
     </div> 
     <!-- img content wide-->
-    <div class="c-container c-img-fullwidth">
+    <!--div class="c-container c-img-fullwidth">
        <figure>
            <img src="../images/cover-footer.jpg" alt="" />
         </figure>
-    </div>
+    </div-->
 
 
 </main>
