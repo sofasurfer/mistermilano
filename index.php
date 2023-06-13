@@ -56,7 +56,7 @@
         <!--text-->
         <div class="c-container c-container-no-padding c-showroom-text">
             <div class="c-row">
-                <div class="c-col-10 c-showroom-text-inner animation-element fade-up in-view">
+                <div class="c-col-12 c-showroom-text-inner animation-element fade-up in-view">
                   <h1 class="animation">Mister<br/>Milano</h1>
                   <span class="c-category-title">I RAGAZZI<br/>DELLA NEBBIA</span>
                 </div>
