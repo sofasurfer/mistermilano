@@ -34,7 +34,11 @@
     @font-face {
       font-family: 'ForwardRoughItalic';
       src: url('/fonts/Forward-RoughItalic.otf') format("opentype");
-    }      
+    }
+    @font-face {
+      font-family: 'B612-Italic';
+      src: url('/fonts/B612-Italic.ttf') format("truetype");
+    }    
     </style>
     <link rel="stylesheet" href="/dist/<?= $json_data['index.css']; ?>" >
 </head>
@@ -142,7 +146,7 @@
     <div class="c-container c-text-only">
         <div class="c-row c-abouttext">
             <div class="c-col-8 c-text-block">
-                <h2>Max Usata - Igor Stepniewski - Lou Caramella</h2>
+                <h2>Max Usata - Igor Stepniewski -<br/>Lou Caramella</h2>
                 <div id="c-text-de" class="c-text-de">
                   <p>Und mit einem Mal kommen die Erinnerungen. Es sind nicht die Strandferien in Rimini — kein Nebel der Zwischensaison, er klebt zu allen Jahreszeiten an der Südseite des Jura. Erinnerungen an eine Kindheit am Rande einer bankrotten Schweizer Stadt. Die Hochsaison ist längst vorbei. In diesem Quartier mit den Wohnblöcken, Genossenschaftswohnungen, ehemaligen Arbeitersiedlungen, kleinen alleinstehenden Häuschen, bizarren Chalets und selbst entworfenen, hässlichen Eigentumshäusern. Ebenso vielfältig wie die architektonische Planlosigkeit sind die Menschen, die sie bewohnen. Sie sind gewürfelt und geworfen: Die Exhibitionisten, mehr Tier als Mensch, schlammbedeckt, rennen am Pausenplatz vorbei in den Wald, das Nachbarskind, das auf seine schamanisch begabte und vom Alkohol infantilisierte Mutter aufzupassen hat. All die Kinder im Nebel, wie sie mit ihren Säbeln den Nebel in Blöcke schlagen, einen gnädigen Mittwochnachmittag lang, ihn am Abend wie ein Kleid abstreifen, ihn an die mit hässlichen Jacken überfrachtete Garderobe hängen — wenn sie können. In diesem Quartier wird italienisch gesprochen, in diesem Quartier ist die Misere kein Geheimnis, durch die stets zugezogenen Vorhänge dringt sie auf die Strassen. Die Polizei würde niemand rufen, irgendwann kommt sie dann von selbst.</p>
                   <p>Die Hoffnung liegt in der Zweideutigkeit, in der inhärenten Mehrsprachigkeit der Musik, die glitzernd, kitschig und vielfarbig die Texte untermalt, manchmal schwertraurig, bald strebend und voller Hoffnung. So kehren Mister Milano fünf Jahre nach dem ersten Album zurück. Mit einem Bündel Lieder, darin ein Figurenkabinett. Die Ragazzi vor ihrem vernebelten Bühnenbild, eine Welt, die vielleicht nie genau so war, aber genauso wahr ist. Darin ein Instrumentarium: Bass, Schlagzeug, Orgel. Und Congas für ein diffuses, knapp noch mittelständisches Fernweh. Ein Barpiano für die Bar. Ein Virtuosenflügel dem Traum, irgendwann doch noch berühmt zu werden. Und Lucio Battisti für den Sonnenstrahl, mittwochnachmittags hinter verwahrlosten oder sorgfältig getrimmten Hecken, hinter schiefen Zäunen und gepflegten kleinen Vorgärten, zwischen Bauernhof, Maisfeld, Bäckerei, Metzger, Kleinladen, Kiosk.</p>
@@ -170,7 +174,7 @@
     <!-- img content wide-->
     <div class="c-container-wide c-img-wide">
         <figure>
-            <img src="./images/mistermilano.jpg" alt="" />
+            <img src="./images/MisterMilano-Portrait-Farbig01.jpg" alt="" />
             <figcaption class="c-legend">Mister Milano</figcaption>
         </figure>
     </div>
@@ -234,13 +238,14 @@
             <a href="https://www.fondation-suisa.ch/" target="_blank"><img src="./images/logo_suisa.png" /></a>
             </div>
         </div>
-    </div> 
+    </div>
+
     <!-- img content wide-->
-    <!--div class="c-container c-img-fullwidth">
+    <div class="c-container c-img-fullwidth">
        <figure>
-           <img src="../images/cover-footer.jpg" alt="" />
+           <img src="./images/footer.jpg" alt="" />
         </figure>
-    </div-->
+    </div>
 
 
 </main>
