@@ -225,7 +225,7 @@
     <div class="c-container c-section-title">
         <div class="c-row">
             <div class="c-col-8">
-                <h2>Unterstuetz durch:</h2>
+                <h2>Unterstuetzt durch:</h2>
             </div>
         </div>
     </div>
