@@ -149,8 +149,15 @@ img {
 	}
 	.c-text-contact{
 		a{
-			display:block;
-			font-size: 2rem;
+			display:inline;
+			font-size: 1.5rem;
 		}
+		.c-col-6 {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}		
+	}
+	.c-support img {
+		width: 80%;
 	}
 }
