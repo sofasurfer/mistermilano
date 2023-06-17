@@ -9,6 +9,7 @@ fonts/**
 images/**
 
 data/**
+*.code-workspace
 
 # OS generated files #
 ######################
