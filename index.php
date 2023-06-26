@@ -207,6 +207,22 @@
     <div class="c-container c-section-title">
         <div class="c-row">
             <div class="c-col-8">
+                <h2>Booking:</h2>
+            </div>
+        </div>
+    </div>
+    <div class="c-container c-text-contact">
+        <div class="c-row">
+            <div class="c-col-12 c-text-block">
+                <a class="button" href="mailto:fabian@gladwemet.ch">fabian@gladwemet.ch</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- section title -->
+    <div class="c-container c-section-title">
+        <div class="c-row">
+            <div class="c-col-8">
                 <h2>Contact:</h2>
             </div>
         </div>
