@@ -87,12 +87,16 @@
               $content = file_get_contents($url, false, stream_context_create($arrContextOptions));
               $json = json_decode($content, true);
 
-              // Check if tours exist
-              if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
-                foreach($json['shows'] as $item) {
-                  include 'templates/tour-item.php';
-                }    
-              }
+              if( !empty($json['shows']) ){
+
+
+                // Check if tours exist
+                if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
+                    foreach($json['shows'] as $item) {
+                    include 'templates/tour-item.php';
+                    }    
+                }
+                }
               ?>
             </table>
             </div>
