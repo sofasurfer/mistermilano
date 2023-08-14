@@ -88,7 +88,6 @@
                 $json = json_decode($content, true);
 
                 if( !empty($json['shows']) ){
-
                     // Check if tours exist
                     if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
                         foreach($json['shows'] as $item) {
@@ -117,6 +116,11 @@
 
     <div class="c-container c-video">
         <div class="c-row">
+            <div class="c-col-12">
+                <div class="c-video-container">
+                  <iframe src="https://www.youtube.com/embed/yRrvRSUDxQk" allowfullscreen="" frameborder="0"></iframe>
+                </div>
+            </div>
             <div class="c-col-6">
                 <div class="c-video-container">
                   <iframe src="https://www.youtube.com/embed/1u0H8ExBxyc" allowfullscreen="" frameborder="0"></iframe>
