@@ -87,12 +87,16 @@
               $content = file_get_contents($url, false, stream_context_create($arrContextOptions));
               $json = json_decode($content, true);
 
-              // Check if tours exist
-              if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
-                foreach($json['shows'] as $item) {
-                  include 'templates/tour-item.php';
-                }    
-              }
+              if( !empty($json['shows']) ){
+
+
+                // Check if tours exist
+                if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
+                    foreach($json['shows'] as $item) {
+                    include 'templates/tour-item.php';
+                    }    
+                }
+                }
               ?>
             </table>
             </div>
@@ -113,6 +117,12 @@
     <div class="c-container c-video">
         <div class="c-row">
             <div class="c-col-12">
+                <div class="c-video-container">
+                  <iframe src="https://player.vimeo.com/video/869990839?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allowfullscreen="" frameborder="0"></iframe>
+                </div>
+                <span></span>
+            </div>
+            <div class="c-col-6">
                 <div class="c-video-container">
                   <iframe src="https://www.youtube.com/embed/Win4rN9PVWQ" allowfullscreen="" frameborder="0"></iframe>
                 </div>
@@ -203,6 +213,22 @@
         </div>
     </div>    
 
+    <!-- section title -->
+    <div class="c-container c-section-title">
+        <div class="c-row">
+            <div class="c-col-8">
+                <h2>Booking:</h2>
+            </div>
+        </div>
+    </div>
+    <div class="c-container c-text-contact">
+        <div class="c-row">
+            <div class="c-col-12 c-text-block">
+                <a class="button" href="mailto:fabian@gladwemet.ch">fabian@gladwemet.ch</a>
+            </div>
+        </div>
+    </div>
+    
     <!-- section title -->
     <div class="c-container c-section-title">
         <div class="c-row">
