@@ -120,7 +120,11 @@
                 <div class="c-video-container">
                   <iframe src="https://player.vimeo.com/video/869990839?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allowfullscreen="" frameborder="0"></iframe>
                 </div>
-                <span></span>
+                <span c-caption>
+                Canzone Del Sole<br/>
+                Video Art by Mister Milano<br/>
+                Canzone Del Sole - Mediterranee (Jean-Daniel Pollet. 1963)<br/>
+                </span>
             </div>
             <div class="c-col-6">
                 <div class="c-video-container">
