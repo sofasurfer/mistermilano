@@ -75,29 +75,29 @@
     <div class="c-container c-section-tour">
         <div class="c-row">
             <div class="c-col-12">
-              <table class="table table-hover" itemscope itemtype="http://schema.org/Event" >
+            <table class="table table-hover" itemscope itemtype="http://schema.org/Event" >
               <?php
-              $arrContextOptions=array(
-                "ssl"=>array(
-                    "verify_peer"=>false,
-                    "verify_peer_name"=>false,
-                ),
-              );              
-              $url = 'https://www.yagwud.com/cms/wp-admin/admin-ajax.php?action=events_list&bid=mistermilano';
-              $content = file_get_contents($url, false, stream_context_create($arrContextOptions));
-              $json = json_decode($content, true);
+                $arrContextOptions=array(
+                    "ssl"=>array(
+                        "verify_peer"=>false,
+                        "verify_peer_name"=>false,
+                    ),
+                );              
+                $url = 'https://www.yagwud.com/cms/wp-admin/admin-ajax.php?action=events_list&bid=mistermilano';
+                $content = file_get_contents($url, false, stream_context_create($arrContextOptions));
+                $json = json_decode($content, true);
 
-              if( !empty($json['shows']) ){
-
-
-                // Check if tours exist
-                if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
-                    foreach($json['shows'] as $item) {
-                    include 'templates/tour-item.php';
-                    }    
+                if( !empty($json['shows']) ){
+                    // Check if tours exist
+                    if( count($json['shows']) > 0 && !empty($json['shows'][0]) ){
+                        foreach($json['shows'] as $item) {
+                        include 'templates/tour-item.php';
+                        }    
+                    }
+                }else{
+                    echo( "<tr><td><h2>SORRY, no upcoming shows.</h2></td></tr>" );
                 }
-                }
-              ?>
+                ?>
             </table>
             </div>
         </div>
@@ -121,6 +121,16 @@
                   <iframe src="https://player.vimeo.com/video/869990839?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allowfullscreen="" frameborder="0"></iframe>
                 </div>
                 <span></span>
+            </div>
+            <div class="c-col-6">
+                <div class="c-video-container">
+                  <iframe src="https://www.youtube.com/embed/yRrvRSUDxQk" allowfullscreen="" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="c-col-6">
+                <div class="c-video-container">
+                  <iframe src="https://www.youtube.com/embed/1u0H8ExBxyc" allowfullscreen="" frameborder="0"></iframe>
+                </div>
             </div>
             <div class="c-col-6">
                 <div class="c-video-container">
