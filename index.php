@@ -216,7 +216,7 @@
             <div class="c-col-6">
                 <figure><img src="./images/IRAGAZZIDELLANEBBIA.png" /></figure>
                 <p>I RAGAZZI DELLA NEBBIA<br/>
-                <a class="btn" target="_blank" href="http://eepurl.com/isHXTk" role="button">Vorbestellen</a>
+                <a class="btn" target="_blank" href="https://mistermilano.bandcamp.com/album/i-ragazzi-della-nebbia" role="button">Vorbestellen</a>
             </div>
             <div class="c-col-6">
                 <figure><img src="./images/cover.png" /></figure>
