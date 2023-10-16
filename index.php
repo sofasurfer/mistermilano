@@ -227,41 +227,36 @@
         </div>
     </div>    
 
+
     <!-- section title -->
-    <div class="c-container c-section-title">
+    <div class="c-container c-albums">
         <div class="c-row">
-            <div class="c-col-8">
+            <div class="c-col-6">
+                <h2>Listen:</h2>
+                <p><a class="button" target="_blank" href="https://music.imusician.pro/a/BxDrV2II">stream online</a></p>
+            </div>
+            <div class="c-col-6">
                 <h2>Booking:</h2>
+                <p><a class="button" href="mailto:fabian@gladwemet.ch">fabian@gladwemet.ch</a></p>
             </div>
         </div>
     </div>
-    <div class="c-container c-text-contact">
+ 
+    <!-- section title -->
+    <div class="c-container c-albums">
         <div class="c-row">
-            <div class="c-col-12 c-text-block">
-                <a class="button" href="mailto:fabian@gladwemet.ch">fabian@gladwemet.ch</a>
+            <div class="c-col-6">
+                <h2>Contact:</h2>
+                <p><a class="button" href="mailto:mistermilano@gmx.net">mistermilano@gmx.net</a></p>
+            </div>
+            <div class="c-col-6">
+                <h2>Social:</h2>
+                <p><a class="button" target="_blank" href="https://www.youtube.com/channel/UCvX7RwA7dIyeo3A3zeb73Wg">youtube</a></p>
+                <p><a class="button" target="_blank" href="https://www.facebook.com/MisterMilanos/">facebook</a></p>
             </div>
         </div>
     </div>
     
-    <!-- section title -->
-    <div class="c-container c-section-title">
-        <div class="c-row">
-            <div class="c-col-8">
-                <h2>Contact:</h2>
-            </div>
-        </div>
-    </div>
-    <!-- sponsor only -->
-    <div class="c-container c-text-contact">
-        <div class="c-row">
-            <div class="c-col-6 c-text-block">
-                <a class="button" href="mailto:mistermilano@gmx.net">mistermilano@gmx.net</a>
-            </div>
-            <div class="c-col-6 c-text-block">
-                <a class="button" target="_blank" href="https://www.youtube.com/channel/UCvX7RwA7dIyeo3A3zeb73Wg">youtube</a> / <a class="button" target="_blank" href="https://www.facebook.com/MisterMilanos/">facebook</a>
-            </div>
-        </div>
-    </div>
     <div class="c-container c-section-title">
         <div class="c-row">
             <div class="c-col-8">

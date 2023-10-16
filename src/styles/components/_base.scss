@@ -137,6 +137,9 @@ img {
 }
 
 @media only screen and (max-width:767px) {
+	.c-hide-mobile{
+		display: none;
+	}
 	.btn{
 		font-size: 1rem;
 	}

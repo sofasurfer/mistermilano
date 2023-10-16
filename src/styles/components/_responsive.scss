@@ -58,7 +58,12 @@
 	}
 }
 
-@media only screen and (max-width:767px) {  
+@media only screen and (max-width:767px) {    
+	.c-col-6,
+	.c-text-only .c-col-6,
+	.c-main-title .c-col-6,
+	.c-section-title .c-col-6,
+	.c-quote .c-col-6,
 	.c-text-only .c-col-8,
 	.c-main-title .c-col-8,
 	.c-section-title .c-col-8,
