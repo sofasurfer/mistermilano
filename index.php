@@ -272,6 +272,12 @@
             <div class="c-col-6">
             <a href="https://www.fondation-suisa.ch/" target="_blank"><img src="./images/logo_suisa.png" /></a>
             </div>
+            <div class="c-col-6">
+            <a href="https://prohelvetia.ch" target="_blank"><img src="./images/logo_prohelvetia.jpg" /></a>
+            </div>
+            <div class="c-col-6">
+            <a href="https://www.ernst-goehner-stiftung.ch" target="_blank"><img src="./images/logo_EGS.svg" /></a>
+            </div>
         </div>
     </div>
 
