@@ -216,7 +216,7 @@
             <div class="c-col-6">
                 <figure><img src="./images/IRAGAZZIDELLANEBBIA.png" /></figure>
                 <p>I RAGAZZI DELLA NEBBIA<br/>
-                <a class="btn" target="_blank" href="https://mistermilano.bandcamp.com/album/i-ragazzi-della-nebbia" role="button">Vorbestellen</a>
+                <a class="btn" target="_blank" href="https://mistermilano.bandcamp.com/album/i-ragazzi-della-nebbia" role="button">Buy Now</a>
             </div>
             <div class="c-col-6">
                 <figure><img src="./images/cover.png" /></figure>
@@ -228,20 +228,54 @@
     </div>    
 
 
-    <!-- section title -->
     <div class="c-container c-albums">
         <div class="c-row">
             <div class="c-col-6">
                 <h2>Listen:</h2>
-                <p><a class="button" target="_blank" href="https://music.imusician.pro/a/BxDrV2II">stream online</a></p>
+                <ul class="stream-list">
+                    <li><a class="stream-link" target="_blank" href="https://open.spotify.com/album/6zgfazM9A4dYfW0JrI3nkF?si=rFUOeoT-TTaJDNMgRxGJfg&nd=1"><img src="./images/social_media/spotify_small.png" alt="Spotify" /></a></li>
+                    <li><a class="stream-link" target="_blank" href="https://music.apple.com/ch/album/i-ragazzi-della-nebbia-ep/1709643654"><img src="./images/social_media/apple_music_small.png" alt="Apple Music" /></a></li>
+                    <li><a class="stream-link" target="_blank" href="https://mistermilano.bandcamp.com/album/i-ragazzi-della-nebbia"><img src="./images/social_media/bandcamp_small.png" alt="Bandcamp" /></a></li>
+                </ul>
             </div>
             <div class="c-col-6">
-                <h2>Booking:</h2>
-                <p><a class="button" href="mailto:fabian@gladwemet.ch">fabian@gladwemet.ch</a></p>
+                <h2>Social:</h2>
+                <ul class="stream-list">
+                    <li><a class="social-link" target="_blank" href="https://www.instagram.com/mister__milano/"><img src="./images/social_media/instagram.svg" alt="Instagram" /></a></li>
+                    <li><a class="social-link" target="_blank" href="https://www.facebook.com/MisterMilanos/"><img src="./images/social_media/facebook.svg" alt="Facebook" /></a></li>
+                    <li><a class="social-link" target="_blank" href="https://www.youtube.com/@blaublaurecords9786"><img src="./images/social_media/youtube.svg" alt="YouTube" /></a></li>
+                </ul>
             </div>
         </div>
     </div>
- 
+    
+    
+    <div class="c-container c-section-title">
+        <div class="c-row">
+            <div class="c-col-8">
+                <h2>Supported by:</h2>
+            </div>
+        </div>
+    </div>
+    <div class="c-container c-support">
+        <div class="c-row">
+            <div class="c-col-3">
+                <a href="http://interpreten.ch/" target="_blank"><img src="./images/logo_sig.png" /></a>
+            </div>
+            <div class="c-col-3">
+            <a href="https://www.fondation-suisa.ch/" target="_blank"><img src="./images/logo_suisa_2.png" /></a>
+            </div>
+            <div class="c-col-3">
+            <a href="https://prohelvetia.ch" target="_blank"><img src="./images/logo_prohelvetia.jpg" /></a>
+            </div>
+            <div class="c-col-3">
+            <a href="https://www.ernst-goehner-stiftung.ch" target="_blank"><img src="./images/logo_EGS.svg" /></a>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- section title -->
     <div class="c-container c-albums">
         <div class="c-row">
@@ -250,33 +284,8 @@
                 <p><a class="button" href="mailto:mistermilano@gmx.net">mistermilano@gmx.net</a></p>
             </div>
             <div class="c-col-6">
-                <h2>Social:</h2>
-                <p><a class="button" target="_blank" href="https://www.youtube.com/channel/UCvX7RwA7dIyeo3A3zeb73Wg">youtube</a></p>
-                <p><a class="button" target="_blank" href="https://www.facebook.com/MisterMilanos/">facebook</a></p>
-            </div>
-        </div>
-    </div>
-    
-    <div class="c-container c-section-title">
-        <div class="c-row">
-            <div class="c-col-8">
-                <h2>Unterstuetzt durch:</h2>
-            </div>
-        </div>
-    </div>
-    <div class="c-container c-support">
-        <div class="c-row">
-            <div class="c-col-6">
-                <a href="http://interpreten.ch/" target="_blank"><img src="./images/logo_sig.png" /></a>
-            </div>
-            <div class="c-col-6">
-            <a href="https://www.fondation-suisa.ch/" target="_blank"><img src="./images/logo_suisa.png" /></a>
-            </div>
-            <div class="c-col-6">
-            <a href="https://prohelvetia.ch" target="_blank"><img src="./images/logo_prohelvetia.jpg" /></a>
-            </div>
-            <div class="c-col-6">
-            <a href="https://www.ernst-goehner-stiftung.ch" target="_blank"><img src="./images/logo_EGS.svg" /></a>
+                <h2>Booking:</h2>
+                <p><a class="button" href="mailto:fabian@gladwemet.ch">fabian@gladwemet.ch</a></p>
             </div>
         </div>
     </div>

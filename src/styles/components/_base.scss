@@ -120,6 +120,13 @@ img {
 	}
 }
 
+
+
+
+.c-text-block{
+	font-size: 1.3rem;
+}
+
 .c-text-contact{
 	a{
 		font-size: 2rem;
@@ -128,7 +135,7 @@ img {
 
 .c-support{
 	img{
-		width: 50%;
+		width: 65%;
 	}
 	.c-col-6{
 		margin-bottom: 2rem;
@@ -136,9 +143,21 @@ img {
 }
 
 
+.stream-list {
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+	padding: 0;
+	li{
+		display: inline-block;
+		flex: 0 0 30%;
+		max-width: 30%;
+		padding-right: 4rem;
 
-.c-text-block{
-	font-size: 1.3rem;
+		img{
+			filter: grayscale(100%);
+		}
+	}
 }
 
 @media only screen and (max-width:767px) {
@@ -168,4 +187,12 @@ img {
 	.c-support img {
 		width: 80%;
 	}
+	.stream-list {
+		li{
+			flex: 0 0 30%;
+			max-width: 30%;
+			padding: 1rem;
+		}
+	}
+
 }
