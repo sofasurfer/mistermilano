@@ -222,7 +222,7 @@
                 <figure><img src="./images/cover.png" /></figure>
                 <p>STANDARD EDITION<br/>
                 LP + CD + Free Digital Download</p>
-                <a class="btn" target="_blank" href="https://www.twogentlemen.net/products/mister-milano/" role="button">Buy Now</a>
+                <a class="btn" target="_blank" href="https://mistermilano.bandcamp.com/album/mister-milano" role="button">Buy Now</a>
             </div>
         </div>
     </div>    
