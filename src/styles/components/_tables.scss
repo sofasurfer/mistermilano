@@ -61,6 +61,7 @@ table tr{
     display:block;
     text-align: center;
     line-height: 30px;
+    font-family: 'ForwardRoughItalic', serif; 
 }
 span.day{
     font-size: 4em;
@@ -118,7 +119,7 @@ span.month{
             padding-top: 0px;
             padding-bottom: 0px;
             text-align: center;
-            border-bottom: 0px!important;         
+            border-bottom: 0px!important; 
             
             &:first-child{
                 padding-top: 2rem;
