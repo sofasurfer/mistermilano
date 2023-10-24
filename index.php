@@ -39,6 +39,10 @@
       font-family: 'B612-Italic';
       src: url('/fonts/B612-Italic.ttf') format("truetype");
     }    
+    @font-face {
+      font-family: 'B612-Regular';
+      src: url('/fonts/B612-Regular.ttf') format("truetype");
+    }   
     </style>
     <link rel="stylesheet" href="/dist/<?= $json_data['index.css']; ?>" >
 </head>
