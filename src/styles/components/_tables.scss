@@ -47,11 +47,16 @@ table tr{
     */
 
     .location{
-        font-size: 2rem;;
+        font-size: 2rem;
+        padding-left: 2rem;
     }
 
     .venue{
         font-size: 1.3rem;
+    }
+
+    .location-small{
+    	font-family: 'B612-Italic',serif; 
     }
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
@@ -61,6 +66,7 @@ table tr{
     display:block;
     text-align: center;
     line-height: 30px;
+    font-family: 'ForwardRoughItalic', serif; 
 }
 span.day{
     font-size: 4em;
@@ -118,7 +124,7 @@ span.month{
             padding-top: 0px;
             padding-bottom: 0px;
             text-align: center;
-            border-bottom: 0px!important;         
+            border-bottom: 0px!important; 
             
             &:first-child{
                 padding-top: 2rem;

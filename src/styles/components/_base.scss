@@ -3,13 +3,19 @@
    ========================================================================== */
 
 body {
-	color: $text-color-light;
-	font-family: 'ForwardRoughItalic', serif;
+	color: $text-color-light;      
+	font-family: 'B612-Regular',serif; 
 	font-weight: normal;
 	letter-spacing: 5px;
 	-webkit-tap-highlight-color: transparent;
 	background: rgb(183,50,100);
 	background: linear-gradient(90deg, rgba(183,50,100,1) 0%, rgba(183,50,100,1) 0%, rgba(245,233,245,1) 100%); 
+}
+
+h1,
+h2,
+.c-category-title{
+	font-family: 'ForwardRoughItalic', serif; 	
 }
 
 /* links */
@@ -27,6 +33,10 @@ a:focus {
 		-webkit-transition: all 0.2s ease-in;
 		transition: all 0.2s ease-in;
 	}
+}
+
+.button{
+	font-size: 1.5rem;
 }
 
 .c-albums{
@@ -155,12 +165,18 @@ img {
 		padding-right: 4rem;
 
 		img{
-			filter: grayscale(100%);
+			// filter: grayscale(100%);
 		}
 	}
 }
 
 @media only screen and (max-width:767px) {
+
+
+	.button{
+		font-size: 1rem;
+	}
+
 	.c-hide-mobile{
 		display: none;
 	}
