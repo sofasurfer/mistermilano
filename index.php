@@ -125,7 +125,7 @@
                   <iframe src="https://player.vimeo.com/video/883221427?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allowfullscreen="" frameborder="0"></iframe>
                 </div>
                 <span c-caption>
-                MUSIC BY MSITER MILANO<br/>
+                MUSIC BY MISTER MILANO<br/>
                 IMAGES BY PIER PAOLO PASOLINI
                 </span>
             </div>
