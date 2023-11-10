@@ -116,7 +116,16 @@
 
     <div class="c-container c-video">
         <div class="c-row">
-            <div class="c-col-12">
+            <div class="c-col-6">
+                <div class="c-video-container">
+                  <iframe src="https://player.vimeo.com/video/883221427?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allowfullscreen="" frameborder="0"></iframe>
+                </div>
+                <span c-caption>
+                MUSIC BY MSITER MILANO<br/>
+                IMAGES BY PIER PAOLO PASOLINI
+                </span>
+            </div>
+            <div class="c-col-6">
                 <div class="c-video-container">
                   <iframe src="https://player.vimeo.com/video/869990839?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allowfullscreen="" frameborder="0"></iframe>
                 </div>
@@ -126,37 +135,37 @@
                 Canzone Del Sole - Mediterranee (Jean-Daniel Pollet. 1963)<br/>
                 </span>
             </div>
-            <div class="c-col-6">
+            <div class="c-col-4">
                 <div class="c-video-container">
                   <iframe src="https://www.youtube.com/embed/yRrvRSUDxQk" allowfullscreen="" frameborder="0"></iframe>
                 </div>
             </div>
-            <div class="c-col-6">
+            <div class="c-col-4">
                 <div class="c-video-container">
                   <iframe src="https://www.youtube.com/embed/1u0H8ExBxyc" allowfullscreen="" frameborder="0"></iframe>
                 </div>
             </div>
-            <div class="c-col-6">
+            <div class="c-col-4">
                 <div class="c-video-container">
                   <iframe src="https://www.youtube.com/embed/Win4rN9PVWQ" allowfullscreen="" frameborder="0"></iframe>
                 </div>
             </div>
-            <div class="c-col-6">
+            <div class="c-col-4">
                 <div class="c-video-container">
                   <iframe src="https://www.youtube.com/embed/3E45tvEpBrY" allowfullscreen="" frameborder="0"></iframe>
                 </div>
             </div>
-            <div class="c-col-6">
+            <div class="c-col-4">
                 <div class="c-video-container">
                   <iframe src="https://www.youtube.com/embed/tCMMMyOh7JA" allowfullscreen="" frameborder="0"></iframe>
                 </div>
             </div>
-            <div class="c-col-6">
+            <div class="c-col-4">
                 <div class="c-video-container">
                   <iframe src="https://www.youtube.com/embed/bU0LoN97Zew" allowfullscreen="" frameborder="0"></iframe>
                 </div>
             </div>
-            <div class="c-col-6">
+            <div class="c-col-4">
                 <div class="c-video-container">
                   <iframe src="https://www.youtube.com/embed/GtGKoo0daDQ" allowfullscreen="" frameborder="0"></iframe>
                 </div>
