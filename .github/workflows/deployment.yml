@@ -1,42 +1,28 @@
-name: 📡 Deployment (🟡STAGING)
+name: Deploy to Live Server
 
 on:
   push:
-    branches: [ deployment ]
-
-permissions:
-  contents: read
+    branches:
+      - deployment
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Use Node.js 18.13.0
-        uses: actions/setup-node@v3
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
         with:
-          node-version: 18.13.0
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: NPM | yarn - Caching 🚀
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
-      - name: NPM | yarn - Install 🔴 🟠 🟡 🟢 🔵 🟣
-        run: yarn install
-
-      - name: NPM | yarn - Build for production 🏗🕌
-        run: yarn build
-
-      - name: RSync Deployments 🚚
-        uses: burnett01/rsync-deployments@5.2
-        with:
-          switches: -avzr --delete --prune-empty-dirs --exclude="node_modules" --exclude=".github" --exclude="package.json" --exclude="package-lock.json" --exclude="*.lock" --exclude="release.sh" --exclude="bud.config.mjs" --exclude="*.md" --exclude="*.html" --exclude="src/fonts" --exclude="src/styles" --exclude="src/images" --exclude="src/bud" --exclude="src/templates" --exclude=".nvmrc" --exclude=".gitignore"
-          path: ./
-          remote_path: public_html/PROJECT_DIRECTORY/wp-content/themes/wptheme.starter
-          remote_host: ${{ vars.REMOTE_HOST }} # example: s094.cyon.net
-          remote_user: ${{ vars.REMOTE_USER }} # example: nflxz
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Sync files with rsync
+        run: |
+          rsync -avz --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            ./ \
+            vemamuwo@sl1702.web.hostpoint.ch:/home/vemamuwo/www/mistermilano.it
