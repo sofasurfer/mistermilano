@@ -272,17 +272,30 @@
     </div>
     <div class="c-container c-support">
         <div class="c-row">
+
+
+            <div class="c-col-3">
+                <a href="https://www.biel-bienne.ch" target="_blank"><img src="./images/logo_biel.jpeg" /></a>
+            </div>
+            <div class="c-col-3">
+                <a href="https://www.swisslos.ch/de/informationen/guter-zweck/kantonale-fonds/funktion-und-adressen.html" target="_blank"><img src="./images/logo_suisslos.png" /></a>
+            </div>
+            <div class="c-col-3">
+                <a href="https://www.fondation-suisa.ch/" target="_blank"><img src="./images/logo_suisa_2.png" /></a>
+            </div>
+            <div class="c-col-3">
+                <a href="https://prohelvetia.ch" target="_blank"><img src="./images/logo_prohelvetia.jpg" /></a>
+            </div>
+        </div>
+        <div class="c-row">
             <div class="c-col-3">
                 <a href="http://interpreten.ch/" target="_blank"><img src="./images/logo_sig.png" /></a>
             </div>
             <div class="c-col-3">
-            <a href="https://www.fondation-suisa.ch/" target="_blank"><img src="./images/logo_suisa_2.png" /></a>
+                <a href="https://www.stadt-zuerich.ch/prd/de/index/kultur.html" target="_blank"><img src="./images/logo_zuerich.svg" /></a>
             </div>
             <div class="c-col-3">
-            <a href="https://prohelvetia.ch" target="_blank"><img src="./images/logo_prohelvetia.jpg" /></a>
-            </div>
-            <div class="c-col-3">
-            <a href="https://www.ernst-goehner-stiftung.ch" target="_blank"><img src="./images/logo_EGS.svg" /></a>
+                <a href="https://www.ernst-goehner-stiftung.ch" target="_blank"><img src="./images/logo_EGS.svg" /></a>
             </div>
         </div>
     </div>
