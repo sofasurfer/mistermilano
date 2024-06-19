@@ -309,10 +309,6 @@
                 <h2>Contact:</h2>
                 <p><a class="button" href="mailto:mistermilano@gmx.net">mistermilano@gmx.net</a></p>
             </div>
-            <div class="c-col-6">
-                <h2>Booking:</h2>
-                <p><a class="button" href="mailto:fabian@gladwemet.ch">fabian@gladwemet.ch</a></p>
-            </div>
         </div>
     </div>
 
