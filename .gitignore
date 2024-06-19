@@ -1,0 +1,27 @@
+node_modules/**
+npm-debug.log
+vendor/**
+*.css.map
+.gitattributes
+.budfiles
+dist/**
+fonts/**
+images/**
+
+data/**
+*.code-workspace
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+/src/fonts/inlineFonts.scss
+/src/templates/dist/
+/src/templates/node_modules/
+./*.sql
+/yarn-error.log

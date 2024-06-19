@@ -1,0 +1,262 @@
+/* ==========================================================================
+   Base
+   ========================================================================== */
+html {
+	font-size: 18px;
+}
+
+/* ==========================================================================
+   Titles
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+.c-h1 {
+	padding-bottom: .5em;
+	line-height: 1.1;
+	font-size: 2rem; /* 80px */
+	color: $text-color-light;
+}
+
+h2,
+.c-h2 {
+	padding-bottom: .5em;
+	line-height: 1.2;
+	font-size: 3rem; /* 40px */
+	font-weight: bold;
+	color: $color-highlight;
+	// text-shadow: rgb(235, 10, 115) 0 0 5px;
+
+	:hover{
+		color: #fdec6e;
+		text-shadow:0px 0px 30px #fdec6e;
+		-moz-transition: all 0.2s ease-in;
+		-o-transition: all 0.2s ease-in;
+		-webkit-transition: all 0.2s ease-in;
+		transition: all 0.2s ease-in;		
+	}
+}
+
+h3,
+.c-h3 {
+	line-height: 1.5;
+	font-size: 1.33rem;
+	padding-bottom: 0.5em;
+	font-weight: bold;
+}
+
+/* ==========================================================================
+   Basic Text Content
+   ========================================================================== */
+
+.c-content,
+.c-footer {
+	line-height: 1.5;
+}
+
+.c-text-block p {
+	padding-bottom: 1.5em;
+}
+
+.c-text-block p + h2,
+.c-text-block p + h3,
+.c-text-block p + h4,
+.c-text-block ul + p,
+.c-text-block ul + h2,
+.c-text-block ul + h3,
+.c-text-block ul + h4,
+.c-text-block ul + ol,
+.c-text-block ol + p,
+.c-text-block ol + h2,
+.c-text-block ol + h3,
+.c-text-block ol + h4 {
+	padding-top: 1.5em;
+}
+
+.c-lead {
+	font-size: 1.33rem;
+	line-height: 1.33;
+}
+
+.c-text-small,
+.c-text-block blockquote cite,
+.c-legend {
+	font-size: 0.77rem; /* 14px */
+}
+
+.c-legend {
+	display: block;
+	padding-top: 1em;
+}
+
+.c-footer-disclaimer {
+	font-size: 0.88rem; /* 18px */
+}
+
+/* ==========================================================================
+   Basic Lists Content 
+   ========================================================================== */
+
+.c-text-block ul,
+.c-text-block ol {
+	margin: 0;
+	padding: 0 0 1.5em 0;
+	list-style: none;
+}
+
+.c-text-block ul li,
+.c-text-block ol li {
+	position: relative;
+	padding-left: 34px;
+}
+
+.c-text-block ul li + li,
+.c-text-block ol li + li {
+	margin-top: 0.5em;
+}
+
+.c-text-block ul li::before {
+	content:'';
+	position: absolute;
+	top: 0.44em;
+	left: 0;
+	width: 20px;
+	height: 5px;
+	background-color: $border-basic;
+}
+
+.c-text-block ol {
+	counter-reset: custom-counter;
+}
+
+.c-text-block ol li {
+	counter-increment: custom-counter;
+}
+
+.c-text-block ol li::before {
+	content: counter(custom-counter) ". ";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 26px;
+	color: $text-color;
+	font-weight: bold;
+	text-align: right;
+}
+
+.c-text-de,
+.c-text-fr{
+	display: none;
+}
+
+.c-abouttext p{
+	letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   Quote
+   ========================================================================== */
+
+.c-text-block blockquote {
+	margin: 0;
+	padding: 0 0 3rem 0;
+}
+
+.c-text-block blockquote p {
+	position: relative;
+	padding: 2.6rem 0 0 0;
+	line-height: 1.25;
+	font-size: 2.22rem; /* 40px */
+	font-weight: 300;
+}
+
+.c-text-block blockquote p::before {
+	content: '\201C';
+	display: block;
+	position: absolute;
+	left: -31px;
+	top: -2.8rem;
+	font-size: 14.44rem;
+	color: $border-basic;
+	font-weight: bold;
+	z-index: -1;
+}
+
+.c-text-block blockquote cite {
+	padding-top: 1.5em;
+	font-style: normal;
+}
+
+/* ==========================================================================
+   Text helpers
+   ========================================================================== */
+
+.c-text-right {
+	text-align: right;
+}
+
+.c-text-center {
+	text-align: center;
+}
+
+.c-text-light {
+	color: $text-color-light;
+}
+
+/* ==========================================================================
+   Text sizes responsive
+   ========================================================================== */
+
+@media only screen and (max-width:1360px) {
+	h1, .c-h1,
+	h2, .c-h2,
+	h3, .c-h3{
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
+}
+
+@media only screen and (max-width:767px) {
+
+	html {
+		font-size: 16px;
+	}
+
+	h1, .c-h1 {
+		font-size: 2rem;
+	}
+
+	h2, .c-h2 {
+		font-size: 1.5rem;
+	}
+
+	.c-lead,
+	h3, .c-h3 {
+		font-size: 1.125rem;
+	}
+
+	.c-text-small,
+	.c-legend {
+		font-size: 0.875rem;
+	}
+
+
+}
+
+

@@ -3,6 +3,7 @@
     CSS Styles for mistermilano.it
 
 */
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Bitter|PT+Sans+Narrow|Just+Me+Again+Down+Here|Shadows+Into+Light|Waiting+for+the+Sunrise');
 
 @font-face {
@@ -13,6 +14,16 @@
 
 html { 
   height:100%;
+=======
+
+@font-face {
+  font-family: 'ForwardRoughItalic';
+  src: url('/assets/fonts/Forward-RoughItalic.otf') format("opentype");
+}
+
+html {
+    margin: 0;
+>>>>>>> mister
 }
 
 body{
@@ -25,12 +36,35 @@ body{
 
 
 body.home{
+<<<<<<< HEAD
     font-family: 'Kirjainkone', cursive;
     background: url(/assets/images/background-plain.png) repeat-y center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+=======
+    font-family: 'ForwardRoughItalic', serif;
+}
+
+.showroom-home{
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.showroom-home figure{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+}
+.showroom-home figure img{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+>>>>>>> mister
 }
 
 h1{
@@ -97,11 +131,14 @@ p.sharing i{
     -o-background-size: cover;
     background-size: cover;
 }
+<<<<<<< HEAD
 .home{
     margin-top: 50px;
     top:0;
     width:100%;
 }
+=======
+>>>>>>> mister
 .about{
     font-size: 3.5em;
 }

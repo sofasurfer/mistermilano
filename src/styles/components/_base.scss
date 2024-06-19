@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Base Project
+   ========================================================================== */
+
+body {
+	color: $text-color-light;      
+	font-family: 'B612-Regular',serif; 
+	font-weight: normal;
+	letter-spacing: 5px;
+	-webkit-tap-highlight-color: transparent;
+	background: rgb(183,50,100);
+	background: linear-gradient(90deg, rgba(183,50,100,1) 0%, rgba(183,50,100,1) 0%, rgba(245,233,245,1) 100%); 
+}
+
+h1,
+h2,
+.c-category-title{
+	font-family: 'ForwardRoughItalic', serif; 	
+}
+
+/* links */
+a,
+a:visited,
+a:focus {
+	color: $color-highlight;
+	text-decoration: none;
+
+	&:hover{
+		color: $color-pink;
+		text-shadow:0px 0px 30px #fdec6e;
+		-moz-transition: all 0.2s ease-in;
+		-o-transition: all 0.2s ease-in;
+		-webkit-transition: all 0.2s ease-in;
+		transition: all 0.2s ease-in;
+	}
+}
+
+.button{
+	font-size: 1.5rem;
+}
+
+.c-albums{
+	figure{
+		margin-bottom: 1rem;
+	}
+}
+
+.btn{
+	font-size: 2rem;
+	padding: 0.5rem 1rem;
+	border:solid 2px $text-color-light;
+	border-radius: 1rem;
+	display: inline-block; 
+	margin-top:1rem;
+	&:hover{
+		color: white;
+		background-color: $color-highlight;
+		text-shadow:0px 0px 30px #fdec6e;
+		-moz-transition: all 0.2s ease-in;
+		-o-transition: all 0.2s ease-in;
+		-webkit-transition: all 0.2s ease-in;
+		transition: all 0.2s ease-in;	
+		border: solid 2px $color-pink;	
+	}
+}
+
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+
+input,
+select,
+textarea {
+	color: $text-color;
+}
+
+textarea {
+	resize: none;
+}
+
+
+/* ==========================================================================
+   Standard img / media declaration
+   ========================================================================== */
+
+embed,
+object,
+video,
+iframe,
+img {
+    width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+.c-img-max-width,
+.c-content .c-img-max-width {
+	width: auto;
+	max-width: 100%;
+}
+
+img { 
+	vertical-align: bottom; 
+}
+
+
+.c-img-fullwidth{
+	max-width: 100%!important;
+	padding-left: 0px!important;
+	padding-right: 0px!important;
+	padding-bottom: 0px!important;
+}
+
+
+.c-link-block{
+	text-align: right;
+	a{
+		font-size: 1.5rem;
+		padding-left: 2rem;
+
+		border: none;
+
+		&.active{
+			color: $color-pink;
+		}
+	}
+}
+
+
+
+
+.c-text-block{
+	font-size: 1.3rem;
+}
+
+.c-text-contact{
+	a{
+		font-size: 2rem;
+	}
+}
+
+.c-support{
+	img{
+		width: 65%;
+	}
+	.c-col-3,
+	.c-col-6{
+		margin-bottom: 2rem;
+	}
+}
+
+
+.stream-list {
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+	padding: 0;
+	li{
+		display: inline-block;
+		flex: 0 0 30%;
+		max-width: 30%;
+		padding-right: 4rem;
+
+		img{
+			// filter: grayscale(100%);
+		}
+	}
+}
+
+@media only screen and (max-width:767px) {
+
+
+	.button{
+		font-size: 1rem;
+	}
+
+	.c-hide-mobile{
+		display: none;
+	}
+	.btn{
+		font-size: 1rem;
+	}
+	.c-albums{
+		.c-col-6 {
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 2rem;
+		  }
+	}
+	.c-text-contact{
+		a{
+			display:inline;
+			font-size: 1.5rem;
+		}
+		.c-col-6 {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}		
+	}
+	.c-support img {
+		width: 80%;
+	}
+	.stream-list {
+		li{
+			flex: 0 0 30%;
+			max-width: 30%;
+			padding: 1rem;
+		}
+	}
+
+}
